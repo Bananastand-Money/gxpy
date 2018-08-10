@@ -29,10 +29,8 @@ from . import gx as gx
 from . import coordinate_system as gxcs
 from . import vv as gxvv
 from . import utility as gxu
-from . import agg as gxagg
 from . import geometry as gxgm
 from . import map as gxmap
-from . import grid_utility as gxgrdu
 from . import view as gxview
 from . import gdb as gxgdb
 
@@ -1934,6 +1932,8 @@ def grid_bool(*args, **kwargs):
     """
     .. deprecated:: 9.4 use `geosoft.gxpy.grid_utility.grid_bool`
     """
+    from . import grid_utility as gxgrdu
+
     return gxgrdu.grid_bool(*args, **kwargs)
 
 
@@ -1951,6 +1951,8 @@ def figure_map(grid_file, map_file=None, shade=True, color_map=None, contour=Non
 
     .. versionadded:: 9.3
     """
+
+    from . import agg as gxagg
 
     with gxagg.Aggregate_image.new(grid_file, shade=shade, color_map=color_map, contour=contour) as agg:
         return agg.figure_map(file_name=map_file, **kwargs)
@@ -1977,6 +1979,8 @@ def image_file(grid_file, image_file=None, image_type=gxmap.RASTER_FORMAT_PNG, p
 
     .. versionadded:: 9.3.1
     """
+
+    from . import agg as gxagg
 
     if color_map is None:
         with Grid.open(grid_file) as g:

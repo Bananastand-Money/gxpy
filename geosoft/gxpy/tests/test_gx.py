@@ -40,7 +40,6 @@ class Test(GXPYTest):
             self.assertTrue(gxc.geosoft_build_number)
             self.assertTrue(gxc.geosoft_name)
 
-    @unittest.skip('WIP')
     def test_entitlements(self):
         with gx.gx() as gxc:
             ent = gxc.entitlements()

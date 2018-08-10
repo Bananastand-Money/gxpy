@@ -50,7 +50,6 @@ import geosoft.gxapi as gxapi
 from . import gx as gx
 from . import coordinate_system as gxcs
 from . import utility as gxu
-from . import map as gxmap
 from . import metadata as gxmeta
 from . import geometry as gxgeo
 from . import spatialdata as gxspd
@@ -173,6 +172,8 @@ def delete_files(v3d_file):
 
     .. versionadded:: 9.3.1
     """
+    from . import map as gxmap
+
     gxmap.delete_files(v3d_file)
 
 
@@ -324,6 +325,8 @@ class View(gxgeo.Geometry):
         """
 
         if map is None:
+            from . import map as gxmap
+
             map = gxmap.Map.new()
 
         view = cls(map,

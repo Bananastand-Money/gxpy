@@ -775,23 +775,23 @@ GS_S4MN = -2147483646
 #: -2147483647L
 GS_S4DM = -2147483647
 #: (unsigned long )   0xFFFFFFFE
-GS_U4MX = struct.unpack('>I', bytes.fromhex('FFFFFFFE'))[0]
+GS_U4MX = struct.unpack('>I', bytearray.fromhex('FFFFFFFE'))[0]
 #: (unsigned long )   0x00000000
-GS_U4MN = struct.unpack('>I', bytes.fromhex('00000000'))[0]
+GS_U4MN = struct.unpack('>I', bytearray.fromhex('00000000'))[0]
 #: (unsigned long )   0xFFFFFFFF
-GS_U4DM = struct.unpack('>I', bytes.fromhex('FFFFFFFF'))[0]
+GS_U4DM = struct.unpack('>I', bytearray.fromhex('FFFFFFFF'))[0]
 #: (__GS_INT64    )   0x7FFFFFFFFFFFFFFF
-GS_S8MX = struct.unpack('>q', bytes.fromhex('7FFFFFFFFFFFFFFF'))[0]
+GS_S8MX = struct.unpack('>q', bytearray.fromhex('7FFFFFFFFFFFFFFF'))[0]
 #: (__GS_INT64    )   0x8000000000000001
-GS_S8MN = struct.unpack('>q', bytes.fromhex('8000000000000001'))[0]
+GS_S8MN = struct.unpack('>q', bytearray.fromhex('8000000000000001'))[0]
 #: (__GS_INT64    )   0x8000000000000000
-GS_S8DM = struct.unpack('>q', bytes.fromhex('8000000000000000'))[0]
+GS_S8DM = struct.unpack('>q', bytearray.fromhex('8000000000000000'))[0]
 #: (__GS_UINT64   )   0xFFFFFFFFFFFFFFFE
-GS_U8MX = struct.unpack('>Q', bytes.fromhex('FFFFFFFFFFFFFFFE'))[0]
+GS_U8MX = struct.unpack('>Q', bytearray.fromhex('FFFFFFFFFFFFFFFE'))[0]
 #: (__GS_UINT64   )   0x0000000000000000
-GS_U8MN = struct.unpack('>Q', bytes.fromhex('0000000000000000'))[0]
+GS_U8MN = struct.unpack('>Q', bytearray.fromhex('0000000000000000'))[0]
 #: (__GS_UINT64   )   0xFFFFFFFFFFFFFFFF
-GS_U8DM = struct.unpack('>Q', bytes.fromhex('FFFFFFFFFFFFFFFF'))[0]
+GS_U8DM = struct.unpack('>Q', bytearray.fromhex('FFFFFFFFFFFFFFFF'))[0]
 #: (float         )   1.0E32   (In C these must be declared as external constants:)
 GS_R4MX = 1.0E32
 #: (float         )  -0.9E32     const float r4min=(float)-0.9E32,

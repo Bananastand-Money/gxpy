@@ -76,7 +76,6 @@ from math import ceil
 import geosoft
 import geosoft.gxapi as gxapi
 from . import gx as gx
-from . import grid as gxgrd
 from . import utility as gxu
 from . import dataframe as gxdf
 from . import group as gxg
@@ -905,6 +904,8 @@ class Map:
 
         .. versionadded:: 9.3
         """
+        from . import grid as gxgrd
+
         crc_image = gx.gx().temp_file('.bmp')
         self.image_file(crc_image, type=RASTER_FORMAT_BMP, pix_width=pix_width)
         crc = gxu.crc32_file(crc_image)

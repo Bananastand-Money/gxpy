@@ -218,7 +218,8 @@ def name_list(what, datum_filter=''):
 
 
 def _extract(s, frame):
-    c1, c2, *_ = frame
+    c1 = frame[0]
+    c2 = frame[1]
     s = s.strip(' \t"\'')
     end = s.rfind(c2)
     if end > 1:
@@ -779,7 +780,9 @@ class Coordinate_system:
 
         if (gxf2 == '') and (gxf3 == ''):
             if '/' in hcs:
-                datum, projection, *_ = hcs.strip('"').split('/')
+                toks = hcs.strip('"').split('/')
+                datum = toks[0]
+                projection = toks[1]
                 gxf2 = datum.strip()
                 gxf3 = projection.strip()
             else:
@@ -1011,7 +1014,7 @@ class Coordinate_system:
         if what == NAME:
             return self.gxf[0]
         else:
-            csname, *_ = self.gxf
+            csname = self.gxf[0]
             hcs, orient, vcs = hcs_orient_vcs_from_name(csname)
             if what == NAME_HCS_VCS:
                 return name_from_hcs_orient_vcs(hcs, orient, vcs)

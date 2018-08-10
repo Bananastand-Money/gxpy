@@ -24,7 +24,6 @@ from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
 from collections import OrderedDict
 from ._xmltodict import xmltodict
-import urllib.request
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -1209,36 +1208,6 @@ def str_significant(value, n, mode=0):
         vstr = str(math.floor(v))
 
     return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
-
-
-def url_retrieve(url, filename=None, overwrite=False, reporthook=None):
-    """
-    Retrieve a URL resource as a file.
-
-    :param url:         name of the URL resource
-    :param filename:    name of file in which to place the resource, default is the resource base name.
-    :param overwrite:   True to overwrite an existing file.  Default is False, in which case if the file
-                        exists the filename is returned.
-    :param reporthook:  a hook function that will be called once on establishment of the network connection
-                        and once after each block read thereafter. The hook will be passed three arguments;
-                        a count of blocks transferred so far, a block size in bytes, and the total size of the file.
-    :return:            filename of the file that is created.
-
-    .. seealso:: https://docs.python.org/3.6/library/urllib.request.html#urllib.request.urlretrieve
-
-    .. versionadded:: 9.3
-    """
-
-    if filename is None:
-        filename = os.path.basename(url).replace('%20', ' ')
-
-    if not overwrite:
-        if os.path.isfile(filename):
-            return filename
-
-    file, message = urllib.request.urlretrieve(url.replace(' ', '%20'), filename=filename, reporthook=reporthook)
-    return file
-
 
 def delete_file(file_name):
     """

@@ -1,3 +1,4 @@
+# coding=utf-8
 ### extends 'class_empty.py'
 ### block ClassImports
 # NOTICE: Do not edit anything here, it is generated code

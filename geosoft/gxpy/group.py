@@ -167,9 +167,7 @@ from . import geometry as gxgm
 from . import coordinate_system as gxcs
 from . import utility as gxu
 from . import view as gxv
-from . import agg as gxagg
 from . import metadata as gxmeta
-from . import vox_display as gxvoxd
 from . import spatialdata as gxspd
 
 
@@ -1258,11 +1256,7 @@ class Draw_3d(Draw):
     .. versionadded:: 9.2
     """
 
-    def __init__(self,
-                 view,
-                 *args,
-                 render_backfaces=False,
-                 **kwargs):
+    def __init__(self, view, render_backfaces=False, *args, **kwargs):
 
         if not isinstance(view, gxv.View_3d):
             raise GroupException(_t('View is not 3D'))
@@ -2666,6 +2660,8 @@ class Aggregate_group(Group):
 
         .. versionadded:: 9.2
         """
+        from . import agg as gxagg
+
         agg_group = cls(view, group_name, mode=READ_ONLY)
         if isinstance(group_name, int):
             group_number = group_name
@@ -2767,6 +2763,8 @@ class VoxDisplayGroup(Group):
 
         .. versionadded: 9.3.1
         """
+        from . import vox_display as gxvoxd
+
         voxd_group = cls(view, group_name, mode=READ_ONLY)
         if view.gxview.is_group(group_name, gxapi.MVIEW_IS_VOXD):
             voxd_group._voxd = gxvoxd.VoxDisplay.gxapi_gxvoxd(voxd_group.view.gxview.get_voxd(voxd_group.number))

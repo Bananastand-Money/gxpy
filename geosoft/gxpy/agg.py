@@ -474,7 +474,8 @@ class Aggregate_image(gxgm.Geometry):
             image_file = gx.gx().temp_file('.png')
             image_type = gxmap.RASTER_FORMAT_PNG
 
-        nx, _, _, _, dx, *_ = self.spatial_properties
+        nx = self.spatial_properties[0]
+        dx = self.spatial_properties[4]
 
         if pix_width is None or pix_width <= 0:
             pix_width = nx

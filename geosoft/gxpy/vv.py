@@ -20,7 +20,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
 
 """
 
-from collections.abc import Sequence
+from collections import Sequence
 import geosoft
 import numpy as np
 import geosoft.gxapi as gxapi

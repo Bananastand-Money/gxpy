@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 GX Context and related methods required for Geosoft Python.
 
@@ -14,7 +15,6 @@ stand-alone Python scripts, or is provided to the script for extensions to Geoso
 
 """
 
-import tkinter.ttk as ttk
 import pprint
 import os
 import shutil
@@ -345,6 +345,7 @@ class GXpy(_Singleton):
                     'Unable to import the pythoncom module, which is needed for GUI APIs to work.'))
 
         if parent_window == -1:
+            import tkinter.ttk as ttk
             self._tkframe = ttk.Frame(master=None)
             parent_window = self._tkframe.winfo_id()
 
