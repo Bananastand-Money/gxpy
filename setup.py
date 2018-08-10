@@ -64,12 +64,6 @@ else:
         shutil.copyfile('gxapi_cy.cp37-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
         shutil.copyfile('gxapi_cy_extend.cp37-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
 
-data_files = []
-
-for root, dirs, files in walk('geosoft/gxapi/GeosoftRedist'):
-    root_files = [path.join(root, i) for i in files]
-    data_files.append((root, root_files))
-    
 setup(
     name='geosoft',
     version=version_tag,
@@ -84,6 +78,18 @@ setup(
     packages=[
         'geosoft',
         'geosoft.gxapi',
+        'geosoft.gxapi.GeosoftRedist',
+        'geosoft.gxapi.GeosoftRedist.bin',
+        'geosoft.gxapi.GeosoftRedist.csv',
+        'geosoft.gxapi.GeosoftRedist.etc',
+        'geosoft.gxapi.GeosoftRedist.fonts',
+        'geosoft.gxapi.GeosoftRedist.ger',
+        'geosoft.gxapi.GeosoftRedist.ini',
+        'geosoft.gxapi.GeosoftRedist.tbl',
+        'geosoft.gxapi.GeosoftRedist.tbl.Geophysics',
+        'geosoft.gxapi.GeosoftRedist.tbl.miscellaneous',
+        'geosoft.gxapi.GeosoftRedist.tbl.monochromatic',
+        'geosoft.gxapi.GeosoftRedist.tbl.topography',
         'geosoft.gxpy',
         'geosoft.gxpy._jdcal',
         'geosoft.gxpy._xmltodict',
@@ -92,11 +98,22 @@ setup(
     package_data={
         'geosoft': ['*.json'],
         'geosoft.gxapi': ['geosoft.key', 'gxapi_cy.pyd',  'gxapi_cy_extend.pyd', '*.dll'],
+        'geosoft.gxapi.GeosoftRedist': ['*'],
+        'geosoft.gxapi.GeosoftRedist.bin': ['*'],
+        'geosoft.gxapi.GeosoftRedist.csv': ['*'],
+        'geosoft.gxapi.GeosoftRedist.etc': ['*'],
+        'geosoft.gxapi.GeosoftRedist.fonts': ['*'],
+        'geosoft.gxapi.GeosoftRedist.ger': ['*'],
+        'geosoft.gxapi.GeosoftRedist.ini': ['*'],
+        'geosoft.gxapi.GeosoftRedist.tbl': ['*'],
+        'geosoft.gxapi.GeosoftRedist.tbl.Geophysics': ['*'],
+        'geosoft.gxapi.GeosoftRedist.tbl.miscellaneous': ['*'],
+        'geosoft.gxapi.GeosoftRedist.tbl.monochromatic': ['*'],
+        'geosoft.gxapi.GeosoftRedist.tbl.topography': ['*'],
         'geosoft.gxpy._jdcal': ['*.txt', '*.rst'],
         'geosoft.gxpy._xmltodict': ['LICENSE', '*.md'],
         'geosoft.gxpy.user_input': ['*.gx']
     },
-    data_files=data_files,
     test_suite="geosoft.gxpy.tests",
     classifiers=[
         dev_status_classifier,
