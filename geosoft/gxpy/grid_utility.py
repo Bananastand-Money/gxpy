@@ -25,7 +25,6 @@ from . import gdb as gxgdb
 from . import geometry as gxgeo
 from . import utility as gxu
 from . import geometry_utility as gxgeou
-from . import grid_fft as gxfft
 
 __version__ = geosoft.__version__
 
@@ -141,6 +140,8 @@ def derivative(grid, derivative_type, file_name=None, overwrite=False, dtype=Non
             g.delete_files()
 
         if fft:
+            from . import grid_fft as gxfft
+
             with gxfft.GridFFT(g) as gfft:
                 gfft.filter(filters=['DRVZ 1'])
                 dzg = gfft.result_grid(file_name=file_name, overwrite=overwrite)

@@ -19,7 +19,7 @@ data to the same fiducial so that vector-to-vector operations can be performed.
     `va tests <https://github.com/GeosoftInc/gxpy/blob/master/geosoft/gxpy/tests/test_gxva.py>`_
 
 """
-from collections.abc import Sequence
+from collections import Sequence
 import numpy as np
 import geosoft
 import geosoft.gxapi as gxapi

@@ -27,7 +27,7 @@ import os
 from json import dumps, loads
 from requests import get, post, exceptions
 from enum import Enum
-from collections.abc import Sequence
+from collections import Sequence
 
 import geosoft
 from . import gx as gx
@@ -625,7 +625,9 @@ class DapClient(Sequence):
                 title = item
                 hierarchy = None
             else:
-                hierarchy, title, *_ = tuple(item)
+                tup = tuple(item)
+                hierarchy = tup[0]
+                title = tup[1]
             for i in self._cat:
                 if hierarchy and i.Hierarchy != hierarchy:
                     continue

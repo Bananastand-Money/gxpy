@@ -28,7 +28,7 @@ Geosoft voxel (voxset) handling.
 """
 import os
 import numpy as np
-from collections.abc import Sequence
+from collections import Sequence
 
 import geosoft
 import geosoft.gxapi as gxapi
