@@ -212,6 +212,9 @@ class GXvv(Sequence):
     def __iter__(self):
         return self
 
+    def next(self):
+        return self.__next__()
+
     def __next__(self):
         if self._next >= self.length:
             self._next = 0
@@ -235,7 +238,7 @@ class GXvv(Sequence):
         """set to data in a numpy array"""
         if not npd.flags['C_CONTIGUOUS']:
             npd = np.ascontiguousarray(npd)
-        self.gxvv.set_data(start, npd.shape[0], npd.data.tobytes(), gxu.gx_dtype_dimension(npd.dtype, self._dim))
+        self.gxvv.set_data(start, npd.shape[0], npd.tobytes(), gxu.gx_dtype_dimension(npd.dtype, self._dim))
 
     def _get_data_np(self, start=0, n=None, dtype=None):
         """return data in a numpy array"""

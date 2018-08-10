@@ -109,6 +109,9 @@ class GXva(Sequence):
     def __iter__(self):
         return self
 
+    def next(self):
+        return self.__next__()
+
     def __next__(self):
         if self._next >= self.length:
             self._next = 0

@@ -369,7 +369,7 @@ class Geosoft_gdb(gxgeo.Geometry):
                 name = '_gdb_'
         else:
             name = os.path.basename(name)
-        super().__init__(name=name)
+        super(Geosoft_gdb, self).__init__(name=name)
 
         self._open = gx.track_resource(self.__class__.__name__, self._file_name)
 
@@ -2236,7 +2236,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         return gmap
 
 
-class Channel:
+class Channel(object):
     """
     Class to work with database channels.  Use constructor `Channel.new` to create a new channel.
     Use instance properties to work with channel properties.
@@ -2542,7 +2542,7 @@ class Channel:
         self._symb = gxapi.NULLSYMB
 
 
-class Line:
+class Line(object):
     """
     Class to work with database lines.  Use constructor `Line.new` to create a new line.
     Use instance properties to work with line properties.

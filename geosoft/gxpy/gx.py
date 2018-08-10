@@ -42,7 +42,7 @@ class GXException(geosoft.GXRuntimeError):
     pass
 
 
-class _Singleton:
+class _Singleton(object):
     """
     Used internally to create a singleton instance of GXpy.
     See http://www.aleax.it/Python/5ep.html
@@ -186,7 +186,7 @@ def _exit_cleanup():
 
     if _gx:
         _gx.log('\nGX closing')
-        atexit.unregister(_exit_cleanup)
+        #atexit.unregister(_exit_cleanup)
 
         # clean up only if we still have context
         gid = gxapi.str_ref()
@@ -752,7 +752,12 @@ class GXpy(_Singleton):
             uuid = "_gx_" + self._gxid
             self._temp_file_folder = os.path.join(path, uuid)
             try:
-                os.makedirs(self._temp_file_folder, exist_ok=True)
+                try:
+                    os.makedirs(self._temp_file_folder)
+                except OSError as e:
+                    import errno
+                    if e.errno != errno.EEXIST:
+                        raise
                 self._keep_temp_files = False
             except OSError:
                 self._temp_file_folder = path

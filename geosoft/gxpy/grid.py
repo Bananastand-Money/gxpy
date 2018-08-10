@@ -326,7 +326,7 @@ class Grid(gxgm.Geometry):
                 kwargs['name'] = os.path.splitext(file_name)[0]
             else:
                 kwargs['name'] = '_grid_'
-        super().__init__(**kwargs)
+        super(Grid, self).__init__(**kwargs)
 
         self._hgd = False
         self._hgd_name = None
@@ -684,7 +684,7 @@ class Grid(gxgm.Geometry):
 
         # parameter control file
         con_file = gx.gx().temp_file('con')
-        with open(con_file, 'x') as f:
+        with open(con_file, 'w') as f:
             f.write('{} / cs\n'.format(cs))
             f.write('{},{},{},{},{} / xmin, ymin, xmax, ymax, bclip\n'.
                     format(area[0], area[1], area[2], area[3], bclip))
@@ -721,6 +721,9 @@ class Grid(gxgm.Geometry):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self.nx * self.ny:

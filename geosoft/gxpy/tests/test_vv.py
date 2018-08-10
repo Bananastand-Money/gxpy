@@ -157,7 +157,7 @@ class Test(GXPYTest):
             self.assertEqual(vv.length,len(npdata))
             self.assertEqual(vv.gxtype,-5)
             self.assertTrue(vv.dtype.type is np.str_)
-            self.assertEqual(str(vv.dtype),'<U5')
+            self.assertEqual(str(vv.dtype),'|S5')
 
             npd,fid = vv.get_data(vv.dtype)
             self.assertEqual(npd[0],"name")
@@ -261,11 +261,11 @@ class Test(GXPYTest):
         self.start()
 
         l = [1, 2, 3]
-        with gxvv.GXvv(l, dtype='U45') as vv:
+        with gxvv.GXvv(l, dtype='S45') as vv:
             self.assertEqual(list(vv.np), ['1', '2', '3'])
 
         l = [1, 2, "abcdefg"]
-        with gxvv.GXvv(l, dtype='U4') as vv:
+        with gxvv.GXvv(l, dtype='S4') as vv:
             self.assertEqual(list(vv.np), ['1', '2', 'abcd'])
 
     def test_iterator(self):

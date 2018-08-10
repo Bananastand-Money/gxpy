@@ -442,7 +442,7 @@ def edge_reference(area, reference):
     return centroid + gxgm.Point((xoff, yoff))
 
 
-class Group:
+class Group(object):
     """
     Geosoft group class.
 
@@ -798,7 +798,7 @@ class Draw(Group):
     def __init__(self, *args, **kwargs):
 
         kwargs['view_lock'] = True
-        super().__init__(*args, **kwargs)
+        super(Draw, self).__init__(*args, **kwargs)
 
         self._pen = None
         self._text_def = None
@@ -1262,7 +1262,7 @@ class Draw_3d(Draw):
             raise GroupException(_t('View is not 3D'))
 
         kwargs['group_3d'] = True
-        super().__init__(view, *args, **kwargs)
+        super(Draw_3d, self).__init__(view, *args, **kwargs)
 
         if render_backfaces:
             self.render_backfaces = True
@@ -1874,7 +1874,7 @@ def legend_color_bar(view,
         g.locate(location, reference)
             
                 
-class Color:
+class Color(object):
     """
     Colours, which are stored as a 32-bit color integer.
 
@@ -2065,7 +2065,7 @@ def thickness_from_font_weight(weight, height):
     return height * _weight_factor[weight - 1]
 
 
-class Text_def:
+class Text_def(object):
     """
     Text definition:
 
@@ -2223,7 +2223,7 @@ class Text_def:
         return '{},,,{},"{}"'.format(self.height, self.slant, font)
 
 
-class Pen:
+class Pen(object):
     """
     Geosoft Pen class.  
     
@@ -2484,7 +2484,7 @@ class Color_symbols_group(Group):
     def __init__(self, view, group_name, **kwargs):
 
         self._gxcsymb = None
-        super().__init__(view, group_name, **kwargs)
+        super(Color_symbols_group).__init__(view, group_name, **kwargs)
 
     @classmethod
     def new(cls,
@@ -2621,7 +2621,7 @@ class Aggregate_group(Group):
     def __init__(self, view, group_name, mode):
 
         self.agg = None
-        super().__init__(view, group_name, mode=mode)
+        super(Aggregate_group, self).__init__(view, group_name, mode=mode)
 
     @classmethod
     def new(cls, view, agg, name=None, mode=REPLACE, clip=True):
@@ -2700,7 +2700,7 @@ class VoxDisplayGroup(Group):
         self._voxd = None
         if not view3d.is_3d:
             raise GroupException(_t('View must be 3d'))
-        super().__init__(view3d, group_name, mode=mode)
+        super(VoxDisplayGroup, self).__init__(view3d, group_name, mode=mode)
 
     @classmethod
     def new(cls, view3d, voxd, name=None, mode=REPLACE):
@@ -2785,7 +2785,7 @@ class VoxDisplayGroup(Group):
         return self._voxd
 
 
-class Color_map:
+class Color_map(object):
     """
     Color map for establishing data color mapping for things like aggregates and color symbols.
     
@@ -2817,6 +2817,9 @@ class Color_map:
             if not cmap:
                 cmap = 'colour'
 
+        if isinstance(cmap, unicode):
+            cmap = str(cmap)
+
         if isinstance(cmap, str):
             if cmap == 'color':
                 cmap = 'colour'
@@ -2846,6 +2849,12 @@ class Color_map:
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self.length:

@@ -215,7 +215,7 @@ class SpatialData(gxgm.Geometry):
             if file_name:
                 name = os.path.splitext(os.path.basename(file_name))[0]
                 
-        super().__init__(name=name, **kwargs)
+        super(SpatialData, self).__init__(name=name, **kwargs)
 
         if file_name is None:
             if mode != MODE_NEW:

@@ -58,7 +58,7 @@ ZONE_LOGLINEAR = 5
 ZONE_LAST = 6
 
 
-class VoxDisplay:
+class VoxDisplay(object):
     """
     Creation and handling of vox displays. Vox displays can be placed into a 3D view for display.
 

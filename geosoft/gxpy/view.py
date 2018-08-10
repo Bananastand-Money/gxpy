@@ -95,7 +95,7 @@ class CrookedPath(gxgeo.Geometry):
 
     def __init__(self, xy_path, log_z=False, **kw):
 
-        super().__init__(**kw)
+        super(CrookedPath, self).__init__(**kw)
 
         if isinstance(xy_path, gxcs.Coordinate_system):
             self.coordinate_system = xy_path
@@ -261,7 +261,7 @@ class View(gxgeo.Geometry):
         if not isinstance(map, geosoft.gxpy.map.Map):
             raise ViewException(_t('First argument must be a map.'))
 
-        super().__init__(**kwargs)
+        super(View, self).__init__(**kwargs)
 
         self._gx = gx.GXpy()
         self._map = map
@@ -922,7 +922,7 @@ class View_3d(View):
         map = geosoft.gxpy.map.Map(file_name=file_name,
                                    mode=mode,
                                    _internal=True)
-        super().__init__(map, '3D', **kwargs)
+        super(View_3d, self).__init__(map, '3D', **kwargs)
         self._extent3d = None
 
     def _extent_union(self, extent):
