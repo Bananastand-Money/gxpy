@@ -4,7 +4,7 @@ import json
 import sys
 import tempfile
 import shutil
-from os import path, remove, environ
+from os import path, remove, environ, walk
 from glob import glob
 from setuptools import setup
 
@@ -64,21 +64,12 @@ else:
         shutil.copyfile('gxapi_cy.cp37-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy.pyd')
         shutil.copyfile('gxapi_cy_extend.cp37-win_amd64.pyd', 'geosoft/gxapi/gxapi_cy_extend.pyd')
 
-key_file = path.join('geosoft', 'gxapi', 'geosoft.key')
-with open(key_file, 'w') as f:
-    use_default_key = True
-    for arg in sys.argv:
-        if arg.startswith('--use_geosoft_key='):
-            index = sys.argv.index(arg)
-            sys.argv.pop(index)  # Removes the arg
-            geosoft_key = arg[18:]
-            f.write(geosoft_key)
-            use_default_key = False
-            break
-    if use_default_key:
-        f.write("Core")
+data_files = []
 
-
+for root, dirs, files in walk('geosoft/gxapi/GeosoftRedist'):
+    root_files = [path.join(root, i) for i in files]
+    data_files.append((root, root_files))
+    
 setup(
     name='geosoft',
     version=version_tag,
@@ -105,6 +96,7 @@ setup(
         'geosoft.gxpy._xmltodict': ['LICENSE', '*.md'],
         'geosoft.gxpy.user_input': ['*.gx']
     },
+    data_files=data_files,
     test_suite="geosoft.gxpy.tests",
     classifiers=[
         dev_status_classifier,
