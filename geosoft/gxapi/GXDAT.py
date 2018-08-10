@@ -30,7 +30,7 @@ class GXDAT(gxapi_cy.WrapDAT):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXDAT, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):

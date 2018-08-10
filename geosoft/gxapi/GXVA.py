@@ -35,7 +35,7 @@ class GXVA(gxapi_cy.WrapVA):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVA, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
@@ -924,7 +924,7 @@ class GXVA(gxapi_cy.WrapVA):
         columns = np_array.shape[1];
         if not np_array.flags['C_CONTIGUOUS']:
             np_array = np.ascontiguousarray(np_array)
-        self.set_array(start_row, start_col, rows, columns, np_array.data.tobytes(), gs_type)
+        self.set_array(start_row, start_col, rows, columns, np_array.tobytes(), gs_type)
     
     def get_data_array(self, start_row, start_col, rows, cols, gs_type):
         return gxapi_cy_extend.GXMemMethods.get_array_data_va(GXContext._internal_p(), self._internal_handle(), start_row, start_col, rows, cols, gs_type)
