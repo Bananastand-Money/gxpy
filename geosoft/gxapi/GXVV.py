@@ -36,7 +36,7 @@ class GXVV(gxapi_cy.WrapVV):
     """
 
     def __init__(self, handle=0):
-        super().__init__(GXContext._get_tls_geo(), handle)
+        super(GXVV, self).__init__(GXContext._get_tls_geo(), handle)
 
     @classmethod
     def null(cls):
