@@ -67,7 +67,7 @@ class GXContext:
         tls_geo = getattr(_tls, '_gxa_geo', None)
         if tls_geo is None:
             p_geo = gxapi_cy.WrapPGeo()
-            p_geo._create(application, version, wind_id, flags)
+            p_geo._create(unicode(application), unicode(version), wind_id, flags)
             return GXContext(p_geo)
         else:
             return GXContext(tls_geo)
