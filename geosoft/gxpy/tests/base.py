@@ -53,7 +53,9 @@ if not IGNORE_IMAGE_DIFFERENCES:
 # Make root window for UI methods
 root_window = None
 if UPDATE_RESULTS and SHOW_TEST_VIEWERS:
-    from tkinter import Tk, messagebox
+    from Tkinter import Tk
+    import tkMessageBox as messagebox
+
 
     # We import these here to properly initialize common controls
     import win32gui
@@ -76,6 +78,9 @@ def _verify_no_gx_context():
     if loc_gx is not None:
         raise Exception(_t("We have a GXContext but should not!"))
 
+
+def print_log(s):
+    print (s)
 
 class GXPYTest(unittest.TestCase):
     maxDiff = None
@@ -102,18 +107,28 @@ class GXPYTest(unittest.TestCase):
 
         cur_dir = os.path.dirname(cls._test_case_py)
         cls._result_base_dir = os.path.join(cur_dir, 'results', cls._test_case_filename)
-        os.makedirs(cls._result_base_dir, exist_ok=True)
+        try:
+            os.makedirs(cls._result_base_dir)
+        except OSError as e:
+            import errno
+            if e.errno != errno.EEXIST:
+                raise
         os.chdir(cls._result_base_dir)
 
         gxu._temp_folder_override = os.path.join(cls._result_base_dir, '__tmp__')
         if os.path.exists(gxu._temp_folder_override):
             shutil.rmtree(gxu._temp_folder_override)
-        os.makedirs(gxu._temp_folder_override, exist_ok=True)
+        try:
+            os.makedirs(gxu._temp_folder_override)
+        except OSError as e:
+            import errno
+            if e.errno != errno.EEXIST:
+                raise
 
         gxu._uuid_callable = cls._cls_uuid
 
         set_geosoft_bin_path()
-        cls._gx = gx.GXpy(name=context_name, log=print, res_stack=res_stack, max_warnings=12,
+        cls._gx = gx.GXpy(name=context_name, log=print_log, res_stack=res_stack, max_warnings=12,
                           suppress_progress=True, parent_window=parent_window)
 
     @classmethod
@@ -244,7 +259,7 @@ class GXPYTest(unittest.TestCase):
                 line = line.replace(file_name_part, alt_crc_name)
                 f.write('{}\r\n'.format(line).encode('UTF-8'))
 
-    def crc_map(self, map_file, *, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
+    def crc_map(self, map_file, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
         """ 
         Run Geosoft crc testing protocol on Geosoft maps.
         

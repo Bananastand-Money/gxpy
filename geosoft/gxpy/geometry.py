@@ -111,7 +111,7 @@ def extent_union(g1, g2):
     return Point2(((min_x, min_y, min_z), (max_x, max_y, max_z)), g1.coordinate_system)
 
 
-class Geometry:
+class Geometry(object):
     """
     Geometry base class for all geometries and spatial objects in Geosoft.
 
@@ -351,14 +351,14 @@ class Point(Geometry, Sequence):
 
         if name is None:
             name = '_point_'
-        super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+        super(Point, self).__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         if isinstance(p, Point):
 
             if coordinate_system is None:
                 coordinate_system = p.coordinate_system
 
-            super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+            super(Point, self).__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
             if coordinate_system != p.coordinate_system:
                 self.p = gxcs.Coordinate_translate(p.coordinate_system, coordinate_system).convert(p.p)
@@ -367,7 +367,7 @@ class Point(Geometry, Sequence):
 
         else:
 
-            super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+            super(Point, self).__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
             if isinstance(p, np.ndarray):
                 if len(p) > 2:
@@ -404,6 +404,9 @@ class Point(Geometry, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= 3:
@@ -556,7 +559,7 @@ class Point2(Geometry, Sequence):
 
         if name is None:
             name = '_point2_'
-        super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+        super(Point2, self).__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         if isinstance(p, Point):
             if coordinate_system is None:
@@ -600,6 +603,9 @@ class Point2(Geometry, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= 2:
@@ -748,7 +754,7 @@ class PPoint(Geometry, Sequence):
 
         if name is None:
             name = '_ppoint_'
-        super().__init__(coordinate_system=coordinate_system, name=name, **kwargs)
+        super(PPoint, self).__init__(coordinate_system=coordinate_system, name=name, **kwargs)
 
         def blankpp(length):
             pp = np.empty(length * 3, dtype=np.float).reshape((length, 3))
@@ -818,6 +824,9 @@ class PPoint(Geometry, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self.pp.shape[0]:
@@ -1077,7 +1086,7 @@ class Mesh(Geometry, Sequence):
 
         if 'name' not in kwargs:
            kwargs['name'] = '_mesh_'
-        super().__init__(coordinate_system=coordinate_system, **kwargs)
+        super(Mesh, self).__init__(coordinate_system=coordinate_system, **kwargs)
 
         self._faces = faces
         self._verticies = verticies
@@ -1088,6 +1097,9 @@ class Mesh(Geometry, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= len(self._faces):

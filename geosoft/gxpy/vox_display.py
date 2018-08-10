@@ -67,7 +67,7 @@ RENDER_EDGE = 1
 RENDER_FILL_EDGE = 2
 RENDER_SMOOTH = 3
 
-class VoxDisplay:
+class VoxDisplay(object):
     """
     Creation and handling of vox displays. Vox displays can be placed into a 3D view for display.
 

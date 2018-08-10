@@ -201,7 +201,7 @@ class Vox(gxspd.SpatialData, Sequence):
         self._file_name = _vox_file_name(name)
         self._name = _vox_name(self._file_name)
 
-        super().__init__(name=self._name, file_name=self._file_name,
+        super(Vox, self).__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
                          gxobj=gxvox)
@@ -237,6 +237,9 @@ class Vox(gxspd.SpatialData, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self._max_iter:

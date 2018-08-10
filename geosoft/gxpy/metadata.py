@@ -107,7 +107,7 @@ def set_node_in_meta_dict(meta_node, meta_dict, content, replace=False):
     root[tree[-1]] = content
 
 
-class Metadata:
+class Metadata(object):
     """
     Simple interface to work with Geosoft metadata objects `geosoft.gxapi.GXMETA`.
 

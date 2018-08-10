@@ -51,7 +51,7 @@ class GridFFTException(geosoft.GXRuntimeError):
     pass
 
 
-class GridFFT:
+class GridFFT(object):
     """
     Descrete Fourier Transform of a grid.
 
@@ -471,7 +471,7 @@ class GridFFT:
 
         # control file
         con_file = gx.gx().temp_file('con')
-        with open(con_file, 'x') as cf:
+        with open(con_file, 'w') as cf:
 
             # control-file header parameters:
             cf.write('\n')      # title not used

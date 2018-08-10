@@ -156,7 +156,7 @@ class ExtractProgressStatus(Enum):
    Cancelled = 4
    Failed = 5
 
-class DataExtract:
+class DataExtract(object):
     """
     Data extraction instance.
 
@@ -185,7 +185,7 @@ class DataExtract:
         self.BoundingBox, self.Filename, self.Resolution, self.Format)
 
 
-class BoundingBox:
+class BoundingBox(object):
     """
     Bounding box instance.
 
@@ -273,7 +273,7 @@ class DataCard(gxgeo.Geometry):
         self.Stylesheet = stylesheet
         self.Extents = extents
         self.HasOriginal = has_original
-        super().__init__(name=title)
+        super(DataCard, self).__init__(name=title)
 
     def __str__(self):
         a = 'Id: %s, Title: %s, Type: %s, Hierarchy: %s'
@@ -435,7 +435,7 @@ class DataCard(gxgeo.Geometry):
         return self._dap.get('dataset/properties/' + str(self.Id))
 
 
-class SearchFilter:
+class SearchFilter(object):
     """
     Search filter instance.
 
@@ -475,7 +475,7 @@ class SearchFilter:
         return a % b
 
 
-class ResultFilter:
+class ResultFilter(object):
     """
     Results filter instance.
 
@@ -506,7 +506,7 @@ class ResultFilter:
         self.Path, self.Depth, self.StartIndex, self.MaxResults, self.ValidPath)
 
 
-class SearchParameters:
+class SearchParameters(object):
     """
     Search parameter instance, defined by a `SearchFilter` and a `ResultFilter`
 
@@ -564,7 +564,7 @@ class DapClient(Sequence):
 
     def __init__(self, url='http://dap.geosoft.com/', get_catalog=False):
 
-        super().__init__()
+        super(DapClient, self).__init__()
         self._cat = []
         self._config = None
         self._http_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -601,6 +601,9 @@ class DapClient(Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= len(self._cat):

@@ -88,7 +88,7 @@ class Aggregate_image(gxgm.Geometry):
         self._gxagg = None
         self._base_properties = None
         self._extent = None
-        super().__init__()
+        super(Aggregate_image, self).__init__()
 
     @classmethod
     def new(cls, grid_file=None, **kwargs):

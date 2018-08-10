@@ -236,7 +236,7 @@ def crc_map(mapfile, pix_width=1000):
     """
     return Map.open(mapfile).crc_image(pix_width=pix_width)
 
-class Map:
+class Map(object):
     """
     Geosoft map files.
 
@@ -298,7 +298,7 @@ class Map:
         if not _internal:
             raise MapException(_t("Map must be created from Map.new(), or Map.open()."))
 
-        super().__init__()
+        super(Map, self).__init__()
 
         self._gx = gx.GXpy()
         self._gxmap = None
@@ -1354,7 +1354,7 @@ class Map:
             gxapi.MAP_EXPORT_FORMAT_GTIFF, "")
 
 
-class _Mapplot:
+class _Mapplot(object):
     """Internal class to marshal MAPPLOT commands to support basic map annotations."""
 
     def __enter__(self):

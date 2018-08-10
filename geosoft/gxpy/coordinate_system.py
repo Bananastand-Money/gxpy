@@ -344,7 +344,7 @@ def wkt_vcs(vcs):
     return 'VERTCS["' + vcs + '"]'
 
 
-class Wkt:
+class Wkt(object):
     """
     Helper class to parse WKT-formatted spatial reference strings.
     
@@ -402,7 +402,7 @@ class Wkt:
         return find_key(self._wkt, k)
 
 
-class Coordinate_system:
+class Coordinate_system(object):
     """
     Coordinate system class. A coordinate system defines a horizontal and vertical reference
     system to locate (x, y, z) cartesian coordinates relative to the Earth.
@@ -523,6 +523,8 @@ class Coordinate_system:
 
         if isinstance(coordinate_system, str):
             self._from_str(coordinate_system)
+        elif isinstance(coordinate_system, unicode):
+            self._from_str(str(coordinate_system))
 
         elif isinstance(coordinate_system, gxapi.GXIPJ):
             coordinate_system.copy(self.gxipj)
@@ -1116,7 +1118,7 @@ def is_known(coordinate_system):
         return False
 
 
-class Coordinate_translate:
+class Coordinate_translate(object):
     """
     Class to reproject coordinates between different coordinate systems.
 

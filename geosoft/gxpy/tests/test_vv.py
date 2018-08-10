@@ -162,7 +162,7 @@ class Test(GXPYTest):
             self.assertEqual(vv.length,len(npdata))
             self.assertEqual(vv.gxtype,-20)
             self.assertTrue(vv.dtype.type is np.str_)
-            self.assertEqual(str(vv.dtype),'<U5')
+            self.assertEqual(str(vv.dtype),'|S20')
 
             npd,fid = vv.get_data(vv.dtype)
             self.assertEqual(npd[0],"name")
@@ -266,22 +266,22 @@ class Test(GXPYTest):
         self.start()
 
         l = [1, 2, 3]
-        with gxvv.GXvv(l, dtype='U2') as vv:
+        with gxvv.GXvv(l, dtype='S2') as vv:
             self.assertEqual(list(vv.np), ['1', '2', '3'])
 
         # Since we are using UTF-8 internally characters can take anywhere between 1 and 4 bytes.
         # Specifying a numpy dtype to instantiate VV will ensure the internal space is enough to allocate up to
         # that 4 times the Unicode characters, however any Numpy arrays will limit the characters to the passed dtype.
         l = [1, 2, "abcdefghijklmnopqrstuvxyz"]
-        with gxvv.GXvv(l, dtype='U4') as vv:
+        with gxvv.GXvv(l, dtype='S4') as vv:
             self.assertEqual(list(vv.np), ['1', '2', 'abcd'])
 
         # The following 4-byte UTF-8 characters can be correctly extracted (to limits of what is specified).
         # Characters from http://www.i18nguy.com/unicode/supplementary-test.html
         l = [1, 2, "𠜎𠜱𠝹𠱓𠱸𠲖"]
-        with gxvv.GXvv(l, dtype='U4') as vv:
+        with gxvv.GXvv(l, dtype='S4') as vv:
             self.assertEqual(list(vv.np), ['1', '2', '𠜎𠜱𠝹𠱓'])
-        with gxvv.GXvv(l, dtype='U2') as vv:
+        with gxvv.GXvv(l, dtype='S2') as vv:
             self.assertEqual(list(vv.np), ['1', '2', '𠜎𠜱'])
 
     def test_iterator(self):

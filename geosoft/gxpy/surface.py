@@ -123,7 +123,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         self._file_name = file_name
         self._name = _surface_name(name)
 
-        super().__init__(name=self._name, file_name=self._file_name,
+        super(SurfaceDataset, self).__init__(name=self._name, file_name=self._file_name,
                          mode=mode,
                          overwrite=overwrite,
                          gxobj=gxsurface)
@@ -139,6 +139,9 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
     def __iter__(self):
         self._refresh_surfaces()
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self.surface_count:
@@ -578,7 +581,7 @@ class Surface(gxspd.SpatialData, Sequence):
         self._next = 0
         self.render_properties = render_properties
 
-        super().__init__(gxobj=self._gxsurfaceitem)
+        super(Surface, self).__init__(gxobj=self._gxsurfaceitem)
 
         if coordinate_system is None and surface_dataset is not None:
             if gxcs.is_known(surface_dataset.coordinate_system):
@@ -598,6 +601,9 @@ class Surface(gxspd.SpatialData, Sequence):
 
     def __iter__(self):
         return self
+
+    def next(self):
+        return self.__next__()
 
     def __next__(self):
         if self._next >= self.component_count:

@@ -22,7 +22,7 @@ import binascii
 from time import gmtime, strftime
 from ._jdcal.jdcal import is_leap, gcal2jd, jd2gcal
 from distutils.version import StrictVersion
-from collections import OrderedDict
+from collections import OrderedDict, Mapping, Iterable
 from ._xmltodict import xmltodict
 
 import geosoft
@@ -178,8 +178,17 @@ def xml_from_dict(d, pretty=True, xmlns=''):
         d[root]['@xmlns'] = xmlns
 
     xml = xmltodict.unparse(d, pretty=pretty)
-    return xml
+    return str(xml)
 
+def _convert_to_str(data):
+    if isinstance(data, basestring):
+        return str(data)
+    elif isinstance(data, Mapping):
+        return dict(map(_convert_to_str, data.iteritems()))
+    elif isinstance(data, Iterable):
+        return type(data)(map(_convert_to_str, data))
+    else:
+        return data
 
 def dict_from_xml(xml):
     """
@@ -231,7 +240,7 @@ def dict_from_xml(xml):
     .. versionadded:: 9.2
     """
 
-    d = xmltodict.parse(xml)
+    d = _convert_to_str(xmltodict.parse(xml))
 
     # strip the generic dictionary root
     if '__gx_xml__' in d:
@@ -283,11 +292,8 @@ def geosoft_metadata(geosoft_file_name):
         if not geosoft_file_name.lower().endswith('.xml'):
             geosoft_file_name = geosoft_file_name + '.xml'
         if os.path.isfile(geosoft_file_name):
-            with open(geosoft_file_name, mode='r', encoding='utf-8') as f:
-                BOM = '\ufeff'
+            with open(geosoft_file_name, mode='r') as f:
                 text = f.read()
-                if text.startswith(BOM):
-                    text = text[1:]
                 metadata = dict_from_xml(text)
     if metadata:
         return metadata
@@ -559,7 +565,7 @@ def gx_dtype(dtype):
             str(np.dtype(np.uint32)): gxapi.GS_ULONG,
             str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
     dtype = np.dtype(dtype)
-    if dtype.type is np.str_:
+    if dtype.type is np.str_ or dtype.type is np.string_:
         # x4 to allow for full UTF-8 characters
         return -int(dtype.str[2:])*4
     return _np2gx_type[str(dtype)]
@@ -589,7 +595,7 @@ def dtype_gx(gtype):
             gxapi.GS_FLOAT3D: np.dtype(np.float32),
             gxapi.GS_DOUBLE3D: np.dtype(np.float64)}
     if gtype < 0:
-        return np.dtype('U{}'.format(-gtype))
+        return np.dtype('|S{}'.format(-gtype))
     return _gx2np_type[gtype]
 
 
@@ -1221,7 +1227,7 @@ def delete_file(file_name):
     if file_name:
         try:
             os.remove(file_name)
-        except (FileNotFoundError, PermissionError):
+        except EnvironmentError:
             pass
 
 
