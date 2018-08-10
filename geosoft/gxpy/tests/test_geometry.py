@@ -1,7 +1,10 @@
+from __future__ import division
+
 import unittest
 import os
 import numpy as np
 import json
+
 
 import geosoft
 import geosoft.gxpy.map as gxmap
@@ -10,7 +13,6 @@ import geosoft.gxpy.vv as gxvv
 import geosoft.gxpy.coordinate_system as gxcs
 
 from base import GXPYTest
-
 
 class Test(GXPYTest):
     def test_version(self):
