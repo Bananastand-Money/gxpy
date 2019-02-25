@@ -92,16 +92,18 @@ class Test(GXPYTest):
 
         gxgrid.Grid.open(self.g3f, mode=gxgrid.FILE_READWRITE).unit_of_measure = 'nT'
         with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
-            self.crc_map(agg.figure_map(title='image test').file_name)
+            with agg.figure_map(title='image test') as map:
+                map.close()
+                self.crc_map(map.file_name)
 
     def test_figure_2(self):
         self.start()
 
         gxgrid.Grid.open(self.g3f, mode=gxgrid.FILE_READWRITE).unit_of_measure = 'nT'
         with gxagg.Aggregate_image.new(self.g3f, shade=True, color_map='elevation.tbl', contour=20) as agg:
-            self.crc_map(agg.figure_map(title='Image with LL Annotations\nsub-title',
-                                        legend_label='nT',
-                                        features='all').file_name)
+            with agg.figure_map(title='Image with LL Annotations\nsub-title', legend_label='nT', features='all') as map:
+                map.close()
+                self.crc_map(map.file_name)
 
     def test_image_file(self):
         self.start()

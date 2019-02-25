@@ -45,7 +45,7 @@ class Test(GXPYTest):
             ent = gxc.entitlements()
             self.assertTrue(ent['1000'], 'Oasis montaj™ Base')
             self.assertTrue(gxc.has_entitlement(1000))
-            self.assertTrue(gxc.has_entitlement('Oasis montaj™ Base'))
+            self.assertTrue(gxc.has_entitlement(u'Oasis montaj™ Base'))
             self.assertTrue(gxc.has_entitlement(2000))
             self.assertTrue(gxc.has_entitlement("ArcGIS"))
             self.assertTrue(gxc.has_entitlement(3000))
@@ -82,7 +82,7 @@ class Test(GXPYTest):
             self.assertFalse(os.path.exists(tf))
             self.assertEqual(tf[-6:], ".dummy")
             try:
-                with open(tf, 'x'):
+                with open(tf, 'w'):
                     pass
             except:
                 self.assertTrue(False)

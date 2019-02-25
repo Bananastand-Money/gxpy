@@ -1297,7 +1297,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         for s in lines:
             if type(s) is str and not self.exist_symb_(s, gxapi.DB_SYMB_LINE):
                 continue
-            ls = self.line_name_symb(s)[1] if type(s) is str else s
+            ls = self.line_name_symb(s)[1] if type(s) is str or type(s) is unicode else s
             self.unlock_(ls)
             self.lock_write_(ls)
             self._db.delete_symb(ls)
@@ -1315,7 +1315,7 @@ class Geosoft_gdb(gxgeo.Geometry):
             lines = [lines]
 
         for s in lines:
-            ls = self.line_name_symb(s)[1] if type(s) is str else s
+            ls = self.line_name_symb(s)[1] if type(s) is str or type(s) is unicode else s
             self._delete_line_data(ls)
 
     def _delete_line_data(self, ls):
@@ -1393,7 +1393,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         else:
             ch = list(self.list_channels())
 
-        ch.sort(key=str.lower)
+        ch.sort(key=unicode.lower)
         ch_lower = [c.lower() for c in ch]
         channels = []
         nxlower = nylower = nzlower = ''
@@ -2165,7 +2165,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         cn, cs = self.channel_name_symb(chan)
         details = self.channel_details(cs)
         dtype = np.dtype('<U{}'.format(details.get('width')))
-        lines.sort(key=str.lower)
+        lines.sort(key=unicode.lower)
         vset = []
         n = 0
         nset = -1

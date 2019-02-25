@@ -765,7 +765,7 @@ class GXpy:
         .. versionadded:: 9.3
         """
 
-        ent = str(ent)
+        ent = unicode(ent)
         if ent in self.entitlements().keys():
             return True
         if ent in self.entitlements().values():

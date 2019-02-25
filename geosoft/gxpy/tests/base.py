@@ -5,6 +5,7 @@ import unittest
 import inspect
 import subprocess
 import numpy as np
+import codecs
 
 np.seterr(all='raise')
 
@@ -117,7 +118,7 @@ class GXPYTest(unittest.TestCase):
 
         gxu._temp_folder_override = os.path.join(cls._result_base_dir, '__tmp__')
         if os.path.exists(gxu._temp_folder_override):
-            shutil.rmtree(gxu._temp_folder_override)
+            shutil.rmtree(gxu._temp_folder_override, ignore_errors=True)
         try:
             os.makedirs(gxu._temp_folder_override)
         except OSError as e:
@@ -251,13 +252,13 @@ class GXPYTest(unittest.TestCase):
 
     @classmethod
     def _agnosticize_and_ensure_consistent_line_endings(cls, xml_file, file_name_part, alt_crc_name):
-        with open(xml_file) as f:
+        with codecs.open(xml_file, encoding='utf-8') as f:
             lines = f.read().splitlines()
 
-        with open(xml_file, 'wb') as f:
+        with codecs.open(xml_file, encoding='utf-8', mode='w') as f:
             for line in lines:
                 line = line.replace(file_name_part, alt_crc_name)
-                f.write('{}\r\n'.format(line).encode('UTF-8'))
+                f.write(u'{}\r\n'.format(line))
 
     def crc_map(self, map_file, format='PNG', pix_width=2048, update_results=False, alt_crc_name=None):
         """ 

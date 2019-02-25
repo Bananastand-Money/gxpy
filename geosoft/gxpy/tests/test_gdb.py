@@ -3,7 +3,6 @@ import os
 import shutil
 import tempfile
 import numpy as np
-from PIL import Image
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -441,20 +440,21 @@ class Test(GXPYTest):
             try:
 
                 npd,ch,fid = gdb.read_line('D2', dummy=gxdb.READ_REMOVE_DUMMYROWS)
-                self.assertEqual(npd.shape, (825, 8))
-                self.assertEqual(npd.shape[1], 8)
-                self.assertEqual(npd.shape[1], len(ch))
+                self.assertEqual((825, 8), npd.shape)
+                self.assertEqual(8, npd.shape[1])
+                self.assertEqual(len(ch), npd.shape[1])
 
                 npd,ch,fid = gdb.read_line('D2',dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
-                self.assertEqual(npd.shape, (832,2))
-                self.assertEqual(npd.shape[1], len(ch))
+                self.assertEqual((832,2), npd.shape)
+                self.assertEqual(len(ch), npd.shape[1])
 
                 npd,ch,fid = gdb.read_line('D2', channels=('x','y'), dummy=gxdb.READ_REMOVE_DUMMYCOLUMNS)
-                self.assertEqual(npd.shape, (832,1))
-                self.assertEqual(npd.shape[1], len(ch))
+                self.assertEqual((832,1), npd.shape)
+                self.assertEqual(len(ch), npd.shape[1])
 
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
-                self.assertEqual(str(px), '_point2_[(578625.0, 7773625.0, -5261.5553894043005) (578625.0, 7782875.0, 1062.4999999999964)]')
+                self.assertEqual('_point2_[(578625.0, 7773625.0, -5261.5553894) (578625.0, 7782875.0, 1062.5)]',
+                                 str(px))
 
             finally:
                 gdb.discard()
@@ -465,16 +465,15 @@ class Test(GXPYTest):
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
 
             try:
-
                 l = gdb.list_lines()
                 gdb.select_lines()
-                self.assertEqual(len(gdb.list_lines()), 5)
+                self.assertEqual(5, len(gdb.list_lines()))
                 gdb.select_lines(select=False)
-                self.assertEqual(len(gdb.list_lines()), 0)
+                self.assertEqual(0, len(gdb.list_lines()))
                 gdb.select_lines('D2')
-                self.assertEqual(len(gdb.list_lines()), 1)
+                self.assertEqual(1, len(gdb.list_lines()))
                 self.assertFalse(gdb.is_line('D0'))
-                self.assertEqual(len(gdb.list_lines(select=False)), 5)
+                self.assertEqual(5, len(gdb.list_lines(select=False)))
 
                 self.assertTrue(gdb.is_line('Dwonk'))
 
@@ -482,18 +481,14 @@ class Test(GXPYTest):
                 dy[:] = np.nan
                 gdb.write_channel('D2', 'y', dy)
                 px = gxgeo.Point2(gdb.extent_xyz)
-                self.assertEqual(str(px),
-                                 '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                self.assertEqual('_point2_[(578625.0, nan, -5261.5553894) (578625.0, nan, 1062.5)]', str(px))
                 px2 = gdb.extent
-                self.assertEqual(str(px2),
-                                 '_point2_[(578625.0, nan, -5261.5553894043005) (578625.0, nan, 1062.4999999999964)]')
+                self.assertEqual('_point2_[(578625.0, nan, -5261.5553894) (578625.0, nan, 1062.5)]', str(px2))
                 self.assertEqual(px.coordinate_system, px2.coordinate_system)
-
             finally:
                 gdb.discard()
 
         with gxdb.Geosoft_gdb.open(self.gdb_name) as gdb:
-
             try:
                 gdb.select_lines(select=False)
                 gdb.select_lines('D2')
@@ -501,7 +496,7 @@ class Test(GXPYTest):
                 dx [:] = np.nan
                 gdb.write_channel('D2', 'x', dx)
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
-                self.assertEqual(str(px), '_point2_[(nan, 7773625.0, -5261.5553894043005) (nan, 7782875.0, 1062.4999999999964)]')
+                self.assertEqual('_point2_[(nan, 7773625.0, -5261.5553894) (nan, 7782875.0, 1062.5)]', str(px))
 
             finally:
                 gdb.discard()
@@ -517,9 +512,7 @@ class Test(GXPYTest):
                 dx[2] = 2
                 gdb.write_channel('D2', 'x', dx)
                 px = geosoft.gxpy.geometry.Point2(gdb.extent_xyz)
-                self.assertEqual(str(px),
-                                 '_point2_[(1.0, 7773625.0, -5261.5553894043005) (2.0, 7782875.0, 1062.4999999999964)]')
-
+                self.assertEqual('_point2_[(1.0, 7773625.0, -5261.5553894) (2.0, 7782875.0, 1062.5)]', str(px))
             finally:
                 gdb.discard()
 
@@ -852,6 +845,7 @@ class Test(GXPYTest):
             finally:
                 gdb.discard()
 
+    @unittest.skip('Remove PIL dependency')
     def test_new(self):
         self.start()
 
@@ -863,6 +857,8 @@ class Test(GXPYTest):
 
                 # read an image and put it in a new database
                 with open(os.path.join(self.folder, 'image.png'), 'rb') as im_handle:
+                    from PIL import Image
+
                     im = Image.open(im_handle)
                     im.thumbnail( (20,20), Image.ANTIALIAS)
                     imageIn = np.asarray(im,dtype=np.float32)
