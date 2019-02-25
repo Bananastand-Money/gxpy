@@ -425,7 +425,7 @@ class GXVA(gxapi_cy.WrapVA):
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        str_val.value = self._get_string(row, col, str_val.value.encode())
+        str_val.value = self._get_string(row, col, str_val.value.encode('utf8'))
         
 
 
@@ -793,7 +793,7 @@ class GXVA(gxapi_cy.WrapVA):
         If the element is > current `GXVA <geosoft.gxapi.GXVA>` length, the `GXVA <geosoft.gxapi.GXVA>` length is
         increased.
         """
-        self._set_string(row, col, value.encode())
+        self._set_string(row, col, value.encode('utf8'))
         
 
 

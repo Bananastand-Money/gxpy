@@ -74,7 +74,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
-        gxapi_cy.WrapDATAMINE._create_voxel(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, meta, voxel.encode())
+        gxapi_cy.WrapDATAMINE._create_voxel(GXContext._get_tls_geo(), file.encode('utf8'), field.encode('utf8'), ipj, meta, voxel.encode('utf8'))
         
 
 
@@ -97,7 +97,7 @@ class GXDATAMINE(gxapi_cy.WrapDATAMINE):
         The field names go in the name part, and field indices (1 to N)
         in the value part.
         """
-        gxapi_cy.WrapDATAMINE._numeric_field_lst(GXContext._get_tls_geo(), file.encode(), lst)
+        gxapi_cy.WrapDATAMINE._numeric_field_lst(GXContext._get_tls_geo(), file.encode('utf8'), lst)
         
 
 

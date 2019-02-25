@@ -102,7 +102,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapDGW._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapDGW._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXDGW(ret_val)
 
 
@@ -156,7 +156,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._get_info_sys(id, info, group.encode(), field.encode())
+        self._get_info_sys(id, info, group.encode('utf8'), field.encode('utf8'))
         
 
 
@@ -203,7 +203,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        buff.value = self._gt_info(id, info, buff.value.encode())
+        buff.value = self._gt_info(id, info, buff.value.encode('utf8'))
         
 
 
@@ -247,7 +247,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._set_info(id, info, buff.encode())
+        self._set_info(id, info, buff.encode('utf8'))
         
 
 
@@ -300,7 +300,7 @@ class GXDGW(gxapi_cy.WrapDGW):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._set_info_sys(id, info, group.encode(), field.encode())
+        self._set_info_sys(id, info, group.encode('utf8'), field.encode('utf8'))
         
 
 
@@ -334,7 +334,7 @@ class GXDGW(gxapi_cy.WrapDGW):
         special font specified using the MONTAJ.GX_TITLE_FONT parameter noted
         above in "Setting Fonts in GX dialogs."
         """
-        self._set_title(title.encode())
+        self._set_title(title.encode('utf8'))
         
 
 

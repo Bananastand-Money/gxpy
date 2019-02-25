@@ -80,7 +80,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_all_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, format.encode(), options.encode())
+        self._export_all_in_view(name.encode('utf8'), view.encode('utf8'), pix_size, dpi, bits, dither, format.encode('utf8'), options.encode('utf8'))
         
 
 
@@ -113,7 +113,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_all_raster(name.encode(), view.encode(), size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
+        self._export_all_raster(name.encode('utf8'), view.encode('utf8'), size_x, size_y, dpi, bits, dither, format.encode('utf8'), options.encode('utf8'))
         
 
 
@@ -152,7 +152,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_area_in_view(name.encode(), view.encode(), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode(), options.encode())
+        self._export_area_in_view(name.encode('utf8'), view.encode('utf8'), pix_size, dpi, bits, dither, min_x, min_y, max_x, max_y, format.encode('utf8'), options.encode('utf8'))
         
 
 
@@ -193,7 +193,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_area_raster(name.encode(), view.encode(), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode(), options.encode())
+        self._export_area_raster(name.encode('utf8'), view.encode('utf8'), min_x, min_y, max_x, max_y, size_x, size_y, dpi, bits, dither, format.encode('utf8'), options.encode('utf8'))
         
 
 
@@ -222,7 +222,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._render_bitmap(view.encode(), min_x, min_y, max_x, max_y, file.encode(), max_res)
+        self._render_bitmap(view.encode('utf8'), min_x, min_y, max_x, max_y, file.encode('utf8'), max_res)
         
 
 
@@ -253,7 +253,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._render_view_bitmap(view, group, min_x, min_y, max_x, max_y, file.encode(), max_res)
+        self._render_view_bitmap(view, group, min_x, min_y, max_x, max_y, file.encode('utf8'), max_res)
         
 
 
@@ -284,7 +284,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._create_linked_3d_view(mview, view_name.encode(), min_x, min_y, max_x, max_y)
+        self._create_linked_3d_view(mview, view_name.encode('utf8'), min_x, min_y, max_x, max_y)
         
 
 
@@ -391,7 +391,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._copy_map_to_view(dest_map.encode(), dest_view.encode())
+        self._copy_map_to_view(dest_map.encode('utf8'), dest_view.encode('utf8'))
         
 
 
@@ -410,7 +410,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        crc.value = self._crc_map(crc.value, file.encode())
+        crc.value = self._crc_map(crc.value, file.encode('utf8'))
         
 
 
@@ -432,7 +432,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMAP._create(GXContext._get_tls_geo(), name.encode(), mode)
+        ret_val = gxapi_cy.WrapMAP._create(GXContext._get_tls_geo(), name.encode('utf8'), mode)
         return GXMAP(ret_val)
 
 
@@ -474,7 +474,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **Note:** If the view does not exist, nothing happens.
         """
-        self._delete_view(name.encode())
+        self._delete_view(name.encode('utf8'))
         
 
 
@@ -670,7 +670,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        n_view.value = self._duplicate_view(view.encode(), n_view.value.encode(), copy)
+        n_view.value = self._duplicate_view(view.encode('utf8'), n_view.value.encode('utf8'), copy)
         
 
 
@@ -691,7 +691,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._exist_view(name.encode())
+        ret_val = self._exist_view(name.encode('utf8'))
         return ret_val
 
 
@@ -722,7 +722,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         If a name is not set, the class name is set and
         returned.
         """
-        name.value = self._get_class_name(cl.encode(), name.value.encode())
+        name.value = self._get_class_name(cl.encode('utf8'), name.value.encode('utf8'))
         
 
 
@@ -739,7 +739,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode('utf8'))
         
 
 
@@ -756,7 +756,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._get_map_name(name.value.encode())
+        name.value = self._get_map_name(name.value.encode('utf8'))
         
 
 
@@ -798,7 +798,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         stop if any files are going to be overwritting. These
         file names will end up in the Errors string.
         """
-        errors.value = self._un_pack_files_ex(force, errors.value.encode())
+        errors.value = self._un_pack_files_ex(force, errors.value.encode('utf8'))
         
 
 
@@ -819,7 +819,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        errors.value = self._un_pack_files_to_folder(force, dir.encode(), errors.value.encode())
+        errors.value = self._un_pack_files_to_folder(force, dir.encode('utf8'), errors.value.encode('utf8'))
         
 
 
@@ -851,7 +851,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._render(name.encode())
+        self._render(name.encode('utf8'))
         
 
 
@@ -933,7 +933,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._save_as_mxd(mxd.encode())
+        self._save_as_mxd(mxd.encode('utf8'))
         
 
 
@@ -964,7 +964,7 @@ class GXMAP(gxapi_cy.WrapMAP):
         If a name is not set, the class name is set and
         returned.
         """
-        self._set_class_name(cl.encode(), name.encode())
+        self._set_class_name(cl.encode('utf8'), name.encode('utf8'))
         
 
 
@@ -998,7 +998,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_map_name(name.encode())
+        self._set_map_name(name.encode('utf8'))
         
 
 
@@ -1101,7 +1101,7 @@ class GXMAP(gxapi_cy.WrapMAP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMAP._sync(GXContext._get_tls_geo(), map.encode())
+        gxapi_cy.WrapMAP._sync(GXContext._get_tls_geo(), map.encode('utf8'))
         
 
 

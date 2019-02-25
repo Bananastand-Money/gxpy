@@ -183,7 +183,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        index.value = self._find_stk2(str_val.encode(), index.value, vv_rtd)
+        index.value = self._find_stk2(str_val.encode('utf8'), index.value, vv_rtd)
         
 
 
@@ -255,7 +255,7 @@ class GXMSTK(gxapi_cy.WrapMSTK):
         for example, string "DATA ( DIST , MAG )"  indicates a map group name of DATA,
         X channel name of DIST and Y channel name of MAG.
         """
-        index.value, group.value, x_ch.value, y_ch.value = self._find_stk(str_val.encode(), index.value, group.value.encode(), x_ch.value.encode(), y_ch.value.encode())
+        index.value, group.value, x_ch.value, y_ch.value = self._find_stk(str_val.encode('utf8'), index.value, group.value.encode('utf8'), x_ch.value.encode('utf8'), y_ch.value.encode('utf8'))
         
 
 

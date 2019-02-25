@@ -146,7 +146,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value, tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value = self._get_axis_parms(bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value.encode(), tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value, xy)
+        bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value, tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value = self._get_axis_parms(bar_draw.value, min_loc.value, max_loc.value, thick.value, color.value.encode('utf8'), tick_interval.value, tick_size1.value, tick_size2.value, min_tick.value, xy)
         
 
 
@@ -175,7 +175,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value, fid_text_size.value, fid_text_color.value = self._get_fid_parms(fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value.encode(), fid_text_size.value, fid_text_color.value.encode())
+        fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value, fid_text_size.value, fid_text_color.value = self._get_fid_parms(fid_y_loc.value, fid_tick_size.value, fid_interval.value, fid_text_font.value.encode('utf8'), fid_text_size.value, fid_text_color.value.encode('utf8'))
         
 
 
@@ -235,7 +235,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        x_ch.value, y_ch.value, grp_name.value, x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value = self._get_gen_parms(x_ch.value.encode(), y_ch.value.encode(), grp_name.value.encode(), x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value)
+        x_ch.value, y_ch.value, grp_name.value, x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value = self._get_gen_parms(x_ch.value.encode('utf8'), y_ch.value.encode('utf8'), grp_name.value.encode('utf8'), x_scale.value, y_scale.value, x_start.value, x_end.value, y_start.value, left.value, bottom.value, height.value)
         
 
 
@@ -275,7 +275,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value = self._get_grid_parms(grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value.encode(), grid12)
+        grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value = self._get_grid_parms(grid.value, min_x.value, max_x.value, min_y.value, max_y.value, thick.value, cross.value, x_sep.value, y_sep.value, color.value.encode('utf8'), grid12)
         
 
 
@@ -317,7 +317,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format <geosoft.gxapi.GXSTK.set_axis_format>` function AFTER calling this.
         """
-        axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value, text_size.value, color.value, bound.value = self._get_label_parms(axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value.encode(), text_size.value, color.value.encode(), bound.value, xy)
+        axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value, text_size.value, color.value, bound.value = self._get_label_parms(axis.value, min_loc.value, min_orient.value, max_loc.value, max_orient.value, interval.value, font.value.encode('utf8'), text_size.value, color.value.encode('utf8'), bound.value, xy)
         
 
 
@@ -362,7 +362,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        prof_type.value, pitch.value, thick.value, ln_clr.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), wrap.value, clip.value, smooth.value, vv_ind, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
+        prof_type.value, pitch.value, thick.value, ln_clr.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile(prof_type.value, pitch.value, thick.value, ln_clr.value.encode('utf8'), wrap.value, clip.value, smooth.value, vv_ind, label.value.encode('utf8'), ref.value, font.value.encode('utf8'), text_size.value, text_clr.value.encode('utf8'), prof_va_num.value)
         
 
 
@@ -409,7 +409,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        prof_type.value, pitch.value, thick.value, ln_clr.value, break_dum.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile_ex(prof_type.value, pitch.value, thick.value, ln_clr.value.encode(), break_dum.value, wrap.value, clip.value, smooth.value, vv_ind, label.value.encode(), ref.value, font.value.encode(), text_size.value, text_clr.value.encode(), prof_va_num.value)
+        prof_type.value, pitch.value, thick.value, ln_clr.value, break_dum.value, wrap.value, clip.value, smooth.value, label.value, ref.value, font.value, text_size.value, text_clr.value, prof_va_num.value = self._get_profile_ex(prof_type.value, pitch.value, thick.value, ln_clr.value.encode('utf8'), break_dum.value, wrap.value, clip.value, smooth.value, vv_ind, label.value.encode('utf8'), ref.value, font.value.encode('utf8'), text_size.value, text_clr.value.encode('utf8'), prof_va_num.value)
         
 
 
@@ -454,7 +454,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, label.value, text_font.value, text_size.value, text_clr.value = self._get_symb_parms(symb_font.value.encode(), symb_size.value, line_clr.value.encode(), fill_clr.value.encode(), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level, vv_type, label.value, text_font.value.encode(), text_size.value, text_clr.value.encode())
+        symb_font.value, symb_size.value, line_clr.value, fill_clr.value, wrap.value, clip.value, symb_y_loc.value, no_levels.value, label.value, text_font.value, text_size.value, text_clr.value = self._get_symb_parms(symb_font.value.encode('utf8'), symb_size.value, line_clr.value.encode('utf8'), fill_clr.value.encode('utf8'), wrap.value, clip.value, symb_y_loc.value, no_levels.value, vv_level, vv_type, label.value, text_font.value.encode('utf8'), text_size.value, text_clr.value.encode('utf8'))
         
 
 
@@ -496,7 +496,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        title1.value, title2.value, title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value, text_size.value, color.value = self._get_title_parms(title1.value.encode(), title2.value.encode(), title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value.encode(), text_size.value, color.value.encode(), xy)
+        title1.value, title2.value, title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value, text_size.value, color.value = self._get_title_parms(title1.value.encode('utf8'), title2.value.encode('utf8'), title1_orient.value, title1_x.value, title1_y.value, title2_orient.value, title2_x.value, title2_y.value, font.value.encode('utf8'), text_size.value, color.value.encode('utf8'), xy)
         
 
 
@@ -596,7 +596,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._set_axis_parms(bar_draw, min_loc, max_loc, thick, color.encode(), tick_interval, tick_size1, tick_size2, min_tick, xy)
+        self._set_axis_parms(bar_draw, min_loc, max_loc, thick, color.encode('utf8'), tick_interval, tick_size1, tick_size2, min_tick, xy)
         
 
 
@@ -625,7 +625,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        self._set_fid_parms(fid_y_loc, fid_tick_size, fid_interval, fid_text_font.encode(), fid_text_size, fid_text_color.encode())
+        self._set_fid_parms(fid_y_loc, fid_tick_size, fid_interval, fid_text_font.encode('utf8'), fid_text_size, fid_text_color.encode('utf8'))
         
 
 
@@ -664,7 +664,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        self._set_gen_parms(x_ch.encode(), y_ch.encode(), grp_name.encode(), x_scale, y_scale, x_start, x_end, y_start, left, bottom, height)
+        self._set_gen_parms(x_ch.encode('utf8'), y_ch.encode('utf8'), grp_name.encode('utf8'), x_scale, y_scale, x_start, x_end, y_start, left, bottom, height)
         
 
 
@@ -704,7 +704,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._set_grid_parms(grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color.encode(), grid12)
+        self._set_grid_parms(grid, min_x, max_x, min_y, max_y, thick, cross, x_sep, y_sep, color.encode('utf8'), grid12)
         
 
 
@@ -746,7 +746,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         Sets the label format to GSF_NORMAL. To override this,
         use the `set_axis_format <geosoft.gxapi.GXSTK.set_axis_format>` function AFTER calling this.
         """
-        self._set_label_parms(axis, min_loc, min_orient, max_loc, max_orient, interval, font.encode(), text_size, color.encode(), bound, xy)
+        self._set_label_parms(axis, min_loc, min_orient, max_loc, max_orient, interval, font.encode('utf8'), text_size, color.encode('utf8'), bound, xy)
         
 
 
@@ -810,7 +810,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        self._set_profile(prof_type, pitch, thick, ln_clr.encode(), wrap, clip, smooth, vv_ind, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
+        self._set_profile(prof_type, pitch, thick, ln_clr.encode('utf8'), wrap, clip, smooth, vv_ind, label.encode('utf8'), ref, font.encode('utf8'), text_size, text_clr.encode('utf8'), prof_va_num)
         
 
 
@@ -857,7 +857,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        self._set_profile_ex(prof_type, pitch, thick, ln_clr.encode(), break_dum, wrap, clip, smooth, vv_ind, label.encode(), ref, font.encode(), text_size, text_clr.encode(), prof_va_num)
+        self._set_profile_ex(prof_type, pitch, thick, ln_clr.encode('utf8'), break_dum, wrap, clip, smooth, vv_ind, label.encode('utf8'), ref, font.encode('utf8'), text_size, text_clr.encode('utf8'), prof_va_num)
         
 
 
@@ -902,7 +902,7 @@ class GXSTK(gxapi_cy.WrapSTK):
 
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         """
-        self._set_symb_parms(symb_font.encode(), symb_size, line_clr.encode(), fill_clr.encode(), wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font.encode(), text_size, text_clr.encode())
+        self._set_symb_parms(symb_font.encode('utf8'), symb_size, line_clr.encode('utf8'), fill_clr.encode('utf8'), wrap, clip, symb_y_loc, no_levels, vv_level, vv_type, label, text_font.encode('utf8'), text_size, text_clr.encode('utf8'))
         
 
 
@@ -944,7 +944,7 @@ class GXSTK(gxapi_cy.WrapSTK):
         **Note:** See `GXMSTK <geosoft.gxapi.GXMSTK>` for detailed description of all function parameters
         ? mark in the note represent either X and Y
         """
-        self._set_title_parms(title1.encode(), title2.encode(), title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font.encode(), text_size, color.encode(), xy)
+        self._set_title_parms(title1.encode('utf8'), title2.encode('utf8'), title1_orient, title1_x, title1_y, title2_orient, title2_x, title2_y, font.encode('utf8'), text_size, color.encode('utf8'), xy)
         
 
 

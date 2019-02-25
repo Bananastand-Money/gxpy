@@ -79,7 +79,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCMAP._display_in_3d_view(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapARCMAP._display_in_3d_view(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -102,7 +102,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapARCMAP._export_feature_layer_by_name_to_3d_file(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode(), output_file.encode())
+        gxapi_cy.WrapARCMAP._export_feature_layer_by_name_to_3d_file(GXContext._get_tls_geo(), mxd_file.encode('utf8'), dataframe_name.encode('utf8'), layer_name.encode('utf8'), output_file.encode('utf8'))
         
 
 
@@ -119,7 +119,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapARCMAP._export_selected_feature_layer_to_3d_file(GXContext._get_tls_geo(), output_file.encode())
+        gxapi_cy.WrapARCMAP._export_selected_feature_layer_to_3d_file(GXContext._get_tls_geo(), output_file.encode('utf8'))
         
 
 
@@ -140,7 +140,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        mxd.value, layer.value, map.value = gxapi_cy.WrapARCMAP._get_current_document_info(GXContext._get_tls_geo(), mxd.value.encode(), layer.value.encode(), map.value.encode())
+        mxd.value, layer.value, map.value = gxapi_cy.WrapARCMAP._get_current_document_info(GXContext._get_tls_geo(), mxd.value.encode('utf8'), layer.value.encode('utf8'), map.value.encode('utf8'))
         
 
 
@@ -161,7 +161,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        layer.value, map.value = gxapi_cy.WrapARCMAP._get_selected_layer_info(GXContext._get_tls_geo(), layer_number, layer.value.encode(), map.value.encode())
+        layer.value, map.value = gxapi_cy.WrapARCMAP._get_selected_layer_info(GXContext._get_tls_geo(), layer_number, layer.value.encode('utf8'), map.value.encode('utf8'))
         
 
 
@@ -216,7 +216,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
          VIEWMATCH   -  View to match with in associated map (used for grouping logic)
          ZONEFILE    -  Used for type RASTER
         """
-        ret_val = gxapi_cy.WrapARCMAP._load_map(GXContext._get_tls_geo(), map.encode(), extra_csv.encode(), layer_tag.encode(), flags)
+        ret_val = gxapi_cy.WrapARCMAP._load_map(GXContext._get_tls_geo(), map.encode('utf8'), extra_csv.encode('utf8'), layer_tag.encode('utf8'), flags)
         return ret_val
 
 
@@ -255,7 +255,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
          VIEWMATCH   -  View to match with in associated map (used for grouping logic)
          ZONEFILE    -  Used for type RASTER
         """
-        ret_val = gxapi_cy.WrapARCMAP._load_map_ex(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), flags)
+        ret_val = gxapi_cy.WrapARCMAP._load_map_ex(GXContext._get_tls_geo(), map.encode('utf8'), view.encode('utf8'), extra_csv.encode('utf8'), layer_tag.encode('utf8'), flags)
         return ret_val
 
 
@@ -277,7 +277,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), shp.encode(), delete_existing)
+        ret_val = gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), shp.encode('utf8'), delete_existing)
         return ret_val
 
 
@@ -299,7 +299,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapARCMAP._load_spf(GXContext._get_tls_geo(), shp.encode(), num_shp)
+        ret_val = gxapi_cy.WrapARCMAP._load_spf(GXContext._get_tls_geo(), shp.encode('utf8'), num_shp)
         return ret_val
 
 
@@ -316,7 +316,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCMAP._load_lyr(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapARCMAP._load_lyr(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -354,7 +354,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
             VIEWMATCH   -  View to match with in associated map (used for grouping logic)
             ZONEFILE    -  Used for type RASTER
         """
-        gxapi_cy.WrapARCMAP._load_map(GXContext._get_tls_geo(), map.encode(), view.encode(), extra_csv.encode(), layer_tag.encode(), fit, activate, prefix)
+        gxapi_cy.WrapARCMAP._load_map(GXContext._get_tls_geo(), map.encode('utf8'), view.encode('utf8'), extra_csv.encode('utf8'), layer_tag.encode('utf8'), fit, activate, prefix)
         
 
 
@@ -377,7 +377,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCMAP._load_map_view(GXContext._get_tls_geo(), map.encode(), view.encode(), layer.encode(), all)
+        gxapi_cy.WrapARCMAP._load_map_view(GXContext._get_tls_geo(), map.encode('utf8'), view.encode('utf8'), layer.encode('utf8'), all)
         
 
 
@@ -397,7 +397,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **Note:** Loads any file type recognized as "raster" formats by ARC `GXGIS <geosoft.gxapi.GXGIS>`.
         This includes geosoft GRD files.
         """
-        gxapi_cy.WrapARCMAP._load_raster(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapARCMAP._load_raster(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -417,7 +417,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
         **Note:** Loads any file type recognized as "raster" formats by ARC `GXGIS <geosoft.gxapi.GXGIS>`.
         This includes geosoft GRD files.
         """
-        gxapi_cy.WrapARCMAP._load_raster_ex(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapARCMAP._load_raster_ex(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -442,7 +442,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         Prefix_NAME_Suffix
         """
-        gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), file.encode(), layer_prefix.encode(), layer_suffix.encode())
+        gxapi_cy.WrapARCMAP._load_shape(GXContext._get_tls_geo(), file.encode('utf8'), layer_prefix.encode('utf8'), layer_suffix.encode('utf8'))
         
 
 
@@ -472,7 +472,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
               NAME_ln.shp    (line or arc objects)
               NAME_pg.shp    (polygon objects)
         """
-        gxapi_cy.WrapARCMAP._map_view_to_shape(GXContext._get_tls_geo(), map.encode(), view.encode(), shp.encode(), lst)
+        gxapi_cy.WrapARCMAP._map_view_to_shape(GXContext._get_tls_geo(), map.encode('utf8'), view.encode('utf8'), shp.encode('utf8'), lst)
         
 
 
@@ -512,7 +512,7 @@ class GXARCMAP(gxapi_cy.WrapARCMAP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapARCMAP._show_layer_by_name_in_3d(GXContext._get_tls_geo(), mxd_file.encode(), dataframe_name.encode(), layer_name.encode())
+        gxapi_cy.WrapARCMAP._show_layer_by_name_in_3d(GXContext._get_tls_geo(), mxd_file.encode('utf8'), dataframe_name.encode('utf8'), layer_name.encode('utf8'))
         
 
 

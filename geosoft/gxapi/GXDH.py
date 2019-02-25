@@ -144,7 +144,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._from_to_data_lst(assay.encode(), lst)
+        self._from_to_data_lst(assay.encode('utf8'), lst)
         
 
 
@@ -179,7 +179,7 @@ class GXDH(gxapi_cy.WrapDH):
         contact with the input geology. Those selected holes which do NOT
         have contacts, return `rDUMMY <geosoft.gxapi.rDUMMY>` for the corresponding locations.
         """
-        self._get_geology_contacts(lst, chan_code.encode(), geology.encode(), surface, gap, vv_x, vv_y, vv_z)
+        self._get_geology_contacts(lst, chan_code.encode('utf8'), geology.encode('utf8'), surface, gap, vv_x, vv_y, vv_z)
         
 
 
@@ -213,7 +213,7 @@ class GXDH(gxapi_cy.WrapDH):
         The alpha and beta data must be from the same database, and the output
         dip and dip/dir channels are written to the same database.
         """
-        self._get_oriented_core_dip_dir(lst, alpha.encode(), beta.encode(), top_ref, dip.encode(), dip_dir.encode())
+        self._get_oriented_core_dip_dir(lst, alpha.encode('utf8'), beta.encode('utf8'), top_ref, dip.encode('utf8'), dip_dir.encode('utf8'))
         
 
 
@@ -236,7 +236,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._get_unique_channel_items(chan_code.encode(), selected_holes, vv)
+        self._get_unique_channel_items(chan_code.encode('utf8'), selected_holes, vv)
         
 
 
@@ -259,7 +259,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        self._get_unique_channel_items_from_collar(chan_name.encode(), selected_holes, vv)
+        self._get_unique_channel_items_from_collar(chan_name.encode('utf8'), selected_holes, vv)
         
 
 
@@ -281,7 +281,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Finds and sorts all the unique non-dummy items for the selected channel.
         """
-        ret_val = self._chan_type(chan_code.encode())
+        ret_val = self._chan_type(chan_code.encode('utf8'))
         return ret_val
 
 
@@ -338,7 +338,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The input channel code is in the form "[Assay] channel"
         """
-        assay_db_index.value, chan.value = self._get_chan_code_info(chan_code.encode(), assay_db_index.value, chan.value.encode())
+        assay_db_index.value, chan.value = self._get_chan_code_info(chan_code.encode('utf8'), assay_db_index.value, chan.value.encode('utf8'))
         
 
 
@@ -377,7 +377,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Given a point on the hole and the straight hole dip and azimuth,
         ocate (an) intersection point with the input DEM grid.
         """
-        ret_val, xo.value, yo.value, zo.value = self._grid_intersection(xi, yi, zi, dip, az, grid.encode(), xo.value, yo.value, zo.value)
+        ret_val, xo.value, yo.value, zo.value = self._grid_intersection(xi, yi, zi, dip, az, grid.encode('utf8'), xo.value, yo.value, zo.value)
         return ret_val
 
 
@@ -419,7 +419,7 @@ class GXDH(gxapi_cy.WrapDH):
         where the gridded lithology is not found. If not specified (dummy) then
         half the distance to the nearest contacting hole is used.
         """
-        self._litho_grid_3d(chan_code.encode(), tpat, vox.encode(), cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files)
+        self._litho_grid_3d(chan_code.encode('utf8'), tpat, vox.encode('utf8'), cell_size, gap, non_contact_radius, gridding_type, reg, retain_grid_files)
         
 
 
@@ -465,7 +465,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Au" channel in the "Tutorial_Assay.gdb" database.
         """
-        self._numeric_from_to_data_lst(assay.encode(), lst)
+        self._numeric_from_to_data_lst(assay.encode('utf8'), lst)
         
 
 
@@ -543,7 +543,7 @@ class GXDH(gxapi_cy.WrapDH):
         containing the given channel name. The above code might refer to
         the "Lithology" channel in the "Tutorial_Geology.gdb" database.
         """
-        self._string_from_to_data_lst(assay.encode(), lst)
+        self._string_from_to_data_lst(assay.encode('utf8'), lst)
         
 
 
@@ -863,7 +863,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._composite_db(mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch.encode(), int_file.encode(), wt_ch.encode(), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode())
+        self._composite_db(mast_db, comp_db, hol_sel, int_sel, fix_int, lith_ch.encode('utf8'), int_file.encode('utf8'), wt_ch.encode('utf8'), rej1_val, rej2_val, rej3_val, rej3_op, rej3_ch.encode('utf8'))
         
 
 
@@ -972,7 +972,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapDH._create(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._create(GXContext._get_tls_geo(), db.encode('utf8'))
         return GXDH(ret_val)
 
 
@@ -991,7 +991,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._create_default_job(ini.encode(), type)
+        self._create_default_job(ini.encode('utf8'), type)
         
 
 
@@ -1016,7 +1016,7 @@ class GXDH(gxapi_cy.WrapDH):
         This function instead creates the project from all projects
         in the input databases's directory.
         """
-        ret_val = gxapi_cy.WrapDH._create_external(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._create_external(GXContext._get_tls_geo(), db.encode('utf8'))
         return GXDH(ret_val)
 
 
@@ -1063,7 +1063,7 @@ class GXDH(gxapi_cy.WrapDH):
              Project_Survey.csv, .i3
              Project_Assay.csv,  .i3
         """
-        gxapi_cy.WrapDH._datamine_to_csv(GXContext._get_tls_geo(), file.encode(), proj.encode())
+        gxapi_cy.WrapDH._datamine_to_csv(GXContext._get_tls_geo(), file.encode('utf8'), proj.encode('utf8'))
         
 
 
@@ -1105,7 +1105,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_file(file.encode(), type)
+        self._export_file(file.encode('utf8'), type)
         
 
 
@@ -1133,7 +1133,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** A table with metadata about the created feature classes will be written to the Geodatabase. This table will have the same
         name with the postfix "_Metadata" attached
         """
-        feat_class.value = self._export_geodatabase_lst(lst, file.encode(), pre.encode(), feat_class.value.encode(), overwrite)
+        feat_class.value = self._export_geodatabase_lst(lst, file.encode('utf8'), pre.encode('utf8'), feat_class.value.encode('utf8'), overwrite)
         
 
 
@@ -1156,7 +1156,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_las(assay_db, hole, interval, file.encode())
+        self._export_las(assay_db, hole, interval, file.encode('utf8'))
         
 
 
@@ -1179,7 +1179,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Use functions like `GXDB.selected_line_lst <geosoft.gxapi.GXDB.selected_line_lst>` to construct the `GXLST <geosoft.gxapi.GXLST>`
         """
-        self._export_lst(lst, file.encode(), type)
+        self._export_lst(lst, file.encode('utf8'), type)
         
 
 
@@ -1296,7 +1296,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._get_hole_group(hole, assay.encode())
+        ret_val = self._get_hole_group(hole, assay.encode('utf8'))
         return ret_val
 
 
@@ -1512,7 +1512,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._add_hole(hole.encode())
+        ret_val = self._add_hole(hole.encode('utf8'))
         return ret_val
 
 
@@ -1584,7 +1584,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         "d:\\directory\\Project_Collar.gdb"
         """
-        db.value = gxapi_cy.WrapDH._create_collar_table(GXContext._get_tls_geo(), project.encode(), chan, db.value.encode())
+        db.value = gxapi_cy.WrapDH._create_collar_table(GXContext._get_tls_geo(), project.encode('utf8'), chan, db.value.encode('utf8'))
         
 
 
@@ -1611,7 +1611,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         "d:\\directory\\Project_Collar.gdb"
         """
-        db.value = gxapi_cy.WrapDH._create_collar_table_dir(GXContext._get_tls_geo(), project.encode(), dir.encode(), chan, db.value.encode())
+        db.value = gxapi_cy.WrapDH._create_collar_table_dir(GXContext._get_tls_geo(), project.encode('utf8'), dir.encode('utf8'), chan, db.value.encode('utf8'))
         
 
 
@@ -1653,7 +1653,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._find_hole(hole.encode())
+        ret_val = self._find_hole(hole.encode('utf8'))
         return ret_val
 
 
@@ -1670,7 +1670,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        db.value = self._get_collar_table_db(db.value.encode())
+        db.value = self._get_collar_table_db(db.value.encode('utf8'))
         
 
 
@@ -1695,7 +1695,7 @@ class GXDH(gxapi_cy.WrapDH):
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        data.value = self._get_info(hole, name.encode(), data.value.encode())
+        data.value = self._get_info(hole, name.encode('utf8'), data.value.encode('utf8'))
         
 
 
@@ -1712,7 +1712,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        project.value = self._get_project_name(project.value.encode())
+        project.value = self._get_project_name(project.value.encode('utf8'))
         
 
 
@@ -1735,7 +1735,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        id.value = gxapi_cy.WrapDH._get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode())
+        id.value = gxapi_cy.WrapDH._get_section_id(GXContext._get_tls_geo(), azimuth, east, north, id.value.encode('utf8'))
         
 
 
@@ -1768,7 +1768,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         If no template blob exists, templ
         """
-        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type.value)
+        ret_val, imp_type.value = gxapi_cy.WrapDH._get_template_blob(GXContext._get_tls_geo(), db, template.encode('utf8'), imp_type.value)
         return ret_val
 
 
@@ -1810,7 +1810,7 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_DATA_UNKNOWN <geosoft.gxapi.DH_DATA_UNKNOWN>` is returned for the data type; likely an indication that this
         is not a new-style template produced by Wholeplot.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode())
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info(GXContext._get_tls_geo(), template.encode('utf8'), data_type.value, file.value.encode('utf8'), table.value.encode('utf8'))
         
 
 
@@ -1856,7 +1856,7 @@ class GXDH(gxapi_cy.WrapDH):
         This version also returns a list of the channels in the template checks can be made to
         see if the import will exceed the database channel limit.
         """
-        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), template.encode(), data_type.value, file.value.encode(), table.value.encode(), lst)
+        data_type.value, file.value, table.value = gxapi_cy.WrapDH._get_template_info_ex(GXContext._get_tls_geo(), template.encode('utf8'), data_type.value, file.value.encode('utf8'), table.value.encode('utf8'), lst)
         
 
 
@@ -1875,7 +1875,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        units.value, conv_factor.value = self._get_units(units.value.encode(), conv_factor.value)
+        units.value, conv_factor.value = self._get_units(units.value.encode('utf8'), conv_factor.value)
         
 
 
@@ -1909,7 +1909,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, db.value = gxapi_cy.WrapDH._have_current2(GXContext._get_tls_geo(), db.value.encode())
+        ret_val, db.value = gxapi_cy.WrapDH._have_current2(GXContext._get_tls_geo(), db.value.encode('utf8'))
         return ret_val
 
 
@@ -1992,7 +1992,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = self._modify3d_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify3d_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2021,7 +2021,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, class_file.value = self._edit_classification_table_file_gui(chan.encode(), class_file.value.encode(), fill_patterns, colors_only)
+        ret_val, class_file.value = self._edit_classification_table_file_gui(chan.encode('utf8'), class_file.value.encode('utf8'), fill_patterns, colors_only)
         return ret_val
 
 
@@ -2046,7 +2046,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Will plot to an empty crooked section.
         """
-        ret_val, page.value = self._modify_crooked_section_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_crooked_section_holes_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2072,7 +2072,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** The fence section function.
         """
-        ret_val, page.value = self._modify_fence_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_fence_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2095,7 +2095,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = self._modify_hole_traces_3d_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_hole_traces_3d_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2118,7 +2118,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = self._modify_hole_traces_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_hole_traces_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2145,7 +2145,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Currently supports `DH_PLOT_PLAN <geosoft.gxapi.DH_PLOT_PLAN>` and `DH_PLOT_SECTION <geosoft.gxapi.DH_PLOT_SECTION>`
         """
-        ret_val, page.value = self._modify_hole_traces_gui2(ini.encode(), plot_type, page.value)
+        ret_val, page.value = self._modify_hole_traces_gui2(ini.encode('utf8'), plot_type, page.value)
         return ret_val
 
 
@@ -2168,7 +2168,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = self._modify_plan_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_plan_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2193,7 +2193,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, page.value = self._modify_plan_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_plan_holes_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2214,7 +2214,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -2242,7 +2242,7 @@ class GXDH(gxapi_cy.WrapDH):
         automatically populate the rock code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_rock_codes_gui2(GXContext._get_tls_geo(), db, file.encode('utf8'))
         return ret_val
 
 
@@ -2274,7 +2274,7 @@ class GXDH(gxapi_cy.WrapDH):
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, page.value = self._modify_section_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_section_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2300,7 +2300,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Works for both regular and stacked sections.
         Modifies only hole trace, hole data, topo, voxel slice data.
         """
-        ret_val, page.value = self._modify_section_holes_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_section_holes_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2332,7 +2332,7 @@ class GXDH(gxapi_cy.WrapDH):
         are plotted in a stack on the left side of the same map,
         not to individual maps.
         """
-        ret_val, page.value = self._modify_stacked_section_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_stacked_section_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2355,7 +2355,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = self._modify_strip_log_gui(ini.encode(), page.value)
+        ret_val, page.value = self._modify_strip_log_gui(ini.encode('utf8'), page.value)
         return ret_val
 
 
@@ -2376,7 +2376,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -2404,7 +2404,7 @@ class GXDH(gxapi_cy.WrapDH):
         automatically populate the structure code list. The database
         should be a Wholeplot database.
         """
-        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui2(GXContext._get_tls_geo(), db, file.encode())
+        ret_val = gxapi_cy.WrapDH._modify_structure_codes_gui2(GXContext._get_tls_geo(), db, file.encode('utf8'))
         return ret_val
 
 
@@ -2433,7 +2433,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapDH._import2(GXContext._get_tls_geo(), project.encode(), db, line, hole, table.encode(), type, log.encode())
+        gxapi_cy.WrapDH._import2(GXContext._get_tls_geo(), project.encode('utf8'), db, line, hole, table.encode('utf8'), type, log.encode('utf8'))
         
 
 
@@ -2462,7 +2462,7 @@ class GXDH(gxapi_cy.WrapDH):
         without the project name and underscore, e.g. for
         "Project_Assay.gdb" use "Assay"
         """
-        self._import_las(assay.encode(), file.encode(), interval, interp, wa)
+        self._import_las(assay.encode('utf8'), file.encode('utf8'), interval, interp, wa)
         
 
 
@@ -2694,7 +2694,7 @@ class GXDH(gxapi_cy.WrapDH):
         in the channel `GXREG <geosoft.gxapi.GXREG>`. This function lets a user transfer pre-defined
         settings to individual INI files (eg. cu.ini).
         """
-        self._load_data_parameters_ini(db, dir.encode())
+        self._load_data_parameters_ini(db, dir.encode('utf8'))
         
 
 
@@ -2713,7 +2713,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._load_plot_parameters(ini.encode(), type)
+        self._load_plot_parameters(ini.encode('utf8'), type)
         
 
 
@@ -2730,7 +2730,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._load_select(file.encode())
+        self._load_select(file.encode('utf8'))
         
 
 
@@ -2763,7 +2763,7 @@ class GXDH(gxapi_cy.WrapDH):
         `DH_MASK_NEW <geosoft.gxapi.DH_MASK_NEW>` --- Mask is created new for each selected hole
         `DH_MASK_APPEND <geosoft.gxapi.DH_MASK_APPEND>` --- Current selection is added to previous.
         """
-        self._mask_ply(pply, ipj, tol, mask.encode(), select, append)
+        self._mask_ply(pply, ipj, tol, mask.encode('utf8'), select, append)
         
 
 
@@ -2783,7 +2783,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapDH._open(GXContext._get_tls_geo(), db.encode())
+        ret_val = gxapi_cy.WrapDH._open(GXContext._get_tls_geo(), db.encode('utf8'))
         return GXDH(ret_val)
 
 
@@ -2802,7 +2802,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._open_job(job.encode(), type)
+        self._open_job(job.encode('utf8'), type)
         
 
 
@@ -2825,7 +2825,7 @@ class GXDH(gxapi_cy.WrapDH):
         The DHPLANHOLES GX uses the default plan map parameter file
         "_plan.inp".
         """
-        self._plot_hole_traces(map, job.encode())
+        self._plot_hole_traces(map, job.encode('utf8'))
         
 
 
@@ -2848,7 +2848,7 @@ class GXDH(gxapi_cy.WrapDH):
         The DH3DHOLES GX uses the default 3D map parameter file
         "_3D.in3".
         """
-        self._plot_hole_traces_3d(mview, job.encode())
+        self._plot_hole_traces_3d(mview, job.encode('utf8'))
         
 
 
@@ -2867,7 +2867,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._plot_symbols_3d(mview, job.encode())
+        self._plot_symbols_3d(mview, job.encode('utf8'))
         
 
 
@@ -2947,7 +2947,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks single hole with Dip-Azimuth survey data
         """
-        self._qa_dip_az_curvature2(wa, tolerance, hole.encode())
+        self._qa_dip_az_curvature2(wa, tolerance, hole.encode('utf8'))
         
 
 
@@ -2973,7 +2973,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no Dip-Azimuth survey database, or if
         the requested line does not exist in the database.
         """
-        self._qa_dip_az_survey(db, wa, line, hole.encode())
+        self._qa_dip_az_survey(db, wa, line, hole.encode('utf8'))
         
 
 
@@ -3017,7 +3017,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Checks single holes with East-North survey data
         """
-        self._qa_east_north_curvature2(wa, tolerance, hole.encode())
+        self._qa_east_north_curvature2(wa, tolerance, hole.encode('utf8'))
         
 
 
@@ -3043,7 +3043,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Error if no East-North survey database, or if
         the requested line does not exist in the database.
         """
-        self._qa_east_north_survey(db, wa, line, hole.encode())
+        self._qa_east_north_survey(db, wa, line, hole.encode('utf8'))
         
 
 
@@ -3066,7 +3066,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._qa_from_to_data(db, wa, line, hole.encode())
+        self._qa_from_to_data(db, wa, line, hole.encode('utf8'))
         
 
 
@@ -3089,7 +3089,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._qa_point_data(db, wa, line, hole.encode())
+        self._qa_point_data(db, wa, line, hole.encode('utf8'))
         
 
 
@@ -3138,7 +3138,7 @@ class GXDH(gxapi_cy.WrapDH):
         INI file used to create the existing map, or things may not
         work out (e.g. bad locations etc).
         """
-        self._replot_holes(job.encode(), plot_type)
+        self._replot_holes(job.encode('utf8'), plot_type)
         
 
 
@@ -3161,7 +3161,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Plot the currently selected holes to a section view.
         """
-        self._plot_holes_on_section(job.encode(), plot_type, view.encode())
+        self._plot_holes_on_section(job.encode('utf8'), plot_type, view.encode('utf8'))
         
 
 
@@ -3199,7 +3199,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Re-interpolates in X, Y and Z to proper depth interval
         and returns depths for each point
         """
-        bot.value = self._re_survey_east_north(hole.encode(), vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot.value)
+        bot.value = self._re_survey_east_north(hole.encode('utf8'), vv_x, vv_y, vv_z, vv_d, east, north, elev, top, bot.value)
         
 
 
@@ -3255,7 +3255,7 @@ class GXDH(gxapi_cy.WrapDH):
         for most smoothly curving holes. The order is reduced to no more than
         the number of input points.
         """
-        self._re_survey_pol_fit(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d)
+        self._re_survey_pol_fit(hole.encode('utf8'), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, order, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3306,7 +3306,7 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._re_survey_rad_curve(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
+        self._re_survey_rad_curve(hole.encode('utf8'), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3355,7 +3355,7 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._re_survey_straight(hole.encode(), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
+        self._re_survey_straight(hole.encode('utf8'), dip, az, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3407,7 +3407,7 @@ class GXDH(gxapi_cy.WrapDH):
         measure distance down the hole (even if it's horizontal).
         A negative dip convention means vertical down is -90 degrees.
         """
-        self._re_survey_straight_seg(hole.encode(), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
+        self._re_survey_straight_seg(hole.encode('utf8'), vv_dip, vv_az, vv_depth, east, north, elev, top, bot, inc, dip_conv, vv_x, vv_y, vv_z, vv_d)
         
 
 
@@ -3432,7 +3432,7 @@ class GXDH(gxapi_cy.WrapDH):
         As of v6.3, the `GXDH <geosoft.gxapi.GXDH>` object is NOT required for this function, and
         is, in fact, ignored.
         """
-        self._save_data_parameters_ini(db, dir.encode())
+        self._save_data_parameters_ini(db, dir.encode('utf8'))
         
 
 
@@ -3451,7 +3451,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._save_job(job.encode(), type)
+        self._save_job(job.encode('utf8'), type)
         
 
 
@@ -3468,7 +3468,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._save_select(file.encode())
+        self._save_select(file.encode('utf8'))
         
 
 
@@ -3552,7 +3552,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Overwrite mode - all selections tested and selected or not selected
         Append mode    - only holes matching the mask are selected or not selected.
         """
-        self._select_name(mask.encode(), sel, mode)
+        self._select_name(mask.encode('utf8'), sel, mode)
         
 
 
@@ -3653,7 +3653,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **Note:** Can be used to specify the name of the view to plot into.
         """
-        self._set_current_view_name(cur_view.encode())
+        self._set_current_view_name(cur_view.encode('utf8'))
         
 
 
@@ -3678,7 +3678,7 @@ class GXDH(gxapi_cy.WrapDH):
         search for the DH_RL channel, which is the new
         name for the collar elevation.
         """
-        self._set_info(hole, name.encode(), data.encode())
+        self._set_info(hole, name.encode('utf8'), data.encode('utf8'))
         
 
 
@@ -3744,7 +3744,7 @@ class GXDH(gxapi_cy.WrapDH):
         **Note:** Gets the `GXIPJ <geosoft.gxapi.GXIPJ>` of the collar table current x channel and copies it
         into the named database (as long as it is in the project!)
         """
-        self._set_new_ipj(db.encode())
+        self._set_new_ipj(db.encode('utf8'))
         
 
 
@@ -3790,7 +3790,7 @@ class GXDH(gxapi_cy.WrapDH):
         The import types correspond to the DHIMPORT.IMPTYPE variable:
         0: ASCII, 1: Database/XLS, 2: ODBC
         """
-        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, template.encode(), imp_type)
+        gxapi_cy.WrapDH._set_template_blob(GXContext._get_tls_geo(), db, template.encode('utf8'), imp_type)
         
 
 
@@ -3827,7 +3827,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._significant_intersections_db(mast_db, comp_db, hol_sel, assay_ch.encode(), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
+        self._significant_intersections_db(mast_db, comp_db, hol_sel, assay_ch.encode('utf8'), cut_off_grade, clip_grade, min_composite_thickness, min_composite_grade, max_internal_dilution_length, min_internal_dilution_grade, grade_for_missing_assays)
         
 
 
@@ -3859,7 +3859,7 @@ class GXDH(gxapi_cy.WrapDH):
         where data is merely extended at the start or the end with dummies
         to match a different interval down the hole.
         """
-        warn.value = self._test_import_las(assay.encode(), file.encode(), interval, wa, warn.value)
+        warn.value = self._test_import_las(assay.encode('utf8'), file.encode('utf8'), interval, wa, warn.value)
         
 
 
@@ -3947,7 +3947,7 @@ class GXDH(gxapi_cy.WrapDH):
         parameters (e.g. Map template, scale, boundaries,
         section definitions, hole trace parameters etc...)
         """
-        self._wholeplot(job.encode(), plot_type)
+        self._wholeplot(job.encode('utf8'), plot_type)
         
 
 
@@ -3968,7 +3968,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._surface_intersections(output_db, input_geosurface_or_grid.encode(), hole_selection)
+        self._surface_intersections(output_db, input_geosurface_or_grid.encode('utf8'), hole_selection)
         
 
 
@@ -3995,7 +3995,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        has_rights.value, base_url.value, api_version_prefix.value, api_key.value, user_key.value, database_id.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), has_rights.value, base_url.value.encode(), api_version_prefix.value.encode(), api_key.value.encode(), user_key.value.encode(), database_id.value.encode())
+        has_rights.value, base_url.value, api_version_prefix.value, api_key.value, user_key.value, database_id.value = gxapi_cy.WrapDH._get_mx_deposit_rights_info(GXContext._get_tls_geo(), has_rights.value, base_url.value.encode('utf8'), api_version_prefix.value.encode('utf8'), api_key.value.encode('utf8'), user_key.value.encode('utf8'), database_id.value.encode('utf8'))
         
 
 
@@ -4014,7 +4014,7 @@ class GXDH(gxapi_cy.WrapDH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode(), select_id.encode())
+        gxapi_cy.WrapDH._navigate_to_mx_deposit(GXContext._get_tls_geo(), select_type.encode('utf8'), select_id.encode('utf8'))
         
 
 

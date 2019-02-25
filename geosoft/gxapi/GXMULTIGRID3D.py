@@ -64,7 +64,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMULTIGRID3D._open(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapMULTIGRID3D._open(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXMULTIGRID3D(ret_val)
 
 
@@ -84,7 +84,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMULTIGRID3D._modify(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapMULTIGRID3D._modify(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXMULTIGRID3D(ret_val)
 
 
@@ -110,7 +110,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMULTIGRID3D._create(GXContext._get_tls_geo(), name.encode(), size_x, size_y, size_z)
+        ret_val = gxapi_cy.WrapMULTIGRID3D._create(GXContext._get_tls_geo(), name.encode('utf8'), size_x, size_y, size_z)
         return GXMULTIGRID3D(ret_val)
 
 
@@ -130,7 +130,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._duplicate(name.encode())
+        ret_val = self._duplicate(name.encode('utf8'))
         return GXMULTIGRID3D(ret_val)
 
 
@@ -695,7 +695,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._fill(output_file.encode(), method, fill_value)
+        self._fill(output_file.encode('utf8'), method, fill_value)
         
 
 
@@ -756,7 +756,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_to_xyz(xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        self._export_to_xyz(xyz.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -785,7 +785,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._export_to_binary(binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
+        self._export_to_binary(binary_file.encode('utf8'), dir, rev_x, rev_y, rev_z, swap, output_type)
         
 
 
@@ -802,7 +802,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_to_xml(xml_file.encode())
+        self._export_to_xml(xml_file.encode('utf8'))
         
 
 
@@ -829,7 +829,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_to_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode())
+        self._export_to_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode('utf8'))
         
 
 
@@ -858,7 +858,7 @@ class GXMULTIGRID3D(gxapi_cy.WrapMULTIGRID3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_to_gdb(db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        self._export_to_gdb(db, chan.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 

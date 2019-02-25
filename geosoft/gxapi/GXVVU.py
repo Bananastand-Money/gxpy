@@ -1019,7 +1019,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             sSearchReplace_VV
         """
-        ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode(), case, match, start, dir)
+        ret_val = gxapi_cy.WrapVVU._search_text(GXContext._get_tls_geo(), vv, text.encode('utf8'), case, match, start, dir)
         return ret_val
 
 
@@ -2122,7 +2122,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             SearchReplace_VV
         """
-        gxapi_cy.WrapVVU._search_replace_text(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode)
+        gxapi_cy.WrapVVU._search_replace_text(GXContext._get_tls_geo(), vv, format, decimal, val.encode('utf8'), rpl.encode('utf8'), mode)
         
 
 
@@ -2157,7 +2157,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
             SearchReplaceText_VV
         """
-        items.value = gxapi_cy.WrapVVU._search_replace_text_ex(GXContext._get_tls_geo(), vv, format, decimal, val.encode(), rpl.encode(), mode, items.value)
+        items.value = gxapi_cy.WrapVVU._search_replace_text_ex(GXContext._get_tls_geo(), vv, format, decimal, val.encode('utf8'), rpl.encode('utf8'), mode, items.value)
         
 
 
@@ -2239,7 +2239,7 @@ class GXVVU(gxapi_cy.WrapVVU):
 
         **Note:** Parses a series of space, tab or comma-delimited values to a `GXVV <geosoft.gxapi.GXVV>`.
         """
-        ret_val = gxapi_cy.WrapVVU._tokenize_to_values(GXContext._get_tls_geo(), vv, str_val.encode())
+        ret_val = gxapi_cy.WrapVVU._tokenize_to_values(GXContext._get_tls_geo(), vv, str_val.encode('utf8'))
         return ret_val
 
 

@@ -132,7 +132,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapLAYOUT._create(GXContext._get_tls_geo(), num, name.encode())
+        ret_val = gxapi_cy.WrapLAYOUT._create(GXContext._get_tls_geo(), num, name.encode('utf8'))
         return GXLAYOUT(ret_val)
 
 
@@ -178,7 +178,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        name.value = self._get_rect_name(rect, name.value.encode())
+        name.value = self._get_rect_name(rect, name.value.encode('utf8'))
         
 
 
@@ -329,7 +329,7 @@ class GXLAYOUT(gxapi_cy.WrapLAYOUT):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_rectangle_name(rect, p3.encode())
+        self._set_rectangle_name(rect, p3.encode('utf8'))
         
 
 

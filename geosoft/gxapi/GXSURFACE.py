@@ -67,7 +67,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSURFACE._create(GXContext._get_tls_geo(), surface_file.encode(), ipj)
+        ret_val = gxapi_cy.WrapSURFACE._create(GXContext._get_tls_geo(), surface_file.encode('utf8'), ipj)
         return GXSURFACE(ret_val)
 
 
@@ -89,7 +89,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSURFACE._open(GXContext._get_tls_geo(), surface_file.encode(), mode)
+        ret_val = gxapi_cy.WrapSURFACE._open(GXContext._get_tls_geo(), surface_file.encode('utf8'), mode)
         return GXSURFACE(ret_val)
 
 
@@ -162,7 +162,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._get_surface_item(guid.encode())
+        ret_val = self._get_surface_item(guid.encode('utf8'))
         return GXSURFACEITEM(ret_val)
 
 
@@ -198,7 +198,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSURFACE._get_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
+        gxapi_cy.WrapSURFACE._get_surface_names(GXContext._get_tls_geo(), surface_file.encode('utf8'), lst)
         
 
 
@@ -217,7 +217,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSURFACE._get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode(), lst)
+        gxapi_cy.WrapSURFACE._get_closed_surface_names(GXContext._get_tls_geo(), surface_file.encode('utf8'), lst)
         
 
 
@@ -268,7 +268,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, crc.value = gxapi_cy.WrapSURFACE._crc(GXContext._get_tls_geo(), surface_file.encode(), output.encode(), crc.value)
+        ret_val, crc.value = gxapi_cy.WrapSURFACE._crc(GXContext._get_tls_geo(), surface_file.encode('utf8'), output.encode('utf8'), crc.value)
         return ret_val
 
 
@@ -285,7 +285,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSURFACE._sync(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSURFACE._sync(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -305,7 +305,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSURFACE._create_from_dxf(GXContext._get_tls_geo(), ipj, surface_file.encode(), dxf_file.encode())
+        gxapi_cy.WrapSURFACE._create_from_dxf(GXContext._get_tls_geo(), ipj, surface_file.encode('utf8'), dxf_file.encode('utf8'))
         
 
 
@@ -325,7 +325,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
+        gxapi_cy.WrapSURFACE._create_from_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode('utf8'), ipj, surface_file.encode('utf8'))
         
 
 
@@ -345,7 +345,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode(), ipj, surface_file.encode())
+        gxapi_cy.WrapSURFACE._append_vulcan_triangulation(GXContext._get_tls_geo(), triangulation_file.encode('utf8'), ipj, surface_file.encode('utf8'))
         
 
 
@@ -364,7 +364,7 @@ class GXSURFACE(gxapi_cy.WrapSURFACE):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSURFACE._dump_geometry_to_text_file(GXContext._get_tls_geo(), surface_filename.encode(), text_filename.encode())
+        gxapi_cy.WrapSURFACE._dump_geometry_to_text_file(GXContext._get_tls_geo(), surface_filename.encode('utf8'), text_filename.encode('utf8'))
         
 
 

@@ -121,7 +121,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_units(scale, str_val.encode())
+        self._set_units(scale, str_val.encode('utf8'))
         
 
 
@@ -399,7 +399,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapIPJ._create_xml(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapIPJ._create_xml(GXContext._get_tls_geo(), file.encode('utf8'))
         return GXIPJ(ret_val)
 
 
@@ -524,7 +524,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** The datum filter string, if specified, will limit the requested
         list to those valid for the spacified datum.
         """
-        gxapi_cy.WrapIPJ._get_list(GXContext._get_tls_geo(), parm, datum.encode(), lst)
+        gxapi_cy.WrapIPJ._get_list(GXContext._get_tls_geo(), parm, datum.encode('utf8'), lst)
         
 
 
@@ -809,7 +809,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_val.value = self._get_display_name(str_val.value.encode())
+        str_val.value = self._get_display_name(str_val.value.encode('utf8'))
         
 
 
@@ -829,7 +829,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** If the projection is not supported in ESRI, the projection
         string will be empty.
         """
-        esri.value = self._get_esri(esri.value.encode())
+        esri.value = self._get_esri(esri.value.encode('utf8'))
         
 
 
@@ -858,7 +858,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         All strings must be the same length, 160 (`STR_GXF <geosoft.gxapi.STR_GXF>`) recommended.
         Strings too short will be truncated.
         """
-        str1.value, str2.value, str3.value, str4.value, str5.value = self._get_gxf(str1.value.encode(), str2.value.encode(), str3.value.encode(), str4.value.encode(), str5.value.encode())
+        str1.value, str2.value, str3.value, str4.value, str5.value = self._get_gxf(str1.value.encode('utf8'), str2.value.encode('utf8'), str3.value.encode('utf8'), str4.value.encode('utf8'), str5.value.encode('utf8'))
         
 
 
@@ -877,7 +877,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        coord.value, units.value = self._get_mi_coord_sys(coord.value.encode(), units.value.encode())
+        coord.value, units.value = self._get_mi_coord_sys(coord.value.encode('utf8'), units.value.encode('utf8'))
         
 
 
@@ -896,7 +896,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_val.value = self._get_name(type, str_val.value.encode())
+        str_val.value = self._get_name(type, str_val.value.encode('utf8'))
         
 
 
@@ -929,7 +929,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
              "NAVD88"          - Clears existing vcs, if any, and sets the VCS name to "NAVD88".
              ""                - Clears the vcs
         """
-        self._set_vcs(str_val.encode())
+        self._set_vcs(str_val.encode('utf8'))
         
 
 
@@ -967,7 +967,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_val.value = self._get_orientation_name(str_val.value.encode())
+        str_val.value = self._get_orientation_name(str_val.value.encode('utf8'))
         
 
 
@@ -986,7 +986,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        scale.value, str_val.value = self._get_units(scale.value, str_val.value.encode())
+        scale.value, str_val.value = self._get_units(scale.value, str_val.value.encode('utf8'))
         
 
 
@@ -1003,7 +1003,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_val.value = self._get_xml(str_val.value.encode())
+        str_val.value = self._get_xml(str_val.value.encode('utf8'))
         
 
 
@@ -1212,7 +1212,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         parameter). If this function fails, it simply returns 0 and leaves the
         `GXIPJ <geosoft.gxapi.GXIPJ>` unchanged.
         """
-        ret_val = self._set_gxf_safe(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
+        ret_val = self._set_gxf_safe(str1.encode('utf8'), str2.encode('utf8'), str3.encode('utf8'), str4.encode('utf8'), str5.encode('utf8'))
         return ret_val
 
 
@@ -1282,7 +1282,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = gxapi_cy.WrapIPJ._unit_name(GXContext._get_tls_geo(), val, type, name.value.encode())
+        name.value = gxapi_cy.WrapIPJ._unit_name(GXContext._get_tls_geo(), val, type, name.value.encode('utf8'))
         
 
 
@@ -1448,7 +1448,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._read(type, str1.encode(), str2.encode(), str3.encode())
+        self._read(type, str1.encode('utf8'), str2.encode('utf8'), str3.encode('utf8'))
         
 
 
@@ -1517,7 +1517,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **Note:** If name cannot be found, returns default.
         """
-        ret_val = gxapi_cy.WrapIPJ._unit_scale(GXContext._get_tls_geo(), name.encode(), default)
+        ret_val = gxapi_cy.WrapIPJ._unit_scale(GXContext._get_tls_geo(), name.encode('utf8'), default)
         return ret_val
 
 
@@ -1550,7 +1550,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._serial_fgdcxml(file.encode())
+        self._serial_fgdcxml(file.encode('utf8'))
         
 
 
@@ -1567,7 +1567,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._serial_isoxml(file.encode())
+        self._serial_isoxml(file.encode('utf8'))
         
 
 
@@ -1584,7 +1584,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._serial_xml(file.encode())
+        self._serial_xml(file.encode('utf8'))
         
 
 
@@ -1799,7 +1799,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         **Note:** If the projection is not supported in Geosoft, the
         `GXIPJ <geosoft.gxapi.GXIPJ>` will be unknown.
         """
-        self._set_esri(esri.encode())
+        self._set_esri(esri.encode('utf8'))
         
 
 
@@ -1959,7 +1959,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
             "<525000,2500000,0,0,0,15>","4210","16137","",""
             ""Arc 1960 / UTM zone 37S"<525000,2500000,0,0,0,15>","","","",""
         """
-        self._set_gxf(str1.encode(), str2.encode(), str3.encode(), str4.encode(), str5.encode())
+        self._set_gxf(str1.encode('utf8'), str2.encode('utf8'), str3.encode('utf8'), str4.encode('utf8'), str5.encode('utf8'))
         
 
 
@@ -1999,7 +1999,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_mi_coord_sys(coord.encode(), units.encode())
+        self._set_mi_coord_sys(coord.encode('utf8'), units.encode('utf8'))
         
 
 
@@ -2145,7 +2145,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
         units of the projection.  Normally, this is from
         long/lat (9102) to metres (9001).
         """
-        self._set_wms_coord_sys(coord.encode(), min_x, min_y, max_x, max_y)
+        self._set_wms_coord_sys(coord.encode('utf8'), min_x, min_y, max_x, max_y)
         
 
 
@@ -2162,7 +2162,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_xml(str_val.encode())
+        self._set_xml(str_val.encode('utf8'))
         
 
 
@@ -2179,7 +2179,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_from_binary_as_string(str_val.encode())
+        self._set_from_binary_as_string(str_val.encode('utf8'))
         
 
 
@@ -2196,7 +2196,7 @@ class GXIPJ(gxapi_cy.WrapIPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_val.value = self._get_from_binary_as_string(str_val.value.encode())
+        str_val.value = self._get_from_binary_as_string(str_val.value.encode('utf8'))
         
 
 

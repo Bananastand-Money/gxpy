@@ -77,7 +77,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapDAT._create_db(GXContext._get_tls_geo(), db, x_ch.encode(), y_ch.encode(), z_ch.encode())
+        ret_val = gxapi_cy.WrapDAT._create_db(GXContext._get_tls_geo(), db, x_ch.encode('utf8'), y_ch.encode('utf8'), z_ch.encode('utf8'))
         return GXDAT(ret_val)
 
 
@@ -99,7 +99,7 @@ class GXDAT(gxapi_cy.WrapDAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapDAT._create_xgd(GXContext._get_tls_geo(), name.encode(), mode)
+        ret_val = gxapi_cy.WrapDAT._create_xgd(GXContext._get_tls_geo(), name.encode('utf8'), mode)
         return GXDAT(ret_val)
 
 
@@ -128,7 +128,7 @@ class GXDAT(gxapi_cy.WrapDAT):
         in the "Name" of the `GXLST <geosoft.gxapi.GXLST>`, while the file qualifiers are stored in
         the "Value".
         """
-        gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface.encode(), flags, mode)
+        gxapi_cy.WrapDAT._get_lst(GXContext._get_tls_geo(), lst, interface.encode('utf8'), flags, mode)
         
 
 

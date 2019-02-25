@@ -70,7 +70,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapGIS._create(GXContext._get_tls_geo(), file.encode(), info.encode(), type)
+        ret_val = gxapi_cy.WrapGIS._create(GXContext._get_tls_geo(), file.encode('utf8'), info.encode('utf8'), type)
         return GXGIS(ret_val)
 
 
@@ -96,7 +96,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         **Note:** This function was created to minimize duplication in
         creation of new maps with 2D views.
         """
-        self._create_map_2d(map.encode(), map_scale, ipj, map2_d)
+        self._create_map_2d(map.encode('utf8'), map_scale, ipj, map2_d)
         
 
 
@@ -129,7 +129,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         or more sub-directories, identified in the ``*.CAT`` file located
         beside the input BPR or BPR2.
         """
-        self._get_bpr_models_lst(file.encode(), lst)
+        self._get_bpr_models_lst(file.encode('utf8'), lst)
         
 
 
@@ -221,7 +221,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         of types, so use `GXMATH.and_ <geosoft.gxapi.GXMATH.and_>` or `GXMATH.or_ <geosoft.gxapi.GXMATH.or_>` to determine if
         the file contains the required data.
         """
-        ret_val = gxapi_cy.WrapGIS._datamine_type(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapGIS._datamine_type(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -238,7 +238,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode('utf8'))
         
 
 
@@ -263,7 +263,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         with a Geosoft one. Use this function to test the MAP
         file (looks at the first few bytes).
         """
-        ret_val = gxapi_cy.WrapGIS._is_mi_map_file(GXContext._get_tls_geo(), map.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_map_file(GXContext._get_tls_geo(), map.encode('utf8'))
         return ret_val
 
 
@@ -284,7 +284,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapGIS._is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode('utf8'))
         return ret_val
 
 
@@ -316,7 +316,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         This function will register an error (and return 0)
         if problems are encountered opening or reading the TAB file.
         """
-        ret_val = gxapi_cy.WrapGIS._is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), tab.encode())
+        ret_val = gxapi_cy.WrapGIS._is_mi_rotated_raster_tab_file(GXContext._get_tls_geo(), tab.encode('utf8'))
         return ret_val
 
 
@@ -418,7 +418,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         **Note:** This will create a GI file for the raster image.
         """
-        file.value = gxapi_cy.WrapGIS._scan_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode(), file.value.encode(), ipj)
+        file.value = gxapi_cy.WrapGIS._scan_mi_raster_tab_file(GXContext._get_tls_geo(), tab.encode('utf8'), file.value.encode('utf8'), ipj)
         
 
 
@@ -507,7 +507,7 @@ class GXGIS(gxapi_cy.WrapGIS):
 
         **Note:** The `GXGIS <geosoft.gxapi.GXGIS>` drawing will be drawin in the current group.
         """
-        self._load_map_ex(map, view_name.encode())
+        self._load_map_ex(map, view_name.encode('utf8'))
         
 
 
@@ -537,7 +537,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         information of every group into the class specified.
         Note that the map may grow very large for big datasets.
         """
-        self._load_meta_groups_map(mview, meta, ph_object, prefix.encode(), name_field.encode())
+        self._load_meta_groups_map(mview, meta, ph_object, prefix.encode('utf8'), name_field.encode('utf8'))
         
 
 
@@ -606,7 +606,7 @@ class GXGIS(gxapi_cy.WrapGIS):
         function allows you to specify the latter when reading the
         first, so that the full model can be decoded.
         """
-        self._set_dm_wireframe_pt_file(file.encode())
+        self._set_dm_wireframe_pt_file(file.encode('utf8'))
         
 
 

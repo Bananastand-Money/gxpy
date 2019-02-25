@@ -134,7 +134,7 @@ class GXEUL3(gxapi_cy.WrapEUL3):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._write(out_fil.encode())
+        self._write(out_fil.encode('utf8'))
         
 
 

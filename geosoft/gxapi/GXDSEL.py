@@ -102,7 +102,7 @@ class GXDSEL(gxapi_cy.WrapDSEL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._meta_query(query.encode())
+        self._meta_query(query.encode('utf8'))
         
 
 

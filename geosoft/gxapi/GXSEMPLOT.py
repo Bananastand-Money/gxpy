@@ -73,7 +73,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         the actions of the filter. Those values passing get 1, those
         failing get 0.
         """
-        gxapi_cy.WrapSEMPLOT._apply_filter_to_mask(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode(), mode)
+        gxapi_cy.WrapSEMPLOT._apply_filter_to_mask(GXContext._get_tls_geo(), db, filter.encode('utf8'), mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'), mode)
         
 
 
@@ -117,7 +117,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._create_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
+        gxapi_cy.WrapSEMPLOT._create_groups(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'))
         
 
 
@@ -164,7 +164,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         based on the new settings. Note that the selection of data
         in the current `GXDB <geosoft.gxapi.GXDB>` is used to replot the map.
         """
-        gxapi_cy.WrapSEMPLOT._edit_map_plot_parameters(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
+        gxapi_cy.WrapSEMPLOT._edit_map_plot_parameters(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), map, view.encode('utf8'))
         
 
 
@@ -190,7 +190,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_components(GXContext._get_tls_geo(), db, template.encode('utf8'))
         
 
 
@@ -216,7 +216,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         The altered template will be output to the user\\etc directory with
         the file extension "semtemplate".
         """
-        gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, template.encode())
+        gxapi_cy.WrapSEMPLOT._edit_plot_parameters(GXContext._get_tls_geo(), db, template.encode('utf8'))
         
 
 
@@ -258,7 +258,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** The group is written to a new map, and an overlay file
         is created which points to this map.
         """
-        gxapi_cy.WrapSEMPLOT._export_overlay(GXContext._get_tls_geo(), overlay.encode(), map.encode(), mview, group.encode(), plot_type, x_stage.encode(), x_oxide.encode(), y_stage.encode(), y_oxide.encode(), z_stage.encode(), z_oxide.encode(), extension)
+        gxapi_cy.WrapSEMPLOT._export_overlay(GXContext._get_tls_geo(), overlay.encode('utf8'), map.encode('utf8'), mview, group.encode('utf8'), plot_type, x_stage.encode('utf8'), x_oxide.encode('utf8'), y_stage.encode('utf8'), y_oxide.encode('utf8'), z_stage.encode('utf8'), z_oxide.encode('utf8'), extension)
         
 
 
@@ -287,7 +287,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._export_view(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode())
+        gxapi_cy.WrapSEMPLOT._export_view(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'))
         
 
 
@@ -318,7 +318,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), export)
+        gxapi_cy.WrapSEMPLOT._export_view2(GXContext._get_tls_geo(), db, lst, new_db, view, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'), export)
         
 
 
@@ -372,7 +372,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         NO DATA IS REMOVED.
         Works on all selected lines of data.
         """
-        gxapi_cy.WrapSEMPLOT._filter_mineral_pos_data(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), pos)
+        gxapi_cy.WrapSEMPLOT._filter_mineral_pos_data(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'), pos)
         
 
 
@@ -417,7 +417,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** If the mineral channel name is not specified, it returns
         just the "X" (Unknown) item.
         """
-        gxapi_cy.WrapSEMPLOT._get_current_mineral_lst(GXContext._get_tls_geo(), db, mineral_ch.encode(), lst)
+        gxapi_cy.WrapSEMPLOT._get_current_mineral_lst(GXContext._get_tls_geo(), db, mineral_ch.encode('utf8'), lst)
         
 
 
@@ -518,7 +518,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._create_ascii_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._create_ascii_template(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'))
         return ret_val
 
 
@@ -541,7 +541,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._create_database_template(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._create_database_template(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'))
         return ret_val
 
 
@@ -588,7 +588,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._edit_filter(GXContext._get_tls_geo(), db, filter.encode(), mask_ch.encode(), mineral_ch.encode(), mineral.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._edit_filter(GXContext._get_tls_geo(), db, filter.encode('utf8'), mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'))
         return ret_val
 
 
@@ -612,7 +612,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         channel found. If still not found, returns a
         blank string.
         """
-        mineral_ch.value = gxapi_cy.WrapSEMPLOT._get_mineral_channel_name(GXContext._get_tls_geo(), db, mineral_ch.value.encode())
+        mineral_ch.value = gxapi_cy.WrapSEMPLOT._get_mineral_channel_name(GXContext._get_tls_geo(), db, mineral_ch.value.encode('utf8'))
         
 
 
@@ -636,7 +636,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         **Note:** If the anomaly name is not included, then
         the input data must have an "Anom_Name" field.
         """
-        anomaly.value = gxapi_cy.WrapSEMPLOT._import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), anomaly.value.encode())
+        anomaly.value = gxapi_cy.WrapSEMPLOT._import_ascii_wizard(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), anomaly.value.encode('utf8'))
         
 
 
@@ -655,7 +655,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        connection.value, temp.value = gxapi_cy.WrapSEMPLOT._import_database_odbc(GXContext._get_tls_geo(), connection.value.encode(), temp.value.encode())
+        connection.value, temp.value = gxapi_cy.WrapSEMPLOT._import_database_odbc(GXContext._get_tls_geo(), connection.value.encode('utf8'), temp.value.encode('utf8'))
         
 
 
@@ -700,7 +700,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
             `GXDU.lab_template <geosoft.gxapi.GXDU.lab_template>` in du.gxh
         """
-        gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapSEMPLOT._import_bin(GXContext._get_tls_geo(), db, data.encode('utf8'), template.encode('utf8'), line.encode('utf8'), flight, date)
         
 
 
@@ -719,7 +719,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._import_database_ado(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        gxapi_cy.WrapSEMPLOT._import_database_ado(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'))
         
 
 
@@ -762,7 +762,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), template.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._template_type(GXContext._get_tls_geo(), template.encode('utf8'))
         return ret_val
 
 
@@ -791,7 +791,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         If the view does not appear to be an XYPlot or a TriPlot view,
         the function returns `SEMPLOT_PLOT_UNKNOWN <geosoft.gxapi.SEMPLOT_PLOT_UNKNOWN>`.
         """
-        ret_val = gxapi_cy.WrapSEMPLOT._view_type(GXContext._get_tls_geo(), map, view.encode())
+        ret_val = gxapi_cy.WrapSEMPLOT._view_type(GXContext._get_tls_geo(), map, view.encode('utf8'))
         return ret_val
 
 
@@ -843,7 +843,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **Note:** Creates a new, empty filter file in the user\\etc directory
         """
-        gxapi_cy.WrapSEMPLOT._new_filter(GXContext._get_tls_geo(), filter.encode(), model.encode())
+        gxapi_cy.WrapSEMPLOT._new_filter(GXContext._get_tls_geo(), filter.encode('utf8'), model.encode('utf8'))
         
 
 
@@ -875,7 +875,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         an XYPlot template as a model for a TriPlot, and vica-verca, with
         few complications.  (e.g. needing to define a "Z" component)
         """
-        gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), template.encode(), type, model.encode())
+        gxapi_cy.WrapSEMPLOT._new_template(GXContext._get_tls_geo(), template.encode('utf8'), type, model.encode('utf8'))
         
 
 
@@ -939,7 +939,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, template.encode(), mask_ch.encode(), mineral_ch.encode(), map.encode(), map_mode, plot_symb)
+        gxapi_cy.WrapSEMPLOT._plot(GXContext._get_tls_geo(), db, template.encode('utf8'), mask_ch.encode('utf8'), mineral_ch.encode('utf8'), map.encode('utf8'), map_mode, plot_symb)
         
 
 
@@ -1020,7 +1020,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **Note:** Replots map using proportional symbols
         """
-        gxapi_cy.WrapSEMPLOT._prop_symb(GXContext._get_tls_geo(), db, map, view.encode(), chan.encode(), mask_ch.encode(), mineral_ch.encode(), log, area, base, scale, symb, wt, line_col, fill_col, legend)
+        gxapi_cy.WrapSEMPLOT._prop_symb(GXContext._get_tls_geo(), db, map, view.encode('utf8'), chan.encode('utf8'), mask_ch.encode('utf8'), mineral_ch.encode('utf8'), log, area, base, scale, symb, wt, line_col, fill_col, legend)
         
 
 
@@ -1054,7 +1054,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         Call `init_group_symbols_used <geosoft.gxapi.GXSEMPLOT.init_group_symbols_used>` prior to this function
         to reset recording of the symbols used in plotting (for legends etc).
         """
-        gxapi_cy.WrapSEMPLOT._replot(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), map, view.encode())
+        gxapi_cy.WrapSEMPLOT._replot(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), map, view.encode('utf8'))
         
 
 
@@ -1096,7 +1096,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._reset_groups(GXContext._get_tls_geo(), db, mask_ch.encode())
+        gxapi_cy.WrapSEMPLOT._reset_groups(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'))
         
 
 
@@ -1148,7 +1148,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._select_poly(GXContext._get_tls_geo(), db, mview, mask_ch.encode(), mineral_ch.encode(), pply, mode)
+        gxapi_cy.WrapSEMPLOT._select_poly(GXContext._get_tls_geo(), db, mview, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), pply, mode)
         
 
 
@@ -1253,7 +1253,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapSEMPLOT._set_mask(GXContext._get_tls_geo(), db, mask_ch.encode(), mineral_ch.encode(), mineral.encode(), selected, val)
+        gxapi_cy.WrapSEMPLOT._set_mask(GXContext._get_tls_geo(), db, mask_ch.encode('utf8'), mineral_ch.encode('utf8'), mineral.encode('utf8'), selected, val)
         
 
 
@@ -1337,7 +1337,7 @@ class GXSEMPLOT(gxapi_cy.WrapSEMPLOT):
         require a mineral for their identification. If none is provided,
         mineral "X" (unknown) is assumed.
         """
-        gxapi_cy.WrapSEMPLOT._total_oxides(GXContext._get_tls_geo(), db, mineral_ch.encode())
+        gxapi_cy.WrapSEMPLOT._total_oxides(GXContext._get_tls_geo(), db, mineral_ch.encode('utf8'))
         
 
 

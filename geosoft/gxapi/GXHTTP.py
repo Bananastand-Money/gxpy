@@ -102,7 +102,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         relationship with your server to "Trusted".  Your user will have the
         opportunity to do so the first time a script is run.
         """
-        ret_val = gxapi_cy.WrapHTTP._create(GXContext._get_tls_geo(), url.encode(), user_name.encode(), password.encode(), purpose.encode())
+        ret_val = gxapi_cy.WrapHTTP._create(GXContext._get_tls_geo(), url.encode('utf8'), user_name.encode('utf8'), password.encode('utf8'), purpose.encode('utf8'))
         return GXHTTP(ret_val)
 
 
@@ -128,7 +128,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`
         """
-        self._download(file.encode(), bf, dynamic)
+        self._download(file.encode('utf8'), bf, dynamic)
         
 
 
@@ -152,7 +152,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         **Note:** The file will be written starting at the current location
         in the `GXBF <geosoft.gxapi.GXBF>`. No prompt for proxy authentication
         """
-        self._silent_download(file.encode(), bf, dynamic)
+        self._silent_download(file.encode('utf8'), bf, dynamic)
         
 
 
@@ -181,7 +181,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         request URL will be:
         http://server/path?search
         """
-        self._get(cl.encode(), method.encode(), bf, ret_bf)
+        self._get(cl.encode('utf8'), method.encode('utf8'), bf, ret_bf)
         
 
 
@@ -207,7 +207,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
         request URL will be:
         http://server/path?search
         """
-        self._post(cl.encode(), method.encode(), bf)
+        self._post(cl.encode('utf8'), method.encode('utf8'), bf)
         
 
 
@@ -227,7 +227,7 @@ class GXHTTP(gxapi_cy.WrapHTTP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_proxy_credentials(username.encode(), password.encode())
+        self._set_proxy_credentials(username.encode('utf8'), password.encode('utf8'))
         
 
 

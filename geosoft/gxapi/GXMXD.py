@@ -60,7 +60,7 @@ class GXMXD(gxapi_cy.WrapMXD):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMXD._create_metadata(GXContext._get_tls_geo(), mxd.encode())
+        gxapi_cy.WrapMXD._create_metadata(GXContext._get_tls_geo(), mxd.encode('utf8'))
         
 
 
@@ -79,7 +79,7 @@ class GXMXD(gxapi_cy.WrapMXD):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMXD._convert_to_map(GXContext._get_tls_geo(), mxd.encode(), map.encode())
+        gxapi_cy.WrapMXD._convert_to_map(GXContext._get_tls_geo(), mxd.encode('utf8'), map.encode('utf8'))
         
 
 
@@ -96,7 +96,7 @@ class GXMXD(gxapi_cy.WrapMXD):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMXD._sync(GXContext._get_tls_geo(), mxd.encode())
+        gxapi_cy.WrapMXD._sync(GXContext._get_tls_geo(), mxd.encode('utf8'))
         
 
 

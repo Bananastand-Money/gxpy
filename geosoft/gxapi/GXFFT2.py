@@ -65,7 +65,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._fft2_in(GXContext._get_tls_geo(), im_gi, trn_fil.encode(), spc_fil.encode())
+        gxapi_cy.WrapFFT2._fft2_in(GXContext._get_tls_geo(), im_gi, trn_fil.encode('utf8'), spc_fil.encode('utf8'))
         
 
 
@@ -92,7 +92,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._filter_pg(GXContext._get_tls_geo(), pg, con_fil.encode(), tr, dx, dy, rot)
+        gxapi_cy.WrapFFT2._filter_pg(GXContext._get_tls_geo(), pg, con_fil.encode('utf8'), tr, dx, dy, rot)
         
 
 
@@ -113,7 +113,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._flt(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
+        gxapi_cy.WrapFFT2._flt(GXContext._get_tls_geo(), im_gi, out_fil.encode('utf8'), con_fil.encode('utf8'))
         
 
 
@@ -134,7 +134,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._flt_inv(GXContext._get_tls_geo(), im_gi, out_fil.encode(), con_fil.encode())
+        gxapi_cy.WrapFFT2._flt_inv(GXContext._get_tls_geo(), im_gi, out_fil.encode('utf8'), con_fil.encode('utf8'))
         
 
 
@@ -153,7 +153,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._pow_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
+        gxapi_cy.WrapFFT2._pow_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode('utf8'))
         
 
 
@@ -172,7 +172,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._rad_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
+        gxapi_cy.WrapFFT2._rad_spc(GXContext._get_tls_geo(), im_gi, spc_fil.encode('utf8'))
         
 
 
@@ -191,7 +191,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._rad_spc_alt(GXContext._get_tls_geo(), im_gi, spc_fil.encode())
+        gxapi_cy.WrapFFT2._rad_spc_alt(GXContext._get_tls_geo(), im_gi, spc_fil.encode('utf8'))
         
 
 
@@ -258,7 +258,7 @@ class GXFFT2(gxapi_cy.WrapFFT2):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapFFT2._td_xd_y(GXContext._get_tls_geo(), img_tx, img_ty, out_fil.encode(), inv_flg)
+        gxapi_cy.WrapFFT2._td_xd_y(GXContext._get_tls_geo(), img_tx, img_ty, out_fil.encode('utf8'), inv_flg)
         
 
 

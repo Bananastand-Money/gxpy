@@ -67,7 +67,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_xyz(GXContext._get_tls_geo(), name.encode(), ra, type, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_xyz(GXContext._get_tls_geo(), name.encode('utf8'), ra, type, ipj)
         
 
 
@@ -96,7 +96,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xyz(GXContext._get_tls_geo(), grid3d_file.encode(), xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xyz(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), xyz.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -127,7 +127,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_binary(GXContext._get_tls_geo(), grid3d_file.encode(), binary_file.encode(), dir, rev_x, rev_y, rev_z, swap, output_type)
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_binary(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), binary_file.encode('utf8'), dir, rev_x, rev_y, rev_z, swap, output_type)
         
 
 
@@ -146,7 +146,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xml(GXContext._get_tls_geo(), grid3d_file.encode(), xml_file.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_xml(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), xml_file.encode('utf8'))
         
 
 
@@ -165,7 +165,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._check_equal_to_legacy_voxel(GXContext._get_tls_geo(), grid3d_file.encode(), legacy_grid3d_file.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._check_equal_to_legacy_voxel(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), legacy_grid3d_file.encode('utf8'))
         
 
 
@@ -190,7 +190,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_ubc(GXContext._get_tls_geo(), name.encode('utf8'), mesh.encode('utf8'), mod.encode('utf8'), dummy, ipj)
         
 
 
@@ -214,7 +214,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj, orientation)
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gocad(GXContext._get_tls_geo(), name.encode('utf8'), header.encode('utf8'), property.encode('utf8'), ipj, orientation)
         
 
 
@@ -233,7 +233,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._list_properties_gocad(GXContext._get_tls_geo(), header.encode(), lst)
+        gxapi_cy.WrapMULTIGRID3DUTIL._list_properties_gocad(GXContext._get_tls_geo(), header.encode('utf8'), lst)
         
 
 
@@ -254,7 +254,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, symb)
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_gdb(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), db, symb)
         
 
 
@@ -285,7 +285,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_vector_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, vector_type, symb_x, symb_y, symb_z, inc, dec)
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_vector_gdb(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), db, vector_type, symb_x, symb_y, symb_z, inc, dec)
         
 
 
@@ -306,7 +306,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_segy(GXContext._get_tls_geo(), multigrid3d_file.encode(), output_segy_filename.encode(), sample_interval)
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_segy(GXContext._get_tls_geo(), multigrid3d_file.encode('utf8'), output_segy_filename.encode('utf8'), sample_interval)
         
 
 
@@ -337,7 +337,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_gdb(GXContext._get_tls_geo(), grid3d_file.encode(), db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_gdb(GXContext._get_tls_geo(), grid3d_file.encode('utf8'), db, chan.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -366,7 +366,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_wa(GXContext._get_tls_geo(), file_name.encode(), wa, dir, rev_x, rev_y, rev_z, dummy.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_wa(GXContext._get_tls_geo(), file_name.encode('utf8'), wa, dir, rev_x, rev_y, rev_z, dummy.encode('utf8'))
         
 
 
@@ -395,7 +395,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_vector(GXContext._get_tls_geo(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), out_file_name.encode(), inclination, declination, rotated)
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_vector(GXContext._get_tls_geo(), x_file_name.encode('utf8'), y_file_name.encode('utf8'), z_file_name.encode('utf8'), out_file_name.encode('utf8'), inclination, declination, rotated)
         
 
 
@@ -420,7 +420,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), rotated)
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double(GXContext._get_tls_geo(), file_name.encode('utf8'), x_file_name.encode('utf8'), y_file_name.encode('utf8'), z_file_name.encode('utf8'), rotated)
         
 
 
@@ -447,7 +447,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double_using_rotation(GXContext._get_tls_geo(), file_name.encode(), x_file_name.encode(), y_file_name.encode(), z_file_name.encode(), inclination, declination)
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_vector_to_double_using_rotation(GXContext._get_tls_geo(), file_name.encode('utf8'), x_file_name.encode('utf8'), y_file_name.encode('utf8'), z_file_name.encode('utf8'), inclination, declination)
         
 
 
@@ -468,7 +468,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_thematic_to_double(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, output_grid3d_filename.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_thematic_to_double(GXContext._get_tls_geo(), input_grid3d_filename.encode('utf8'), translate_vv, output_grid3d_filename.encode('utf8'))
         
 
 
@@ -491,7 +491,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_thematic(GXContext._get_tls_geo(), input_grid3d_filename.encode(), translate_vv, tpat, output_grid3d_filename.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_double_to_thematic(GXContext._get_tls_geo(), input_grid3d_filename.encode('utf8'), translate_vv, tpat, output_grid3d_filename.encode('utf8'))
         
 
 
@@ -530,7 +530,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_velocity_to_density(GXContext._get_tls_geo(), input_grid3d_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_velocity_to_density(GXContext._get_tls_geo(), input_grid3d_filename.encode('utf8'), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode('utf8'))
         
 
 
@@ -569,7 +569,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._convert_density_to_velocity(GXContext._get_tls_geo(), input_grid3d_filename.encode(), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._convert_density_to_velocity(GXContext._get_tls_geo(), input_grid3d_filename.encode('utf8'), input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_grid3d_filename.encode('utf8'))
         
 
 
@@ -610,7 +610,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_gocad_location(GXContext._get_tls_geo(), input_grid3d_filename.encode(), origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value)
+        origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_gocad_location(GXContext._get_tls_geo(), input_grid3d_filename.encode('utf8'), origin_x.value, origin_y.value, origin_z.value, vect_xx.value, vect_xy.value, vect_xz.value, vect_yx.value, vect_yy.value, vect_yz.value, vect_zx.value, vect_zy.value, vect_zz.value)
         
 
 
@@ -649,7 +649,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant(GXContext._get_tls_geo(), name.encode('utf8'), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -670,7 +670,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_copy(GXContext._get_tls_geo(), name.encode(), value, source_name.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_copy(GXContext._get_tls_geo(), name.encode('utf8'), value, source_name.encode('utf8'))
         
 
 
@@ -709,7 +709,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant(GXContext._get_tls_geo(), name.encode('utf8'), value, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -752,7 +752,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant(GXContext._get_tls_geo(), name.encode(), value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant(GXContext._get_tls_geo(), name.encode('utf8'), value_x, value_y, value_z, ox, oy, oz, cell_x, cell_y, cell_z, size_x, size_y, size_z, ipj)
         
 
 
@@ -785,7 +785,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_double_constant_vv(GXContext._get_tls_geo(), name.encode('utf8'), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -818,7 +818,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant_vv(GXContext._get_tls_geo(), name.encode(), value, ox, oy, oz, cx, cy, cz, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_thematic_constant_vv(GXContext._get_tls_geo(), name.encode('utf8'), value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -855,7 +855,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant_vv(GXContext._get_tls_geo(), name.encode(), x_value, y_value, z_value, ox, oy, oz, cx, cy, cz, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._create_vector_constant_vv(GXContext._get_tls_geo(), name.encode('utf8'), x_value, y_value, z_value, ox, oy, oz, cx, cy, cz, ipj)
         
 
 
@@ -878,7 +878,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_voxel(GXContext._get_tls_geo(), project_file.encode(), multi_voxset_uuid.encode(), multi_voxset_attribute.encode(), grid3d_file.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._export_to_voxel(GXContext._get_tls_geo(), project_file.encode('utf8'), multi_voxset_uuid.encode('utf8'), multi_voxset_attribute.encode('utf8'), grid3d_file.encode('utf8'))
         
 
 
@@ -901,7 +901,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        p_uuid_string.value = gxapi_cy.WrapMULTIGRID3DUTIL._import_from_voxel(GXContext._get_tls_geo(), project_file.encode(), grid3d_file.encode(), multi_voxset_attribute.encode(), p_uuid_string.value.encode())
+        p_uuid_string.value = gxapi_cy.WrapMULTIGRID3DUTIL._import_from_voxel(GXContext._get_tls_geo(), project_file.encode('utf8'), grid3d_file.encode('utf8'), multi_voxset_attribute.encode('utf8'), p_uuid_string.value.encode('utf8'))
         
 
 
@@ -926,7 +926,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Create a Geosoft Voxel file from a Datamine block model file.
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_datamine(GXContext._get_tls_geo(), file.encode(), field.encode(), ipj, grid3d.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._import_from_datamine(GXContext._get_tls_geo(), file.encode('utf8'), field.encode('utf8'), ipj, grid3d.encode('utf8'))
         
 
 
@@ -985,7 +985,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._filter(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), filter, filter_file.encode(), n_passes, interpolate_dummies)
+        gxapi_cy.WrapMULTIGRID3DUTIL._filter(GXContext._get_tls_geo(), input_file.encode('utf8'), output_file.encode('utf8'), filter, filter_file.encode('utf8'), n_passes, interpolate_dummies)
         
 
 
@@ -1004,7 +1004,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._invert_z(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._invert_z(GXContext._get_tls_geo(), input_file.encode('utf8'), output_file.encode('utf8'))
         
 
 
@@ -1023,7 +1023,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._extract_dem(GXContext._get_tls_geo(), input_file.encode(), output_file.encode())
+        gxapi_cy.WrapMULTIGRID3DUTIL._extract_dem(GXContext._get_tls_geo(), input_file.encode('utf8'), output_file.encode('utf8'))
         
 
 
@@ -1046,7 +1046,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._clip_to_polygon(GXContext._get_tls_geo(), input_file.encode(), output_file.encode(), poly, clip_dummies)
+        gxapi_cy.WrapMULTIGRID3DUTIL._clip_to_polygon(GXContext._get_tls_geo(), input_file.encode('utf8'), output_file.encode('utf8'), poly, clip_dummies)
         
 
 
@@ -1079,7 +1079,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode(), data_channel.encode(), cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
+        gxapi_cy.WrapMULTIGRID3DUTIL._generate_rbf(GXContext._get_tls_geo(), db, output_file.encode('utf8'), data_channel.encode('utf8'), cell_size, error_tolerance, max_iterations, desample, kernel, kernel_epsilon)
         
 
 
@@ -1128,7 +1128,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._grid_direct_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel)
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_direct_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode('utf8'), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method, db, x_channel, y_channel, z_channel, data_channel)
         
 
 
@@ -1198,7 +1198,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
                        If the blanking distance is set, all cells whose center point is not within the blanking distance of
                        at least one data point are set to dummy.
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._grid_idw_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative)
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_idw_from_gdb(GXContext._get_tls_geo(), output_grid3d_filename.encode('utf8'), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, db, x_channel, y_channel, z_channel, data_channel, weight_power, weight_slope, search_radius, blanking_distance, log, log_base, log_negative)
         
 
 
@@ -1230,7 +1230,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_extents(GXContext._get_tls_geo(), filename.encode('utf8'), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -1262,7 +1262,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         **Note:** Find the non-dummy volume of a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object. If the voxel is all dummies,
         returns `iMAX <geosoft.gxapi.iMAX>` for the minima, and `iMIN <geosoft.gxapi.iMIN>` for the maxima.
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_ground_extents(GXContext._get_tls_geo(), filename.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMULTIGRID3DUTIL._get_data_ground_extents(GXContext._get_tls_geo(), filename.encode('utf8'), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -1318,7 +1318,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_from_gdb(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
 
@@ -1376,7 +1376,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_from_gdb(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
 
@@ -1444,7 +1444,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
 
@@ -1516,7 +1516,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._log_grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
+        slope.value, range.value, sill.value = gxapi_cy.WrapMULTIGRID3DUTIL._log_grid_points_z_ex_from_gdb(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, db, x_channel, y_channel, z_channel, data_channel, ipj)
         
 
 
@@ -1580,7 +1580,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
         MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `GXVOX.log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
         basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
         """
-        gxapi_cy.WrapMULTIGRID3DUTIL._krig_from_gdb(GXContext._get_tls_geo(), name.encode(), cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg)
+        gxapi_cy.WrapMULTIGRID3DUTIL._krig_from_gdb(GXContext._get_tls_geo(), name.encode('utf8'), cell_size, type, db, x_channel, y_channel, z_channel, data_channel, ipj, reg)
         
 
 
@@ -1614,7 +1614,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset .
         """
-        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset(GXContext._get_tls_geo(), input_name.encode(), output_name.encode(), offset_x, offset_y, offset_z, length_x, length_y, length_z)
+        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset(GXContext._get_tls_geo(), input_name.encode('utf8'), output_name.encode('utf8'), offset_x, offset_y, offset_z, length_x, length_y, length_z)
         return GXMULTIGRID3D(ret_val)
 
 
@@ -1636,7 +1636,7 @@ class GXMULTIGRID3DUTIL(gxapi_cy.WrapMULTIGRID3DUTIL):
 
         **Note:** Creates a `GXMULTIGRID3D <geosoft.gxapi.GXMULTIGRID3D>` object that is a subset with all dummy data regions removed.
         """
-        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset_from_double_extents(GXContext._get_tls_geo(), input_name.encode(), output_name.encode())
+        ret_val = gxapi_cy.WrapMULTIGRID3DUTIL._create_subset_from_double_extents(GXContext._get_tls_geo(), input_name.encode('utf8'), output_name.encode('utf8'))
         return GXMULTIGRID3D(ret_val)
 
 

@@ -233,7 +233,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode('utf8'))
         
 
 
@@ -281,7 +281,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, name.value = gxapi_cy.WrapEMAPTEMPLATE._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
+        ret_val, name.value = gxapi_cy.WrapEMAPTEMPLATE._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode('utf8'), value.encode('utf8'), name.value.encode('utf8'))
         return ret_val
 
 
@@ -321,7 +321,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE._loaded(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE._loaded(GXContext._get_tls_geo(), name.encode('utf8'))
         return ret_val
 
 
@@ -427,7 +427,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE._load(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE._load(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAPTEMPLATE(ret_val)
 
 
@@ -453,7 +453,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEMAPTEMPLATE.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE._load_no_activate(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE._load_no_activate(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAPTEMPLATE(ret_val)
 
 
@@ -512,7 +512,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** If the map template is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEMAPTEMPLATE.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEMAPTEMPLATE._un_load(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEMAPTEMPLATE._un_load(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -553,7 +553,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
-        gxapi_cy.WrapEMAPTEMPLATE._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
+        gxapi_cy.WrapEMAPTEMPLATE._un_load_verify(GXContext._get_tls_geo(), name.encode('utf8'), prompt)
         
 
 
@@ -608,7 +608,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(state.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(state.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -642,7 +642,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -672,7 +672,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`)
         """
-        ret_val, x.value, y.value = self._get_point(str_val.encode(), x.value, y.value)
+        ret_val, x.value, y.value = self._get_point(str_val.encode('utf8'), x.value, y.value)
         return ret_val
 
 
@@ -706,7 +706,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
         **Note:** The coordinates are returned in the current template units
         (See GetUnits and SetUnits in `GXMAPTEMPLATE <geosoft.gxapi.GXMAPTEMPLATE>`)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -761,7 +761,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Note:** If nothing is selected the string will be empty and the function will return ``False``
         """
-        ret_val, item.value = self._get_item_selection(item.value.encode())
+        ret_val, item.value = self._get_item_selection(item.value.encode('utf8'))
         return ret_val
 
 
@@ -782,7 +782,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Note:** An empty string will unselect everything.
         """
-        self._set_item_selection(item.encode())
+        self._set_item_selection(item.encode('utf8'))
         
 
 
@@ -979,7 +979,7 @@ class GXEMAPTEMPLATE(gxapi_cy.WrapEMAPTEMPLATE):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAPTEMPLATE._create_virtual(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAPTEMPLATE._create_virtual(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAPTEMPLATE(ret_val)
 
 

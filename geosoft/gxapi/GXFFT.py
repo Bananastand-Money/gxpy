@@ -596,7 +596,7 @@ class GXFFT(gxapi_cy.WrapFFT):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._write_spectrum(gvv, out_file.encode())
+        self._write_spectrum(gvv, out_file.encode('utf8'))
         
 
 

@@ -74,7 +74,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapGU._dipole_mag(GXContext._get_tls_geo(), xyz_file.encode(), depth, inc, nx, ny, dx, dy)
+        gxapi_cy.WrapGU._dipole_mag(GXContext._get_tls_geo(), xyz_file.encode('utf8'), depth, inc, nx, ny, dx, dy)
         
 
 
@@ -297,7 +297,7 @@ class GXGU(gxapi_cy.WrapGU):
              Segments will pass the tolerance test if the number of readings
              falls within the Lower and Upper Bounds.
         """
-        gxapi_cy.WrapGU._geometrics_qc(GXContext._get_tls_geo(), wa, line.encode(), in_vv, tol, min_coord, max_coord, out_vv, flag_vv)
+        gxapi_cy.WrapGU._geometrics_qc(GXContext._get_tls_geo(), wa, line.encode('utf8'), in_vv, tol, min_coord, max_coord, out_vv, flag_vv)
         
 
 
@@ -516,7 +516,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapGU._gravity_still_reading_correction(GXContext._get_tls_geo(), db, grav_in, date, time, still.encode(), grav_out)
+        gxapi_cy.WrapGU._gravity_still_reading_correction(GXContext._get_tls_geo(), db, grav_in, date, time, still.encode('utf8'), grav_out)
         
 
 
@@ -671,7 +671,7 @@ class GXGU(gxapi_cy.WrapGU):
 
             `GXSTR.gen_group_name <geosoft.gxapi.GXSTR.gen_group_name>`
         """
-        ostr.value = gxapi_cy.WrapGU._gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode(), targets.encode(), ostr.value.encode())
+        ostr.value = gxapi_cy.WrapGU._gen_ux_detect_symbols_group_name(GXContext._get_tls_geo(), target_gdb.encode('utf8'), targets.encode('utf8'), ostr.value.encode('utf8'))
         
 
 
@@ -697,7 +697,7 @@ class GXGU(gxapi_cy.WrapGU):
         to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
-        bytes.value = gxapi_cy.WrapGU._import_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), output.encode(), bytes.value)
+        bytes.value = gxapi_cy.WrapGU._import_daarc500_ethernet(GXContext._get_tls_geo(), file.encode('utf8'), output.encode('utf8'), bytes.value)
         
 
 
@@ -725,7 +725,7 @@ class GXGU(gxapi_cy.WrapGU):
         that channel to a new binary file, returning the number of bytes per
         block, to make it easier to import the data using the regular binary import.
         """
-        bytes.value = gxapi_cy.WrapGU._import_daarc500_serial(GXContext._get_tls_geo(), file.encode(), channel, output.encode(), bytes.value)
+        bytes.value = gxapi_cy.WrapGU._import_daarc500_serial(GXContext._get_tls_geo(), file.encode('utf8'), channel, output.encode('utf8'), bytes.value)
         
 
 
@@ -757,7 +757,7 @@ class GXGU(gxapi_cy.WrapGU):
         letter are imported, otherwise all records (except for the header "H"
         records) are imported.
         """
-        gxapi_cy.WrapGU._import_p190(GXContext._get_tls_geo(), db, file.encode(), rec_type.encode(), wa)
+        gxapi_cy.WrapGU._import_p190(GXContext._get_tls_geo(), db, file.encode('utf8'), rec_type.encode('utf8'), wa)
         
 
 
@@ -864,7 +864,7 @@ class GXGU(gxapi_cy.WrapGU):
         **Note:** Scans the file to see what data type is in the Ethernet file.
         Currently only detects GR820 types.
         """
-        type.value, items.value = gxapi_cy.WrapGU._scan_daarc500_ethernet(GXContext._get_tls_geo(), file.encode(), type.value, items.value)
+        type.value, items.value = gxapi_cy.WrapGU._scan_daarc500_ethernet(GXContext._get_tls_geo(), file.encode('utf8'), type.value, items.value)
         
 
 
@@ -887,7 +887,7 @@ class GXGU(gxapi_cy.WrapGU):
 
         **Note:** Scans the file to see which of the 8 serial channels were used to store data.
         """
-        gxapi_cy.WrapGU._scan_daarc500_serial(GXContext._get_tls_geo(), file.encode(), vv_type, vv_items)
+        gxapi_cy.WrapGU._scan_daarc500_serial(GXContext._get_tls_geo(), file.encode('utf8'), vv_type, vv_items)
         
 
 

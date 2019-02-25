@@ -116,7 +116,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_file(file.encode())
+        self._get_file(file.encode('utf8'))
         
 
 
@@ -141,7 +141,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         support metadata, the metadata will be placed in an associated
         file "filename.extension.GeosoftMeta"
         """
-        self._get_file_meta(file.encode())
+        self._get_file_meta(file.encode('utf8'))
         
 
 
@@ -175,7 +175,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._doc_name(name.value.encode())
+        name.value = self._doc_name(name.value.encode('utf8'))
         
 
 
@@ -192,7 +192,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._file_name(name.value.encode())
+        name.value = self._file_name(name.value.encode('utf8'))
         
 
 
@@ -317,7 +317,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
         the `GXDOCU <geosoft.gxapi.GXDOCU>` class and the document can be retrieved using the sGetFile_DOCU
         method.
         """
-        self._set_file(type.encode(), name.encode(), file.encode())
+        self._set_file(type.encode('utf8'), name.encode('utf8'), file.encode('utf8'))
         
 
 
@@ -354,7 +354,7 @@ class GXDOCU(gxapi_cy.WrapDOCU):
            "gdb"       Geosoft database
            "grd"       Geosoft grid file
         """
-        self._set_file_meta(type.encode(), name.encode(), file.encode())
+        self._set_file_meta(type.encode('utf8'), name.encode('utf8'), file.encode('utf8'))
         
 
 

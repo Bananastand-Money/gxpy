@@ -112,7 +112,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapTEST._wrapper_test(GXContext._get_tls_geo(), funcs.encode(), log.encode())
+        gxapi_cy.WrapTEST._wrapper_test(GXContext._get_tls_geo(), funcs.encode('utf8'), log.encode('utf8'))
         
 
 
@@ -131,7 +131,7 @@ class GXTEST(gxapi_cy.WrapTEST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapTEST._core_class(GXContext._get_tls_geo(), cl.encode(), log.encode())
+        gxapi_cy.WrapTEST._core_class(GXContext._get_tls_geo(), cl.encode('utf8'), log.encode('utf8'))
         
 
 

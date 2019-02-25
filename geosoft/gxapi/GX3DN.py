@@ -159,7 +159,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        font.value = self._get_axis_font(font.value.encode())
+        font.value = self._get_axis_font(font.value.encode('utf8'))
         
 
 
@@ -202,7 +202,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        box.value, axis.value, label_x.value, label_y.value, label_z.value = self._get_render_controls(box.value, axis.value, label_x.value.encode(), label_y.value.encode(), label_z.value.encode())
+        box.value, axis.value, label_x.value, label_y.value, label_z.value = self._get_render_controls(box.value, axis.value, label_x.value.encode('utf8'), label_y.value.encode('utf8'), label_z.value.encode('utf8'))
         
 
 
@@ -254,7 +254,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_axis_font(font.encode())
+        self._set_axis_font(font.encode('utf8'))
         
 
 
@@ -317,7 +317,7 @@ class GX3DN(gxapi_cy.Wrap3DN):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_render_controls(box, axis, label_x.encode(), label_y.encode(), label_z.encode())
+        self._set_render_controls(box, axis, label_x.encode('utf8'), label_y.encode('utf8'), label_z.encode('utf8'))
         
 
 

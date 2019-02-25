@@ -74,7 +74,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapCOM._create(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
+        ret_val = gxapi_cy.WrapCOM._create(GXContext._get_tls_geo(), port.encode('utf8'), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
@@ -106,7 +106,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapCOM._create_no_terminate(GXContext._get_tls_geo(), port.encode(), baud, data_size, parity, stop_bits, flow_control, time_out)
+        ret_val = gxapi_cy.WrapCOM._create_no_terminate(GXContext._get_tls_geo(), port.encode('utf8'), baud, data_size, parity, stop_bits, flow_control, time_out)
         return GXCOM(ret_val)
 
 
@@ -129,7 +129,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val, line.value = self._read_line_no_terminate(line.value.encode())
+        ret_val, line.value = self._read_line_no_terminate(line.value.encode('utf8'))
         return ret_val
 
 
@@ -150,7 +150,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val, line.value = self._read_chars_no_terminate(line.value.encode())
+        ret_val, line.value = self._read_chars_no_terminate(line.value.encode('utf8'))
         return ret_val
 
 
@@ -167,7 +167,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        line.value = self._read_line(line.value.encode())
+        line.value = self._read_line(line.value.encode('utf8'))
         
 
 
@@ -188,7 +188,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = self._write_chars_no_terminate(line.encode())
+        ret_val = self._write_chars_no_terminate(line.encode('utf8'))
         return ret_val
 
 
@@ -220,7 +220,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        line.value = self._read_chars(line.value.encode())
+        line.value = self._read_chars(line.value.encode('utf8'))
         
 
 
@@ -309,7 +309,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._write_chars(line.encode())
+        self._write_chars(line.encode('utf8'))
         
 
 
@@ -326,7 +326,7 @@ class GXCOM(gxapi_cy.WrapCOM):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._write_line(line.encode())
+        self._write_line(line.encode('utf8'))
         
 
 

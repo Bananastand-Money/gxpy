@@ -111,7 +111,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXBIGRID <geosoft.gxapi.GXBIGRID>` object.
         """
-        ret_val = self._load_parms(file.encode())
+        ret_val = self._load_parms(file.encode('utf8'))
         return ret_val
 
 
@@ -136,7 +136,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._load_warp(title.encode(), cell.encode(), warp.encode())
+        ret_val = self._load_warp(title.encode('utf8'), cell.encode('utf8'), warp.encode('utf8'))
         return ret_val
 
 
@@ -158,7 +158,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._run(zchan.encode(), in_dat, out_dat)
+        self._run(zchan.encode('utf8'), in_dat, out_dat)
         
 
 
@@ -182,7 +182,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._run2(zchan.encode(), in_dat, out_dat, ipj)
+        self._run2(zchan.encode('utf8'), in_dat, out_dat, ipj)
         
 
 
@@ -203,7 +203,7 @@ class GXBIGRID(gxapi_cy.WrapBIGRID):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        self._save_parms(name.encode())
+        self._save_parms(name.encode('utf8'))
         
 
 

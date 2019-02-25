@@ -59,7 +59,7 @@ class GXGMSYS(gxapi_cy.WrapGMSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapGMSYS._launch(GXContext._get_tls_geo(), model.encode())
+        gxapi_cy.WrapGMSYS._launch(GXContext._get_tls_geo(), model.encode('utf8'))
         
 
 

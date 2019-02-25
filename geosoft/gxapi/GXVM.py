@@ -156,7 +156,7 @@ class GXVM(gxapi_cy.WrapVM):
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        str_val.value = self._get_string(element, str_val.value.encode())
+        str_val.value = self._get_string(element, str_val.value.encode('utf8'))
         
 
 
@@ -289,7 +289,7 @@ class GXVM(gxapi_cy.WrapVM):
         increased.  Reallocating `GXVM <geosoft.gxapi.GXVM>` lengths can lead to fragmented
         memory and should be avoided if possible.
         """
-        self._set_string(element, value.encode())
+        self._set_string(element, value.encode('utf8'))
         
 
 

@@ -64,7 +64,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         **Note:** After manipulating contents the object may be updated by a call to
         the UpdateFromTmpCopy method.
         """
-        tmp.value = self._get_tmp_copy(tmp.value.encode())
+        tmp.value = self._get_tmp_copy(tmp.value.encode('utf8'))
         
 
 
@@ -86,7 +86,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         will restore the contents to that of the original file. The temporary file is not deleted
         and should be to not leak file resources.
         """
-        self._update_from_tmp_copy(tmp.encode())
+        self._update_from_tmp_copy(tmp.encode('utf8'))
         
 
 
@@ -133,7 +133,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
         file in the <geosoft>\\maptemplate or <geosoftuser>\\maptemplate folders. A base file
         in the user folder will override any in the Geosoft install dir.
         """
-        ret_val = gxapi_cy.WrapMAPTEMPLATE._create(GXContext._get_tls_geo(), name.encode(), base.encode(), mode)
+        ret_val = gxapi_cy.WrapMAPTEMPLATE._create(GXContext._get_tls_geo(), name.encode('utf8'), base.encode('utf8'), mode)
         return GXMAPTEMPLATE(ret_val)
 
 
@@ -167,7 +167,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        name.value = self._get_file_name(name.value.encode())
+        name.value = self._get_file_name(name.value.encode('utf8'))
         
 
 
@@ -190,7 +190,7 @@ class GXMAPTEMPLATE(gxapi_cy.WrapMAPTEMPLATE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._create_map(map.encode(), group.encode())
+        self._create_map(map.encode('utf8'), group.encode('utf8'))
         
 
 

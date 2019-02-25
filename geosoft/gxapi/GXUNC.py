@@ -89,7 +89,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapUNC._valid_symbol(GXContext._get_tls_geo(), face.encode(), geofont, number)
+        ret_val = gxapi_cy.WrapUNC._valid_symbol(GXContext._get_tls_geo(), face.encode('utf8'), geofont, number)
         return ret_val
 
 
@@ -110,7 +110,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **Note:** An empty string will be returned for invalid symbols
         """
-        str_val.value = gxapi_cy.WrapUNC._utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode())
+        str_val.value = gxapi_cy.WrapUNC._utf16_val_to_str(GXContext._get_tls_geo(), ch, str_val.value.encode('utf8'))
         
 
 
@@ -134,7 +134,7 @@ class GXUNC(gxapi_cy.WrapUNC):
 
         **Note:** Invalid symbols in the `GXVV <geosoft.gxapi.GXVV>` will be set to -1 by this call. `GXVV <geosoft.gxapi.GXVV>` has to be of type `GS_LONG <geosoft.gxapi.GS_LONG>`.
         """
-        gxapi_cy.WrapUNC._validate_symbols(GXContext._get_tls_geo(), vv, face.encode(), geofont)
+        gxapi_cy.WrapUNC._validate_symbols(GXContext._get_tls_geo(), vv, face.encode('utf8'), geofont)
         
 
 

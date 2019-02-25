@@ -107,7 +107,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ._add_document(GXContext._get_tls_geo(), name.encode(), type.encode(), display)
+        ret_val = gxapi_cy.WrapPROJ._add_document(GXContext._get_tls_geo(), name.encode('utf8'), type.encode('utf8'), display)
         return ret_val
 
 
@@ -147,7 +147,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS3D         
             GMS2D
         """
-        ret_val = gxapi_cy.WrapPROJ._add_document_without_opening(GXContext._get_tls_geo(), name.encode(), type.encode())
+        ret_val = gxapi_cy.WrapPROJ._add_document_without_opening(GXContext._get_tls_geo(), name.encode('utf8'), type.encode('utf8'))
         return ret_val
 
 
@@ -207,7 +207,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ._list_documents(GXContext._get_tls_geo(), gvv, type.encode())
+        ret_val = gxapi_cy.WrapPROJ._list_documents(GXContext._get_tls_geo(), gvv, type.encode('utf8'))
         return ret_val
 
 
@@ -243,7 +243,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         GMS2D            List GM-SYS 2D Models.
         All              Lists all files.
         """
-        ret_val = gxapi_cy.WrapPROJ._list_loaded_documents(GXContext._get_tls_geo(), gvv, type.encode())
+        ret_val = gxapi_cy.WrapPROJ._list_loaded_documents(GXContext._get_tls_geo(), gvv, type.encode('utf8'))
         return ret_val
 
 
@@ -264,7 +264,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value, type.value = gxapi_cy.WrapPROJ._current_document(GXContext._get_tls_geo(), name.value.encode(), type.value.encode())
+        name.value, type.value = gxapi_cy.WrapPROJ._current_document(GXContext._get_tls_geo(), name.value.encode('utf8'), type.value.encode('utf8'))
         
 
 
@@ -285,7 +285,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = gxapi_cy.WrapPROJ._current_document_of_type(GXContext._get_tls_geo(), name.value.encode(), type.encode())
+        name.value = gxapi_cy.WrapPROJ._current_document_of_type(GXContext._get_tls_geo(), name.value.encode('utf8'), type.encode('utf8'))
         
 
 
@@ -343,7 +343,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
         file name complete with an extension and
         qualifiers (if applicable).
         """
-        ret_val = gxapi_cy.WrapPROJ._remove_document(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapPROJ._remove_document(GXContext._get_tls_geo(), name.encode('utf8'))
         return ret_val
 
 
@@ -368,7 +368,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Nothing
         """
-        ret_val = gxapi_cy.WrapPROJ._remove_tool(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapPROJ._remove_tool(GXContext._get_tls_geo(), name.encode('utf8'))
         return ret_val
 
 
@@ -408,7 +408,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
             GMS2D
             All
         """
-        ret_val = gxapi_cy.WrapPROJ._save_close_documents(GXContext._get_tls_geo(), type.encode())
+        ret_val = gxapi_cy.WrapPROJ._save_close_documents(GXContext._get_tls_geo(), type.encode('utf8'))
         return ret_val
 
 
@@ -429,7 +429,7 @@ class GXPROJ(gxapi_cy.WrapPROJ):
 
         **Note:** Return the name of the project file.
         """
-        name.value = gxapi_cy.WrapPROJ._get_name(GXContext._get_tls_geo(), name.value.encode())
+        name.value = gxapi_cy.WrapPROJ._get_name(GXContext._get_tls_geo(), name.value.encode('utf8'))
         
 
 

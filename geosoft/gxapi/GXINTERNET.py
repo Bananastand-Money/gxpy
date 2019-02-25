@@ -76,7 +76,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
 
             iserver.gxh internet class.
         """
-        ret_val = gxapi_cy.WrapINTERNET._download_http(GXContext._get_tls_geo(), url.encode(), file.encode(), size)
+        ret_val = gxapi_cy.WrapINTERNET._download_http(GXContext._get_tls_geo(), url.encode('utf8'), file.encode('utf8'), size)
         return ret_val
 
 
@@ -110,7 +110,7 @@ class GXINTERNET(gxapi_cy.WrapINTERNET):
         **Note:** Requires a MAPI complient mail system to be installed
         on the client machine.
         """
-        gxapi_cy.WrapINTERNET._send_mail(GXContext._get_tls_geo(), recipient.encode(), p2.encode(), p3.encode(), p4.encode(), p5.encode(), p6.encode(), p7.encode(), p8.encode())
+        gxapi_cy.WrapINTERNET._send_mail(GXContext._get_tls_geo(), recipient.encode('utf8'), p2.encode('utf8'), p3.encode('utf8'), p4.encode('utf8'), p5.encode('utf8'), p6.encode('utf8'), p7.encode('utf8'), p8.encode('utf8'))
         
 
 

@@ -70,7 +70,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** This consumes a very small amount of memory
         """
-        gxapi_cy.WrapIMU._agg_to_geo_color(GXContext._get_tls_geo(), agg, grid.encode(), ipj, res)
+        gxapi_cy.WrapIMU._agg_to_geo_color(GXContext._get_tls_geo(), agg, grid.encode('utf8'), ipj, res)
         
 
 
@@ -114,7 +114,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapIMU._crc_grid(GXContext._get_tls_geo(), grid.encode(), pul_crc)
+        ret_val = gxapi_cy.WrapIMU._crc_grid(GXContext._get_tls_geo(), grid.encode('utf8'), pul_crc)
         return ret_val
 
 
@@ -145,7 +145,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** Very useful for testing where the last bits of accuracy
         are not as important.
         """
-        ret_val = gxapi_cy.WrapIMU._crc_grid_inexact(GXContext._get_tls_geo(), grid.encode(), pul_crc, float_bits, double_bits)
+        ret_val = gxapi_cy.WrapIMU._crc_grid_inexact(GXContext._get_tls_geo(), grid.encode('utf8'), pul_crc, float_bits, double_bits)
         return ret_val
 
 
@@ -197,7 +197,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        crc.value = gxapi_cy.WrapIMU._export_grid_without_data_section_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_grid_without_data_section_xml(GXContext._get_tls_geo(), grid.encode('utf8'), crc.value, file.encode('utf8'))
         
 
 
@@ -218,7 +218,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        crc.value = gxapi_cy.WrapIMU._export_grid_xml(GXContext._get_tls_geo(), grid.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_grid_xml(GXContext._get_tls_geo(), grid.encode('utf8'), crc.value, file.encode('utf8'))
         
 
 
@@ -239,7 +239,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        crc.value = gxapi_cy.WrapIMU._export_raw_xml(GXContext._get_tls_geo(), img, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_raw_xml(GXContext._get_tls_geo(), img, crc.value, file.encode('utf8'))
         
 
 
@@ -260,7 +260,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        crc.value = gxapi_cy.WrapIMU._export_xml(GXContext._get_tls_geo(), img, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapIMU._export_xml(GXContext._get_tls_geo(), img, crc.value, file.encode('utf8'))
         
 
 
@@ -397,7 +397,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters must be of type `GS_DOUBLE <geosoft.gxapi.GS_DOUBLE>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU._grid_bool(GXContext._get_tls_geo(), img1, img2, out.encode(), bool, sizing, olap)
+        gxapi_cy.WrapIMU._grid_bool(GXContext._get_tls_geo(), img1, img2, out.encode('utf8'), bool, sizing, olap)
         
 
 
@@ -418,7 +418,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_edge(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y)
+        gxapi_cy.WrapIMU._grid_edge(GXContext._get_tls_geo(), grid.encode('utf8'), vv_x, vv_y)
         
 
 
@@ -473,7 +473,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameter MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU._grid_expand(GXContext._get_tls_geo(), im_gi, out.encode(), per, shape, x, y)
+        gxapi_cy.WrapIMU._grid_expand(GXContext._get_tls_geo(), im_gi, out.encode('utf8'), per, shape, x, y)
         
 
 
@@ -496,7 +496,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode(), p_ex, t_ex)
+        gxapi_cy.WrapIMU._grid_exp_fill(GXContext._get_tls_geo(), in_grd.encode('utf8'), out_grd.encode('utf8'), p_ex, t_ex)
         
 
 
@@ -573,7 +573,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** The `GXIMG <geosoft.gxapi.GXIMG>` parameters MUST be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`!
         If not, the method will terminate.
         """
-        gxapi_cy.WrapIMU._grid_filt(GXContext._get_tls_geo(), img, imgo, passes, mult, dum, hz, usefile, file.encode(), vv)
+        gxapi_cy.WrapIMU._grid_filt(GXContext._get_tls_geo(), img, imgo, passes, mult, dum, hz, usefile, file.encode('utf8'), vv)
         
 
 
@@ -600,7 +600,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_head(GXContext._get_tls_geo(), grid.encode(), esep, vsep, x_orig, y_orig, rot)
+        gxapi_cy.WrapIMU._grid_head(GXContext._get_tls_geo(), grid.encode('utf8'), esep, vsep, x_orig, y_orig, rot)
         
 
 
@@ -623,7 +623,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_in_fill(GXContext._get_tls_geo(), im_gi, out_grd.encode(), extend, iter)
+        gxapi_cy.WrapIMU._grid_in_fill(GXContext._get_tls_geo(), im_gi, out_grd.encode('utf8'), extend, iter)
         
 
 
@@ -655,7 +655,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         if it was loaded from a file containing
         coordinates of more than one polygon.
         """
-        gxapi_cy.WrapIMU._grid_mask(GXContext._get_tls_geo(), in_grid.encode(), m_grid.encode(), pply, mode)
+        gxapi_cy.WrapIMU._grid_mask(GXContext._get_tls_geo(), in_grid.encode('utf8'), m_grid.encode('utf8'), pply, mode)
         
 
 
@@ -685,7 +685,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         value is greater than it's two neighbors in at least one
         direction.  Up to 4 directions can be tested.
         """
-        gxapi_cy.WrapIMU._grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, v_vx, v_vy, v_vz)
+        gxapi_cy.WrapIMU._grid_peak(GXContext._get_tls_geo(), grid.encode('utf8'), nlmt, v_vx, v_vy, v_vz)
         
 
 
@@ -774,7 +774,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_reproject_and_window(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), new_projection, min_x, max_x, min_y, max_y)
+        gxapi_cy.WrapIMU._grid_reproject_and_window(GXContext._get_tls_geo(), input_grid_filename.encode('utf8'), output_grid_filename.encode('utf8'), new_projection, min_x, max_x, min_y, max_y)
         
 
 
@@ -807,7 +807,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** Works only for un rotated grids.
         """
-        gxapi_cy.WrapIMU._grid_resample(GXContext._get_tls_geo(), input_grid_filename.encode(), output_grid_filename.encode(), o_x, o_y, d_x, d_y, n_x, n_y)
+        gxapi_cy.WrapIMU._grid_resample(GXContext._get_tls_geo(), input_grid_filename.encode('utf8'), output_grid_filename.encode('utf8'), o_x, o_y, d_x, d_y, n_x, n_y)
         
 
 
@@ -826,7 +826,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_resize(GXContext._get_tls_geo(), in_grd.encode(), out_grd.encode())
+        gxapi_cy.WrapIMU._grid_resize(GXContext._get_tls_geo(), in_grd.encode('utf8'), out_grd.encode('utf8'))
         
 
 
@@ -854,7 +854,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         **Note:** Pass `GS_R8DM <geosoft.gxapi.GS_R8DM>` as parameters to obtain default values.
         The default values are returned.
         """
-        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU._grid_shad(GXContext._get_tls_geo(), in_grid.encode(), sh_grid.encode(), inc.value, dec.value, scl.value)
+        inc.value, dec.value, scl.value = gxapi_cy.WrapIMU._grid_shad(GXContext._get_tls_geo(), in_grid.encode('utf8'), sh_grid.encode('utf8'), inc.value, dec.value, scl.value)
         
 
 
@@ -906,7 +906,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         info on more than a single grid.
         See `GXST <geosoft.gxapi.GXST>`.
         """
-        gxapi_cy.WrapIMU._grid_st(GXContext._get_tls_geo(), grid.encode(), st)
+        gxapi_cy.WrapIMU._grid_st(GXContext._get_tls_geo(), grid.encode('utf8'), st)
         
 
 
@@ -947,7 +947,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value = gxapi_cy.WrapIMU._grid_stat(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value = gxapi_cy.WrapIMU._grid_stat(GXContext._get_tls_geo(), grid.encode('utf8'), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value)
         
 
 
@@ -990,7 +990,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** Statistics are returned in the parameter set
         """
-        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value = gxapi_cy.WrapIMU._grid_stat_comp(GXContext._get_tls_geo(), grid.encode(), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value)
+        type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value = gxapi_cy.WrapIMU._grid_stat_comp(GXContext._get_tls_geo(), grid.encode('utf8'), type.value, xelem.value, yelem.value, xsep.value, ysep.value, kx.value, x_orig.value, y_orig.value, rot.value, base.value, mult.value, comp.value)
         
 
 
@@ -1025,7 +1025,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         statistics will be recalculated.
         Statistics are returned in the parameter set.
         """
-        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU._grid_stat_ext(GXContext._get_tls_geo(), grid.encode(), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
+        items.value, dums.value, min.value, max.value, mean.value, stddev.value = gxapi_cy.WrapIMU._grid_stat_ext(GXContext._get_tls_geo(), grid.encode('utf8'), force, items.value, dums.value, min.value, max.value, mean.value, stddev.value)
         
 
 
@@ -1052,7 +1052,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** Trend Info are returned in the parameter set
         """
-        trend_valid.value, co.value, cx.value, cy.value = gxapi_cy.WrapIMU._grid_stat_trend(GXContext._get_tls_geo(), grid.encode(), trend_valid.value, co.value, cx.value, cy.value)
+        trend_valid.value, co.value, cx.value, cy.value = gxapi_cy.WrapIMU._grid_stat_trend(GXContext._get_tls_geo(), grid.encode('utf8'), trend_valid.value, co.value, cx.value, cy.value)
         
 
 
@@ -1081,7 +1081,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **Note:** Trend Info are returned in the parameter set
         """
-        order.value, num_coef.value, xo.value, yo.value = gxapi_cy.WrapIMU._grid_stat_trend_ext(GXContext._get_tls_geo(), grid.encode(), order.value, num_coef.value, xo.value, yo.value, vm)
+        order.value, num_coef.value, xo.value, yo.value = gxapi_cy.WrapIMU._grid_stat_trend_ext(GXContext._get_tls_geo(), grid.encode('utf8'), order.value, num_coef.value, xo.value, yo.value, vm)
         
 
 
@@ -1151,7 +1151,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_stitch(GXContext._get_tls_geo(), grid1.encode(), grid2.encode(), grid3.encode(), method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply, weighting, width)
+        gxapi_cy.WrapIMU._grid_stitch(GXContext._get_tls_geo(), grid1.encode('utf8'), grid2.encode('utf8'), grid3.encode('utf8'), method, tr_order1, tr_order2, tr_calc, gap, spline, path, pply, weighting, width)
         
 
 
@@ -1172,7 +1172,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         This is simply a way of avoiding writing a new GX wrapper
         every time an option is added.
         """
-        gxapi_cy.WrapIMU._grid_stitch_ctl(GXContext._get_tls_geo(), ctl.encode())
+        gxapi_cy.WrapIMU._grid_stitch_ctl(GXContext._get_tls_geo(), ctl.encode('utf8'))
         
 
 
@@ -1209,7 +1209,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         from one of 8 settings, or can be specified
         as a combination of Reg,Green, and Blue values.
         """
-        gxapi_cy.WrapIMU._grid_tiff(GXContext._get_tls_geo(), grds.encode(), tiff.encode(), bcol.encode(), red, green, blue, csize, reg, scale)
+        gxapi_cy.WrapIMU._grid_tiff(GXContext._get_tls_geo(), grds.encode('utf8'), tiff.encode('utf8'), bcol.encode('utf8'), red, green, blue, csize, reg, scale)
         
 
 
@@ -1281,7 +1281,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         match the :ref:`IMU_TRANS` value, this method will
         not succeed.
         """
-        gxapi_cy.WrapIMU._grid_trns(GXContext._get_tls_geo(), grid.encode(), tcon)
+        gxapi_cy.WrapIMU._grid_trns(GXContext._get_tls_geo(), grid.encode('utf8'), tcon)
         
 
 
@@ -1378,7 +1378,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMU._grid_wind(GXContext._get_tls_geo(), img, out.encode(), coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf.encode())
+        gxapi_cy.WrapIMU._grid_wind(GXContext._get_tls_geo(), img, out.encode('utf8'), coord, xmin, xmax, ymin, ymax, zmin, zmax, csize, clip, dec, mdf.encode('utf8'))
         
 
 
@@ -1417,7 +1417,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         The windowed grid will be adjusted/expanded to include the
         defined area and line up on an even grid cell.
         """
-        gxapi_cy.WrapIMU._grid_wind2(GXContext._get_tls_geo(), img, out.encode(), xmin, xmax, ymin, ymax, zmin, zmax, clip)
+        gxapi_cy.WrapIMU._grid_wind2(GXContext._get_tls_geo(), img, out.encode('utf8'), xmin, xmax, ymin, ymax, zmin, zmax, clip)
         
 
 
@@ -1448,7 +1448,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         be of type `GS_FLOAT <geosoft.gxapi.GS_FLOAT>`. If not, this method will
         terminate with an error.
         """
-        gxapi_cy.WrapIMU._grid_xyz(GXContext._get_tls_geo(), img, xyz.encode(), index, dec_x, dec_y, lab)
+        gxapi_cy.WrapIMU._grid_xyz(GXContext._get_tls_geo(), img, xyz.encode('utf8'), index, dec_x, dec_y, lab)
         
 
 
@@ -1468,7 +1468,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapIMU._grid_type(GXContext._get_tls_geo(), grid.encode())
+        ret_val = gxapi_cy.WrapIMU._grid_type(GXContext._get_tls_geo(), grid.encode('utf8'))
         return ret_val
 
 
@@ -1485,7 +1485,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._make_mi_tab_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapIMU._make_mi_tab_file(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -1502,7 +1502,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._make_mi_tabfrom_grid(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapIMU._make_mi_tabfrom_grid(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -1519,7 +1519,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapIMU._make_mi_tabfrom_map(GXContext._get_tls_geo(), map.encode())
+        gxapi_cy.WrapIMU._make_mi_tabfrom_map(GXContext._get_tls_geo(), map.encode('utf8'))
         
 
 
@@ -1549,7 +1549,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         the first image. Note that this function may require very large
         amounts of virtual memory.
         """
-        ret_val = gxapi_cy.WrapIMU._mosaic(GXContext._get_tls_geo(), grids.encode(), name.encode(), ipj, cell)
+        ret_val = gxapi_cy.WrapIMU._mosaic(GXContext._get_tls_geo(), grids.encode('utf8'), name.encode('utf8'), ipj, cell)
         return GXIMG(ret_val)
 
 
@@ -1588,7 +1588,7 @@ class GXIMU(gxapi_cy.WrapIMU):
 
         Note: `peak_size2 <geosoft.gxapi.GXIMU.peak_size2>` is probably a better routine...
         """
-        gxapi_cy.WrapIMU._peak_size(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y, max, prec, v_vz)
+        gxapi_cy.WrapIMU._peak_size(GXContext._get_tls_geo(), grid.encode('utf8'), vv_x, vv_y, max, prec, v_vz)
         
 
 
@@ -1626,7 +1626,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         This algorithm tends to give much smaller (and more reasonable)
         results than `peak_size <geosoft.gxapi.GXIMU.peak_size>`.
         """
-        gxapi_cy.WrapIMU._peak_size2(GXContext._get_tls_geo(), grid.encode(), vv_x, vv_y, max, v_vz)
+        gxapi_cy.WrapIMU._peak_size2(GXContext._get_tls_geo(), grid.encode('utf8'), vv_x, vv_y, max, v_vz)
         
 
 
@@ -1796,7 +1796,7 @@ class GXIMU(gxapi_cy.WrapIMU):
         Otherwise, the range in the requested `GXIPJ <geosoft.gxapi.GXIPJ>` will be
         determined.
         """
-        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU._range_grids(GXContext._get_tls_geo(), grids.encode(), ipj, min_x.value, min_y.value, max_x.value, max_y.value)
+        min_x.value, min_y.value, max_x.value, max_y.value = gxapi_cy.WrapIMU._range_grids(GXContext._get_tls_geo(), grids.encode('utf8'), ipj, min_x.value, min_y.value, max_x.value, max_y.value)
         
 
 

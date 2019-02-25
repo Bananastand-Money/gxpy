@@ -360,7 +360,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._load(file.encode())
+        self._load(file.encode('utf8'))
         
 
 
@@ -482,7 +482,7 @@ class GXDMPPLY(gxapi_cy.WrapDMPPLY):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._save(file.encode())
+        self._save(file.encode('utf8'))
         
 
 

@@ -66,7 +66,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHGD._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapHGD._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXHGD(ret_val)
 
 
@@ -85,7 +85,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_img(name.encode())
+        self._export_img(name.encode('utf8'))
         
 
 
@@ -124,7 +124,7 @@ class GXHGD(gxapi_cy.WrapHGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHGD._h_create_img(GXContext._get_tls_geo(), img, name.encode())
+        ret_val = gxapi_cy.WrapHGD._h_create_img(GXContext._get_tls_geo(), img, name.encode('utf8'))
         return GXHGD(ret_val)
 
 

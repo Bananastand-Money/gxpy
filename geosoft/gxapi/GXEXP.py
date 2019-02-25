@@ -97,7 +97,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         All other tokens are assumed to be channel names.
         """
-        ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode(), unused)
+        ret_val = gxapi_cy.WrapEXP._create(GXContext._get_tls_geo(), db, formula.encode('utf8'), unused)
         return GXEXP(ret_val)
 
 
@@ -119,7 +119,7 @@ class GXEXP(gxapi_cy.WrapEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapEXP._create_file(GXContext._get_tls_geo(), db, file.encode())
+        ret_val = gxapi_cy.WrapEXP._create_file(GXContext._get_tls_geo(), db, file.encode('utf8'))
         return GXEXP(ret_val)
 
 

@@ -65,7 +65,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapPDF3D._render(GXContext._get_tls_geo(), mview, file_name.encode(), resolution, no_clipping)
+        gxapi_cy.WrapPDF3D._render(GXContext._get_tls_geo(), mview, file_name.encode('utf8'), resolution, no_clipping)
         
 
 
@@ -90,7 +90,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapPDF3D._render_to_page(GXContext._get_tls_geo(), mview, file_name.encode(), page_number, resolution, no_clip)
+        gxapi_cy.WrapPDF3D._render_to_page(GXContext._get_tls_geo(), mview, file_name.encode('utf8'), page_number, resolution, no_clip)
         
 
 
@@ -115,7 +115,7 @@ class GXPDF3D(gxapi_cy.WrapPDF3D):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapPDF3D._export_2d(GXContext._get_tls_geo(), input_map.encode(), output_file.encode(), create_layersin_pdf, geospatial_pdf, open_pdf)
+        gxapi_cy.WrapPDF3D._export_2d(GXContext._get_tls_geo(), input_map.encode('utf8'), output_file.encode('utf8'), create_layersin_pdf, geospatial_pdf, open_pdf)
         
 
 

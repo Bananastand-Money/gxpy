@@ -139,7 +139,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        data.value = self._get(parm.encode(), data.value.encode())
+        data.value = self._get(parm.encode('utf8'), data.value.encode('utf8'))
         
 
 
@@ -160,7 +160,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `iDUMMY <geosoft.gxapi.iDUMMY>` is returned.
         """
-        data.value = self._get_int(parm.encode(), data.value)
+        data.value = self._get_int(parm.encode('utf8'), data.value)
         
 
 
@@ -181,7 +181,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        parm.value, data.value = self._get_one(loc, parm.value.encode(), data.value.encode())
+        parm.value, data.value = self._get_one(loc, parm.value.encode('utf8'), data.value.encode('utf8'))
         
 
 
@@ -202,7 +202,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** If parameter is not present in `GXREG <geosoft.gxapi.GXREG>`, `rDUMMY <geosoft.gxapi.rDUMMY>` is returned.
         """
-        data.value = self._get_double(parm.encode(), data.value)
+        data.value = self._get_double(parm.encode('utf8'), data.value)
         
 
 
@@ -239,7 +239,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **Note:** Items are loaded into the `GXREG <geosoft.gxapi.GXREG>` in the format "GROUP.ITEM".
         """
-        self._load_ini(ini.encode())
+        self._load_ini(ini.encode('utf8'))
         
 
 
@@ -258,7 +258,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        data.value = self._match_string(parm.encode(), data.value.encode())
+        data.value = self._match_string(parm.encode('utf8'), data.value.encode('utf8'))
         
 
 
@@ -299,7 +299,7 @@ class GXREG(gxapi_cy.WrapREG):
         which groups items under [GROUP] headings.
         Single-word items (without a separating period) are skipped.
         """
-        self._save_ini(ini.encode())
+        self._save_ini(ini.encode('utf8'))
         
 
 
@@ -342,7 +342,7 @@ class GXREG(gxapi_cy.WrapREG):
         or
         `set_double <geosoft.gxapi.GXREG.set_double>`(Reg, sParam, `rDUMMY <geosoft.gxapi.rDUMMY>`);
         """
-        self._set(parm.encode(), data.encode())
+        self._set(parm.encode('utf8'), data.encode('utf8'))
         
 
 
@@ -361,7 +361,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_int(parm.encode(), data)
+        self._set_int(parm.encode('utf8'), data)
         
 
 
@@ -380,7 +380,7 @@ class GXREG(gxapi_cy.WrapREG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_double(parm.encode(), p3)
+        self._set_double(parm.encode('utf8'), p3)
         
 
 

@@ -135,7 +135,7 @@ class GXTIN(gxapi_cy.WrapTIN):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        crc.value = gxapi_cy.WrapTIN._export_xml(GXContext._get_tls_geo(), tin.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapTIN._export_xml(GXContext._get_tls_geo(), tin.encode('utf8'), crc.value, file.encode('utf8'))
         
 
 

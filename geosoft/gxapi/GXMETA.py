@@ -77,7 +77,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._create_attrib(name.encode(), ph_class, ph_type)
+        ret_val = self._create_attrib(name.encode('utf8'), ph_class, ph_type)
         return ret_val
 
 
@@ -162,7 +162,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._create_class(name.encode(), ph_class)
+        ret_val = self._create_class(name.encode('utf8'), ph_class)
         return ret_val
 
 
@@ -389,7 +389,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        value.value = self._get_attrib_string(ph_object, ph_attrib, value.value.encode())
+        value.value = self._get_attrib_string(ph_object, ph_attrib, value.value.encode('utf8'))
         
 
 
@@ -432,7 +432,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_table_csv(ph_class, file.encode())
+        self._export_table_csv(ph_class, file.encode('utf8'))
         
 
 
@@ -456,7 +456,7 @@ class GXMETA(gxapi_cy.WrapMETA):
         a class created using the hCreateTable_SCHEMA method so that the contents of
         class can be viewed as a table.
         """
-        self._import_table_csv(ph_class, file.encode())
+        self._import_table_csv(ph_class, file.encode('utf8'))
         
 
 
@@ -534,7 +534,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._h_creat_item(name.encode(), ph_class)
+        ret_val = self._h_creat_item(name.encode('utf8'), ph_class)
         return ret_val
 
 
@@ -712,7 +712,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_attrib_string(ph_object, ph_attrib, value.encode())
+        self._set_attrib_string(ph_object, ph_attrib, value.encode('utf8'))
         
 
 
@@ -903,7 +903,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._create_type(name.encode(), ph_class, ph_type)
+        ret_val = self._create_type(name.encode('utf8'), ph_class, ph_type)
         return ret_val
 
 
@@ -960,7 +960,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._get_obj_name(ph_object, name.value.encode())
+        name.value = self._get_obj_name(ph_object, name.value.encode('utf8'))
         
 
 
@@ -981,7 +981,7 @@ class GXMETA(gxapi_cy.WrapMETA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._resolve_umn(umn.encode())
+        ret_val = self._resolve_umn(umn.encode('utf8'))
         return ret_val
 
 

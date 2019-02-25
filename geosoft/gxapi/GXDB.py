@@ -69,7 +69,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._create_dup(file.encode())
+        self._create_dup(file.encode('utf8'))
         
 
 
@@ -90,7 +90,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._create_dup_comp(file.encode(), level)
+        self._create_dup_comp(file.encode('utf8'), level)
         
 
 
@@ -135,7 +135,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._easy_maker_symb(symb, name.encode(), groups.encode())
+        self._easy_maker_symb(symb, name.encode('utf8'), groups.encode('utf8'))
         
 
 
@@ -161,7 +161,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        str_val.value = self._get_chan_str(line, chan, ind, str_val.value.encode())
+        str_val.value = self._get_chan_str(line, chan, ind, str_val.value.encode('utf8'))
         
 
 
@@ -322,7 +322,7 @@ class GXDB(gxapi_cy.WrapDB):
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        setting.value = self._get_reg_symb_setting(symb, name.encode(), setting.value.encode())
+        setting.value = self._get_reg_symb_setting(symb, name.encode('utf8'), setting.value.encode('utf8'))
         
 
 
@@ -414,7 +414,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** If the passed string is too short, the result will be
         "**".
         """
-        str_val.value = self._format_chan(chan, val, str_val.value.encode())
+        str_val.value = self._format_chan(chan, val, str_val.value.encode('utf8'))
         
 
 
@@ -459,7 +459,7 @@ class GXDB(gxapi_cy.WrapDB):
         empty string is returned.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        cl.value = self._get_chan_class(chan, cl.value.encode())
+        cl.value = self._get_chan_class(chan, cl.value.encode('utf8'))
         
 
 
@@ -558,7 +558,7 @@ class GXDB(gxapi_cy.WrapDB):
         channel name is returned.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        label.value = self._get_chan_label(chan, label.value.encode())
+        label.value = self._get_chan_label(chan, label.value.encode('utf8'))
         
 
 
@@ -580,7 +580,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        name.value = self._get_chan_name(chan, name.value.encode())
+        name.value = self._get_chan_name(chan, name.value.encode('utf8'))
         
 
 
@@ -651,7 +651,7 @@ class GXDB(gxapi_cy.WrapDB):
         of the channel reg.
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        unit.value = self._get_chan_unit(chan, unit.value.encode())
+        unit.value = self._get_chan_unit(chan, unit.value.encode('utf8'))
         
 
 
@@ -693,7 +693,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        psz_name.value = self._get_name(name, psz_name.value.encode())
+        psz_name.value = self._get_name(name, psz_name.value.encode('utf8'))
         
 
 
@@ -722,7 +722,7 @@ class GXDB(gxapi_cy.WrapDB):
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        ret_val = self._get_reg_symb_setting_int(symb, name.encode())
+        ret_val = self._get_reg_symb_setting_int(symb, name.encode('utf8'))
         return ret_val
 
 
@@ -744,7 +744,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** See GetChanName_DB for more information
         The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        name.value = self._get_symb_name(symb, name.value.encode())
+        name.value = self._get_symb_name(symb, name.value.encode('utf8'))
         
 
 
@@ -794,7 +794,7 @@ class GXDB(gxapi_cy.WrapDB):
         pair, or of the channel does not exist, the returned
         string will be empty.
         """
-        ret_val, pair.value = self._coord_pair(chan.encode(), pair.value.encode())
+        ret_val, pair.value = self._coord_pair(chan.encode('utf8'), pair.value.encode('utf8'))
         return ret_val
 
 
@@ -853,7 +853,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._maker_symb(symb, prog.encode(), name.encode(), groups.encode())
+        self._maker_symb(symb, prog.encode('utf8'), name.encode('utf8'), groups.encode('utf8'))
         
 
 
@@ -991,7 +991,7 @@ class GXDB(gxapi_cy.WrapDB):
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        ret_val = self._get_reg_symb_setting_double(symb, name.encode())
+        ret_val = self._get_reg_symb_setting_double(symb, name.encode('utf8'))
         return ret_val
 
 
@@ -1036,7 +1036,7 @@ class GXDB(gxapi_cy.WrapDB):
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._set_chan_class(chan, cl.encode())
+        self._set_chan_class(chan, cl.encode('utf8'))
         
 
 
@@ -1129,7 +1129,7 @@ class GXDB(gxapi_cy.WrapDB):
         of the channel reg.
         The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._set_chan_label(chan, label.encode())
+        self._set_chan_label(chan, label.encode('utf8'))
         
 
 
@@ -1150,7 +1150,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._set_chan_name(chan, name.encode())
+        self._set_chan_name(chan, name.encode('utf8'))
         
 
 
@@ -1226,7 +1226,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** These methods are slow and should only be used when
         performance is not an issue.
         """
-        self._set_chan_str(line, chan, ind, str_val.encode())
+        self._set_chan_str(line, chan, ind, str_val.encode('utf8'))
         
 
 
@@ -1248,7 +1248,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The channel must be locked `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        self._set_chan_unit(chan, unit.encode())
+        self._set_chan_unit(chan, unit.encode('utf8'))
         
 
 
@@ -1370,7 +1370,7 @@ class GXDB(gxapi_cy.WrapDB):
         settings.  If performance is an issue, and more than one
         setting is to be Get and or Set, use the `GXREG <geosoft.gxapi.GXREG>` directly.
         """
-        self._set_reg_symb_setting(symb, name.encode(), setting.encode())
+        self._set_reg_symb_setting(symb, name.encode('utf8'), setting.encode('utf8'))
         
 
 
@@ -1456,7 +1456,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDB._create(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode())
+        gxapi_cy.WrapDB._create(GXContext._get_tls_geo(), file.encode('utf8'), lines, chans, blobs, users, cache, super.encode('utf8'), password.encode('utf8'))
         
 
 
@@ -1493,7 +1493,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDB._create_comp(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page, level)
+        gxapi_cy.WrapDB._create_comp(GXContext._get_tls_geo(), file.encode('utf8'), lines, chans, blobs, users, cache, super.encode('utf8'), password.encode('utf8'), page, level)
         
 
 
@@ -1528,7 +1528,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDB._create_ex(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache, super.encode(), password.encode(), page)
+        gxapi_cy.WrapDB._create_ex(GXContext._get_tls_geo(), file.encode('utf8'), lines, chans, blobs, users, cache, super.encode('utf8'), password.encode('utf8'), page)
         
 
 
@@ -1598,7 +1598,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDB._grow(GXContext._get_tls_geo(), file.encode(), lines, chans, blobs, users, cache)
+        gxapi_cy.WrapDB._grow(GXContext._get_tls_geo(), file.encode('utf8'), lines, chans, blobs, users, cache)
         
 
 
@@ -1627,7 +1627,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `open <geosoft.gxapi.GXDB.open>`, `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB._can_open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._can_open(GXContext._get_tls_geo(), file.encode('utf8'), user.encode('utf8'), password.encode('utf8'))
         return ret_val
 
 
@@ -1656,7 +1656,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `open <geosoft.gxapi.GXDB.open>`, `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open <geosoft.gxapi.GXDB.can_open>`
         """
-        ret_val = gxapi_cy.WrapDB._can_open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._can_open_read_only(GXContext._get_tls_geo(), file.encode('utf8'), user.encode('utf8'), password.encode('utf8'))
         return ret_val
 
 
@@ -1746,7 +1746,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `open_read_only <geosoft.gxapi.GXDB.open_read_only>`, `can_open <geosoft.gxapi.GXDB.can_open>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB._open(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._open(GXContext._get_tls_geo(), file.encode('utf8'), user.encode('utf8'), password.encode('utf8'))
         return GXDB(ret_val)
 
 
@@ -1777,7 +1777,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `open <geosoft.gxapi.GXDB.open>`, `can_open <geosoft.gxapi.GXDB.can_open>`, `can_open_read_only <geosoft.gxapi.GXDB.can_open_read_only>`
         """
-        ret_val = gxapi_cy.WrapDB._open_read_only(GXContext._get_tls_geo(), file.encode(), user.encode(), password.encode())
+        ret_val = gxapi_cy.WrapDB._open_read_only(GXContext._get_tls_geo(), file.encode('utf8'), user.encode('utf8'), password.encode('utf8'))
         return GXDB(ret_val)
 
 
@@ -1794,7 +1794,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDB._repair(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapDB._repair(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -2163,7 +2163,7 @@ class GXDB(gxapi_cy.WrapDB):
         underscore character "_", and the first letter must be a letter
         or an underscore.
         """
-        ret_val = gxapi_cy.WrapDB._is_chan_name(GXContext._get_tls_geo(), chan.encode())
+        ret_val = gxapi_cy.WrapDB._is_chan_name(GXContext._get_tls_geo(), chan.encode('utf8'))
         return ret_val
 
 
@@ -2206,7 +2206,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapDB._is_line_name(GXContext._get_tls_geo(), line.encode())
+        ret_val = gxapi_cy.WrapDB._is_line_name(GXContext._get_tls_geo(), line.encode('utf8'))
         return ret_val
 
 
@@ -2305,7 +2305,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         Use LINK format to create a database link label.
         """
-        label.value = self._line_label(line, label.value.encode(), format)
+        label.value = self._line_label(line, label.value.encode('utf8'), format)
         
 
 
@@ -2348,7 +2348,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** The channel must be locked `DB_LOCK_READONLY <geosoft.gxapi.DB_LOCK_READONLY>` or `DB_LOCK_READWRITE <geosoft.gxapi.DB_LOCK_READWRITE>`
         """
-        line_number.value = self._line_number2(line, line_number.value.encode())
+        line_number.value = self._line_number2(line, line_number.value.encode('utf8'))
         
 
 
@@ -2421,7 +2421,7 @@ class GXDB(gxapi_cy.WrapDB):
         for an operation on a line.
         See also SetLineName2_DB.
         """
-        name.value = gxapi_cy.WrapDB._set_line_name(GXContext._get_tls_geo(), num, type, ver, name.value.encode())
+        name.value = gxapi_cy.WrapDB._set_line_name(GXContext._get_tls_geo(), num, type, ver, name.value.encode('utf8'))
         
 
 
@@ -2450,7 +2450,7 @@ class GXDB(gxapi_cy.WrapDB):
         The line number can be any combination of letters and numbers,
         i.e. XU324, 98765, A, 23NGV etc.
         """
-        name.value = gxapi_cy.WrapDB._set_line_name2(GXContext._get_tls_geo(), al_num.encode(), type, ver, name.value.encode())
+        name.value = gxapi_cy.WrapDB._set_line_name2(GXContext._get_tls_geo(), al_num.encode('utf8'), type, ver, name.value.encode('utf8'))
         
 
 
@@ -2467,7 +2467,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._load_select(file.encode())
+        self._load_select(file.encode('utf8'))
         
 
 
@@ -2560,7 +2560,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_select(file.encode())
+        self._save_select(file.encode('utf8'))
         
 
 
@@ -2592,7 +2592,7 @@ class GXDB(gxapi_cy.WrapDB):
         E.g. "F10" would select all lines of flight 10.
         Use an empty string ("") to select/deselect ALL lines.
         """
-        self._select(select.encode(), mode)
+        self._select(select.encode('utf8'), mode)
         
 
 
@@ -2918,7 +2918,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._class_chan_lst(lst, cl.encode())
+        self._class_chan_lst(lst, cl.encode('utf8'))
         
 
 
@@ -2944,7 +2944,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first, and the items are sorted by name.
         """
-        self._class_group_lst(lst, cl.encode())
+        self._class_group_lst(lst, cl.encode('utf8'))
         
 
 
@@ -2999,7 +2999,7 @@ class GXDB(gxapi_cy.WrapDB):
         Programmers should avoid using the above prefixes as the starting
         letters of their blob names to avoid any possible conflicts.
         """
-        ret_val = self._create_symb(name.encode(), symb, owner, category)
+        ret_val = self._create_symb(name.encode('utf8'), symb, owner, category)
         return ret_val
 
 
@@ -3055,7 +3055,7 @@ class GXDB(gxapi_cy.WrapDB):
         The ability to create a `GXVA <geosoft.gxapi.GXVA>` channel is not available in the
         free interface and requires a Montaj license.
         """
-        ret_val = self._create_symb_ex(name.encode(), symb, owner, category, extra)
+        ret_val = self._create_symb_ex(name.encode('utf8'), symb, owner, category, extra)
         return ret_val
 
 
@@ -3081,7 +3081,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The `GXLST <geosoft.gxapi.GXLST>` is cleared first.
         """
-        self._csv_chan_lst(lst, channels.encode())
+        self._csv_chan_lst(lst, channels.encode('utf8'))
         
 
 
@@ -3123,7 +3123,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._dup_line_symb(symb, new.encode())
+        ret_val = self._dup_line_symb(symb, new.encode('utf8'))
         return ret_val
 
 
@@ -3152,7 +3152,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `dup_symb_no_lock <geosoft.gxapi.GXDB.dup_symb_no_lock>`
         """
-        ret_val = self._dup_symb(symb, new.encode())
+        ret_val = self._dup_symb(symb, new.encode('utf8'))
         return ret_val
 
 
@@ -3181,7 +3181,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `dup_symb <geosoft.gxapi.GXDB.dup_symb>`
         """
-        ret_val = self._dup_symb_no_lock(symb, new.encode())
+        ret_val = self._dup_symb_no_lock(symb, new.encode('utf8'))
         return ret_val
 
 
@@ -3210,7 +3210,7 @@ class GXDB(gxapi_cy.WrapDB):
         Introduced in v5.1.3.
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
         """
-        ret_val = self._find_chan(chan.encode())
+        ret_val = self._find_chan(chan.encode('utf8'))
         return ret_val
 
 
@@ -3253,7 +3253,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The new `find_chan <geosoft.gxapi.GXDB.find_chan>` searches using the exact channel name.
         """
-        ret_val = self._find_symb(symb.encode(), type)
+        ret_val = self._find_symb(symb.encode('utf8'), type)
         return ret_val
 
 
@@ -3326,7 +3326,7 @@ class GXDB(gxapi_cy.WrapDB):
         Only channels with the given class name are included,
         e.g. use "ASSAY" for assay channels used in `GXCHIMERA <geosoft.gxapi.GXCHIMERA>`.
         """
-        ret_val = self._class_chan_list(vv, cl.encode())
+        ret_val = self._class_chan_list(vv, cl.encode('utf8'))
         return ret_val
 
 
@@ -3351,7 +3351,7 @@ class GXDB(gxapi_cy.WrapDB):
         Introduced in v5.1.3.
         `exist_chan <geosoft.gxapi.GXDB.exist_chan>` searches using the exact channel name.
         """
-        ret_val = self._exist_chan(chan.encode())
+        ret_val = self._exist_chan(chan.encode('utf8'))
         return ret_val
 
 
@@ -3392,7 +3392,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The new `exist_chan <geosoft.gxapi.GXDB.exist_chan>` searches using the exact channel name.
         """
-        ret_val = self._exist_symb(symb.encode(), type)
+        ret_val = self._exist_symb(symb.encode('utf8'), type)
         return ret_val
 
 
@@ -3457,7 +3457,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** searches for the "current" X, Y or Z channel.
         If none is defined, then returns "X", "Y" or "Z".
         """
-        chan.value = self._get_xyz_chan(chan_symb, chan.value.encode())
+        chan.value = self._get_xyz_chan(chan_symb, chan.value.encode('utf8'))
         
 
 
@@ -3621,7 +3621,7 @@ class GXDB(gxapi_cy.WrapDB):
         the current X and Y channels, and have GXs using the
         `get_xyz_chan_symb <geosoft.gxapi.GXDB.get_xyz_chan_symb>` function to load "X" and "Y" work as desired.
         """
-        self._set_xyz_chan(chan_symb, chan.encode())
+        self._set_xyz_chan(chan_symb, chan.encode('utf8'))
         
 
 
@@ -3770,7 +3770,7 @@ class GXDB(gxapi_cy.WrapDB):
         and is followed by a carriage return.
         The activity log is created automatically if it does not exist.
         """
-        self._add_comment(comment.encode(), str_val.encode(), indent)
+        self._add_comment(comment.encode('utf8'), str_val.encode('utf8'), indent)
         
 
 
@@ -3800,7 +3800,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._add_int_comment(comment.encode(), val, indent)
+        self._add_int_comment(comment.encode('utf8'), val, indent)
         
 
 
@@ -3830,7 +3830,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._add_double_comment(comment.encode(), val, indent)
+        self._add_double_comment(comment.encode('utf8'), val, indent)
         
 
 
@@ -3858,7 +3858,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         See Notes in `add_comment <geosoft.gxapi.GXDB.add_comment>`.
         """
-        self._add_time_comment(comment.encode(), indent)
+        self._add_time_comment(comment.encode('utf8'), indent)
         
 
 
@@ -3933,7 +3933,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** As of v6.3, if a group line has no class defined, then ALL
         channels are automatically assumed to be associated with it.
         """
-        self._associate_class(chan, cl.encode())
+        self._associate_class(chan, cl.encode('utf8'))
         
 
 
@@ -3952,7 +3952,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        str_out.value = gxapi_cy.WrapDB._gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
+        str_out.value = gxapi_cy.WrapDB._gen_valid_chan_symb(GXContext._get_tls_geo(), str_in.encode('utf8'), str_out.value.encode('utf8'))
         
 
 
@@ -3975,7 +3975,7 @@ class GXDB(gxapi_cy.WrapDB):
         or shorter. Escapes, leading and trailing spaces are removed, then
         all illegal characters are replaced with an underscore.
         """
-        str_out.value = gxapi_cy.WrapDB._gen_valid_line_symb(GXContext._get_tls_geo(), str_in.encode(), str_out.value.encode())
+        str_out.value = gxapi_cy.WrapDB._gen_valid_line_symb(GXContext._get_tls_geo(), str_in.encode('utf8'), str_out.value.encode('utf8'))
         
 
 
@@ -4075,7 +4075,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** See `get_va_base_coordinate_info <geosoft.gxapi.GXDB.get_va_base_coordinate_info>`.
         """
-        self._set_va_base_coordinate_info(ch, domain, base, vv, units.encode(), allow_changes)
+        self._set_va_base_coordinate_info(ch, domain, base, vv, units.encode('utf8'), allow_changes)
         
 
 
@@ -4102,7 +4102,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** See `set_va_base_coordinate_info <geosoft.gxapi.GXDB.set_va_base_coordinate_info>`.
         """
-        domain.value, base.value, units.value = self._get_va_base_coordinate_info(ch, domain.value, base.value, vv, units.value.encode())
+        domain.value, base.value, units.value = self._get_va_base_coordinate_info(ch, domain.value, base.value, vv, units.value.encode('utf8'))
         
 
 
@@ -4130,7 +4130,7 @@ class GXDB(gxapi_cy.WrapDB):
 
             `line_category <geosoft.gxapi.GXDB.line_category>` - to see if a line is a group line.
         """
-        cl.value = self._get_group_class(symb, cl.value.encode())
+        cl.value = self._get_group_class(symb, cl.value.encode('utf8'))
         
 
 
@@ -4171,7 +4171,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** See `set_va_prof_color_file <geosoft.gxapi.GXDB.set_va_prof_color_file>`.
         """
-        file.value = self._get_va_prof_color_file(ch, file.value.encode())
+        file.value = self._get_va_prof_color_file(ch, file.value.encode('utf8'))
         
 
 
@@ -4190,7 +4190,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        option.value = self._get_va_prof_sect_option(ch, option.value.encode())
+        option.value = self._get_va_prof_sect_option(ch, option.value.encode('utf8'))
         
 
 
@@ -4211,7 +4211,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **Note:** Fails in the channel is not an array channel
         """
-        file.value = self._get_va_sect_color_file(ch, file.value.encode())
+        file.value = self._get_va_sect_color_file(ch, file.value.encode('utf8'))
         
 
 
@@ -4316,7 +4316,7 @@ class GXDB(gxapi_cy.WrapDB):
             `line_category <geosoft.gxapi.GXDB.line_category>` - to see if a line is a group line.
             `associate <geosoft.gxapi.GXDB.associate>` - Associate a channel with a group.
         """
-        self._set_group_class(symb, cl.encode())
+        self._set_group_class(symb, cl.encode('utf8'))
         
 
 
@@ -4373,7 +4373,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         The color file search path is: Local directory, then oasismontaj\\tbl.
         """
-        self._set_va_prof_color_file(ch, file.encode())
+        self._set_va_prof_color_file(ch, file.encode('utf8'))
         
 
 
@@ -4392,7 +4392,7 @@ class GXDB(gxapi_cy.WrapDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_va_prof_sect_option(ch, option.encode())
+        self._set_va_prof_sect_option(ch, option.encode('utf8'))
         
 
 
@@ -4440,7 +4440,7 @@ class GXDB(gxapi_cy.WrapDB):
         **Note:** Fails in the channel is not an array channel, if the
         file does not exist, or if it is not a valid color zone file.
         """
-        self._set_va_sect_color_file(ch, file.encode())
+        self._set_va_sect_color_file(ch, file.encode('utf8'))
         
 
 

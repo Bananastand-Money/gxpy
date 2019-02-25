@@ -65,7 +65,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._add_pager(pg, var.encode())
+        self._add_pager(pg, var.encode('utf8'))
         
 
 
@@ -104,7 +104,7 @@ class GXPGEXP(gxapi_cy.WrapPGEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._do_formula(formula.encode(), unused)
+        self._do_formula(formula.encode('utf8'), unused)
         
 
 

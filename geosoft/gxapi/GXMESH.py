@@ -62,7 +62,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMESH._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapMESH._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXMESH(ret_val)
 
 
@@ -84,7 +84,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMESH._open(GXContext._get_tls_geo(), fileName.encode(), lstMeshNames)
+        ret_val = gxapi_cy.WrapMESH._open(GXContext._get_tls_geo(), fileName.encode('utf8'), lstMeshNames)
         return GXMESH(ret_val)
 
 
@@ -104,7 +104,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._insert_patch(mesh_name.encode())
+        ret_val = self._insert_patch(mesh_name.encode('utf8'))
         return ret_val
 
 
@@ -123,7 +123,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._delete_patch(mesh_name.encode(), patch_id)
+        self._delete_patch(mesh_name.encode('utf8'), patch_id)
         
 
 
@@ -145,7 +145,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._patch_exists(mesh_name.encode(), patch_id)
+        ret_val = self._patch_exists(mesh_name.encode('utf8'), patch_id)
         return ret_val
 
 
@@ -165,7 +165,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._num_patches(mesh_name.encode())
+        ret_val = self._num_patches(mesh_name.encode('utf8'))
         return ret_val
 
 
@@ -193,7 +193,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._add_vertex(mesh_name.encode(), patch_id, x, y, z)
+        ret_val = self._add_vertex(mesh_name.encode('utf8'), patch_id, x, y, z)
         return ret_val
 
 
@@ -215,7 +215,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._num_vertices(mesh_name.encode(), patch_id)
+        ret_val = self._num_vertices(mesh_name.encode('utf8'), patch_id)
         return ret_val
 
 
@@ -243,7 +243,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._add_face(mesh_name.encode(), patch_id, v0, v1, v2)
+        ret_val = self._add_face(mesh_name.encode('utf8'), patch_id, v0, v1, v2)
         return ret_val
 
 
@@ -265,7 +265,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._num_faces(mesh_name.encode(), patch_id)
+        ret_val = self._num_faces(mesh_name.encode('utf8'), patch_id)
         return ret_val
 
 
@@ -295,7 +295,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, x_coordinate.value, y_coordinate.value, z_coordinate.value = self._get_vertex_point(mesh_name.encode(), patch_id, vertex_index, x_coordinate.value, y_coordinate.value, z_coordinate.value)
+        ret_val, x_coordinate.value, y_coordinate.value, z_coordinate.value = self._get_vertex_point(mesh_name.encode('utf8'), patch_id, vertex_index, x_coordinate.value, y_coordinate.value, z_coordinate.value)
         return ret_val
 
 
@@ -320,7 +320,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_vertices(mesh_name.encode(), patch_id, vert_v_vx, vert_v_vy, vert_v_vz)
+        self._get_vertices(mesh_name.encode('utf8'), patch_id, vert_v_vx, vert_v_vy, vert_v_vz)
         
 
 
@@ -345,7 +345,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_faces(mesh_name.encode(), patch_id, face_v_1, face_v_2, face_v_3)
+        self._get_faces(mesh_name.encode('utf8'), patch_id, face_v_1, face_v_2, face_v_3)
         
 
 
@@ -368,7 +368,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._insert_attributes(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type)
+        self._insert_attributes(mesh_name.encode('utf8'), attribute_name.encode('utf8'), data_type, attribute_type)
         
 
 
@@ -395,7 +395,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_attribute_values(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type, patch_id, vv)
+        self._set_attribute_values(mesh_name.encode('utf8'), attribute_name.encode('utf8'), data_type, attribute_type, patch_id, vv)
         
 
 
@@ -422,7 +422,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_attribute_values(mesh_name.encode(), attribute_name.encode(), data_type, attribute_type, patch_id, vv)
+        self._get_attribute_values(mesh_name.encode('utf8'), attribute_name.encode('utf8'), data_type, attribute_type, patch_id, vv)
         
 
 
@@ -446,7 +446,7 @@ class GXMESH(gxapi_cy.WrapMESH):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMESH._import_grid_to_mesh(GXContext._get_tls_geo(), grid_file_name.encode(), geosurface_filename.encode(), surface_name.encode())
+        ret_val = gxapi_cy.WrapMESH._import_grid_to_mesh(GXContext._get_tls_geo(), grid_file_name.encode('utf8'), geosurface_filename.encode('utf8'), surface_name.encode('utf8'))
         return GXMESH(ret_val)
 
 

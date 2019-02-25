@@ -99,7 +99,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         The output values at the output data locations are created by performing an average of the original data point and
         its valid surrounding data points; what is essentially a 3x3 smoothing filter.
         """
-        gxapi_cy.WrapIMG._average2(GXContext._get_tls_geo(), grid_in.encode(), grid_out.encode())
+        gxapi_cy.WrapIMG._average2(GXContext._get_tls_geo(), grid_in.encode('utf8'), grid_out.encode('utf8'))
         
 
 
@@ -173,7 +173,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG._create_file(GXContext._get_tls_geo(), type, grid.encode(), mode)
+        ret_val = gxapi_cy.WrapIMG._create_file(GXContext._get_tls_geo(), type, grid.encode('utf8'), mode)
         return GXIMG(ret_val)
 
 
@@ -229,7 +229,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapIMG._create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode())
+        ret_val = gxapi_cy.WrapIMG._create_new_file(GXContext._get_tls_geo(), type, kx, width, height, grid.encode('utf8'))
         return GXIMG(ret_val)
 
 
@@ -258,7 +258,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         if the on-disk values represent color data as opposed
         to real numbers.
         """
-        ret_val = gxapi_cy.WrapIMG._create_out_file(GXContext._get_tls_geo(), type, grid.encode(), img)
+        ret_val = gxapi_cy.WrapIMG._create_out_file(GXContext._get_tls_geo(), type, grid.encode('utf8'), img)
         return GXIMG(ret_val)
 
 
@@ -577,7 +577,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapIMG._is_valid_img_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapIMG._is_valid_img_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -597,7 +597,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, err_msg.value = gxapi_cy.WrapIMG._is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode(), err_msg.value.encode())
+        ret_val, err_msg.value = gxapi_cy.WrapIMG._is_valid_img_file_ex(GXContext._get_tls_geo(), file.encode('utf8'), err_msg.value.encode('utf8'))
         return ret_val
 
 
@@ -936,7 +936,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMG._refresh_gi(GXContext._get_tls_geo(), grid.encode())
+        gxapi_cy.WrapIMG._refresh_gi(GXContext._get_tls_geo(), grid.encode('utf8'))
         
 
 
@@ -986,7 +986,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMG._report(GXContext._get_tls_geo(), grid.encode(), wa, force, decimals, title.encode())
+        gxapi_cy.WrapIMG._report(GXContext._get_tls_geo(), grid.encode('utf8'), wa, force, decimals, title.encode('utf8'))
         
 
 
@@ -1014,7 +1014,7 @@ class GXIMG(gxapi_cy.WrapIMG):
         **Note:** Appends the stats as a CSV line to the input text file.
         The header line should only be written to a new text file.
         """
-        gxapi_cy.WrapIMG._report_csv(GXContext._get_tls_geo(), grid.encode(), wa, force, decimals, header)
+        gxapi_cy.WrapIMG._report_csv(GXContext._get_tls_geo(), grid.encode('utf8'), wa, force, decimals, header)
         
 
 
@@ -1190,7 +1190,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapIMG._sync(GXContext._get_tls_geo(), grid.encode())
+        gxapi_cy.WrapIMG._sync(GXContext._get_tls_geo(), grid.encode('utf8'))
         
 
 
@@ -1276,7 +1276,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_double_parameter(name.encode(), value)
+        self._set_double_parameter(name.encode('utf8'), value)
         
 
 
@@ -1296,7 +1296,7 @@ class GXIMG(gxapi_cy.WrapIMG):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._get_double_parameter(name.encode())
+        ret_val = self._get_double_parameter(name.encode('utf8'))
         return ret_val
 
 

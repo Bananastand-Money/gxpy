@@ -59,7 +59,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._puts(str_val.encode())
+        self._puts(str_val.encode('utf8'))
         
 
 
@@ -83,7 +83,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **Note:** ANSI Encoding is assumed, See `create_ex <geosoft.gxapi.GXWA.create_ex>` to override this.
         """
-        ret_val = gxapi_cy.WrapWA._create(GXContext._get_tls_geo(), file.encode(), append)
+        ret_val = gxapi_cy.WrapWA._create(GXContext._get_tls_geo(), file.encode('utf8'), append)
         return GXWA(ret_val)
 
 
@@ -112,7 +112,7 @@ class GXWA(gxapi_cy.WrapWA):
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
-        ret_val = gxapi_cy.WrapWA._create_ex(GXContext._get_tls_geo(), file.encode(), append, encode)
+        ret_val = gxapi_cy.WrapWA._create_ex(GXContext._get_tls_geo(), file.encode('utf8'), append, encode)
         return GXWA(ret_val)
 
 
@@ -138,7 +138,7 @@ class GXWA(gxapi_cy.WrapWA):
 
         **Note:** See sbf.gxh. ANSI Encoding is assumed, See `create_sbf_ex <geosoft.gxapi.GXWA.create_sbf_ex>` to override this.
         """
-        ret_val = gxapi_cy.WrapWA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), append)
+        ret_val = gxapi_cy.WrapWA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode('utf8'), append)
         return GXWA(ret_val)
 
 
@@ -170,7 +170,7 @@ class GXWA(gxapi_cy.WrapWA):
         montaj engine that greatly increased the number of symbols that can be used. The :ref:`WA_ENCODE` constants
         were introduce that controls how text are written to files on disk with the `GXWA <geosoft.gxapi.GXWA>` class.
         """
-        ret_val = gxapi_cy.WrapWA._create_sbf_ex(GXContext._get_tls_geo(), sbf, file.encode(), append, encode)
+        ret_val = gxapi_cy.WrapWA._create_sbf_ex(GXContext._get_tls_geo(), sbf, file.encode('utf8'), append, encode)
         return GXWA(ret_val)
 
 

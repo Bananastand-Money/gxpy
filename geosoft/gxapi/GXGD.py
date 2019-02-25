@@ -66,7 +66,7 @@ class GXGD(gxapi_cy.WrapGD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapGD._create(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapGD._create(GXContext._get_tls_geo(), name.encode('utf8'), type)
         return GXGD(ret_val)
 
 

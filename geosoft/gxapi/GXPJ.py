@@ -215,7 +215,7 @@ class GXPJ(gxapi_cy.WrapPJ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapPJ._create(GXContext._get_tls_geo(), input.encode(), output.encode())
+        ret_val = gxapi_cy.WrapPJ._create(GXContext._get_tls_geo(), input.encode('utf8'), output.encode('utf8'))
         return GXPJ(ret_val)
 
 

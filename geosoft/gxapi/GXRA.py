@@ -64,7 +64,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapRA._create(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapRA._create(GXContext._get_tls_geo(), file.encode('utf8'))
         return GXRA(ret_val)
 
 
@@ -96,7 +96,7 @@ class GXRA(gxapi_cy.WrapRA):
 
             sbf.gxh
         """
-        ret_val = gxapi_cy.WrapRA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode())
+        ret_val = gxapi_cy.WrapRA._create_sbf(GXContext._get_tls_geo(), sbf, file.encode('utf8'))
         return GXRA(ret_val)
 
 
@@ -119,7 +119,7 @@ class GXRA(gxapi_cy.WrapRA):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, strbuff.value = self._gets(strbuff.value.encode())
+        ret_val, strbuff.value = self._gets(strbuff.value.encode('utf8'))
         return ret_val
 
 

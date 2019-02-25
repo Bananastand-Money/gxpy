@@ -107,7 +107,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         `SHP_GEOM_TYPE_ARCZ <geosoft.gxapi.SHP_GEOM_TYPE_ARCZ>`      `set_arc_z <geosoft.gxapi.GXSHP.set_arc_z>`
         `SHP_GEOM_TYPE_POLYGONZ <geosoft.gxapi.SHP_GEOM_TYPE_POLYGONZ>`  `set_polygon_z <geosoft.gxapi.GXSHP.set_polygon_z>`
         """
-        ret_val = gxapi_cy.WrapSHP._create(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapSHP._create(GXContext._get_tls_geo(), name.encode('utf8'), type)
         return GXSHP(ret_val)
 
 
@@ -132,7 +132,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._add_int_field(field.encode())
+        ret_val = self._add_int_field(field.encode('utf8'))
         return ret_val
 
 
@@ -157,7 +157,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._add_double_field(field.encode(), dec)
+        ret_val = self._add_double_field(field.encode('utf8'), dec)
         return ret_val
 
 
@@ -182,7 +182,7 @@ class GXSHP(gxapi_cy.WrapSHP):
         **Note:** The returned field index should be used with the SetXXX_SHP
         functions to set individual data values.
         """
-        ret_val = self._add_string_field(field.encode(), width)
+        ret_val = self._add_string_field(field.encode('utf8'), width)
         return ret_val
 
 
@@ -202,7 +202,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._find_field(field.encode())
+        ret_val = self._find_field(field.encode('utf8'))
         return ret_val
 
 
@@ -294,7 +294,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSHP._open(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapSHP._open(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXSHP(ret_val)
 
 
@@ -517,7 +517,7 @@ class GXSHP(gxapi_cy.WrapSHP):
 
         **Note:** The input string is converted to the field's data type.
         """
-        self._set_string(index, str_val.encode())
+        self._set_string(index, str_val.encode('utf8'))
         
 
 

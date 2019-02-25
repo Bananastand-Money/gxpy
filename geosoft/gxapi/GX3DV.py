@@ -99,7 +99,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
         **Note:** A `GX3DV <geosoft.gxapi.GX3DV>` packs all source files. This functions creates an unpacked map and
         unpacks the packed files in the same way that UnPackFilesEx in the `GXMAP <geosoft.gxapi.GXMAP>` class does.
         """
-        new_view.value, problem_files.value = self._copy_to_map(map, mview.encode(), min_x, min_y, max_x, max_y, force_overwrite, new_view.value.encode(), problem_files.value.encode())
+        new_view.value, problem_files.value = self._copy_to_map(map, mview.encode('utf8'), min_x, min_y, max_x, max_y, force_overwrite, new_view.value.encode('utf8'), problem_files.value.encode('utf8'))
         
 
 
@@ -121,7 +121,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.Wrap3DV._create_new(GXContext._get_tls_geo(), file_name.encode(), mview)
+        ret_val = gxapi_cy.Wrap3DV._create_new(GXContext._get_tls_geo(), file_name.encode('utf8'), mview)
         return GX3DV(ret_val)
 
 
@@ -141,7 +141,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.Wrap3DV._open(GXContext._get_tls_geo(), file_name.encode())
+        ret_val = gxapi_cy.Wrap3DV._open(GXContext._get_tls_geo(), file_name.encode('utf8'))
         return GX3DV(ret_val)
 
 
@@ -180,7 +180,7 @@ class GX3DV(gxapi_cy.Wrap3DV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        crc.value = self._crc_3dv(crc.value, file.encode())
+        crc.value = self._crc_3dv(crc.value, file.encode('utf8'))
         
 
 

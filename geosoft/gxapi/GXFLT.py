@@ -67,7 +67,7 @@ class GXFLT(gxapi_cy.WrapFLT):
 
               "-1,-1,1,1"
         """
-        ret_val = gxapi_cy.WrapFLT._create(GXContext._get_tls_geo(), input.encode())
+        ret_val = gxapi_cy.WrapFLT._create(GXContext._get_tls_geo(), input.encode('utf8'))
         return ret_val
 
 
@@ -105,7 +105,7 @@ class GXFLT(gxapi_cy.WrapFLT):
            1
            1
         """
-        ret_val = gxapi_cy.WrapFLT._load(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapFLT._load(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 

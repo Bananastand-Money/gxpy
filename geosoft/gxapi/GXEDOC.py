@@ -76,7 +76,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         not to save changes, the document is deleted thus keeping the
         project folders clean.
         """
-        ret_val = gxapi_cy.WrapEDOC._create_new_gms_3d(GXContext._get_tls_geo(), name.encode(), nx, ny, type)
+        ret_val = gxapi_cy.WrapEDOC._create_new_gms_3d(GXContext._get_tls_geo(), name.encode('utf8'), nx, ny, type)
         return GXEDOC(ret_val)
 
 
@@ -198,7 +198,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode('utf8'))
         
 
 
@@ -262,7 +262,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDOC._loaded(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._loaded(GXContext._get_tls_geo(), name.encode('utf8'), type)
         return ret_val
 
 
@@ -369,7 +369,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDOC._load(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._load(GXContext._get_tls_geo(), name.encode('utf8'), type)
         return GXEDOC(ret_val)
 
 
@@ -397,7 +397,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEDOC.load>` except that the document(s) is not activated (brought to foreground) and no
         					guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDOC._load_no_activate(GXContext._get_tls_geo(), name.encode(), type)
+        ret_val = gxapi_cy.WrapEDOC._load_no_activate(GXContext._get_tls_geo(), name.encode('utf8'), type)
         return GXEDOC(ret_val)
 
 
@@ -454,7 +454,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDOC._sync(GXContext._get_tls_geo(), file.encode(), type)
+        gxapi_cy.WrapEDOC._sync(GXContext._get_tls_geo(), file.encode('utf8'), type)
         
 
 
@@ -495,7 +495,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         **Note:** If the document is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDOC.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDOC._un_load(GXContext._get_tls_geo(), name.encode(), type)
+        gxapi_cy.WrapEDOC._un_load(GXContext._get_tls_geo(), name.encode('utf8'), type)
         
 
 
@@ -537,7 +537,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
 
         **Note:** If the document is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDOC._un_load_discard(GXContext._get_tls_geo(), name.encode(), type)
+        gxapi_cy.WrapEDOC._un_load_discard(GXContext._get_tls_geo(), name.encode('utf8'), type)
         
 
 
@@ -564,7 +564,7 @@ class GXEDOC(gxapi_cy.WrapEDOC):
         The user can be prompted to save before unloading.
         If `EDOC_UNLOAD_NO_PROMPT <geosoft.gxapi.EDOC_UNLOAD_NO_PROMPT>`, data is always saved.
         """
-        gxapi_cy.WrapEDOC._un_load_verify(GXContext._get_tls_geo(), name.encode(), verify, type)
+        gxapi_cy.WrapEDOC._un_load_verify(GXContext._get_tls_geo(), name.encode('utf8'), verify, type)
         
 
 

@@ -429,7 +429,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        desc.value = self._get_description(desc.value.encode())
+        desc.value = self._get_description(desc.value.encode('utf8'))
         
 
 
@@ -464,7 +464,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._load_table(table.encode())
+        self._load_table(table.encode('utf8'))
         
 
 
@@ -545,7 +545,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_table(table.encode())
+        self._save_table(table.encode('utf8'))
         
 
 
@@ -579,7 +579,7 @@ class GXPLY(gxapi_cy.WrapPLY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_description(desc.encode())
+        self._set_description(desc.encode('utf8'))
         
 
 

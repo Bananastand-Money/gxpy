@@ -71,7 +71,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
         **Note:** Fails if the `GXVOX <geosoft.gxapi.GXVOX>` object is NOT thematic.
         (See the `create_thematic <geosoft.gxapi.GXVOXD.create_thematic>` function.)
         """
-        ret_val = gxapi_cy.WrapVOXD._create(GXContext._get_tls_geo(), vox, table.encode(), zone, contour)
+        ret_val = gxapi_cy.WrapVOXD._create(GXContext._get_tls_geo(), vox, table.encode('utf8'), zone, contour)
         return GXVOXD(ret_val)
 
 
@@ -237,7 +237,7 @@ class GXVOXD(gxapi_cy.WrapVOXD):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode('utf8'))
         
 
 

@@ -90,7 +90,7 @@ class GXPAT(gxapi_cy.WrapPAT):
         There will always be at least two items,
         "None" and "Solid Fill"
         """
-        self._get_lst(cl.encode(), lst)
+        self._get_lst(cl.encode('utf8'), lst)
         
 
 

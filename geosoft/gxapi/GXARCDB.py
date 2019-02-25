@@ -68,7 +68,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._create_dat(x_field.encode(), y_field.encode(), d_field.encode())
+        ret_val = self._create_dat(x_field.encode('utf8'), y_field.encode('utf8'), d_field.encode('utf8'))
         return GXDAT(ret_val)
 
 
@@ -94,7 +94,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._create_dat_3d(x_field.encode(), y_field.encode(), z_field.encode(), d_field.encode())
+        ret_val = self._create_dat_3d(x_field.encode('utf8'), y_field.encode('utf8'), z_field.encode('utf8'), d_field.encode('utf8'))
         return GXDAT(ret_val)
 
 
@@ -138,7 +138,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        self._export_to_db(db, temp.encode(), line.encode())
+        self._export_to_db(db, temp.encode('utf8'), line.encode('utf8'))
         
 
 
@@ -219,7 +219,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._exist_field(field.encode())
+        ret_val = self._exist_field(field.encode('utf8'))
         return ret_val
 
 
@@ -259,7 +259,7 @@ class GXARCDB(gxapi_cy.WrapARCDB):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._import_chem_database_wizard(temp.encode(), type)
+        ret_val = self._import_chem_database_wizard(temp.encode('utf8'), type)
         return ret_val
 
 

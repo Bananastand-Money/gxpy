@@ -200,7 +200,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapCSYMB._create(GXContext._get_tls_geo(), itr.encode())
+        ret_val = gxapi_cy.WrapCSYMB._create(GXContext._get_tls_geo(), itr.encode('utf8'))
         return GXCSYMB(ret_val)
 
 
@@ -242,7 +242,7 @@ class GXCSYMB(gxapi_cy.WrapCSYMB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_font(font.encode(), geo_font, weight, italic)
+        self._set_font(font.encode('utf8'), geo_font, weight, italic)
         
 
 

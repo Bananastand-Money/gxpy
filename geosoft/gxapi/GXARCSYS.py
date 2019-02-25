@@ -64,7 +64,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
         otherwise MxD path). We cannot mess with the CWD in ArcGIS because there MxD settings for
         relative/absolute paths depends on it.
         """
-        path.value = gxapi_cy.WrapARCSYS._get_browse_loc(GXContext._get_tls_geo(), path.value.encode())
+        path.value = gxapi_cy.WrapARCSYS._get_browse_loc(GXContext._get_tls_geo(), path.value.encode('utf8'))
         
 
 
@@ -83,7 +83,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
 
         **Note:** If the current document is not yet saved, this will return an empty string.
         """
-        path.value = gxapi_cy.WrapARCSYS._get_current_doc(GXContext._get_tls_geo(), path.value.encode())
+        path.value = gxapi_cy.WrapARCSYS._get_current_doc(GXContext._get_tls_geo(), path.value.encode('utf8'))
         
 
 
@@ -103,7 +103,7 @@ class GXARCSYS(gxapi_cy.WrapARCSYS):
         **Note:** Will also set the current working directory (CWD) if the MxD has not been saved.
         We cannot mess with the CWD in ArcGIS because their MxD settings for relative/absolute paths depends on it.
         """
-        gxapi_cy.WrapARCSYS._set_browse_loc(GXContext._get_tls_geo(), path.encode())
+        gxapi_cy.WrapARCSYS._set_browse_loc(GXContext._get_tls_geo(), path.encode('utf8'))
         
 
 

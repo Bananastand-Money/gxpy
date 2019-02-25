@@ -114,7 +114,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         **Note:** Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._import_hole(proj.encode(), dir.encode(), para.encode(), geo_vv, delete, convert)
+        ret_val = self._import_hole(proj.encode('utf8'), dir.encode('utf8'), para.encode('utf8'), geo_vv, delete, convert)
         return ret_val
 
 
@@ -143,7 +143,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         Point data and polygon data are saved into Dnnn lines in GDB,
         nnn representing incremental number starting from 0
         """
-        ret_val = self._import_point(db, para.encode(), convert)
+        ret_val = self._import_point(db, para.encode('utf8'), convert)
         return ret_val
 
 
@@ -170,7 +170,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         the user can make selections then the selections are saved
         back in the selection file.
         """
-        ret_val = self._selection_tool(selection_file.encode(), mode)
+        ret_val = self._selection_tool(selection_file.encode('utf8'), mode)
         return ret_val
 
 
@@ -197,7 +197,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
         the user can make selections then the selections are saved
         back in the selection file.
         """
-        ret_val = self._selection_tool_force_grid_selection(selection_file.encode(), mode)
+        ret_val = self._selection_tool_force_grid_selection(selection_file.encode('utf8'), mode)
         return ret_val
 
 
@@ -219,7 +219,7 @@ class GXACQUIRE(gxapi_cy.WrapACQUIRE):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        mode.value, destination_grid.value = self._get_selection_info(selection_file.encode(), mode.value, destination_grid.value)
+        mode.value, destination_grid.value = self._get_selection_info(selection_file.encode('utf8'), mode.value, destination_grid.value)
         
 
 

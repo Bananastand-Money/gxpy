@@ -600,7 +600,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._fill_string(str_val.encode())
+        self._fill_string(str_val.encode('utf8'))
         
 
 
@@ -717,7 +717,7 @@ class GXVV(gxapi_cy.WrapVV):
         Type conversions are performed if necessary.  Dummy values
         are converted to "*" string.
         """
-        str_val.value = self._get_string(element, str_val.value.encode())
+        str_val.value = self._get_string(element, str_val.value.encode('utf8'))
         
 
 
@@ -1035,7 +1035,7 @@ class GXVV(gxapi_cy.WrapVV):
         not shortened after this call.  If the mask is longer than the target,
         the target will be lengthenned with dummies before applying the mask.
         """
-        self._mask_str(vv_m, str_val.encode())
+        self._mask_str(vv_m, str_val.encode('utf8'))
         
 
 
@@ -1551,7 +1551,7 @@ class GXVV(gxapi_cy.WrapVV):
         not what you expect it to be because of dynamic allocation at
         an earlier time.
         """
-        self._set_string(element, value.encode())
+        self._set_string(element, value.encode('utf8'))
         
 
 
@@ -1576,7 +1576,7 @@ class GXVV(gxapi_cy.WrapVV):
         If the element is > current `GXVV <geosoft.gxapi.GXVV>` length, the `GXVV <geosoft.gxapi.GXVV>` length is
         increased.
         """
-        self._set_string_n(start, n, value.encode())
+        self._set_string_n(start, n, value.encode('utf8'))
         
 
 
@@ -1891,7 +1891,7 @@ class GXVV(gxapi_cy.WrapVV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._write_xml(file.encode(), format, decimal)
+        self._write_xml(file.encode('utf8'), format, decimal)
         
 
 

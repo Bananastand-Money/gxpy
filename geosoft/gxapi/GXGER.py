@@ -90,7 +90,7 @@ class GXGER(gxapi_cy.WrapGER):
         **Note:** The `GXGER <geosoft.gxapi.GXGER>` file may be in the local directory or the GEOSOFT
         directory.
         """
-        ret_val = gxapi_cy.WrapGER._create(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapGER._create(GXContext._get_tls_geo(), file.encode('utf8'))
         return GXGER(ret_val)
 
 
@@ -115,7 +115,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, message.value = self._get(num, message.value.encode())
+        ret_val, message.value = self._get(num, message.value.encode('utf8'))
         return ret_val
 
 
@@ -134,7 +134,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_int(parm.encode(), set)
+        self._set_int(parm.encode('utf8'), set)
         
 
 
@@ -153,7 +153,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_double(parm.encode(), set)
+        self._set_double(parm.encode('utf8'), set)
         
 
 
@@ -172,7 +172,7 @@ class GXGER(gxapi_cy.WrapGER):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_string(parm.encode(), set.encode())
+        self._set_string(parm.encode('utf8'), set.encode('utf8'))
         
 
 

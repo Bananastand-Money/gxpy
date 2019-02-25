@@ -86,7 +86,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record exists, the existing record is cleared
         and the record number is returned.
         """
-        rec.value = self._add_record(key.encode(), rec.value)
+        rec.value = self._add_record(key.encode('utf8'), rec.value)
         
 
 
@@ -145,7 +145,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB._create(GXContext._get_tls_geo(), file.encode(), type, delim, key.encode())
+        ret_val = gxapi_cy.WrapLTB._create(GXContext._get_tls_geo(), file.encode('utf8'), type, delim, key.encode('utf8'))
         return GXLTB(ret_val)
 
 
@@ -178,7 +178,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB._create_crypt(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode(), crypt.encode())
+        ret_val = gxapi_cy.WrapLTB._create_crypt(GXContext._get_tls_geo(), file.encode('utf8'), type, delim, case, key.encode('utf8'), crypt.encode('utf8'))
         return GXLTB(ret_val)
 
 
@@ -209,7 +209,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the file has no header, field names are assumed to be "0", "1", etc.
         """
-        ret_val = gxapi_cy.WrapLTB._create_ex(GXContext._get_tls_geo(), file.encode(), type, delim, case, key.encode())
+        ret_val = gxapi_cy.WrapLTB._create_ex(GXContext._get_tls_geo(), file.encode('utf8'), type, delim, case, key.encode('utf8'))
         return GXLTB(ret_val)
 
 
@@ -258,7 +258,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         The `GXLST <geosoft.gxapi.GXLST>` names will be the `GXLTB <geosoft.gxapi.GXLTB>` key fields and the
         `GXLST <geosoft.gxapi.GXLST>` values will be the `GXLTB <geosoft.gxapi.GXLTB>` record numbers.
         """
-        self._get_con_lst(fld, match.encode(), match_type, lst)
+        self._get_con_lst(fld, match.encode('utf8'), match_type, lst)
         
 
 
@@ -345,7 +345,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._find_field(field.encode())
+        ret_val = self._find_field(field.encode('utf8'))
         return ret_val
 
 
@@ -366,7 +366,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._find_key(key.encode())
+        ret_val = self._find_key(key.encode('utf8'))
         return ret_val
 
 
@@ -387,7 +387,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **Note:** If the record or field are out of range, an empty string is returned.
         """
-        field.value = self._get_field(field_num, field.value.encode())
+        field.value = self._get_field(field_num, field.value.encode('utf8'))
         
 
 
@@ -434,7 +434,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
         """
-        token.value = self._get_string(record, field, token.value.encode())
+        token.value = self._get_string(record, field, token.value.encode('utf8'))
         
 
 
@@ -458,7 +458,7 @@ class GXLTB(gxapi_cy.WrapLTB):
         **Note:** If the record or field are out of range,
         an empty string or dummy value is returned.
         """
-        token.value = self._get_english_string(record, field, token.value.encode())
+        token.value = self._get_english_string(record, field, token.value.encode('utf8'))
         
 
 
@@ -501,7 +501,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._search(rec, fld, field.encode())
+        ret_val = self._search(rec, fld, field.encode('utf8'))
         return ret_val
 
 
@@ -578,7 +578,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save(file.encode())
+        self._save(file.encode('utf8'))
         
 
 
@@ -597,7 +597,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_crypt(file.encode(), crypt.encode())
+        self._save_crypt(file.encode('utf8'), crypt.encode('utf8'))
         
 
 
@@ -660,7 +660,7 @@ class GXLTB(gxapi_cy.WrapLTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._set_string(record, field, token.encode())
+        self._set_string(record, field, token.encode('utf8'))
         
 
 

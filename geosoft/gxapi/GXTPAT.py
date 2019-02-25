@@ -99,7 +99,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **Note:** The new code must be unique; not in the existing list.
         """
-        self._add_color(code.encode(), label.encode(), descr.encode(), color)
+        self._add_color(code.encode('utf8'), label.encode('utf8'), descr.encode('utf8'), color)
         
 
 
@@ -139,7 +139,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._code(code.encode())
+        ret_val = self._code(code.encode('utf8'))
         return ret_val
 
 
@@ -167,7 +167,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         **Note:** Returns the solid color, pattern foreground color, or symbol
         color, along with the code, label and description.
         """
-        code.value, label.value, descr.value, color.value = self._get_solid_pattern(index, code.value.encode(), label.value.encode(), descr.value.encode(), color.value)
+        code.value, label.value, descr.value, color.value = self._get_solid_pattern(index, code.value.encode('utf8'), label.value.encode('utf8'), descr.value.encode('utf8'), color.value)
         
 
 
@@ -228,7 +228,7 @@ class GXTPAT(gxapi_cy.WrapTPAT):
         SYMBROT         Symbol rotation
         SYMBSCL         Additional scaling factor applied to the current size
         """
-        self._load_csv(file.encode())
+        self._load_csv(file.encode('utf8'))
         
 
 

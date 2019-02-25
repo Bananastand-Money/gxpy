@@ -157,7 +157,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         For example "<geosoft>/user/csv/datum.csv"
         """
-        ret_val = gxapi_cy.WrapBF._create(GXContext._get_tls_geo(), file.encode(), status)
+        ret_val = gxapi_cy.WrapBF._create(GXContext._get_tls_geo(), file.encode('utf8'), status)
         return GXBF(ret_val)
 
 
@@ -183,7 +183,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **Note:** see sbf.gxh
         """
-        ret_val = gxapi_cy.WrapBF._create_sbf(GXContext._get_tls_geo(), sbf, file.encode(), status)
+        ret_val = gxapi_cy.WrapBF._create_sbf(GXContext._get_tls_geo(), sbf, file.encode('utf8'), status)
         return GXBF(ret_val)
 
 
@@ -246,7 +246,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        data.value = self._read_binary_string(bytes, encoding, data.value.encode())
+        data.value = self._read_binary_string(bytes, encoding, data.value.encode('utf8'))
         
 
 
@@ -408,7 +408,7 @@ class GXBF(gxapi_cy.WrapBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._write_binary_string(encoding, data.encode())
+        self._write_binary_string(encoding, data.encode('utf8'))
         
 
 

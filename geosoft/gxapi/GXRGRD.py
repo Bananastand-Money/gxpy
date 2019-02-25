@@ -119,7 +119,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         If the grid file name is not defined, the `GXIMG <geosoft.gxapi.GXIMG>` is memory-based; not
         tied to a file.
         """
-        ret_val = gxapi_cy.WrapRGRD._create_img(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grid.encode())
+        ret_val = gxapi_cy.WrapRGRD._create_img(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode('utf8'), grid.encode('utf8'))
         return GXIMG(ret_val)
 
 
@@ -143,7 +143,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._default(zchan.encode(), in_dat)
+        ret_val = self._default(zchan.encode('utf8'), in_dat)
         return ret_val
 
 
@@ -170,7 +170,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXRGRD <geosoft.gxapi.GXRGRD>` object.
         """
-        ret_val = self._load_parms(file.encode())
+        ret_val = self._load_parms(file.encode('utf8'))
         return ret_val
 
 
@@ -223,7 +223,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapRGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode())
+        ret_val = gxapi_cy.WrapRGRD._run2(GXContext._get_tls_geo(), db, x.encode('utf8'), y.encode('utf8'), z.encode('utf8'), ctl.encode('utf8'), grd.encode('utf8'))
         return ret_val
 
 
@@ -247,7 +247,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._save_parms(name.encode())
+        ret_val = self._save_parms(name.encode('utf8'))
         return ret_val
 
 
@@ -274,7 +274,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapRGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode(), grd.encode())
+        gxapi_cy.WrapRGRD._run_vv(GXContext._get_tls_geo(), vv_x, vv_y, vv_z, ipj, ctl.encode('utf8'), grd.encode('utf8'))
         
 
 
@@ -299,7 +299,7 @@ class GXRGRD(gxapi_cy.WrapRGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapRGRD._run_list(GXContext._get_tls_geo(), dbs.encode(), zch.encode(), ipj, ctl.encode(), grd.encode())
+        gxapi_cy.WrapRGRD._run_list(GXContext._get_tls_geo(), dbs.encode('utf8'), zch.encode('utf8'), ipj, ctl.encode('utf8'), grd.encode('utf8'))
         
 
 

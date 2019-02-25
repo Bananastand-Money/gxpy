@@ -164,7 +164,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapITR._create_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapITR._create_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return GXITR(ret_val)
 
 
@@ -197,7 +197,7 @@ class GXITR(gxapi_cy.WrapITR):
         the same name as the original grid but with the suffux "_s"
         added to the name part of the grid.
         """
-        ret_val = gxapi_cy.WrapITR._create_img(GXContext._get_tls_geo(), img, tbl.encode(), zone, contour)
+        ret_val = gxapi_cy.WrapITR._create_img(GXContext._get_tls_geo(), img, tbl.encode('utf8'), zone, contour)
         return GXITR(ret_val)
 
 
@@ -219,7 +219,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapITR._create_map(GXContext._get_tls_geo(), map, name.encode())
+        ret_val = gxapi_cy.WrapITR._create_map(GXContext._get_tls_geo(), map, name.encode('utf8'))
         return GXITR(ret_val)
 
 
@@ -422,7 +422,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._load_a(file.encode())
+        self._load_a(file.encode('utf8'))
         
 
 
@@ -550,7 +550,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_a(file.encode())
+        self._save_a(file.encode('utf8'))
         
 
 
@@ -567,7 +567,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_file(file.encode())
+        self._save_file(file.encode('utf8'))
         
 
 
@@ -607,7 +607,7 @@ class GXITR(gxapi_cy.WrapITR):
 
         **Note:** See the `create_map <geosoft.gxapi.GXITR.create_map>` function
         """
-        gxapi_cy.WrapITR._set_agg_map(GXContext._get_tls_geo(), map, name.encode(), itr)
+        gxapi_cy.WrapITR._set_agg_map(GXContext._get_tls_geo(), map, name.encode('utf8'), itr)
         
 
 

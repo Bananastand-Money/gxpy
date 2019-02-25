@@ -92,7 +92,7 @@ class GXDU(gxapi_cy.WrapDU):
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU._table_look1(GXContext._get_tls_geo(), db, line, i_ch, o_ch, ref_field.encode(), l_field.encode(), mode, close, tb)
+        gxapi_cy.WrapDU._table_look1(GXContext._get_tls_geo(), db, line, i_ch, o_ch, ref_field.encode('utf8'), l_field.encode('utf8'), mode, close, tb)
         
 
 
@@ -136,7 +136,7 @@ class GXDU(gxapi_cy.WrapDU):
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU._table_look2(GXContext._get_tls_geo(), db, line, r1_ch, r2_ch, o_ch, r1_field.encode(), r2_field.encode(), l_field.encode(), mode, close, tb)
+        gxapi_cy.WrapDU._table_look2(GXContext._get_tls_geo(), db, line, r1_ch, r2_ch, o_ch, r1_field.encode('utf8'), r2_field.encode('utf8'), l_field.encode('utf8'), mode, close, tb)
         
 
 
@@ -181,7 +181,7 @@ class GXDU(gxapi_cy.WrapDU):
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU._table_look_i2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb)
+        gxapi_cy.WrapDU._table_look_i2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode('utf8'), r2.encode('utf8'), field.encode('utf8'), mode, dist, tb)
         
 
 
@@ -226,7 +226,7 @@ class GXDU(gxapi_cy.WrapDU):
         - secondary index channel for Lookup2C_DU, LookupIValC_DU
         and LookupRValC_DU
         """
-        gxapi_cy.WrapDU._table_look_r2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode(), r2.encode(), field.encode(), mode, dist, tb)
+        gxapi_cy.WrapDU._table_look_r2(GXContext._get_tls_geo(), db, line, val, i_ch, o_ch, r1.encode('utf8'), r2.encode('utf8'), field.encode('utf8'), mode, dist, tb)
         
 
 
@@ -249,7 +249,7 @@ class GXDU(gxapi_cy.WrapDU):
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU._ado_table_names(GXContext._get_tls_geo(), connect.encode(), vv)
+        gxapi_cy.WrapDU._ado_table_names(GXContext._get_tls_geo(), connect.encode('utf8'), vv)
         
 
 
@@ -534,7 +534,7 @@ class GXDU(gxapi_cy.WrapDU):
         this will NOT be true. (Groups without class names are treated
         as isolated entities for the purposes of channel loading).
         """
-        gxapi_cy.WrapDU._break_line_to_groups(GXContext._get_tls_geo(), db, line, chan, cl.encode())
+        gxapi_cy.WrapDU._break_line_to_groups(GXContext._get_tls_geo(), db, line, chan, cl.encode('utf8'))
         
 
 
@@ -561,7 +561,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The same as BreakLineToGroups, but with an option to reset each line's starting fiducial to zero.
         """
-        gxapi_cy.WrapDU._break_line_to_groups2(GXContext._get_tls_geo(), db, line, chan, cl.encode(), reset_fi_ds)
+        gxapi_cy.WrapDU._break_line_to_groups2(GXContext._get_tls_geo(), db, line, chan, cl.encode('utf8'), reset_fi_ds)
         
 
 
@@ -772,7 +772,7 @@ class GXDU(gxapi_cy.WrapDU):
         `STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`; i.e. use
         Creat_VV(-`STR_DB_SYMBOL <geosoft.gxapi.STR_DB_SYMBOL>`, 0), or it will assert.
         """
-        gxapi_cy.WrapDU._dao_table_names(GXContext._get_tls_geo(), file.encode(), type.encode(), vv)
+        gxapi_cy.WrapDU._dao_table_names(GXContext._get_tls_geo(), file.encode('utf8'), type.encode('utf8'), vv)
         
 
 
@@ -1019,7 +1019,7 @@ class GXDU(gxapi_cy.WrapDU):
         channels, listed by the symbols (DB_SYMB) values, cast to int values and
         stored in a `GXVV <geosoft.gxapi.GXVV>`.
         """
-        gxapi_cy.WrapDU._export1(GXContext._get_tls_geo(), db, format, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header)
+        gxapi_cy.WrapDU._export1(GXContext._get_tls_geo(), db, format, cur_line.encode('utf8'), chan_vv, chan, data.encode('utf8'), dummies, header)
         
 
 
@@ -1055,7 +1055,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** See `export1 <geosoft.gxapi.GXDU.export1>`.
         The line names are printed as the first column of data exported.
         """
-        gxapi_cy.WrapDU._export2(GXContext._get_tls_geo(), db, format, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header, line_names)
+        gxapi_cy.WrapDU._export2(GXContext._get_tls_geo(), db, format, cur_line.encode('utf8'), chan_vv, chan, data.encode('utf8'), dummies, header, line_names)
         
 
 
@@ -1095,7 +1095,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** Other defined FIELDS stored in the database (see `import_amira <geosoft.gxapi.GXDU.import_amira>` function)
         will be automatically included in the export
         """
-        gxapi_cy.WrapDU._export_amira(GXContext._get_tls_geo(), db, wa, one_cols_ch.encode(), array_ch.encode(), time_ch.encode(), errors_ch.encode(), datatype.encode(), units.encode(), config.encode(), instrument.encode(), frequency.encode())
+        gxapi_cy.WrapDU._export_amira(GXContext._get_tls_geo(), db, wa, one_cols_ch.encode('utf8'), array_ch.encode('utf8'), time_ch.encode('utf8'), errors_ch.encode('utf8'), datatype.encode('utf8'), units.encode('utf8'), config.encode('utf8'), instrument.encode('utf8'), frequency.encode('utf8'))
         
 
 
@@ -1132,7 +1132,7 @@ class GXDU(gxapi_cy.WrapDU):
         if it is (1) a group and (2) selected, else save the first selected
         group. ---
         """
-        gxapi_cy.WrapDU._export_aseg(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, defn.encode(), data.encode())
+        gxapi_cy.WrapDU._export_aseg(GXContext._get_tls_geo(), db, cur_line.encode('utf8'), chan_vv, chan, defn.encode('utf8'), data.encode('utf8'))
         
 
 
@@ -1175,7 +1175,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         This version supports projections
         """
-        gxapi_cy.WrapDU._export_aseg_proj(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, defn.encode(), data.encode(), proj.encode(), ipj)
+        gxapi_cy.WrapDU._export_aseg_proj(GXContext._get_tls_geo(), db, cur_line.encode('utf8'), chan_vv, chan, defn.encode('utf8'), data.encode('utf8'), proj.encode('utf8'), ipj)
         
 
 
@@ -1203,7 +1203,7 @@ class GXDU(gxapi_cy.WrapDU):
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        crc.value = gxapi_cy.WrapDU._export_chan_crc(GXContext._get_tls_geo(), db, symb, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapDU._export_chan_crc(GXContext._get_tls_geo(), db, symb, crc.value, file.encode('utf8'))
         
 
 
@@ -1240,7 +1240,7 @@ class GXDU(gxapi_cy.WrapDU):
         Option to filter out data where one of the channels has a dummy in it.
         Option to allow a header with the channel names.
         """
-        gxapi_cy.WrapDU._export_csv(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, data.encode(), dummies, header)
+        gxapi_cy.WrapDU._export_csv(GXContext._get_tls_geo(), db, cur_line.encode('utf8'), chan_vv, chan, data.encode('utf8'), dummies, header)
         
 
 
@@ -1266,7 +1266,7 @@ class GXDU(gxapi_cy.WrapDU):
         full channel (include metadata) do a CRC of the generated
         file.
         """
-        crc.value = gxapi_cy.WrapDU._export_database_crc(GXContext._get_tls_geo(), db, crc.value, file.encode())
+        crc.value = gxapi_cy.WrapDU._export_database_crc(GXContext._get_tls_geo(), db, crc.value, file.encode('utf8'))
         
 
 
@@ -1290,7 +1290,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** The iDispChanList_DBE or `GXDB.symb_list <geosoft.gxapi.GXDB.symb_list>` methods can be
         used to obtain a list of channels.
         """
-        gxapi_cy.WrapDU._export_gbn(GXContext._get_tls_geo(), db, vv, data.encode())
+        gxapi_cy.WrapDU._export_gbn(GXContext._get_tls_geo(), db, vv, data.encode('utf8'))
         
 
 
@@ -1322,7 +1322,7 @@ class GXDU(gxapi_cy.WrapDU):
         a single table, or individual tables, based on the
         value of :ref:`DU_LINEOUT`
         """
-        gxapi_cy.WrapDU._export_mdb(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, single, data.encode())
+        gxapi_cy.WrapDU._export_mdb(GXContext._get_tls_geo(), db, cur_line.encode('utf8'), chan_vv, chan, single, data.encode('utf8'))
         
 
 
@@ -1358,7 +1358,7 @@ class GXDU(gxapi_cy.WrapDU):
         a single table, or individual tables, based on the
         value of :ref:`DU_LINEOUT`
         """
-        gxapi_cy.WrapDU._export_geodatabase(GXContext._get_tls_geo(), db, feature_class_name.encode(), cur_line.encode(), chan_vv, chan, output, single, data.encode())
+        gxapi_cy.WrapDU._export_geodatabase(GXContext._get_tls_geo(), db, feature_class_name.encode('utf8'), cur_line.encode('utf8'), chan_vv, chan, output, single, data.encode('utf8'))
         
 
 
@@ -1387,7 +1387,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** Searches the geodatabases for an existing Feature class
         """
-        ret_val = gxapi_cy.WrapDU._get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), db, geodatabase.encode(), lst, vv)
+        ret_val = gxapi_cy.WrapDU._get_existing_feature_classes_in_geodatabase(GXContext._get_tls_geo(), db, geodatabase.encode('utf8'), lst, vv)
         return ret_val
 
 
@@ -1420,7 +1420,7 @@ class GXDU(gxapi_cy.WrapDU):
         with group name suffixes, and lines go to a single file, or multiple files
         with line name suffixes, based on the value of :ref:`DU_LINEOUT`.
         """
-        gxapi_cy.WrapDU._export_shp(GXContext._get_tls_geo(), db, cur_line.encode(), chan_vv, chan, single, data.encode(), lst)
+        gxapi_cy.WrapDU._export_shp(GXContext._get_tls_geo(), db, cur_line.encode('utf8'), chan_vv, chan, single, data.encode('utf8'), lst)
         
 
 
@@ -1459,7 +1459,7 @@ class GXDU(gxapi_cy.WrapDU):
         4. This can be used to export a group, but the group must be the
         currently displayed line, and only that group will be exported.
         """
-        gxapi_cy.WrapDU._export_xyz(GXContext._get_tls_geo(), db, data.encode(), template.encode())
+        gxapi_cy.WrapDU._export_xyz(GXContext._get_tls_geo(), db, data.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -1559,7 +1559,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapDU._gen_lev(GXContext._get_tls_geo(), db, in_file.encode(), out_file.encode(), max_dz, m0)
+        gxapi_cy.WrapDU._gen_lev(GXContext._get_tls_geo(), db, in_file.encode('utf8'), out_file.encode('utf8'), max_dz, m0)
         
 
 
@@ -1588,7 +1588,7 @@ class GXDU(gxapi_cy.WrapDU):
         Line, LFid, LZ, LDZ
         Mask
         """
-        gxapi_cy.WrapDU._gen_lev_db(GXContext._get_tls_geo(), db, out_file.encode(), max_dz, m0)
+        gxapi_cy.WrapDU._gen_lev_db(GXContext._get_tls_geo(), db, out_file.encode('utf8'), max_dz, m0)
         
 
 
@@ -1607,7 +1607,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode(), temp.encode())
+        gxapi_cy.WrapDU._gen_xyz_temp(GXContext._get_tls_geo(), xyz.encode('utf8'), temp.encode('utf8'))
         
 
 
@@ -1626,7 +1626,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        num_fields.value = gxapi_cy.WrapDU._get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode(), num_fields.value)
+        num_fields.value = gxapi_cy.WrapDU._get_xyz_num_fields(GXContext._get_tls_geo(), xyz.encode('utf8'), num_fields.value)
         
 
 
@@ -1923,7 +1923,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        line.value = gxapi_cy.WrapDU._import_bin3(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.value.encode(), flight, date, wa)
+        line.value = gxapi_cy.WrapDU._import_bin3(GXContext._get_tls_geo(), db, data.encode('utf8'), template.encode('utf8'), line.value.encode('utf8'), flight, date, wa)
         
 
 
@@ -1950,7 +1950,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The polygon file is provided by Ana Christina in Brazil.
         """
-        gxapi_cy.WrapDU._imp_cb_ply(GXContext._get_tls_geo(), db, pj, file.encode(), x_chan, y_chan)
+        gxapi_cy.WrapDU._imp_cb_ply(GXContext._get_tls_geo(), db, pj, file.encode('utf8'), x_chan, y_chan)
         
 
 
@@ -1984,7 +1984,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_ado(GXContext._get_tls_geo(), db, connect.encode('utf8'), table.encode('utf8'), template.encode('utf8'), line.encode('utf8'))
         
 
 
@@ -2017,7 +2017,7 @@ class GXDU(gxapi_cy.WrapDU):
         4. If connection string is of type "FILENAME=..." the connection will attempt to resolve
         it as a file database. (see also ODBCFileConnect_GUI)
         """
-        gxapi_cy.WrapDU._import_all_ado(GXContext._get_tls_geo(), db, connect.encode(), storage)
+        gxapi_cy.WrapDU._import_all_ado(GXContext._get_tls_geo(), db, connect.encode('utf8'), storage)
         
 
 
@@ -2068,7 +2068,7 @@ class GXDU(gxapi_cy.WrapDU):
         Paradox 4.x
         Paradox 5.x
         """
-        gxapi_cy.WrapDU._import_all_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), storage)
+        gxapi_cy.WrapDU._import_all_dao(GXContext._get_tls_geo(), db, data.encode('utf8'), type.encode('utf8'), storage)
         
 
 
@@ -2122,7 +2122,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans)
+        gxapi_cy.WrapDU._import_aseg(GXContext._get_tls_geo(), db, template.encode('utf8'), file.encode('utf8'), data.encode('utf8'), flc.encode('utf8'), chans)
         
 
 
@@ -2157,7 +2157,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** This version supports projections
         """
-        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, template.encode(), file.encode(), data.encode(), flc.encode(), chans, proj.encode(), x_ch.encode(), y_ch.encode())
+        gxapi_cy.WrapDU._import_aseg_proj(GXContext._get_tls_geo(), db, template.encode('utf8'), file.encode('utf8'), data.encode('utf8'), flc.encode('utf8'), chans, proj.encode('utf8'), x_ch.encode('utf8'), y_ch.encode('utf8'))
         
 
 
@@ -2200,7 +2200,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU._import_bin(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date)
+        gxapi_cy.WrapDU._import_bin(GXContext._get_tls_geo(), db, data.encode('utf8'), template.encode('utf8'), line.encode('utf8'), flight, date)
         
 
 
@@ -2244,7 +2244,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `lab_template <geosoft.gxapi.GXDU.lab_template>`
         """
-        gxapi_cy.WrapDU._import_bin2(GXContext._get_tls_geo(), db, data.encode(), template.encode(), line.encode(), flight, date, wa)
+        gxapi_cy.WrapDU._import_bin2(GXContext._get_tls_geo(), db, data.encode('utf8'), template.encode('utf8'), line.encode('utf8'), flight, date, wa)
         
 
 
@@ -2280,7 +2280,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin2 <geosoft.gxapi.GXDU.import_bin2>`
         """
-        gxapi_cy.WrapDU._import_bin4(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), line.encode(), flight, date, wa)
+        gxapi_cy.WrapDU._import_bin4(GXContext._get_tls_geo(), db, mode, data.encode('utf8'), template.encode('utf8'), line.encode('utf8'), flight, date, wa)
         
 
 
@@ -2309,7 +2309,7 @@ class GXDU(gxapi_cy.WrapDU):
         by the RMS Instruments DAARC500 instrument, and outputs the data to
         a line in the database. The channels created depend on the input data type
         """
-        gxapi_cy.WrapDU._import_daarc500_serial(GXContext._get_tls_geo(), db, line, file.encode(), channel, type)
+        gxapi_cy.WrapDU._import_daarc500_serial(GXContext._get_tls_geo(), db, line, file.encode('utf8'), channel, type)
         
 
 
@@ -2340,7 +2340,7 @@ class GXDU(gxapi_cy.WrapDU):
         NumSat (Number of satellites), GPS_HDOP (Horizontal Dilution of Position),
         Undulation, GPS_DiffAge (Age of differential channel).
         """
-        gxapi_cy.WrapDU._import_daarc500_serial_gps(GXContext._get_tls_geo(), db, line, file.encode(), channel)
+        gxapi_cy.WrapDU._import_daarc500_serial_gps(GXContext._get_tls_geo(), db, line, file.encode('utf8'), channel)
         
 
 
@@ -2378,7 +2378,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode(), type.encode(), table.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_dao(GXContext._get_tls_geo(), db, data.encode('utf8'), type.encode('utf8'), table.encode('utf8'), template.encode('utf8'), line.encode('utf8'))
         
 
 
@@ -2410,7 +2410,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         3. If the line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode(), template.encode(), line.encode())
+        gxapi_cy.WrapDU._import_esri(GXContext._get_tls_geo(), db, connect.encode('utf8'), template.encode('utf8'), line.encode('utf8'))
         
 
 
@@ -2429,7 +2429,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_gbn(GXContext._get_tls_geo(), db, file.encode())
+        gxapi_cy.WrapDU._import_gbn(GXContext._get_tls_geo(), db, file.encode('utf8'))
         
 
 
@@ -2448,7 +2448,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_oddf(GXContext._get_tls_geo(), db, file.encode())
+        gxapi_cy.WrapDU._import_oddf(GXContext._get_tls_geo(), db, file.encode('utf8'))
         
 
 
@@ -2471,7 +2471,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, template.encode(), data.encode(), chans)
+        gxapi_cy.WrapDU._import_pico(GXContext._get_tls_geo(), db, template.encode('utf8'), data.encode('utf8'), chans)
         
 
 
@@ -2499,7 +2499,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** Each slice in X,Y or Z is imported to its own line in the database
         beginning with L0.
         """
-        gxapi_cy.WrapDU._import_ubc_mod_msh(GXContext._get_tls_geo(), db, mesh.encode(), mods.encode(), dir, dummy)
+        gxapi_cy.WrapDU._import_ubc_mod_msh(GXContext._get_tls_geo(), db, mesh.encode('utf8'), mods.encode('utf8'), dir, dummy)
         
 
 
@@ -2518,7 +2518,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._import_usgs_post(GXContext._get_tls_geo(), db, file.encode())
+        gxapi_cy.WrapDU._import_usgs_post(GXContext._get_tls_geo(), db, file.encode('utf8'))
         
 
 
@@ -2547,7 +2547,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode())
+        gxapi_cy.WrapDU._import_xyz(GXContext._get_tls_geo(), db, mode, data.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -2577,7 +2577,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         2. Both the import template and data file must exist.
         """
-        gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode(), template.encode(), wa)
+        gxapi_cy.WrapDU._import_xyz2(GXContext._get_tls_geo(), db, mode, data.encode('utf8'), template.encode('utf8'), wa)
         
 
 
@@ -2601,7 +2601,7 @@ class GXDU(gxapi_cy.WrapDU):
         **Note:** 1. All columns in the speficied ioGAS data file will be imported.
         2. If a line already exists, the data will overwrite the existing data.
         """
-        gxapi_cy.WrapDU._import_io_gas(GXContext._get_tls_geo(), db, data_csv.encode(), template.encode())
+        gxapi_cy.WrapDU._import_io_gas(GXContext._get_tls_geo(), db, data_csv.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -2709,7 +2709,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapDU._intersect(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
+        gxapi_cy.WrapDU._intersect(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode('utf8'))
         
 
 
@@ -2736,7 +2736,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapDU._intersect_all(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode())
+        gxapi_cy.WrapDU._intersect_all(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, tol, file.encode('utf8'))
         
 
 
@@ -2757,7 +2757,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** If the TBL exists, it is overwritten.
         """
-        gxapi_cy.WrapDU._intersect_gd_bto_tbl(GXContext._get_tls_geo(), db.encode(), tbl.encode())
+        gxapi_cy.WrapDU._intersect_gd_bto_tbl(GXContext._get_tls_geo(), db.encode('utf8'), tbl.encode('utf8'))
         
 
 
@@ -2792,7 +2792,7 @@ class GXDU(gxapi_cy.WrapDU):
         after processing levelling corrections. Existing intersections
         whose locations do not exist in the database are ignored.
         """
-        gxapi_cy.WrapDU._intersect_old(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, in_file.encode(), out_file.encode())
+        gxapi_cy.WrapDU._intersect_old(GXContext._get_tls_geo(), db, x_chan, y_chan, z_chan, in_file.encode('utf8'), out_file.encode('utf8'))
         
 
 
@@ -2816,7 +2816,7 @@ class GXDU(gxapi_cy.WrapDU):
         The database is split by Tie lines (or whatever lines are found in column 3
         of the TBL file.
         """
-        gxapi_cy.WrapDU._intersect_tb_lto_gdb(GXContext._get_tls_geo(), tbl.encode(), db.encode())
+        gxapi_cy.WrapDU._intersect_tb_lto_gdb(GXContext._get_tls_geo(), tbl.encode('utf8'), db.encode('utf8'))
         
 
 
@@ -2870,7 +2870,7 @@ class GXDU(gxapi_cy.WrapDU):
 
             `import_bin <geosoft.gxapi.GXDU.import_bin>`
         """
-        gxapi_cy.WrapDU._lab_template(GXContext._get_tls_geo(), data.encode(), template.encode(), type, delimit.encode(), name_off, unit_off, data_off, sample_type, data_type)
+        gxapi_cy.WrapDU._lab_template(GXContext._get_tls_geo(), data.encode('utf8'), template.encode('utf8'), type, delimit.encode('utf8'), name_off, unit_off, data_off, sample_type, data_type)
         
 
 
@@ -2918,7 +2918,7 @@ class GXDU(gxapi_cy.WrapDU):
         If the constant is not defined and it is not already in
         the `GXREG <geosoft.gxapi.GXREG>`, the indicated default will be set.
         """
-        gxapi_cy.WrapDU._load_gravity(GXContext._get_tls_geo(), db, reg, line, data.encode())
+        gxapi_cy.WrapDU._load_gravity(GXContext._get_tls_geo(), db, reg, line, data.encode('utf8'))
         
 
 
@@ -2939,7 +2939,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** Has its own format - space-delimited columns of data
         """
-        gxapi_cy.WrapDU._load_gravity_cg6(GXContext._get_tls_geo(), db, data.encode())
+        gxapi_cy.WrapDU._load_gravity_cg6(GXContext._get_tls_geo(), db, data.encode('utf8'))
         
 
 
@@ -3744,7 +3744,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU._scan_ado(GXContext._get_tls_geo(), connect.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_ado(GXContext._get_tls_geo(), connect.encode('utf8'), table.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -3768,7 +3768,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode(), data.encode(), flc.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_aseg(GXContext._get_tls_geo(), file.encode('utf8'), data.encode('utf8'), flc.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -3793,7 +3793,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** All the channels are listed
         """
-        gxapi_cy.WrapDU._scan_dao(GXContext._get_tls_geo(), file.encode(), type.encode(), table.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_dao(GXContext._get_tls_geo(), file.encode('utf8'), type.encode('utf8'), table.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -3813,7 +3813,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode(), template.encode())
+        gxapi_cy.WrapDU._scan_pico(GXContext._get_tls_geo(), data.encode('utf8'), template.encode('utf8'))
         
 
 
@@ -4367,7 +4367,7 @@ class GXDU(gxapi_cy.WrapDU):
         (This is to simplify creating multiple grids from
         at once, where not all may intersect).
         """
-        gxapi_cy.WrapDU._voxel_section(GXContext._get_tls_geo(), db, line, x_ch, y_ch, vox, grid.encode(), cell_x, cell_y, interp)
+        gxapi_cy.WrapDU._voxel_section(GXContext._get_tls_geo(), db, line, x_ch, y_ch, vox, grid.encode('utf8'), cell_x, cell_y, interp)
         
 
 
@@ -4672,7 +4672,7 @@ class GXDU(gxapi_cy.WrapDU):
         MINIMUM - the minimum weighting value to apply, at the radius (Default = 0.0001).
         POWER - Exponential power to use in the weighting function (negative of this is used) (Default = 2).
         """
-        gxapi_cy.WrapDU._create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), db, ch, reg, database.encode())
+        gxapi_cy.WrapDU._create_drillhole_parameter_weight_constraint_database(GXContext._get_tls_geo(), db, ch, reg, database.encode('utf8'))
         
 
 
@@ -4811,7 +4811,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU._direct_grid_data_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method)
+        gxapi_cy.WrapDU._direct_grid_data_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode('utf8'), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, method)
         
 
 
@@ -4860,7 +4860,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **Note:** The Z and Data channels may be array channels. If they are, the array sizes must match.
         """
-        gxapi_cy.WrapDU._direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode(), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy)
+        gxapi_cy.WrapDU._direct_grid_item_counts_to_voxel(GXContext._get_tls_geo(), db, x_channel, y_channel, z_channel, data_channel, output_voxel_filename.encode('utf8'), origin_x, origin_y, origin_z, cell_count_x, cell_count_y, cell_count_z, cell_size_x, cell_size_y, cell_size_z, pb_replace_zeroes_with_dummy)
         
 
 
@@ -5141,7 +5141,7 @@ class GXDU(gxapi_cy.WrapDU):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        covered_area.value, total_area.value = gxapi_cy.WrapDU._footprint_coverage_dynamic(GXContext._get_tls_geo(), dat, area, channel_name.encode(), segments, thinning_threshold, covered_area.value, total_area.value, result)
+        covered_area.value, total_area.value = gxapi_cy.WrapDU._footprint_coverage_dynamic(GXContext._get_tls_geo(), dat, area, channel_name.encode('utf8'), segments, thinning_threshold, covered_area.value, total_area.value, result)
         
 
 

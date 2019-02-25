@@ -107,7 +107,7 @@ class GXTB(gxapi_cy.WrapTB):
         the table header, the `GXTB <geosoft.gxapi.GXTB>` object will read in the table and dummy
         the elements of the missing data columns.
         """
-        ret_val = gxapi_cy.WrapTB._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapTB._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXTB(ret_val)
 
 
@@ -175,7 +175,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._field(name.encode())
+        ret_val = self._field(name.encode('utf8'))
         return ret_val
 
 
@@ -196,7 +196,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        val.value = self._get_string(row, col, val.value.encode())
+        val.value = self._get_string(row, col, val.value.encode('utf8'))
         
 
 
@@ -235,7 +235,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = self._find_col_by_index(idx, name.value.encode())
+        name.value = self._find_col_by_index(idx, name.value.encode('utf8'))
         
 
 
@@ -256,7 +256,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._find_col_by_name(name.encode())
+        ret_val = self._find_col_by_name(name.encode('utf8'))
         return ret_val
 
 
@@ -395,7 +395,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save(name.encode())
+        self._save(name.encode('utf8'))
         
 
 
@@ -435,7 +435,7 @@ class GXTB(gxapi_cy.WrapTB):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_to_ascii(name.encode())
+        self._save_to_ascii(name.encode('utf8'))
         
 
 
@@ -537,7 +537,7 @@ class GXTB(gxapi_cy.WrapTB):
         the new rows up to the new element's row will also contain
         invalid data.
         """
-        self._set_string(row, col, val.encode())
+        self._set_string(row, col, val.encode('utf8'))
         
 
 

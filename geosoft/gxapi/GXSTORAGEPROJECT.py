@@ -59,7 +59,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSTORAGEPROJECT._open(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSTORAGEPROJECT._open(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -91,7 +91,7 @@ class GXSTORAGEPROJECT(gxapi_cy.WrapSTORAGEPROJECT):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSTORAGEPROJECT._remove_dataset(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSTORAGEPROJECT._remove_dataset(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 

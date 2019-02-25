@@ -62,7 +62,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapPGU._bool_mask(GXContext._get_tls_geo(), pg, ref_fil.encode())
+        gxapi_cy.WrapPGU._bool_mask(GXContext._get_tls_geo(), pg, ref_fil.encode('utf8'))
         
 
 
@@ -128,7 +128,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapPGU._fill(GXContext._get_tls_geo(), pg, fl_roll_wt, fl_roll_base, fl_roll_dist, fl_mxf, fl_mxp, fl_amp_lmt, fl_edge_lmt, fl_edge_wid, fl_npass, ref_fil.encode())
+        gxapi_cy.WrapPGU._fill(GXContext._get_tls_geo(), pg, fl_roll_wt, fl_roll_base, fl_roll_dist, fl_mxf, fl_mxp, fl_amp_lmt, fl_edge_lmt, fl_edge_wid, fl_npass, ref_fil.encode('utf8'))
         
 
 
@@ -174,7 +174,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapPGU._filt_sym(GXContext._get_tls_geo(), pg, npass, usefile, file.encode(), size, vv)
+        gxapi_cy.WrapPGU._filt_sym(GXContext._get_tls_geo(), pg, npass, usefile, file.encode('utf8'), size, vv)
         
 
 
@@ -199,7 +199,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapPGU._filt_sym5(GXContext._get_tls_geo(), pg, npass, usefile, file.encode(), vv)
+        gxapi_cy.WrapPGU._filt_sym5(GXContext._get_tls_geo(), pg, npass, usefile, file.encode('utf8'), vv)
         
 
 
@@ -229,7 +229,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         point will be picked if its grid value is greater than
         the value of one or more of its four neighouring points.
         """
-        gxapi_cy.WrapPGU._grid_peak(GXContext._get_tls_geo(), grid.encode(), nlmt, vv_x, vv_y, vv_z)
+        gxapi_cy.WrapPGU._grid_peak(GXContext._get_tls_geo(), grid.encode('utf8'), nlmt, vv_x, vv_y, vv_z)
         
 
 
@@ -459,7 +459,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        gxapi_cy.WrapPGU._peakedness(GXContext._get_tls_geo(), grid.encode(), pkness, vv_x, vv_y, vv_z)
+        gxapi_cy.WrapPGU._peakedness(GXContext._get_tls_geo(), grid.encode('utf8'), pkness, vv_x, vv_y, vv_z)
         
 
 
@@ -498,7 +498,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         value range for anomalies. For example the 1 mV anomaly could quite possibly have
         the same representation as the 100 mV anomaly using this function.
         """
-        gxapi_cy.WrapPGU._peakedness_grid(GXContext._get_tls_geo(), grdi.encode(), grdo.encode(), radius, percent_lesser)
+        gxapi_cy.WrapPGU._peakedness_grid(GXContext._get_tls_geo(), grdi.encode('utf8'), grdo.encode('utf8'), radius, percent_lesser)
         
 
 
@@ -526,7 +526,7 @@ class GXPGU(gxapi_cy.WrapPGU):
         The reference file is used in various operations where it is
         necessary to mask some output to the original defined cells.
         """
-        gxapi_cy.WrapPGU._ref_file(GXContext._get_tls_geo(), pg, ref_fil.encode())
+        gxapi_cy.WrapPGU._ref_file(GXContext._get_tls_geo(), pg, ref_fil.encode('utf8'))
         
 
 
@@ -561,7 +561,7 @@ class GXPGU(gxapi_cy.WrapPGU):
 
         **Note:** The trend object and projection are optional.
         """
-        gxapi_cy.WrapPGU._save_file(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, tr, ipj, file.encode())
+        gxapi_cy.WrapPGU._save_file(GXContext._get_tls_geo(), pg, xo, yo, dx, dy, rot, tr, ipj, file.encode('utf8'))
         
 
 

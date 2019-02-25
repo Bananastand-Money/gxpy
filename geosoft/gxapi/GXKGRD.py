@@ -111,7 +111,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
         Otherwise, the control file's settings are retrieved from
         the file and loaded into the `GXKGRD <geosoft.gxapi.GXKGRD>` object.
         """
-        ret_val = self._load_parms(file.encode())
+        ret_val = self._load_parms(file.encode('utf8'))
         return ret_val
 
 
@@ -148,7 +148,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._run(zchan.encode(), in_dat, out_grd_dat, out_err_dat, in_var_name.encode(), out_var_name.encode(), vao, vi, vo)
+        ret_val = self._run(zchan.encode('utf8'), in_dat, out_grd_dat, out_err_dat, in_var_name.encode('utf8'), out_var_name.encode('utf8'), vao, vi, vo)
         return ret_val
 
 
@@ -186,7 +186,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapKGRD._run2(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), vao)
+        ret_val = gxapi_cy.WrapKGRD._run2(GXContext._get_tls_geo(), db, x.encode('utf8'), y.encode('utf8'), z.encode('utf8'), ctl.encode('utf8'), grd.encode('utf8'), err_grd.encode('utf8'), in_var.encode('utf8'), out_var.encode('utf8'), vao)
         return ret_val
 
 
@@ -226,7 +226,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapKGRD._run3(GXContext._get_tls_geo(), db, x.encode(), y.encode(), z.encode(), ctl.encode(), grd.encode(), err_grd.encode(), in_var.encode(), out_var.encode(), log_file.encode(), vao)
+        ret_val = gxapi_cy.WrapKGRD._run3(GXContext._get_tls_geo(), db, x.encode('utf8'), y.encode('utf8'), z.encode('utf8'), ctl.encode('utf8'), grd.encode('utf8'), err_grd.encode('utf8'), in_var.encode('utf8'), out_var.encode('utf8'), log_file.encode('utf8'), vao)
         return ret_val
 
 
@@ -250,7 +250,7 @@ class GXKGRD(gxapi_cy.WrapKGRD):
         **Note:** If the control file did not previously exist, it will be
         created. Otherwise, the old file will be overwritten.
         """
-        ret_val = self._save_parms(name.encode())
+        ret_val = self._save_parms(name.encode('utf8'))
         return ret_val
 
 

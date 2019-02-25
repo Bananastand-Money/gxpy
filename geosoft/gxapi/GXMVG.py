@@ -147,7 +147,7 @@ class GXMVG(gxapi_cy.WrapMVG):
 
         **Note:** Obsolete
         """
-        ret_val = gxapi_cy.WrapMVG._create(GXContext._get_tls_geo(), map, name.encode(), xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u)
+        ret_val = gxapi_cy.WrapMVG._create(GXContext._get_tls_geo(), map, name.encode('utf8'), xmin_m, ymin_m, xmax_m, ymax_m, xmin_u, ymin_u, xmax_u, ymax_u)
         return GXMVG(ret_val)
 
 

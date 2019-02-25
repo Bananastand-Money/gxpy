@@ -77,7 +77,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
         **Note:** The file's path need to be visible as local files on the server.
         Network drives and substitutes may not work.
         """
-        ret_val = gxapi_cy.WrapSQLSRV._attach_mdf(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode(), mdf_file_name.encode(), ldf_file_name.encode())
+        ret_val = gxapi_cy.WrapSQLSRV._attach_mdf(GXContext._get_tls_geo(), server.encode('utf8'), user.encode('utf8'), password.encode('utf8'), db.encode('utf8'), mdf_file_name.encode('utf8'), ldf_file_name.encode('utf8'))
         return ret_val
 
 
@@ -104,7 +104,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV._detach_db(GXContext._get_tls_geo(), server.encode(), user.encode(), password.encode(), db.encode())
+        ret_val = gxapi_cy.WrapSQLSRV._detach_db(GXContext._get_tls_geo(), server.encode('utf8'), user.encode('utf8'), password.encode('utf8'), db.encode('utf8'))
         return ret_val
 
 
@@ -131,7 +131,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV._get_database_languages_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV._get_database_languages_lst(GXContext._get_tls_geo(), lst, server.encode('utf8'), user.encode('utf8'), password.encode('utf8'), win_auth)
         return ret_val
 
 
@@ -158,7 +158,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSQLSRV._get_databases_lst(GXContext._get_tls_geo(), lst, server.encode(), user.encode(), password.encode(), win_auth)
+        ret_val = gxapi_cy.WrapSQLSRV._get_databases_lst(GXContext._get_tls_geo(), lst, server.encode('utf8'), user.encode('utf8'), password.encode('utf8'), win_auth)
         return ret_val
 
 
@@ -183,7 +183,7 @@ class GXSQLSRV(gxapi_cy.WrapSQLSRV):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV._get_login_gui(GXContext._get_tls_geo(), server.encode(), user.value.encode(), password.value.encode(), mode, win_auth.value)
+        user.value, password.value, win_auth.value = gxapi_cy.WrapSQLSRV._get_login_gui(GXContext._get_tls_geo(), server.encode('utf8'), user.value.encode('utf8'), password.value.encode('utf8'), mode, win_auth.value)
         
 
 

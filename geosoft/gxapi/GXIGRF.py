@@ -143,7 +143,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         the `GXIGRF <geosoft.gxapi.GXIGRF>` year nearest to the line's date will
         be used. Otherwise, the specified year is used.
         """
-        ret_val = gxapi_cy.WrapIGRF._create(GXContext._get_tls_geo(), date, year, filename.encode())
+        ret_val = gxapi_cy.WrapIGRF._create(GXContext._get_tls_geo(), date, year, filename.encode('utf8'))
         return GXIGRF(ret_val)
 
 
@@ -168,7 +168,7 @@ class GXIGRF(gxapi_cy.WrapIGRF):
         up only to calculate for years within the date range, and will
         return an error otherwise.
         """
-        min.value, max.value = gxapi_cy.WrapIGRF._date_range(GXContext._get_tls_geo(), file_name.encode(), min.value, max.value)
+        min.value, max.value = gxapi_cy.WrapIGRF._date_range(GXContext._get_tls_geo(), file_name.encode('utf8'), min.value, max.value)
         
 
 

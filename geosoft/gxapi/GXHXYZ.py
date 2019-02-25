@@ -65,7 +65,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXHXYZ(ret_val)
 
 
@@ -108,7 +108,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ._h_create_db(GXContext._get_tls_geo(), db, gvv, name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._h_create_db(GXContext._get_tls_geo(), db, gvv, name.encode('utf8'))
         return GXHXYZ(ret_val)
 
 
@@ -138,7 +138,7 @@ class GXHXYZ(gxapi_cy.WrapHXYZ):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), template.encode(), x.encode(), y.encode(), z.encode(), ipj, name.encode())
+        ret_val = gxapi_cy.WrapHXYZ._h_create_sql(GXContext._get_tls_geo(), template.encode('utf8'), x.encode('utf8'), y.encode('utf8'), z.encode('utf8'), ipj, name.encode('utf8'))
         return GXHXYZ(ret_val)
 
 

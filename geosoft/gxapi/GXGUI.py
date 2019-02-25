@@ -90,7 +90,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode(), con_file_name.encode())
+        gxapi_cy.WrapGUI._fft2_spec_filter(GXContext._get_tls_geo(), spec_file_name.encode('utf8'), con_file_name.encode('utf8'))
         
 
 
@@ -270,7 +270,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._grid_stat_hist(GXContext._get_tls_geo(), grid_name.encode())
+        gxapi_cy.WrapGUI._grid_stat_hist(GXContext._get_tls_geo(), grid_name.encode('utf8'))
         
 
 
@@ -289,7 +289,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._voxel_stat_hist(GXContext._get_tls_geo(), vox_name.encode())
+        gxapi_cy.WrapGUI._voxel_stat_hist(GXContext._get_tls_geo(), vox_name.encode('utf8'))
         
 
 
@@ -391,7 +391,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         The "Data source label" and "Data source" is information displayed
         in the dialog for the user to know where the `GXIPJ <geosoft.gxapi.GXIPJ>` came from (e.g. "Grid: X.grd")
         """
-        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode(), source.encode())
+        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode('utf8'), source.encode('utf8'))
         return ret_val
 
 
@@ -425,7 +425,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Same as `coord_sys_wizard_licensed <geosoft.gxapi.GXGUI.coord_sys_wizard_licensed>` but will always be editable. The other
         method is not editable in the viewer while this one is.
         """
-        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode(), source.encode())
+        ret_val = gxapi_cy.WrapGUI._coord_sys_wizard_licensed(GXContext._get_tls_geo(), ipj, editable, mode, source_label.encode('utf8'), source.encode('utf8'))
         return ret_val
 
 
@@ -477,7 +477,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         In the tool, it is the "modified" orientation required to keep the edited projection's grid
         in the same location as it was in the target projection.
         """
-        ret_val, x0.value, y0.value, dx.value, dy.value, rot.value = gxapi_cy.WrapGUI._coord_sys_wizard_grid(GXContext._get_tls_geo(), ipj, target_ipj, editable, mode, source_label.encode(), source.encode(), nx, ny, x0.value, y0.value, dx.value, dy.value, rot.value)
+        ret_val, x0.value, y0.value, dx.value, dy.value, rot.value = gxapi_cy.WrapGUI._coord_sys_wizard_grid(GXContext._get_tls_geo(), ipj, target_ipj, editable, mode, source_label.encode('utf8'), source.encode('utf8'), nx, ny, x0.value, y0.value, dx.value, dy.value, rot.value)
         return ret_val
 
 
@@ -508,7 +508,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         returned as the type. Otherwise, a dialog appears listing the
         other valid DAO database types.
         """
-        ret_val, type.value = gxapi_cy.WrapGUI._database_type(GXContext._get_tls_geo(), name.encode(), type.value.encode())
+        ret_val, type.value = gxapi_cy.WrapGUI._database_type(GXContext._get_tls_geo(), name.encode('utf8'), type.value.encode('utf8'))
         return ret_val
 
 
@@ -546,7 +546,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         dmString
         dmWireframePoint
         """
-        ret_val, type.value = gxapi_cy.WrapGUI._datamine_type(GXContext._get_tls_geo(), file.encode(), type.value)
+        ret_val, type.value = gxapi_cy.WrapGUI._datamine_type(GXContext._get_tls_geo(), file.encode('utf8'), type.value)
         return ret_val
 
 
@@ -581,7 +581,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         the current `GXDB <geosoft.gxapi.GXDB>`. Please see ExportXYXTemplateEditorEx_GUI
         for an updated function.
         """
-        ret_val = gxapi_cy.WrapGUI._export_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size)
+        ret_val = gxapi_cy.WrapGUI._export_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode('utf8'), size)
         return ret_val
 
 
@@ -608,7 +608,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, template.value = gxapi_cy.WrapGUI._export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb, template.value.encode())
+        ret_val, template.value = gxapi_cy.WrapGUI._export_xyz_template_editor_ex(GXContext._get_tls_geo(), edb, template.value.encode('utf8'))
         return ret_val
 
 
@@ -631,7 +631,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** For example, if "Database (``*.gdb``)" is input,
         then the `FILE_FILTER_GDB <geosoft.gxapi.FILE_FILTER_GDB>` value is returned.
         """
-        ret_val = gxapi_cy.WrapGUI._file_filter_index(GXContext._get_tls_geo(), filter.encode())
+        ret_val = gxapi_cy.WrapGUI._file_filter_index(GXContext._get_tls_geo(), filter.encode('utf8'))
         return ret_val
 
 
@@ -656,7 +656,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Runs the GCS Warning dialog with one data source
         """
-        ret_val = gxapi_cy.WrapGUI._gcs_datum_warning_shp(GXContext._get_tls_geo(), data_source.encode(), ipj)
+        ret_val = gxapi_cy.WrapGUI._gcs_datum_warning_shp(GXContext._get_tls_geo(), data_source.encode('utf8'), ipj)
         return ret_val
 
 
@@ -818,7 +818,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         then "grd" and "GRD" are returned as the default extension
         and qualifier.
         """
-        ext.value, qual.value = gxapi_cy.WrapGUI._get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode(), qual.value.encode())
+        ext.value, qual.value = gxapi_cy.WrapGUI._get_dat_defaults(GXContext._get_tls_geo(), flags, open, ext.value.encode('utf8'), qual.value.encode('utf8'))
         
 
 
@@ -854,7 +854,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        filter.value, mask.value, ext.value, path.value = gxapi_cy.WrapGUI._get_file_filter(GXContext._get_tls_geo(), file_filter, filter.value.encode(), mask.value.encode(), ext.value.encode(), path.value)
+        filter.value, mask.value, ext.value, path.value = gxapi_cy.WrapGUI._get_file_filter(GXContext._get_tls_geo(), file_filter, filter.value.encode('utf8'), mask.value.encode('utf8'), ext.value.encode('utf8'), path.value)
         
 
 
@@ -880,7 +880,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         This function is useful for constuction open/save dialog
         file filters, especially in GX.Net functions.
         """
-        dir.value = gxapi_cy.WrapGUI._get_gs_directory(GXContext._get_tls_geo(), path, dir.value.encode())
+        dir.value = gxapi_cy.WrapGUI._get_gs_directory(GXContext._get_tls_geo(), path, dir.value.encode('utf8'))
         
 
 
@@ -907,7 +907,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, dir_path.value = gxapi_cy.WrapGUI._browse_dir(GXContext._get_tls_geo(), title.encode(), default.encode(), dir_path.value.encode())
+        ret_val, dir_path.value = gxapi_cy.WrapGUI._browse_dir(GXContext._get_tls_geo(), title.encode('utf8'), default.encode('utf8'), dir_path.value.encode('utf8'))
         return ret_val
 
 
@@ -945,7 +945,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, file.value = gxapi_cy.WrapGUI._color_transform_ex(GXContext._get_tls_geo(), itr, st, zones, load_save, file.value.encode())
+        ret_val, file.value = gxapi_cy.WrapGUI._color_transform_ex(GXContext._get_tls_geo(), itr, st, zones, load_save, file.value.encode('utf8'))
         return ret_val
 
 
@@ -985,7 +985,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         button is pushed, and is updated both after the load and save buttons
         are pushed by the value input or selected by the user.
         """
-        ret_val, file.value = gxapi_cy.WrapGUI._cumulative_percent(GXContext._get_tls_geo(), file.value.encode(), itr)
+        ret_val, file.value = gxapi_cy.WrapGUI._cumulative_percent(GXContext._get_tls_geo(), file.value.encode('utf8'), itr)
         return ret_val
 
 
@@ -1027,7 +1027,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         drive:\\path1\\path2\\name.grid|name2.grid|name3.grid(QUALIFIERS)
         All grids are required to be of the same type.
         """
-        ret_val, psz_file_path.value = gxapi_cy.WrapGUI._dat_file_form(GXContext._get_tls_geo(), title.encode(), default.encode(), psz_file_path.value.encode(), type, validation_type, multi)
+        ret_val, psz_file_path.value = gxapi_cy.WrapGUI._dat_file_form(GXContext._get_tls_geo(), title.encode('utf8'), default.encode('utf8'), psz_file_path.value.encode('utf8'), type, validation_type, multi)
         return ret_val
 
 
@@ -1074,7 +1074,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         iMultiFileOpen_GUI
         iMultiFileSave_GUI
         """
-        ret_val, file_path.value = gxapi_cy.WrapGUI._gen_file_form(GXContext._get_tls_geo(), title.encode(), filt_vv, filter, default.encode(), file_path.value.encode(), type, multi)
+        ret_val, file_path.value = gxapi_cy.WrapGUI._gen_file_form(GXContext._get_tls_geo(), title.encode('utf8'), filt_vv, filter, default.encode('utf8'), file_path.value.encode('utf8'), type, multi)
         return ret_val
 
 
@@ -1111,7 +1111,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         selections. In the case of multiple selections the names will be separated
         by a semicolon and only the first file will contain the full path.
         """
-        ret_val, file_path.value = gxapi_cy.WrapGUI._custom_file_form(GXContext._get_tls_geo(), title.encode(), filter.encode(), default.encode(), file_path.value.encode(), type, multi)
+        ret_val, file_path.value = gxapi_cy.WrapGUI._custom_file_form(GXContext._get_tls_geo(), title.encode('utf8'), filter.encode('utf8'), default.encode('utf8'), file_path.value.encode('utf8'), type, multi)
         return ret_val
 
 
@@ -1146,7 +1146,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado2(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado2(GXContext._get_tls_geo(), connect.encode('utf8'), temp.value.encode('utf8'), table.value.encode('utf8'), type.value, reg)
         return ret_val
 
 
@@ -1183,7 +1183,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         to be the Wholeplot table name; e.g.
         "HOLESURVEY.i4" for "Project_HOLESURVEY"
         """
-        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_esri(GXContext._get_tls_geo(), connect.encode(), temp.value.encode(), table.value.encode(), type.value, geochem, reg)
+        ret_val, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_esri(GXContext._get_tls_geo(), connect.encode('utf8'), temp.value.encode('utf8'), table.value.encode('utf8'), type.value, geochem, reg)
         return ret_val
 
 
@@ -1223,7 +1223,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         Because the name of the database is not necessarily known, the template name is created
         from the name of the table opened - e.g. "HOLELOCATION.i4".
         """
-        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc(GXContext._get_tls_geo(), connect.value.encode('utf8'), temp.value.encode('utf8'), table.value.encode('utf8'), type.value, reg)
         return ret_val
 
 
@@ -1255,7 +1255,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Same as `import_drill_database_odbc <geosoft.gxapi.GXGUI.import_drill_database_odbc>` but customized for Maxwell.
         """
-        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode(), temp.value.encode(), table.value.encode(), type.value, reg)
+        ret_val, connect.value, temp.value, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_odbc_maxwell(GXContext._get_tls_geo(), connect.value.encode('utf8'), temp.value.encode('utf8'), table.value.encode('utf8'), type.value, reg)
         return ret_val
 
 
@@ -1280,7 +1280,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI._import_ascii_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode())
+        ret_val = gxapi_cy.WrapGUI._import_ascii_wizard(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'))
         return ret_val
 
 
@@ -1309,7 +1309,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type)
+        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'), type)
         return ret_val
 
 
@@ -1342,7 +1342,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         new ADO technology, as opposed to DAO. Use in conjuction with
         `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type)
+        ret_val, table.value = gxapi_cy.WrapGUI._import_chem_database_ado(GXContext._get_tls_geo(), connect.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'), type)
         return ret_val
 
 
@@ -1377,7 +1377,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         creates an import template which may be used to import
         the table (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val, table.value = gxapi_cy.WrapGUI._import_database(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI._import_database(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'))
         return ret_val
 
 
@@ -1414,7 +1414,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         3. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, table.value = gxapi_cy.WrapGUI._import_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode())
+        ret_val, table.value = gxapi_cy.WrapGUI._import_database_ado(GXContext._get_tls_geo(), connect.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'))
         return ret_val
 
 
@@ -1474,7 +1474,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         5. If connection string is of type "FILENAME=..." the connection will attempt to resolve
            it as a file database. (see also ODBCFileConnect_GUI)
         """
-        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sql(GXContext._get_tls_geo(), name.encode(), sql.encode(), temp.encode(), line.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sql(GXContext._get_tls_geo(), name.encode('utf8'), sql.encode('utf8'), temp.encode('utf8'), line.value.encode('utf8'))
         return ret_val
 
 
@@ -1531,7 +1531,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sqlado(GXContext._get_tls_geo(), connect.encode(), sql.encode(), temp.encode(), line.value.encode())
+        ret_val, line.value = gxapi_cy.WrapGUI._import_database_sqlado(GXContext._get_tls_geo(), connect.encode('utf8'), sql.encode('utf8'), temp.encode('utf8'), line.value.encode('utf8'))
         return ret_val
 
 
@@ -1566,7 +1566,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         new ADO technology, as opposed to DAO. Use in conjunction with
         `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`. See also ImportDatabaseADO_GUI.
         """
-        ret_val, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado(GXContext._get_tls_geo(), connect.encode(), temp.encode(), table.value.encode(), type.value, reg)
+        ret_val, table.value, type.value = gxapi_cy.WrapGUI._import_drill_database_ado(GXContext._get_tls_geo(), connect.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'), type.value, reg)
         return ret_val
 
 
@@ -1604,7 +1604,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         creates an import template which may be used to import
         the data (see `GXDU.import_dao <geosoft.gxapi.GXDU.import_dao>`).
         """
-        ret_val = gxapi_cy.WrapGUI._import_template_sql(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
+        ret_val = gxapi_cy.WrapGUI._import_template_sql(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), sql.encode('utf8'), line.encode('utf8'))
         return ret_val
 
 
@@ -1642,7 +1642,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         creates an import template which may be used to import
         the data (see `GXDU.import_ado <geosoft.gxapi.GXDU.import_ado>`).
         """
-        ret_val = gxapi_cy.WrapGUI._import_template_sqlado(GXContext._get_tls_geo(), name.encode(), temp.encode(), sql.encode(), line.encode())
+        ret_val = gxapi_cy.WrapGUI._import_template_sqlado(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), sql.encode('utf8'), line.encode('utf8'))
         return ret_val
 
 
@@ -1673,7 +1673,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode(), size, file.encode())
+        ret_val = gxapi_cy.WrapGUI._import_xyz_template_editor(GXContext._get_tls_geo(), db, template.encode('utf8'), size, file.encode('utf8'))
         return ret_val
 
 
@@ -1710,7 +1710,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         returned. This is needed because the table name may or may not include
         the file extension.
         """
-        ret_val, connect.value, table.value = gxapi_cy.WrapGUI._odbc_file_connect(GXContext._get_tls_geo(), file.encode(), connect.value.encode(), usage, table.value.encode())
+        ret_val, connect.value, table.value = gxapi_cy.WrapGUI._odbc_file_connect(GXContext._get_tls_geo(), file.encode('utf8'), connect.value.encode('utf8'), usage, table.value.encode('utf8'))
         return ret_val
 
 
@@ -1749,7 +1749,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Symbols are set on input, and new values returned.
         """
-        ret_val, symb_font.value, geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value = gxapi_cy.WrapGUI._symbol_form(GXContext._get_tls_geo(), symb_font.value.encode(), geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value)
+        ret_val, symb_font.value, geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value = gxapi_cy.WrapGUI._symbol_form(GXContext._get_tls_geo(), symb_font.value.encode('utf8'), geo_font.value, weight.value, symb_num.value, symb_size.value, symb_ang.value, edge_col.value, fill_col.value)
         return ret_val
 
 
@@ -1799,7 +1799,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._import_chem_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), type)
+        gxapi_cy.WrapGUI._import_chem_wizard(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), type)
         
 
 
@@ -1826,7 +1826,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        table.value, type.value = gxapi_cy.WrapGUI._import_drill_wizard(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type.value, reg)
+        table.value, type.value = gxapi_cy.WrapGUI._import_drill_wizard(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'), type.value, reg)
         
 
 
@@ -1853,7 +1853,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        table.value = gxapi_cy.WrapGUI._import_drill_wizard_ex(GXContext._get_tls_geo(), name.encode(), temp.encode(), table.value.encode(), type, reg)
+        table.value = gxapi_cy.WrapGUI._import_drill_wizard_ex(GXContext._get_tls_geo(), name.encode('utf8'), temp.encode('utf8'), table.value.encode('utf8'), type, reg)
         
 
 
@@ -1997,7 +1997,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         can be used to convert the selection LSTs to forms that can be
         stored and retrieved from GX parameters (or `GXREG <geosoft.gxapi.GXREG>` or INI, etc.).
         """
-        ret_val = gxapi_cy.WrapGUI._two_panel_selection(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode('utf8'))
         return ret_val
 
 
@@ -2029,7 +2029,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI._two_panel_selection2(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection2(GXContext._get_tls_geo(), ls_tf, ls_ts, title.encode('utf8'))
         return ret_val
 
 
@@ -2065,7 +2065,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         exactly as input, and when an item is selected it is
         added at the end of the lists.
         """
-        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode('utf8'))
         return ret_val
 
 
@@ -2101,7 +2101,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** Same as `two_panel_selection_ex <geosoft.gxapi.GXGUI.two_panel_selection_ex>`, but user can specify a help
         link.
         """
-        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode(), help.encode())
+        ret_val = gxapi_cy.WrapGUI._two_panel_selection_ex2(GXContext._get_tls_geo(), ls_tf, ls_ts, sorted, allow_no_select, title.encode('utf8'), help.encode('utf8'))
         return ret_val
 
 
@@ -2124,7 +2124,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
+        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta)
         
 
 
@@ -2147,7 +2147,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
+        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta)
         
 
 
@@ -2170,7 +2170,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_geo_x_tool(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta)
+        gxapi_cy.WrapGUI._launch_geo_x_tool(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta)
         
 
 
@@ -2201,7 +2201,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_single_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta, align, dock, width, height)
         
 
 
@@ -2232,7 +2232,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_geo_dotnetx_tool_ex(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta, align, dock, width, height)
         
 
 
@@ -2263,7 +2263,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._launch_geo_x_tool_ex(GXContext._get_tls_geo(), dll.encode(), func.encode(), meta, align, dock, width, height)
+        gxapi_cy.WrapGUI._launch_geo_x_tool_ex(GXContext._get_tls_geo(), dll.encode('utf8'), func.encode('utf8'), meta, align, dock, width, height)
         
 
 
@@ -2305,7 +2305,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._print_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapGUI._print_file(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -2436,7 +2436,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapGUI._set_printer(GXContext._get_tls_geo(), printer.encode())
+        gxapi_cy.WrapGUI._set_printer(GXContext._get_tls_geo(), printer.encode('utf8'))
         
 
 
@@ -2536,7 +2536,7 @@ class GXGUI(gxapi_cy.WrapGUI):
         **Note:** This function displays a map in a simple resizable dialog that fits the map into it.
         It is generally useful to display temporary maps as graphs (e.g. variograms).
         """
-        gxapi_cy.WrapGUI._simple_map_dialog(GXContext._get_tls_geo(), map, title.encode(), help_id.encode())
+        gxapi_cy.WrapGUI._simple_map_dialog(GXContext._get_tls_geo(), map, title.encode('utf8'), help_id.encode('utf8'))
         
 
 
@@ -2583,7 +2583,7 @@ class GXGUI(gxapi_cy.WrapGUI):
 
         **Note:** Any changes made to the 3D View will be persisted.
         """
-        gxapi_cy.WrapGUI._show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode(), o3dv.encode())
+        gxapi_cy.WrapGUI._show_3d_viewer_dialog(GXContext._get_tls_geo(), title.encode('utf8'), o3dv.encode('utf8'))
         
 
 

@@ -368,7 +368,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._exist_env(GXContext._get_tls_geo(), parm.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_env(GXContext._get_tls_geo(), parm.encode('utf8'))
         return ret_val
 
 
@@ -387,7 +387,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        set.value = gxapi_cy.WrapSYS._get_env(GXContext._get_tls_geo(), parm.encode(), set.value.encode())
+        set.value = gxapi_cy.WrapSYS._get_env(GXContext._get_tls_geo(), parm.encode('utf8'), set.value.encode('utf8'))
         
 
 
@@ -406,7 +406,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_env(GXContext._get_tls_geo(), parm.encode(), set.encode())
+        gxapi_cy.WrapSYS._set_env(GXContext._get_tls_geo(), parm.encode('utf8'), set.encode('utf8'))
         
 
 
@@ -490,7 +490,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         the GX would terminate before it could be called.
         Use `num_errors_ap <geosoft.gxapi.GXSYS.num_errors_ap>` to get the number of registered errors.
         """
-        err_str.value = gxapi_cy.WrapSYS._get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode())
+        err_str.value = gxapi_cy.WrapSYS._get_error_message_ap(GXContext._get_tls_geo(), err, err_str.value.encode('utf8'))
         
 
 
@@ -574,7 +574,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         2. the <geosoft>\\bin directory
         3. the system path
         """
-        ret_val = gxapi_cy.WrapSYS._run(GXContext._get_tls_geo(), command.encode(), args.encode(), process)
+        ret_val = gxapi_cy.WrapSYS._run(GXContext._get_tls_geo(), command.encode('utf8'), args.encode('utf8'), process)
         return ret_val
 
 
@@ -601,7 +601,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `set_interactive <geosoft.gxapi.GXSYS.set_interactive>`, `run_gx <geosoft.gxapi.GXSYS.run_gx>`
         """
-        ret_val = gxapi_cy.WrapSYS._run_gs(GXContext._get_tls_geo(), gs.encode())
+        ret_val = gxapi_cy.WrapSYS._run_gs(GXContext._get_tls_geo(), gs.encode('utf8'))
         return ret_val
 
 
@@ -632,7 +632,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `run_gx_ex <geosoft.gxapi.GXSYS.run_gx_ex>`, `set_interactive <geosoft.gxapi.GXSYS.set_interactive>` and `run_gs <geosoft.gxapi.GXSYS.run_gs>`
         """
-        ret_val = gxapi_cy.WrapSYS._run_gx(GXContext._get_tls_geo(), gx.encode())
+        ret_val = gxapi_cy.WrapSYS._run_gx(GXContext._get_tls_geo(), gx.encode('utf8'))
         return ret_val
 
 
@@ -661,7 +661,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `run_gx <geosoft.gxapi.GXSYS.run_gx>`, `set_return <geosoft.gxapi.GXSYS.set_return>`
         """
-        ret_val, ret.value = gxapi_cy.WrapSYS._run_gx_ex(GXContext._get_tls_geo(), gx.encode(), ret.value)
+        ret_val, ret.value = gxapi_cy.WrapSYS._run_gx_ex(GXContext._get_tls_geo(), gx.encode('utf8'), ret.value)
         return ret_val
 
 
@@ -689,7 +689,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         where "group" is the name given in the first argument,
         and "pdf" is the root PDF file name.
         """
-        ret_val = gxapi_cy.WrapSYS._run_pdf(GXContext._get_tls_geo(), mnu.encode(), pdf.encode())
+        ret_val = gxapi_cy.WrapSYS._run_pdf(GXContext._get_tls_geo(), mnu.encode('utf8'), pdf.encode('utf8'))
         return ret_val
 
 
@@ -721,7 +721,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `do_command <geosoft.gxapi.GXSYS.do_command>`
         """
-        ret_val = gxapi_cy.WrapSYS._shell_execute(GXContext._get_tls_geo(), verb.encode(), file.encode(), parameters.encode(), directory.encode(), show)
+        ret_val = gxapi_cy.WrapSYS._shell_execute(GXContext._get_tls_geo(), verb.encode('utf8'), file.encode('utf8'), parameters.encode('utf8'), directory.encode('utf8'), show)
         return ret_val
 
 
@@ -793,7 +793,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `shell_execute <geosoft.gxapi.GXSYS.shell_execute>`
         """
-        gxapi_cy.WrapSYS._do_command(GXContext._get_tls_geo(), command.encode())
+        gxapi_cy.WrapSYS._do_command(GXContext._get_tls_geo(), command.encode('utf8'))
         
 
 
@@ -823,7 +823,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         OE32.`GXGER <geosoft.gxapi.GXGER>` file, then the GEOSOFT.`GXGER <geosoft.gxapi.GXGER>` file will be
         searched.
         """
-        gxapi_cy.WrapSYS._error(GXContext._get_tls_geo(), error_file.encode(), module.encode(), error)
+        gxapi_cy.WrapSYS._error(GXContext._get_tls_geo(), error_file.encode('utf8'), module.encode('utf8'), error)
         
 
 
@@ -848,7 +848,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         "%2", etc. as place holders to be replaced by a string
         which is only known at run-time.
         """
-        gxapi_cy.WrapSYS._error_tag(GXContext._get_tls_geo(), tag.encode(), set.encode())
+        gxapi_cy.WrapSYS._error_tag(GXContext._get_tls_geo(), tag.encode('utf8'), set.encode('utf8'))
         
 
 
@@ -888,7 +888,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         functions if you would like to provide a more specific
         error message.
         """
-        ret_val = gxapi_cy.WrapSYS._assert_gx(GXContext._get_tls_geo(), exp, mod.encode(), parm.encode())
+        ret_val = gxapi_cy.WrapSYS._assert_gx(GXContext._get_tls_geo(), exp, mod.encode('utf8'), parm.encode('utf8'))
         return ret_val
 
 
@@ -914,7 +914,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS._ole_automation(GXContext._get_tls_geo(), object.encode(), info_str.encode(), info_val)
+        ret_val = gxapi_cy.WrapSYS._ole_automation(GXContext._get_tls_geo(), object.encode('utf8'), info_str.encode('utf8'), info_val)
         return ret_val
 
 
@@ -933,7 +933,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._save_log(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._save_log(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -961,7 +961,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         already registered their own errors and called
         `terminate <geosoft.gxapi.GXSYS.terminate>`.
         """
-        gxapi_cy.WrapSYS._terminate(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._terminate(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -985,7 +985,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._crc_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._crc_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1007,7 +1007,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._crc_file_offset(GXContext._get_tls_geo(), file.encode(), offset)
+        ret_val = gxapi_cy.WrapSYS._crc_file_offset(GXContext._get_tls_geo(), file.encode('utf8'), offset)
         return ret_val
 
 
@@ -1026,7 +1026,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._file_ren(GXContext._get_tls_geo(), old_file.encode(), new_file.encode())
+        gxapi_cy.WrapSYS._file_ren(GXContext._get_tls_geo(), old_file.encode('utf8'), new_file.encode('utf8'))
         
 
 
@@ -1048,7 +1048,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** Fill a `GXVV <geosoft.gxapi.GXVV>` with files matching the input file mask.
         The `GXVV <geosoft.gxapi.GXVV>` should be of string type.
         """
-        gxapi_cy.WrapSYS._find_files_vv(GXContext._get_tls_geo(), vv, mask.encode())
+        gxapi_cy.WrapSYS._find_files_vv(GXContext._get_tls_geo(), vv, mask.encode('utf8'))
         
 
 
@@ -1070,7 +1070,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** This is mainly intended to convert ".\\name" to a full
         name at run-time.
         """
-        name.value = gxapi_cy.WrapSYS._absolute_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._absolute_file_name(GXContext._get_tls_geo(), abbr.encode('utf8'), name.value.encode('utf8'))
         
 
 
@@ -1093,7 +1093,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._copy_file(GXContext._get_tls_geo(), src_file.encode(), dest_file.encode())
+        ret_val = gxapi_cy.WrapSYS._copy_file(GXContext._get_tls_geo(), src_file.encode('utf8'), dest_file.encode('utf8'))
         return ret_val
 
 
@@ -1114,7 +1114,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._delete_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1138,7 +1138,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._delete_gi_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_gi_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1163,7 +1163,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         and XML files.
         No error is registered if a file is not found or cannot be deleted.
         """
-        ret_val = gxapi_cy.WrapSYS._delete_grid_file(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._delete_grid_file(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1184,7 +1184,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._dir_exist(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._dir_exist(GXContext._get_tls_geo(), dir.encode('utf8'))
         return ret_val
 
 
@@ -1209,7 +1209,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS._file_exist(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_exist(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1230,7 +1230,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._file_size(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_size(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1249,7 +1249,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._file_writable(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_writable(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1286,7 +1286,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         <system>       the operating system system directory
         <other>        other environment variables
         """
-        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path(GXContext._get_tls_geo(), file.encode(), mode, fullname.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path(GXContext._get_tls_geo(), file.encode('utf8'), mode, fullname.value.encode('utf8'))
         return ret_val
 
 
@@ -1325,7 +1325,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         <system>       the operating system system directory
         <other>        other environment variable
         """
-        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path_ex(GXContext._get_tls_geo(), file.encode(), mode, dir_mode, fullname.value.encode())
+        ret_val, fullname.value = gxapi_cy.WrapSYS._find_path_ex(GXContext._get_tls_geo(), file.encode('utf8'), mode, dir_mode, fullname.value.encode('utf8'))
         return ret_val
 
 
@@ -1346,7 +1346,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The path will always end with the file separator character
         """
-        dir.value = gxapi_cy.WrapSYS._get_directory(GXContext._get_tls_geo(), sys_dir, dir.value.encode())
+        dir.value = gxapi_cy.WrapSYS._get_directory(GXContext._get_tls_geo(), sys_dir, dir.value.encode('utf8'))
         
 
 
@@ -1367,7 +1367,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** The path name will have a directory separator at the end.
         """
-        path.value = gxapi_cy.WrapSYS._get_path(GXContext._get_tls_geo(), type, path.value.encode())
+        path.value = gxapi_cy.WrapSYS._get_path(GXContext._get_tls_geo(), type, path.value.encode('utf8'))
         
 
 
@@ -1384,7 +1384,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        dir.value = gxapi_cy.WrapSYS._get_windows_dir(GXContext._get_tls_geo(), dir.value.encode())
+        dir.value = gxapi_cy.WrapSYS._get_windows_dir(GXContext._get_tls_geo(), dir.value.encode('utf8'))
         
 
 
@@ -1405,7 +1405,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._make_dir(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._make_dir(GXContext._get_tls_geo(), dir.encode('utf8'))
         return ret_val
 
 
@@ -1426,7 +1426,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._make_file_readonly(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._make_file_readonly(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1447,7 +1447,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._make_file_writable(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._make_file_writable(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1469,7 +1469,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** This will produce relative paths based on the workspace
         directory into ".\\name".
         """
-        name.value = gxapi_cy.WrapSYS._relative_file_name(GXContext._get_tls_geo(), abbr.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._relative_file_name(GXContext._get_tls_geo(), abbr.encode('utf8'), name.value.encode('utf8'))
         
 
 
@@ -1488,7 +1488,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = gxapi_cy.WrapSYS._short_path_file_name(GXContext._get_tls_geo(), in_name.encode(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._short_path_file_name(GXContext._get_tls_geo(), in_name.encode('utf8'), name.value.encode('utf8'))
         
 
 
@@ -1509,7 +1509,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** This is useful for created a unique tempory name for a file in the Geosoft temporary directory.
         """
-        out.value = gxapi_cy.WrapSYS._temp_file_ext(GXContext._get_tls_geo(), ext.encode(), out.value.encode())
+        out.value = gxapi_cy.WrapSYS._temp_file_ext(GXContext._get_tls_geo(), ext.encode('utf8'), out.value.encode('utf8'))
         
 
 
@@ -1534,7 +1534,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         filename itself will be a process and thread unique value to ensure that
         clashes does not happen.
         """
-        out_filename.value = gxapi_cy.WrapSYS._temp_file_name(GXContext._get_tls_geo(), path_file.encode(), out_filename.value.encode())
+        out_filename.value = gxapi_cy.WrapSYS._temp_file_name(GXContext._get_tls_geo(), path_file.encode('utf8'), out_filename.value.encode('utf8'))
         
 
 
@@ -1556,7 +1556,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The path and volume of from the input string is added to
         file name from the output string.
         """
-        file.value = gxapi_cy.WrapSYS._transfer_path(GXContext._get_tls_geo(), path_file.encode(), file.value.encode())
+        file.value = gxapi_cy.WrapSYS._transfer_path(GXContext._get_tls_geo(), path_file.encode('utf8'), file.value.encode('utf8'))
         
 
 
@@ -1581,7 +1581,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         path is not specified, then the current working
         directory is used for the path.
         """
-        ret_val = gxapi_cy.WrapSYS._valid_file_name(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._valid_file_name(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1602,7 +1602,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._write_in_dir(GXContext._get_tls_geo(), dir.encode())
+        ret_val = gxapi_cy.WrapSYS._write_in_dir(GXContext._get_tls_geo(), dir.encode('utf8'))
         return ret_val
 
 
@@ -1625,7 +1625,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS._file_date(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_date(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1648,7 +1648,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS._file_time(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._file_time(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1671,7 +1671,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The FormatDate_STR function can be used to convert a date
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS._utc_file_date(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._utc_file_date(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1694,7 +1694,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The FormatTime_STR function can be used to convert a time
         to a string.
         """
-        ret_val = gxapi_cy.WrapSYS._utc_file_time(GXContext._get_tls_geo(), file.encode())
+        ret_val = gxapi_cy.WrapSYS._utc_file_time(GXContext._get_tls_geo(), file.encode('utf8'))
         return ret_val
 
 
@@ -1732,7 +1732,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._global_reset(GXContext._get_tls_geo(), ini.encode())
+        gxapi_cy.WrapSYS._global_reset(GXContext._get_tls_geo(), ini.encode('utf8'))
         
 
 
@@ -1751,7 +1751,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._global_set(GXContext._get_tls_geo(), parm.encode(), set.encode())
+        gxapi_cy.WrapSYS._global_set(GXContext._get_tls_geo(), parm.encode('utf8'), set.encode('utf8'))
         
 
 
@@ -1771,7 +1771,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** If the global parameters have been changed, use
         this function to make the changes permanent,
         """
-        gxapi_cy.WrapSYS._global_write(GXContext._get_tls_geo(), ini.encode())
+        gxapi_cy.WrapSYS._global_write(GXContext._get_tls_geo(), ini.encode('utf8'))
         
 
 
@@ -1812,7 +1812,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         retrieve the string "setting is text".  The double
         quotes will not appear in the setting.
         """
-        ret_val, setting.value = gxapi_cy.WrapSYS._global_(GXContext._get_tls_geo(), parm.encode(), setting.value.encode())
+        ret_val, setting.value = gxapi_cy.WrapSYS._global_(GXContext._get_tls_geo(), parm.encode('utf8'), setting.value.encode('utf8'))
         return ret_val
 
 
@@ -1890,7 +1890,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, version.value = gxapi_cy.WrapSYS._check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode())
+        ret_val, version.value = gxapi_cy.WrapSYS._check_arc_license_ex(GXContext._get_tls_geo(), version.value.encode('utf8'))
         return ret_val
 
 
@@ -1913,7 +1913,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._check_intrinsic(GXContext._get_tls_geo(), cl, name.encode())
+        ret_val = gxapi_cy.WrapSYS._check_intrinsic(GXContext._get_tls_geo(), cl, name.encode('utf8'))
         return ret_val
 
 
@@ -1953,7 +1953,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         "OasisMontaj"
         "DapServer"
         """
-        cl.value = gxapi_cy.WrapSYS._get_license_class(GXContext._get_tls_geo(), cl.value.encode())
+        cl.value = gxapi_cy.WrapSYS._get_license_class(GXContext._get_tls_geo(), cl.value.encode('utf8'))
         
 
 
@@ -1972,7 +1972,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        user.value, company.value = gxapi_cy.WrapSYS._get_licensed_user(GXContext._get_tls_geo(), user.value.encode(), company.value.encode())
+        user.value, company.value = gxapi_cy.WrapSYS._get_licensed_user(GXContext._get_tls_geo(), user.value.encode('utf8'), company.value.encode('utf8'))
         
 
 
@@ -2037,7 +2037,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._geosoft_connect_authenticate_and_navigate(GXContext._get_tls_geo(), url.encode())
+        gxapi_cy.WrapSYS._geosoft_connect_authenticate_and_navigate(GXContext._get_tls_geo(), url.encode('utf8'))
         
 
 
@@ -2054,7 +2054,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        id.value = gxapi_cy.WrapSYS._get_geosoft_id(GXContext._get_tls_geo(), id.value.encode())
+        id.value = gxapi_cy.WrapSYS._get_geosoft_id(GXContext._get_tls_geo(), id.value.encode('utf8'))
         
 
 
@@ -2071,7 +2071,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value = gxapi_cy.WrapSYS._get_profile_name(GXContext._get_tls_geo(), name.value.encode())
+        name.value = gxapi_cy.WrapSYS._get_profile_name(GXContext._get_tls_geo(), name.value.encode('utf8'))
         
 
 
@@ -2088,7 +2088,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        url.value = gxapi_cy.WrapSYS._get_profile_url(GXContext._get_tls_geo(), url.value.encode())
+        url.value = gxapi_cy.WrapSYS._get_profile_url(GXContext._get_tls_geo(), url.value.encode('utf8'))
         
 
 
@@ -2111,7 +2111,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._add_lineage_parameter(GXContext._get_tls_geo(), name.encode(), value.encode())
+        gxapi_cy.WrapSYS._add_lineage_parameter(GXContext._get_tls_geo(), name.encode('utf8'), value.encode('utf8'))
         
 
 
@@ -2130,7 +2130,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode())
+        gxapi_cy.WrapSYS._add_lineage_source(GXContext._get_tls_geo(), source_type, source_name.encode('utf8'))
         
 
 
@@ -2183,7 +2183,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS._copy_geo_file(GXContext._get_tls_geo(), data.encode(), dir.encode())
+        gxapi_cy.WrapSYS._copy_geo_file(GXContext._get_tls_geo(), data.encode('utf8'), dir.encode('utf8'))
         
 
 
@@ -2206,7 +2206,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        target.value = gxapi_cy.WrapSYS._backup_geo_file(GXContext._get_tls_geo(), data.encode(), target.value.encode())
+        target.value = gxapi_cy.WrapSYS._backup_geo_file(GXContext._get_tls_geo(), data.encode('utf8'), target.value.encode('utf8'))
         
 
 
@@ -2223,7 +2223,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._remove_lineage_output(GXContext._get_tls_geo(), output_name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_output(GXContext._get_tls_geo(), output_name.encode('utf8'))
         
 
 
@@ -2240,7 +2240,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._remove_lineage_parameter(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_parameter(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -2257,7 +2257,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._remove_lineage_source(GXContext._get_tls_geo(), source_name.encode())
+        gxapi_cy.WrapSYS._remove_lineage_source(GXContext._get_tls_geo(), source_name.encode('utf8'))
         
 
 
@@ -2280,7 +2280,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         for non-geosoft grids is limited since this method does not
         guarantee all grid files besides the main one are copied.
         """
-        gxapi_cy.WrapSYS._restore_geo_file(GXContext._get_tls_geo(), target.encode(), original.encode())
+        gxapi_cy.WrapSYS._restore_geo_file(GXContext._get_tls_geo(), target.encode('utf8'), original.encode('utf8'))
         
 
 
@@ -2297,7 +2297,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_lineage_description(GXContext._get_tls_geo(), description.encode())
+        gxapi_cy.WrapSYS._set_lineage_description(GXContext._get_tls_geo(), description.encode('utf8'))
         
 
 
@@ -2314,7 +2314,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode())
+        gxapi_cy.WrapSYS._set_lineage_display_name(GXContext._get_tls_geo(), display_name.encode('utf8'))
         
 
 
@@ -2331,7 +2331,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_lineage_name(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapSYS._set_lineage_name(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -2444,7 +2444,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        guid.value = gxapi_cy.WrapSYS._generate_guid(GXContext._get_tls_geo(), guid.value.encode())
+        guid.value = gxapi_cy.WrapSYS._generate_guid(GXContext._get_tls_geo(), guid.value.encode('utf8'))
         
 
 
@@ -2461,7 +2461,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._clipboard_to_file(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._clipboard_to_file(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -2526,7 +2526,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        size_x.value, size_y.value = gxapi_cy.WrapSYS._emf_object_size(GXContext._get_tls_geo(), file.encode(), size_x.value, size_y.value)
+        size_x.value, size_y.value = gxapi_cy.WrapSYS._emf_object_size(GXContext._get_tls_geo(), file.encode('utf8'), size_x.value, size_y.value)
         
 
 
@@ -2543,7 +2543,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._file_to_clipboard(GXContext._get_tls_geo(), file.encode())
+        gxapi_cy.WrapSYS._file_to_clipboard(GXContext._get_tls_geo(), file.encode('utf8'))
         
 
 
@@ -2594,7 +2594,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         string with each entry point separated by a semi-colon.
         For example: NewGDB|Run;NewGDB|RunEx
         """
-        ret_val, entry_buffer.value = gxapi_cy.WrapSYS._get_dot_net_gx_entries(GXContext._get_tls_geo(), gx.encode(), entry_buffer.value.encode())
+        ret_val, entry_buffer.value = gxapi_cy.WrapSYS._get_dot_net_gx_entries(GXContext._get_tls_geo(), gx.encode('utf8'), entry_buffer.value.encode('utf8'))
         return ret_val
 
 
@@ -2613,7 +2613,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._send_general_message(GXContext._get_tls_geo(), cl.encode(), info.encode())
+        gxapi_cy.WrapSYS._send_general_message(GXContext._get_tls_geo(), cl.encode('utf8'), info.encode('utf8'))
         
 
 
@@ -2631,7 +2631,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._write_debug_log(GXContext._get_tls_geo(), log.encode())
+        gxapi_cy.WrapSYS._write_debug_log(GXContext._get_tls_geo(), log.encode('utf8'))
         
 
 
@@ -2648,7 +2648,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._log_script_run(GXContext._get_tls_geo(), location.encode())
+        gxapi_cy.WrapSYS._log_script_run(GXContext._get_tls_geo(), location.encode('utf8'))
         
 
 
@@ -2703,7 +2703,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         or EDBS. Users must ensure that the resources
         that are shared are protected.
         """
-        gxapi_cy.WrapSYS._run_multi_user_script(GXContext._get_tls_geo(), script.encode(), users, iterations, wait_min_time, wait_max_time, ramp_up_time)
+        gxapi_cy.WrapSYS._run_multi_user_script(GXContext._get_tls_geo(), script.encode('utf8'), users, iterations, wait_min_time, wait_max_time, ramp_up_time)
         
 
 
@@ -2724,7 +2724,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._clear_group(GXContext._get_tls_geo(), group.encode())
+        gxapi_cy.WrapSYS._clear_group(GXContext._get_tls_geo(), group.encode('utf8'))
         
 
 
@@ -2741,7 +2741,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._clear_group_parm(GXContext._get_tls_geo(), group.encode())
+        gxapi_cy.WrapSYS._clear_group_parm(GXContext._get_tls_geo(), group.encode('utf8'))
         
 
 
@@ -2780,7 +2780,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS._default_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._default_int(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val)
         
 
 
@@ -2804,7 +2804,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS._default_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._default_double(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val)
         
 
 
@@ -2828,7 +2828,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The value will only be set if there is no existing
         setting.
         """
-        gxapi_cy.WrapSYS._default_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
+        gxapi_cy.WrapSYS._default_string(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val.encode('utf8'))
         
 
 
@@ -2871,7 +2871,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         Returned values may be DUMMY, but will be acceptable for use with
         the `GXGUI.color_form <geosoft.gxapi.GXGUI.color_form>` function, to set defaults.
         """
-        pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS._get_pattern(GXContext._get_tls_geo(), group.encode(), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
+        pat.value, size.value, thick.value, dense.value, col.value, back_col.value = gxapi_cy.WrapSYS._get_pattern(GXContext._get_tls_geo(), group.encode('utf8'), pat.value, size.value, thick.value, dense.value, col.value, back_col.value)
         
 
 
@@ -2890,7 +2890,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._get_reg(GXContext._get_tls_geo(), reg, group.encode())
+        gxapi_cy.WrapSYS._get_reg(GXContext._get_tls_geo(), reg, group.encode('utf8'))
         
 
 
@@ -2914,7 +2914,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** If the setting exits it is placed in the buffer, otherwise
         the buffer will have zero length
         """
-        buff.value = gxapi_cy.WrapSYS._gt_string(GXContext._get_tls_geo(), group.encode(), field.encode(), buff.value.encode())
+        buff.value = gxapi_cy.WrapSYS._gt_string(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), buff.value.encode('utf8'))
         
 
 
@@ -2937,7 +2937,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._exist_int(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_int(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -2960,7 +2960,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._exist_double(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_double(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -2983,7 +2983,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._exist_string(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._exist_string(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -3005,7 +3005,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._get_int(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_int(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -3028,7 +3028,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._get_yes_no(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_yes_no(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -3053,7 +3053,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         such as "%group.name%", are used as-is.  Partial parameter names, such as
         "%name%" will have the default group attached.
         """
-        output.value = gxapi_cy.WrapSYS._replace_string(GXContext._get_tls_geo(), str_val.encode(), output.value.encode(), group.encode())
+        output.value = gxapi_cy.WrapSYS._replace_string(GXContext._get_tls_geo(), str_val.encode('utf8'), output.value.encode('utf8'), group.encode('utf8'))
         
 
 
@@ -3072,7 +3072,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._load_parm(GXContext._get_tls_geo(), file.encode(), groups.encode())
+        gxapi_cy.WrapSYS._load_parm(GXContext._get_tls_geo(), file.encode('utf8'), groups.encode('utf8'))
         
 
 
@@ -3094,7 +3094,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._get_double(GXContext._get_tls_geo(), group.encode(), field.encode())
+        ret_val = gxapi_cy.WrapSYS._get_double(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'))
         return ret_val
 
 
@@ -3115,7 +3115,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._save_parm(GXContext._get_tls_geo(), file.encode(), mode, groups.encode())
+        gxapi_cy.WrapSYS._save_parm(GXContext._get_tls_geo(), file.encode('utf8'), mode, groups.encode('utf8'))
         
 
 
@@ -3136,7 +3136,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** This is useful to prevent certain utility GX parameters from being recorded during GS script runs where the parameters does not influence the actual script execution.
         """
-        gxapi_cy.WrapSYS._filter_parm_group(GXContext._get_tls_geo(), group.encode(), add)
+        gxapi_cy.WrapSYS._filter_parm_group(GXContext._get_tls_geo(), group.encode('utf8'), add)
         
 
 
@@ -3157,7 +3157,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_int(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._set_int(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val)
         
 
 
@@ -3201,7 +3201,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         Designed for use along with the sPatternForm_GUI function.
         """
-        gxapi_cy.WrapSYS._set_pattern(GXContext._get_tls_geo(), group.encode(), pat, size, thick, dense, col, back_col)
+        gxapi_cy.WrapSYS._set_pattern(GXContext._get_tls_geo(), group.encode('utf8'), pat, size, thick, dense, col, back_col)
         
 
 
@@ -3222,7 +3222,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_double(GXContext._get_tls_geo(), group.encode(), field.encode(), val)
+        gxapi_cy.WrapSYS._set_double(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val)
         
 
 
@@ -3260,7 +3260,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._set_string(GXContext._get_tls_geo(), group.encode(), field.encode(), val.encode())
+        gxapi_cy.WrapSYS._set_string(GXContext._get_tls_geo(), group.encode('utf8'), field.encode('utf8'), val.encode('utf8'))
         
 
 
@@ -3333,7 +3333,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._prog_name(GXContext._get_tls_geo(), name.encode(), reset)
+        gxapi_cy.WrapSYS._prog_name(GXContext._get_tls_geo(), name.encode('utf8'), reset)
         
 
 
@@ -3413,7 +3413,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        info.value = gxapi_cy.WrapSYS._get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode())
+        info.value = gxapi_cy.WrapSYS._get_sys_info(GXContext._get_tls_geo(), sys_info, info.value.encode('utf8'))
         
 
 
@@ -3440,7 +3440,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, value.value = gxapi_cy.WrapSYS._registry_get_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.value.encode())
+        ret_val, value.value = gxapi_cy.WrapSYS._registry_get_val(GXContext._get_tls_geo(), domain, key.encode('utf8'), sub_key.encode('utf8'), value.value.encode('utf8'))
         return ret_val
 
 
@@ -3465,7 +3465,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Note:** All sub-keys and values will be deleted if they exist.
         """
-        ret_val = gxapi_cy.WrapSYS._registry_delete_key(GXContext._get_tls_geo(), domain, key.encode())
+        ret_val = gxapi_cy.WrapSYS._registry_delete_key(GXContext._get_tls_geo(), domain, key.encode('utf8'))
         return ret_val
 
 
@@ -3490,7 +3490,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._registry_delete_val(GXContext._get_tls_geo(), domain, key.encode(), value_name.encode())
+        ret_val = gxapi_cy.WrapSYS._registry_delete_val(GXContext._get_tls_geo(), domain, key.encode('utf8'), value_name.encode('utf8'))
         return ret_val
 
 
@@ -3516,7 +3516,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** This function will create the subkey and key if either do not
         already exist.
         """
-        gxapi_cy.WrapSYS._registry_set_val(GXContext._get_tls_geo(), domain, key.encode(), sub_key.encode(), value.encode())
+        gxapi_cy.WrapSYS._registry_set_val(GXContext._get_tls_geo(), domain, key.encode('utf8'), sub_key.encode('utf8'), value.encode('utf8'))
         
 
 
@@ -3584,7 +3584,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
             `get_ptmp <geosoft.gxapi.GXSYS.get_ptmp>`, `destroy_ptmp <geosoft.gxapi.GXSYS.destroy_ptmp>`
         """
-        ret_val = gxapi_cy.WrapSYS._save_ptmp(GXContext._get_tls_geo(), groups.encode())
+        ret_val = gxapi_cy.WrapSYS._save_ptmp(GXContext._get_tls_geo(), groups.encode('utf8'))
         return ret_val
 
 
@@ -3607,7 +3607,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapSYS._abort(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapSYS._abort(GXContext._get_tls_geo(), message.encode('utf8'))
         
 
 
@@ -3734,7 +3734,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_help(GXContext._get_tls_geo(), group.encode(), topic.encode())
+        gxapi_cy.WrapSYS._display_help(GXContext._get_tls_geo(), group.encode('utf8'), topic.encode('utf8'))
         
 
 
@@ -3755,7 +3755,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_help_topic(GXContext._get_tls_geo(), file.encode(), topic.encode())
+        gxapi_cy.WrapSYS._display_help_topic(GXContext._get_tls_geo(), file.encode('utf8'), topic.encode('utf8'))
         
 
 
@@ -3776,7 +3776,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_int(GXContext._get_tls_geo(), title.encode(), int)
+        gxapi_cy.WrapSYS._display_int(GXContext._get_tls_geo(), title.encode('utf8'), int)
         
 
 
@@ -3797,7 +3797,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_message(GXContext._get_tls_geo(), title.encode(), message.encode())
+        gxapi_cy.WrapSYS._display_message(GXContext._get_tls_geo(), title.encode('utf8'), message.encode('utf8'))
         
 
 
@@ -3818,7 +3818,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._display_double(GXContext._get_tls_geo(), title.encode(), real)
+        gxapi_cy.WrapSYS._display_double(GXContext._get_tls_geo(), title.encode('utf8'), real)
         
 
 
@@ -3844,7 +3844,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS._display_question(GXContext._get_tls_geo(), title.encode(), message.encode())
+        ret_val = gxapi_cy.WrapSYS._display_question(GXContext._get_tls_geo(), title.encode('utf8'), message.encode('utf8'))
         return ret_val
 
 
@@ -3871,7 +3871,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapSYS._display_question_with_cancel(GXContext._get_tls_geo(), title.encode(), message.encode())
+        ret_val = gxapi_cy.WrapSYS._display_question_with_cancel(GXContext._get_tls_geo(), title.encode('utf8'), message.encode('utf8'))
         return ret_val
 
 
@@ -3915,7 +3915,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, verification_checked.value = gxapi_cy.WrapSYS._display_task_dialog_ui(GXContext._get_tls_geo(), title.encode(), main_instruction.encode(), content.encode(), common_buttons, custom_button_lst, icon, footer.encode(), footer_icon, verification_check_text.encode(), verification_checked.value, expanded_information.encode(), collapsed_control_text.encode(), expanded_control_text.encode())
+        ret_val, verification_checked.value = gxapi_cy.WrapSYS._display_task_dialog_ui(GXContext._get_tls_geo(), title.encode('utf8'), main_instruction.encode('utf8'), content.encode('utf8'), common_buttons, custom_button_lst, icon, footer.encode('utf8'), footer_icon, verification_check_text.encode('utf8'), verification_checked.value, expanded_information.encode('utf8'), collapsed_control_text.encode('utf8'), expanded_control_text.encode('utf8'))
         return ret_val
 
 
@@ -3981,7 +3981,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         **Note:** The User string is displayed as the default value in the prompt.
         Empty the user string if no default is needed.
         """
-        ret_val, result.value = gxapi_cy.WrapSYS._prompt(GXContext._get_tls_geo(), title.encode(), result.value.encode())
+        ret_val, result.value = gxapi_cy.WrapSYS._prompt(GXContext._get_tls_geo(), title.encode('utf8'), result.value.encode('utf8'))
         return ret_val
 
 
@@ -4051,7 +4051,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         SnapPoint, SnapLine, SnapOnPoint, SnapOnLine, NPolygon,
         ExcludeRect, ExcludePoly, ExcludeNPoly, AddVertex, DelVertex, GeneralAdd and GeneralDelete
         """
-        gxapi_cy.WrapSYS._set_cursor(GXContext._get_tls_geo(), cursor.encode())
+        gxapi_cy.WrapSYS._set_cursor(GXContext._get_tls_geo(), cursor.encode('utf8'))
         
 
 
@@ -4071,7 +4071,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapSYS._set_info_line(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapSYS._set_info_line(GXContext._get_tls_geo(), message.encode('utf8'))
         
 
 
@@ -4177,7 +4177,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        output.value = gxapi_cy.WrapSYS._encrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
+        output.value = gxapi_cy.WrapSYS._encrypt_string(GXContext._get_tls_geo(), input.encode('utf8'), output.value.encode('utf8'), key)
         
 
 
@@ -4198,7 +4198,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        output.value = gxapi_cy.WrapSYS._decrypt_string(GXContext._get_tls_geo(), input.encode(), output.value.encode(), key)
+        output.value = gxapi_cy.WrapSYS._decrypt_string(GXContext._get_tls_geo(), input.encode('utf8'), output.value.encode('utf8'), key)
         
 
 
@@ -4218,7 +4218,7 @@ class GXSYS(gxapi_cy.WrapSYS):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapSYS._is_encrypted_string(GXContext._get_tls_geo(), input.encode())
+        ret_val = gxapi_cy.WrapSYS._is_encrypted_string(GXContext._get_tls_geo(), input.encode('utf8'))
         return ret_val
 
 
@@ -4267,7 +4267,7 @@ class GXSYS(gxapi_cy.WrapSYS):
         soon as the GX is run the `GXGUI <geosoft.gxapi.GXGUI>` will become visible and it will be possible to set more
         breakpoints in any of the GXC files found in the path.
         """
-        gxapi_cy.WrapSYS._enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode(), first_gx.encode())
+        gxapi_cy.WrapSYS._enable_gx_debugger(GXContext._get_tls_geo(), src_dir.encode('utf8'), first_gx.encode('utf8'))
         
 
 

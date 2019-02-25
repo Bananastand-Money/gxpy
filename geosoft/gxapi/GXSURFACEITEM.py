@@ -70,7 +70,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `set_properties <geosoft.gxapi.GXSURFACEITEM.set_properties>` and `set_default_render_properties <geosoft.gxapi.GXSURFACEITEM.set_default_render_properties>`
         """
-        ret_val = gxapi_cy.WrapSURFACEITEM._create(GXContext._get_tls_geo(), type.encode(), name.encode())
+        ret_val = gxapi_cy.WrapSURFACEITEM._create(GXContext._get_tls_geo(), type.encode('utf8'), name.encode('utf8'))
         return GXSURFACEITEM(ret_val)
 
 
@@ -91,7 +91,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **Note:** The value returned by this call will not be valid for newly created items until after a call to `GXSURFACE.add_surface_item <geosoft.gxapi.GXSURFACE.add_surface_item>`.
         """
-        guid.value = self._get_guid(guid.value.encode())
+        guid.value = self._get_guid(guid.value.encode('utf8'))
         
 
 
@@ -126,7 +126,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
-        self._set_properties(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_measure)
+        self._set_properties(type.encode('utf8'), name.encode('utf8'), source_guid.encode('utf8'), source_name.encode('utf8'), source_measure, secondary_source_guid.encode('utf8'), secondary_source_name.encode('utf8'), secondary_source_measure)
         
 
 
@@ -165,7 +165,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
             `GXSYS.generate_guid <geosoft.gxapi.GXSYS.generate_guid>`
         """
-        self._set_properties_ex(type.encode(), name.encode(), source_guid.encode(), source_name.encode(), source_measure, secondary_source_guid.encode(), secondary_source_name.encode(), secondary_source_option, secondary_source_measure, secondary_source_measure2)
+        self._set_properties_ex(type.encode('utf8'), name.encode('utf8'), source_guid.encode('utf8'), source_name.encode('utf8'), source_measure, secondary_source_guid.encode('utf8'), secondary_source_name.encode('utf8'), secondary_source_option, secondary_source_measure, secondary_source_measure2)
         
 
 
@@ -196,7 +196,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._get_properties(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_measure.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_measure.value = self._get_properties(type.value.encode('utf8'), name.value.encode('utf8'), source_guid.value.encode('utf8'), source_name.value.encode('utf8'), source_measure.value, secondary_source_guid.value.encode('utf8'), secondary_source_name.value.encode('utf8'), secondary_source_measure.value)
         
 
 
@@ -231,7 +231,7 @@ class GXSURFACEITEM(gxapi_cy.WrapSURFACEITEM):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._get_properties_ex(type.value.encode(), name.value.encode(), source_guid.value.encode(), source_name.value.encode(), source_measure.value, secondary_source_guid.value.encode(), secondary_source_name.value.encode(), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
+        type.value, name.value, source_guid.value, source_name.value, source_measure.value, secondary_source_guid.value, secondary_source_name.value, secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value = self._get_properties_ex(type.value.encode('utf8'), name.value.encode('utf8'), source_guid.value.encode('utf8'), source_name.value.encode('utf8'), source_measure.value, secondary_source_guid.value.encode('utf8'), secondary_source_name.value.encode('utf8'), secondary_source_option.value, secondary_source_measure.value, secondary_source_measure2.value)
         
 
 

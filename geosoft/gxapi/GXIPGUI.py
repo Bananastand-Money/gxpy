@@ -72,7 +72,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val, page.value = gxapi_cy.WrapIPGUI._modify_job(GXContext._get_tls_geo(), ip, db, ini.encode(), plot_type, page.value)
+        ret_val, page.value = gxapi_cy.WrapIPGUI._modify_job(GXContext._get_tls_geo(), ip, db, ini.encode('utf8'), plot_type, page.value)
         return ret_val
 
 
@@ -95,7 +95,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         **Note:** The database should be a currently open database.
         """
-        gxapi_cy.WrapIPGUI._launch_ipqc_tool(GXContext._get_tls_geo(), db.encode(), line.encode(), chan.encode())
+        gxapi_cy.WrapIPGUI._launch_ipqc_tool(GXContext._get_tls_geo(), db.encode('utf8'), line.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -118,7 +118,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
 
         **Note:** The database should be a currently open database.
         """
-        gxapi_cy.WrapIPGUI._launch_offset_ipqc_tool(GXContext._get_tls_geo(), db.encode(), line.encode(), chan.encode())
+        gxapi_cy.WrapIPGUI._launch_offset_ipqc_tool(GXContext._get_tls_geo(), db.encode('utf8'), line.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -160,7 +160,7 @@ class GXIPGUI(gxapi_cy.WrapIPGUI):
         **Note:** This tool removes the `GXEXT <geosoft.gxapi.GXEXT>` object that allows the database-map linking between an IP data base 
         and IP plan map for plotting contributing electrodes for a given database row of data.
         """
-        gxapi_cy.WrapIPGUI._launch_remove_contributing_electrodes_ext_tool(GXContext._get_tls_geo(), db.encode(), map.encode())
+        gxapi_cy.WrapIPGUI._launch_remove_contributing_electrodes_ext_tool(GXContext._get_tls_geo(), db.encode('utf8'), map.encode('utf8'))
         
 
 

@@ -85,7 +85,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._create(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapVOX._create(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXVOX(ret_val)
 
 
@@ -142,7 +142,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._dump(name.encode())
+        self._dump(name.encode('utf8'))
         
 
 
@@ -161,7 +161,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_img(name.encode(), dir)
+        self._export_img(name.encode('utf8'), dir)
         
 
 
@@ -194,7 +194,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         1. If the cell sizes are uniform in a given direction, that size is used
         2. If the cell sizes are variable in a given direction, then the smallest size is used
         """
-        self._export_to_grids(name.encode(), dir, start, incr, num, cell_size, interp)
+        self._export_to_grids(name.encode('utf8'), dir, start, incr, num, cell_size, interp)
         
 
 
@@ -215,7 +215,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        crc.value = gxapi_cy.WrapVOX._export_xml(GXContext._get_tls_geo(), voxel.encode(), crc.value, file.encode())
+        crc.value = gxapi_cy.WrapVOX._export_xml(GXContext._get_tls_geo(), voxel.encode('utf8'), crc.value, file.encode('utf8'))
         
 
 
@@ -234,7 +234,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_seg_y(output_segy_filename.encode(), sample_interval)
+        self._export_seg_y(output_segy_filename.encode('utf8'), sample_interval)
         
 
 
@@ -253,7 +253,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._export_ji_gs_xml(GXContext._get_tls_geo(), voxel.encode(), file.encode())
+        gxapi_cy.WrapVOX._export_ji_gs_xml(GXContext._get_tls_geo(), voxel.encode('utf8'), file.encode('utf8'))
         
 
 
@@ -280,7 +280,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._export_xyz(xyz.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        self._export_xyz(xyz.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 
@@ -305,7 +305,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._filter(filter, filter_file.encode(), n_passes, interpolate_dummies, output_vox.encode())
+        self._filter(filter, filter_file.encode('utf8'), n_passes, interpolate_dummies, output_vox.encode('utf8'))
         
 
 
@@ -326,7 +326,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._generate_db(GXContext._get_tls_geo(), voxel_file.encode(), db, symb)
+        gxapi_cy.WrapVOX._generate_db(GXContext._get_tls_geo(), voxel_file.encode('utf8'), db, symb)
         
 
 
@@ -357,7 +357,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._generate_vector_voxel_from_db(GXContext._get_tls_geo(), voxel_file.encode(), db, type, symb_x, symb_y, symb_z, inc, dec)
+        gxapi_cy.WrapVOX._generate_vector_voxel_from_db(GXContext._get_tls_geo(), voxel_file.encode('utf8'), db, type, symb_x, symb_y, symb_z, inc, dec)
         
 
 
@@ -395,7 +395,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._generate_pg(GXContext._get_tls_geo(), name.encode(), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
+        ret_val = gxapi_cy.WrapVOX._generate_pg(GXContext._get_tls_geo(), name.encode('utf8'), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
         return GXVOX(ret_val)
 
 
@@ -435,7 +435,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The input cell size VVs' lengths must match the input `GXPG <geosoft.gxapi.GXPG>` dimensions.
         """
-        ret_val = gxapi_cy.WrapVOX._generate_pgvv(GXContext._get_tls_geo(), name.encode(), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
+        ret_val = gxapi_cy.WrapVOX._generate_pgvv(GXContext._get_tls_geo(), name.encode('utf8'), pg, ox, oy, oz, cx, cy, cz, ipj, meta)
         return GXVOX(ret_val)
 
 
@@ -523,7 +523,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** You must begin by calling `init_generate_by_subset_pg <geosoft.gxapi.GXVOX.init_generate_by_subset_pg>` and add data using `add_generate_by_subset_pg <geosoft.gxapi.GXVOX.add_generate_by_subset_pg>`.
         """
-        self._end_generate_by_subset_pg(name.encode(), ox, oy, oz, cx, cy, cz, ipj, meta)
+        self._end_generate_by_subset_pg(name.encode('utf8'), ox, oy, oz, cx, cy, cz, ipj, meta)
         
 
 
@@ -966,7 +966,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._grid_points(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
+        ret_val = gxapi_cy.WrapVOX._grid_points(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
 
@@ -1025,7 +1025,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._grid_points_z(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
+        ret_val = gxapi_cy.WrapVOX._grid_points_z(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope, range, nugget, sill, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
 
@@ -1094,7 +1094,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj)
+        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._grid_points_z_ex(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
 
@@ -1114,7 +1114,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._can_append_to(surface_file.encode())
+        ret_val = self._can_append_to(surface_file.encode('utf8'))
         return ret_val
 
 
@@ -1141,7 +1141,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        loc_x.value, loc_y.value, loc_z.value = self._get_cell_size_strings(loc_x.value.encode(), loc_y.value.encode(), loc_z.value.encode(), scale_x, scale_y, scale_z)
+        loc_x.value, loc_y.value, loc_z.value = self._get_cell_size_strings(loc_x.value.encode('utf8'), loc_y.value.encode('utf8'), loc_z.value.encode('utf8'), scale_x, scale_y, scale_z)
         
 
 
@@ -1211,7 +1211,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._set_cell_size_strings(loc_x.encode(), loc_y.encode(), loc_z.encode())
+        ret_val = self._set_cell_size_strings(loc_x.encode('utf8'), loc_y.encode('utf8'), loc_z.encode('utf8'))
         return ret_val
 
 
@@ -1284,7 +1284,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode(), error.encode(), cell_size, cell_size_z.encode(), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj)
+        ret_val, slope.value, range.value, sill.value = gxapi_cy.WrapVOX._log_grid_points_z_ex(GXContext._get_tls_geo(), name.encode('utf8'), error.encode('utf8'), cell_size, cell_size_z.encode('utf8'), var_only, min_radius, max_radius, min_points, max_points, model, power, slope.value, range.value, nugget, sill.value, strike, dip, plunge, along_strike_weight, down_dip_weight, log_opt, min_log, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
 
@@ -1349,7 +1349,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of `log_grid_points_z_ex <geosoft.gxapi.GXVOX.log_grid_points_z_ex>`. Only the most
         basic parameters are entered directly. Optional parameters are passed via a `GXREG <geosoft.gxapi.GXREG>` object.
         """
-        ret_val = gxapi_cy.WrapVOX._krig(GXContext._get_tls_geo(), name.encode(), cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg)
+        ret_val = gxapi_cy.WrapVOX._krig(GXContext._get_tls_geo(), name.encode('utf8'), cell_size, type, vv_x, vv_y, vv_z, vv_d, ipj, reg)
         return GXVOX(ret_val)
 
 
@@ -1381,7 +1381,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The input voxels must all be of the same type.
         """
-        ret_val = gxapi_cy.WrapVOX._math(GXContext._get_tls_geo(), master.encode(), mastervar.encode(), output.encode(), outvar.encode(), formula.encode(), lst)
+        ret_val = gxapi_cy.WrapVOX._math(GXContext._get_tls_geo(), master.encode('utf8'), mastervar.encode('utf8'), output.encode('utf8'), outvar.encode('utf8'), formula.encode('utf8'), lst)
         return GXVOX(ret_val)
 
 
@@ -1402,7 +1402,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._merge(vox2, reg, output_vox.encode())
+        self._merge(vox2, reg, output_vox.encode('utf8'))
         
 
 
@@ -1437,7 +1437,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode(), cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj)
+        ret_val = gxapi_cy.WrapVOX._nearest_neighbour_grid(GXContext._get_tls_geo(), name.encode('utf8'), cell_size, max_radius, type, vv_x, vv_y, vv_z, vv_d, ipj)
         return GXVOX(ret_val)
 
 
@@ -1488,7 +1488,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._re_grid(vox_to_regrid, reg, output_vox.encode())
+        self._re_grid(vox_to_regrid, reg, output_vox.encode('utf8'))
         
 
 
@@ -1600,7 +1600,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         default; use the "Negative depths down" parameter if the depths
         become more negative as you go deeper.
         """
-        self._sample_cdi(db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch.encode())
+        self._sample_cdi(db, line, x_ch, y_ch, elev_ch, negative_depths_down, topo_ch, mode, out_ch.encode('utf8'))
         
 
 
@@ -1632,7 +1632,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._sample_cdi_to_topography(db, line, x_ch, y_ch, zvv, mode, out_ch.encode(), topo_ch.encode())
+        self._sample_cdi_to_topography(db, line, x_ch, y_ch, zvv, mode, out_ch.encode('utf8'), topo_ch.encode('utf8'))
         
 
 
@@ -1827,7 +1827,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._slice_ipj(name.encode(), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y)
+        self._slice_ipj(name.encode('utf8'), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y)
         
 
 
@@ -1866,7 +1866,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._slice_multi_layer_ipj(name.encode(), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc)
+        self._slice_multi_layer_ipj(name.encode('utf8'), ipj, mode, orig_x, orig_y, cell_size_x, cell_size_y, size_x, size_y, layers, start_elev, elev_inc)
         
 
 
@@ -1883,7 +1883,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._subset_to_double_extents(output_vox.encode())
+        self._subset_to_double_extents(output_vox.encode('utf8'))
         
 
 
@@ -1900,7 +1900,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._sync(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapVOX._sync(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -1931,7 +1931,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         Optionally, it will be windowed to the input Z range as well.
         The output can be clipped to the non-dummied cells.
         """
-        self._window_ply(pply, mask, min_z, max_z, output_vox.encode(), clip_dummies)
+        self._window_ply(pply, mask, min_z, max_z, output_vox.encode('utf8'), clip_dummies)
         
 
 
@@ -1965,7 +1965,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         **Note:** The six minima and maxima are optional.
         The output can be clipped to the non-dummied cells.
         """
-        self._window_xyz(min_x, min_y, min_z, max_x, max_y, max_z, output_vox.encode(), clip_dummies)
+        self._window_xyz(min_x, min_y, min_z, max_x, max_y, max_z, output_vox.encode('utf8'), clip_dummies)
         
 
 
@@ -1982,7 +1982,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._write_xml(file.encode())
+        self._write_xml(file.encode('utf8'))
         
 
 
@@ -2001,7 +2001,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._convert_numeric_to_thematic(vv_translate, output_vox.encode())
+        self._convert_numeric_to_thematic(vv_translate, output_vox.encode('utf8'))
         
 
 
@@ -2020,7 +2020,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._convert_thematic_to_numeric(vv_translate, output_vox.encode())
+        self._convert_thematic_to_numeric(vv_translate, output_vox.encode('utf8'))
         
 
 
@@ -2053,7 +2053,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._convert_velocity_to_density(input_scaling_factor, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
+        self._convert_velocity_to_density(input_scaling_factor, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode('utf8'))
         
 
 
@@ -2090,7 +2090,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._convert_velocity_in_range_to_density(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
+        self._convert_velocity_in_range_to_density(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode('utf8'))
         
 
 
@@ -2127,7 +2127,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._convert_density_to_velocity(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode())
+        self._convert_density_to_velocity(input_scaling_factor, input_lower_bound, input_upper_bound, a5, a4, a3, a2, a1, a0, output_scaling_factor, output_voxel_filename.encode('utf8'))
         
 
 
@@ -2144,7 +2144,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._invert_z(output_voxel_filename.encode())
+        self._invert_z(output_voxel_filename.encode('utf8'))
         
 
 
@@ -2193,7 +2193,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         LOG_BASE: One of `VV_LOG_BASE_10 <geosoft.gxapi.VV_LOG_BASE_10>` (default) or `VV_LOG_BASE_E <geosoft.gxapi.VV_LOG_BASE_E>`
         LOG_NEGATIVE: One of `VV_LOG_NEGATIVE_NO <geosoft.gxapi.VV_LOG_NEGATIVE_NO>` (default) or `VV_LOG_NEGATIVE_YES <geosoft.gxapi.VV_LOG_NEGATIVE_YES>`
         """
-        gxapi_cy.WrapVOX._dw_grid_db(GXContext._get_tls_geo(), voxel.encode(), db, x, y, z, data, reg)
+        gxapi_cy.WrapVOX._dw_grid_db(GXContext._get_tls_geo(), voxel.encode('utf8'), db, x, y, z, data, reg)
         
 
 
@@ -2236,7 +2236,7 @@ class GXVOX(gxapi_cy.WrapVOX):
         NX, NY, NZ: Voxel dimensions.
         DZ and NZ are used only if the input cell sizes `GXVV <geosoft.gxapi.GXVV>` is of zero length.
         """
-        gxapi_cy.WrapVOX._tin_grid_db(GXContext._get_tls_geo(), voxel.encode(), db, x, y, z, data, method, z_cell, reg)
+        gxapi_cy.WrapVOX._tin_grid_db(GXContext._get_tls_geo(), voxel.encode('utf8'), db, x, y, z, data, method, z_cell, reg)
         
 
 
@@ -2255,7 +2255,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        p_uuid_string.value = gxapi_cy.WrapVOX._get_multi_voxset_guid(GXContext._get_tls_geo(), voxel_file.encode(), p_uuid_string.value.encode())
+        p_uuid_string.value = gxapi_cy.WrapVOX._get_multi_voxset_guid(GXContext._get_tls_geo(), voxel_file.encode('utf8'), p_uuid_string.value.encode('utf8'))
         
 
 
@@ -2280,7 +2280,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._generate_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj)
+        ret_val = gxapi_cy.WrapVOX._generate_gocad(GXContext._get_tls_geo(), name.encode('utf8'), header.encode('utf8'), property.encode('utf8'), ipj)
         return GXVOX(ret_val)
 
 
@@ -2309,7 +2309,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** Allows the Orientation flag to be specified.
         """
-        ret_val = gxapi_cy.WrapVOX._generate_oriented_gocad(GXContext._get_tls_geo(), name.encode(), header.encode(), property.encode(), ipj, orientation)
+        ret_val = gxapi_cy.WrapVOX._generate_oriented_gocad(GXContext._get_tls_geo(), name.encode('utf8'), header.encode('utf8'), property.encode('utf8'), ipj, orientation)
         return GXVOX(ret_val)
 
 
@@ -2337,7 +2337,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapVOX._generate_ubc(GXContext._get_tls_geo(), name.encode(), mesh.encode(), mod.encode(), dummy, ipj)
+        ret_val = gxapi_cy.WrapVOX._generate_ubc(GXContext._get_tls_geo(), name.encode('utf8'), mesh.encode('utf8'), mod.encode('utf8'), dummy, ipj)
         return GXVOX(ret_val)
 
 
@@ -2360,7 +2360,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._generate_xyz(GXContext._get_tls_geo(), name.encode(), ra, type, ipj)
+        gxapi_cy.WrapVOX._generate_xyz(GXContext._get_tls_geo(), name.encode('utf8'), ra, type, ipj)
         
 
 
@@ -2379,7 +2379,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapVOX._list_gocad_properties(GXContext._get_tls_geo(), header.encode(), lst)
+        gxapi_cy.WrapVOX._list_gocad_properties(GXContext._get_tls_geo(), header.encode('utf8'), lst)
         
 
 
@@ -2410,7 +2410,7 @@ class GXVOX(gxapi_cy.WrapVOX):
 
         **Note:** The database lines contain a slice of the voxel at a time.
         """
-        self._export_db(db, chan.encode(), dir, rev_x, rev_y, rev_z, dummies)
+        self._export_db(db, chan.encode('utf8'), dir, rev_x, rev_y, rev_z, dummies)
         
 
 

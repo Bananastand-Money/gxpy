@@ -63,7 +63,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._add_grid(img, var.encode())
+        self._add_grid(img, var.encode('utf8'))
         
 
 
@@ -102,7 +102,7 @@ class GXIEXP(gxapi_cy.WrapIEXP):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._do_formula(formula.encode(), unused)
+        self._do_formula(formula.encode('utf8'), unused)
         
 
 

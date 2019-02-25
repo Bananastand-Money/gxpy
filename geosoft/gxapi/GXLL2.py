@@ -105,7 +105,7 @@ class GXLL2(gxapi_cy.WrapLL2):
         inside square brackets in the datum transform name in the
         datumtrf table.
         """
-        self._save(name.encode())
+        self._save(name.encode('utf8'))
         
 
 

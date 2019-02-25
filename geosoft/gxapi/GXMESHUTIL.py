@@ -63,7 +63,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._import_grid_to_surface(GXContext._get_tls_geo(), grid_file_name.encode(), geosurface_filename.encode(), surface_name.encode())
+        gxapi_cy.WrapMESHUTIL._import_grid_to_surface(GXContext._get_tls_geo(), grid_file_name.encode('utf8'), geosurface_filename.encode('utf8'), surface_name.encode('utf8'))
         
 
 
@@ -94,7 +94,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), gridSurfaceFileName.encode(), gridSurfaceName.encode(), outputSurfaceFile.encode(), outputSurfaceNameAbove.encode(), outputSurfaceNameBelow.encode(), surface_clip_mode)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_grid(GXContext._get_tls_geo(), inputSurfaceFile.encode('utf8'), inputSurface.encode('utf8'), gridSurfaceFileName.encode('utf8'), gridSurfaceName.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurfaceNameAbove.encode('utf8'), outputSurfaceNameBelow.encode('utf8'), surface_clip_mode)
         
 
 
@@ -129,7 +129,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), min_x, max_x, min_y, max_y, min_z, max_z)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_extents(GXContext._get_tls_geo(), inputSurfaceFile.encode('utf8'), inputSurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurfaceName.encode('utf8'), min_x, max_x, min_y, max_y, min_z, max_z)
         
 
 
@@ -156,7 +156,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), polygonFile.encode(), outputSurfaceFile.encode(), outputSurfaceName.encode(), maskInside)
+        gxapi_cy.WrapMESHUTIL._clip_surface_with_polygon2d(GXContext._get_tls_geo(), inputSurfaceFile.encode('utf8'), inputSurface.encode('utf8'), polygonFile.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurfaceName.encode('utf8'), maskInside)
         
 
 
@@ -183,7 +183,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._compute_surface_union(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        gxapi_cy.WrapMESHUTIL._compute_surface_union(GXContext._get_tls_geo(), primarySurfaceFile.encode('utf8'), primarySurface.encode('utf8'), secondarySurfaceFile.encode('utf8'), secondarySurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurface.encode('utf8'))
         
 
 
@@ -210,7 +210,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._compute_surface_clip(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        gxapi_cy.WrapMESHUTIL._compute_surface_clip(GXContext._get_tls_geo(), primarySurfaceFile.encode('utf8'), primarySurface.encode('utf8'), secondarySurfaceFile.encode('utf8'), secondarySurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurface.encode('utf8'))
         
 
 
@@ -237,7 +237,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._compute_surface_intersection(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        gxapi_cy.WrapMESHUTIL._compute_surface_intersection(GXContext._get_tls_geo(), primarySurfaceFile.encode('utf8'), primarySurface.encode('utf8'), secondarySurfaceFile.encode('utf8'), secondarySurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurface.encode('utf8'))
         
 
 
@@ -260,7 +260,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._compute_surface_simplification(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        gxapi_cy.WrapMESHUTIL._compute_surface_simplification(GXContext._get_tls_geo(), inputSurfaceFile.encode('utf8'), inputSurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurface.encode('utf8'))
         
 
 
@@ -283,7 +283,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._compute_surface_subdivision(GXContext._get_tls_geo(), inputSurfaceFile.encode(), inputSurface.encode(), outputSurfaceFile.encode(), outputSurface.encode())
+        gxapi_cy.WrapMESHUTIL._compute_surface_subdivision(GXContext._get_tls_geo(), inputSurfaceFile.encode('utf8'), inputSurface.encode('utf8'), outputSurfaceFile.encode('utf8'), outputSurface.encode('utf8'))
         
 
 
@@ -309,7 +309,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_intersect(GXContext._get_tls_geo(), primarySurfaceFile.encode(), primarySurface.encode(), secondarySurfaceFile.encode(), secondarySurface.encode())
+        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_intersect(GXContext._get_tls_geo(), primarySurfaceFile.encode('utf8'), primarySurface.encode('utf8'), secondarySurfaceFile.encode('utf8'), secondarySurface.encode('utf8'))
         return ret_val
 
 
@@ -331,7 +331,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_self_intersect(GXContext._get_tls_geo(), surfaceFile.encode(), surfaceName.encode())
+        ret_val = gxapi_cy.WrapMESHUTIL._does_surface_self_intersect(GXContext._get_tls_geo(), surfaceFile.encode('utf8'), surfaceName.encode('utf8'))
         return ret_val
 
 
@@ -358,7 +358,7 @@ class GXMESHUTIL(gxapi_cy.WrapMESHUTIL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMESHUTIL._extract_isosurface_from_voxel(GXContext._get_tls_geo(), voxelFile.encode(), surfaceFile.encode(), surfaceName.encode(), contourMin, contourMax, close)
+        gxapi_cy.WrapMESHUTIL._extract_isosurface_from_voxel(GXContext._get_tls_geo(), voxelFile.encode('utf8'), surfaceFile.encode('utf8'), surfaceName.encode('utf8'), contourMin, contourMax, close)
         
 
 

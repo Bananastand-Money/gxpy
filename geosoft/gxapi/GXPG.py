@@ -722,7 +722,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** Each line must hold only 1 value
         """
-        self._read_ra(ra, dir, rev_x, rev_y, rev_z, dummy.encode())
+        self._read_ra(ra, dir, rev_x, rev_y, rev_z, dummy.encode('utf8'))
         
 
 
@@ -807,7 +807,7 @@ class GXPG(gxapi_cy.WrapPG):
 
         **Note:** Each line will hold only 1 value
         """
-        self._write_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode())
+        self._write_wa(wa, dir, rev_x, rev_y, rev_z, dummy.encode('utf8'))
         
 
 

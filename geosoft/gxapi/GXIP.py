@@ -90,7 +90,7 @@ class GXIP(gxapi_cy.WrapIP):
         By setting the final value, a resistivity grid can be
         created from conductivity data.
         """
-        gxapi_cy.WrapIP._convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode(), pg, vv_x, vv_z, x, z, cx, cz, reciprocal)
+        gxapi_cy.WrapIP._convert_ubcip_2d_to_grid(GXContext._get_tls_geo(), file.encode('utf8'), pg, vv_x, vv_z, x, z, cx, cz, reciprocal)
         
 
 
@@ -109,7 +109,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._create_default_job(ini.encode(), type)
+        self._create_default_job(ini.encode('utf8'), type)
         
 
 
@@ -142,7 +142,7 @@ class GXIP(gxapi_cy.WrapIP):
         UBC 2D inversion program IPINV2D.
         Include error channel output and version-specific formatting.
         """
-        self._export_ubcip3(db, line.encode(), chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
+        self._export_ubcip3(db, line.encode('utf8'), chan.encode('utf8'), error_chan.encode('utf8'), obs.encode('utf8'), topo.encode('utf8'), version)
         
 
 
@@ -185,7 +185,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D `GXIP <geosoft.gxapi.GXIP>` inversion program IPINV2D.
         """
-        gxapi_cy.WrapIP._export_ubcip_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), cond.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_mod.encode(), alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubcip_control(GXContext._get_tls_geo(), control.encode('utf8'), n_iter, i_rest, chi_factor, obs.encode('utf8'), cond.encode('utf8'), mesh.encode('utf8'), topo.encode('utf8'), initial.encode('utf8'), ref_mod.encode('utf8'), alphas.encode('utf8'), wts.encode('utf8'))
         
 
 
@@ -234,7 +234,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** UBC Version 5 Control file.
         """
-        gxapi_cy.WrapIP._export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), cond_selection, cond.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubcip_control_v5(GXContext._get_tls_geo(), control.encode('utf8'), n_iter, chi_factor, obs.encode('utf8'), topo.encode('utf8'), cond_selection, cond.encode('utf8'), mesh_selection, mesh.encode('utf8'), initial_selection, initial.encode('utf8'), reference_selection, ref_cond.encode('utf8'), alphas_selection, alphas.encode('utf8'), wts.encode('utf8'))
         
 
 
@@ -270,7 +270,7 @@ class GXIP(gxapi_cy.WrapIP):
         Voltage and current channels should be in units such that
         V/I gives volts/amp (or mV/mA).
         """
-        self._export_ubc_res3(db, line.encode(), voltage_chan.encode(), current_chan.encode(), error_chan.encode(), obs.encode(), topo.encode(), version)
+        self._export_ubc_res3(db, line.encode('utf8'), voltage_chan.encode('utf8'), current_chan.encode('utf8'), error_chan.encode('utf8'), obs.encode('utf8'), topo.encode('utf8'), version)
         
 
 
@@ -311,7 +311,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP._export_ubc_res_control(GXContext._get_tls_geo(), control.encode(), n_iter, i_rest, chi_factor, obs.encode(), mesh.encode(), topo.encode(), initial.encode(), ref_cond, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubc_res_control(GXContext._get_tls_geo(), control.encode('utf8'), n_iter, i_rest, chi_factor, obs.encode('utf8'), mesh.encode('utf8'), topo.encode('utf8'), initial.encode('utf8'), ref_cond, alphas.encode('utf8'), wts.encode('utf8'))
         
 
 
@@ -358,7 +358,7 @@ class GXIP(gxapi_cy.WrapIP):
         Outputs a control file for use in the
         UBC 2D resistivity inversion program DCINV2D.
         """
-        gxapi_cy.WrapIP._export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode(), n_iter, chi_factor, obs.encode(), topo.encode(), mesh_selection, mesh.encode(), initial_selection, initial.encode(), reference_selection, ref_cond.encode(), alphas_selection, alphas.encode(), wts.encode())
+        gxapi_cy.WrapIP._export_ubc_res_control_v5(GXContext._get_tls_geo(), control.encode('utf8'), n_iter, chi_factor, obs.encode('utf8'), topo.encode('utf8'), mesh_selection, mesh.encode('utf8'), initial_selection, initial.encode('utf8'), reference_selection, ref_cond.encode('utf8'), alphas_selection, alphas.encode('utf8'), wts.encode('utf8'))
         
 
 
@@ -396,7 +396,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Outputs a ``*.DAT`` file of the survey data for use in the
         UBC `GXIP <geosoft.gxapi.GXIP>` 3D inversion programs.
         """
-        self._export_data_to_ubc_3d(db, line_lst, locations_only, include_z, chan.encode(), error_chan.encode(), mask_chan.encode(), ip_type, comments.encode(), obs.encode())
+        self._export_data_to_ubc_3d(db, line_lst, locations_only, include_z, chan.encode('utf8'), error_chan.encode('utf8'), mask_chan.encode('utf8'), ip_type, comments.encode('utf8'), obs.encode('utf8'))
         
 
 
@@ -422,7 +422,7 @@ class GXIP(gxapi_cy.WrapIP):
         The CON/CHG selection is necessary because the import sets
         padding values to dummies based on the type of file.
         """
-        ret_val = gxapi_cy.WrapIP._import_ubc2_dmod(GXContext._get_tls_geo(), file.encode(), type)
+        ret_val = gxapi_cy.WrapIP._import_ubc2_dmod(GXContext._get_tls_geo(), file.encode('utf8'), type)
         return GXPG(ret_val)
 
 
@@ -449,7 +449,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Imports the MSH file geometry.
         """
-        x.value, z.value = gxapi_cy.WrapIP._import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode(), x.value, z.value, vv_x, vv_z)
+        x.value, z.value = gxapi_cy.WrapIP._import_ubc2_dmsh(GXContext._get_tls_geo(), file.encode('utf8'), x.value, z.value, vv_x, vv_z)
         
 
 
@@ -475,7 +475,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports the maximum elevation (top of mesh)
         as well as the topo (X, Z) values.
         """
-        elev0.value = gxapi_cy.WrapIP._import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode(), elev0.value, vv_x, vv_z)
+        elev0.value = gxapi_cy.WrapIP._import_ubc_2d_topo(GXContext._get_tls_geo(), file.encode('utf8'), elev0.value, vv_x, vv_z)
         
 
 
@@ -494,7 +494,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._open_job(job.encode(), type)
+        self._open_job(job.encode('utf8'), type)
         
 
 
@@ -513,7 +513,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._save_job(job.encode(), type)
+        self._save_job(job.encode('utf8'), type)
         
 
 
@@ -624,7 +624,7 @@ class GXIP(gxapi_cy.WrapIP):
         If the QC channel is selected, only those rows of data where the QC channel
         value is "1" will be included in the average.
         """
-        self._average_duplicates_qc(db, chan.encode(), qc_chan.encode(), out)
+        self._average_duplicates_qc(db, chan.encode('utf8'), qc_chan.encode('utf8'), out)
         
 
 
@@ -683,7 +683,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Exports a line to an ".I2X" file.
         """
-        self._export_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode())
+        self._export_i2_x(db, file.encode('utf8'), line.encode('utf8'), res_data.encode('utf8'), ip_data.encode('utf8'), res_model.encode('utf8'), ip_model.encode('utf8'), res_synth.encode('utf8'), ip_synth.encode('utf8'), res_poly.encode('utf8'), ip_poly.encode('utf8'))
         
 
 
@@ -704,7 +704,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_ipdata(db, chan.encode(), title.encode())
+        self._export_ipdata(db, chan.encode('utf8'), title.encode('utf8'))
         
 
 
@@ -727,7 +727,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_ipdata_dir(db, chan.encode(), title.encode(), dir.encode())
+        self._export_ipdata_dir(db, chan.encode('utf8'), title.encode('utf8'), dir.encode('utf8'))
         
 
 
@@ -764,7 +764,7 @@ class GXIP(gxapi_cy.WrapIP):
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._export_ipred(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n)
+        self._export_ipred(db, title.encode('utf8'), chan.encode('utf8'), suffix.encode('utf8'), filter, wts.encode('utf8'), stn1, stn2, max_n)
         
 
 
@@ -803,7 +803,7 @@ class GXIP(gxapi_cy.WrapIP):
         and are listed as w1,w2,w3,...   Unspecified values beyond
         the list's end are set to 1.0.
         """
-        self._export_ipred_dir(db, title.encode(), chan.encode(), suffix.encode(), filter, wts.encode(), stn1, stn2, max_n, dir.encode())
+        self._export_ipred_dir(db, title.encode('utf8'), chan.encode('utf8'), suffix.encode('utf8'), filter, wts.encode('utf8'), stn1, stn2, max_n, dir.encode('utf8'))
         
 
 
@@ -826,7 +826,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_line_ipdata(db, line.encode(), chan.encode(), title.encode())
+        self._export_line_ipdata(db, line.encode('utf8'), chan.encode('utf8'), title.encode('utf8'))
         
 
 
@@ -849,7 +849,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._export_sgdf(db, file.encode(), chan.encode(), chan2.encode())
+        self._export_sgdf(db, file.encode('utf8'), chan.encode('utf8'), chan2.encode('utf8'))
         
 
 
@@ -900,7 +900,7 @@ class GXIP(gxapi_cy.WrapIP):
         will be dummies. Values between actual data are interpolated using
         the Akima spline. Ends are extrapolated using the end data points.
         """
-        self._get_topo_line(db, line.encode(), x_min, x_max, x_inc, vv)
+        self._get_topo_line(db, line.encode('utf8'), x_min, x_max, x_inc, vv)
         
 
 
@@ -922,7 +922,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._get_chan_domain(db, chan.encode())
+        ret_val = self._get_chan_domain(db, chan.encode('utf8'))
         return ret_val
 
 
@@ -943,7 +943,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        label.value, units.value = gxapi_cy.WrapIP._get_chan_label(GXContext._get_tls_geo(), chan.encode(), label.value.encode(), units.value.encode())
+        label.value, units.value = gxapi_cy.WrapIP._get_chan_label(GXContext._get_tls_geo(), chan.encode('utf8'), label.value.encode('utf8'), units.value.encode('utf8'))
         
 
 
@@ -970,7 +970,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        domain.value, delay.value, n_windows.value = self._get_channel_info(db, chan.encode(), domain.value, delay.value, n_windows.value, vv)
+        domain.value, delay.value, n_windows.value = self._get_channel_info(db, chan.encode('utf8'), domain.value, delay.value, n_windows.value, vv)
         
 
 
@@ -997,7 +997,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._set_channel_info(db, chan.encode(), domain, delay, n_windows, vv)
+        self._set_channel_info(db, chan.encode('utf8'), domain, delay, n_windows, vv)
         
 
 
@@ -1018,7 +1018,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._import_dump(ip_sys, db, dump_file.encode())
+        self._import_dump(ip_sys, db, dump_file.encode('utf8'))
         
 
 
@@ -1043,7 +1043,7 @@ class GXIP(gxapi_cy.WrapIP):
         The values are interpolated at each row's X and Y
         positions.
         """
-        self._import_grid(db, grid.encode(), chan.encode())
+        self._import_grid(db, grid.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -1085,7 +1085,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._import_i2_x(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), mode)
+        self._import_i2_x(db, file.encode('utf8'), line.encode('utf8'), res_data.encode('utf8'), ip_data.encode('utf8'), res_model.encode('utf8'), ip_model.encode('utf8'), res_synth.encode('utf8'), ip_synth.encode('utf8'), res_poly.encode('utf8'), ip_poly.encode('utf8'), mode)
         
 
 
@@ -1131,7 +1131,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Imports a single ".I2X" file to a specified line.
         If the line does not exist, it will be created.
         """
-        self._import_i2_x_ex(db, file.encode(), line.encode(), res_data.encode(), ip_data.encode(), res_model.encode(), ip_model.encode(), res_synth.encode(), ip_synth.encode(), res_poly.encode(), ip_poly.encode(), res_zonge.encode(), ip_zonge.encode(), mode)
+        self._import_i2_x_ex(db, file.encode('utf8'), line.encode('utf8'), res_data.encode('utf8'), ip_data.encode('utf8'), res_model.encode('utf8'), ip_model.encode('utf8'), res_synth.encode('utf8'), ip_synth.encode('utf8'), res_poly.encode('utf8'), ip_poly.encode('utf8'), res_zonge.encode('utf8'), ip_zonge.encode('utf8'), mode)
         
 
 
@@ -1150,7 +1150,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._import_instrumentation_gdd(db, file.encode())
+        self._import_instrumentation_gdd(db, file.encode('utf8'))
         
 
 
@@ -1171,7 +1171,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._import_ipdata(db, file.encode(), chan.encode())
+        self._import_ipdata(db, file.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -1201,7 +1201,7 @@ class GXIP(gxapi_cy.WrapIP):
         the T= or F= fields) then the import is assumed to be frequency
         domain.
         """
-        self._import_ipdata2(db, file.encode(), chan.encode(), chan2.encode())
+        self._import_ipdata2(db, file.encode('utf8'), chan.encode('utf8'), chan2.encode('utf8'))
         
 
 
@@ -1225,7 +1225,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** This import produces a limited `GXIP <geosoft.gxapi.GXIP>` data set with no Current "I",
         Voltage "Vp" or Apparent Resistivity "ResApp" values.
         """
-        self._import_ipred(db, file.encode(), chan.encode())
+        self._import_ipred(db, file.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -1249,7 +1249,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** Exits with error if the line does not exist.
         Data is merged on basis of Stn and N value.
         """
-        self._import_merge_ipred(db, file.encode(), chan.encode())
+        self._import_merge_ipred(db, file.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -1268,7 +1268,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._import_sgdf(db, file.encode())
+        self._import_sgdf(db, file.encode('utf8'))
         
 
 
@@ -1290,7 +1290,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The elevation of each point in the current database
         is interpolated from the input topography values.
         """
-        self._import_topo_csv(db, csv.encode())
+        self._import_topo_csv(db, csv.encode('utf8'))
         
 
 
@@ -1312,7 +1312,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The elevation of each point in the current database
         is interpolated from the input topography grid.
         """
-        self._import_topo_grid(db, grid.encode())
+        self._import_topo_grid(db, grid.encode('utf8'))
         
 
 
@@ -1339,7 +1339,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** See `import_zonge_fld <geosoft.gxapi.GXIP.import_zonge_fld>`
         """
-        self._import_zonge_avg(db, file.encode(), line, scale, mult)
+        self._import_zonge_avg(db, file.encode('utf8'), line, scale, mult)
         
 
 
@@ -1366,7 +1366,7 @@ class GXIP(gxapi_cy.WrapIP):
         values, and a conversion is required.
         The line direction is taken from the `GXIP <geosoft.gxapi.GXIP>` setup values.
         """
-        self._import_zonge_fld(db, file.encode(), scale, mult)
+        self._import_zonge_fld(db, file.encode('utf8'), scale, mult)
         
 
 
@@ -1394,7 +1394,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** A mask channel can be used to select a subset of the data.
         A single N value can also be selected (Dummy for all).
         """
-        self._new_xy_database(db, new_db, chan_vv, mask.encode(), pr_n_val)
+        self._new_xy_database(db, new_db, chan_vv, mask.encode('utf8'), pr_n_val)
         
 
 
@@ -1420,7 +1420,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._pseudo_plot(db, ini_file.encode(), cur_line.encode(), map.encode())
+        self._pseudo_plot(db, ini_file.encode('utf8'), cur_line.encode('utf8'), map.encode('utf8'))
         
 
 
@@ -1448,7 +1448,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._pseudo_plot2(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode())
+        self._pseudo_plot2(db, ini_file.encode('utf8'), cur_line.encode('utf8'), tag.encode('utf8'), map.encode('utf8'))
         
 
 
@@ -1478,7 +1478,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPPLTCON GX. It may then
         be modified by hand as required.
         """
-        self._pseudo_plot2_dir(db, ini_file.encode(), cur_line.encode(), tag.encode(), map.encode(), dir.encode())
+        self._pseudo_plot2_dir(db, ini_file.encode('utf8'), cur_line.encode('utf8'), tag.encode('utf8'), map.encode('utf8'), dir.encode('utf8'))
         
 
 
@@ -1504,7 +1504,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The control file is created using the IPSTAKCON GX. It may then
         be modified by hand as required.
         """
-        self._ps_stack(db, chan.encode(), con_file.encode(), map.encode())
+        self._ps_stack(db, chan.encode('utf8'), con_file.encode('utf8'), map.encode('utf8'))
         
 
 
@@ -1529,7 +1529,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._ps_stack2(db, chan.encode(), con_file.encode(), type, map.encode())
+        self._ps_stack2(db, chan.encode('utf8'), con_file.encode('utf8'), type, map.encode('utf8'))
         
 
 
@@ -1556,7 +1556,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        self._ps_stack2_dir(db, chan.encode(), con_file.encode(), type, map.encode(), dir.encode())
+        self._ps_stack2_dir(db, chan.encode('utf8'), con_file.encode('utf8'), type, map.encode('utf8'), dir.encode('utf8'))
         
 
 
@@ -1681,7 +1681,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** For some imports, no line name is derivable from the import itself.
         """
-        self._set_import_line(line.encode())
+        self._set_import_line(line.encode('utf8'))
         
 
 
@@ -1734,7 +1734,7 @@ class GXIP(gxapi_cy.WrapIP):
         In frequency domain a simple sum is performed.
         Window List Syntax:
         """
-        self._window(db, va_chan.encode(), chan.encode(), windows.encode())
+        self._window(db, va_chan.encode('utf8'), chan.encode('utf8'), windows.encode('utf8'))
         
 
 
@@ -1792,7 +1792,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._is_valid_line(db, line.encode())
+        ret_val = self._is_valid_line(db, line.encode('utf8'))
         return ret_val
 
 
@@ -1814,7 +1814,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._line_array_type(db, line.encode())
+        ret_val = self._line_array_type(db, line.encode('utf8'))
         return ret_val
 
 
@@ -1837,7 +1837,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = self._a_spacing(db, line.encode())
+        ret_val = self._a_spacing(db, line.encode('utf8'))
         return ret_val
 
 
@@ -1887,7 +1887,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._get_electrode_locations_and_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
+        self._get_electrode_locations_and_mask_values(db, line.encode('utf8'), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
 
@@ -1921,7 +1921,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** The mask values are determined from the first row where a given electrode is found.
         Values returned for all currently selected lines.
         """
-        self._get_electrode_locations_and_mask_values2(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines)
+        self._get_electrode_locations_and_mask_values2(db, line.encode('utf8'), tx_rx, v_vx, v_vy, v_vm1, v_vm2, v_vlines)
         
 
 
@@ -1952,7 +1952,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._set_electrode_mask_values(db, line.encode(), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
+        self._set_electrode_mask_values(db, line.encode('utf8'), tx_rx, v_vx, v_vy, v_vm1, v_vm2)
         
 
 
@@ -1983,7 +1983,7 @@ class GXIP(gxapi_cy.WrapIP):
 
         **Note:** Mask values are set for all included electrode locations, currently selected lines.
         """
-        self._set_electrode_mask_values_single_qc_channel(db, line.encode(), tx_rx, qc_type, v_vx, v_vy, v_vm)
+        self._set_electrode_mask_values_single_qc_channel(db, line.encode('utf8'), tx_rx, qc_type, v_vx, v_vy, v_vm)
         
 
 
@@ -2010,7 +2010,7 @@ class GXIP(gxapi_cy.WrapIP):
         **Note:** For `GXIP <geosoft.gxapi.GXIP>`, looks for "QC_IP", then "QC_OffTime", then "QC".
         For Resistivity, looks for "QC_Res", then "QC_OnTime" (case insensitive).
         """
-        ret_val, chan.value = gxapi_cy.WrapIP._get_qc_channel(GXContext._get_tls_geo(), db, qc_type, chan.value.encode())
+        ret_val, chan.value = gxapi_cy.WrapIP._get_qc_channel(GXContext._get_tls_geo(), db, qc_type, chan.value.encode('utf8'))
         return ret_val
 
 
@@ -2053,7 +2053,7 @@ class GXIP(gxapi_cy.WrapIP):
         This EXT is not serialized, so it is also removed if the database is closed (since
         this is not the normal behaviour expected from a database).
         """
-        gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode(), rx1x.encode(), rx1y.encode(), rx2x.encode(), rx2y.encode(), tx1x.encode(), tx1y.encode(), tx2x.encode(), tx2y.encode(), sym_size)
+        gxapi_cy.WrapIP._locate_contributing_electrodes(GXContext._get_tls_geo(), db, map.encode('utf8'), rx1x.encode('utf8'), rx1y.encode('utf8'), rx2x.encode('utf8'), rx2y.encode('utf8'), tx1x.encode('utf8'), tx1y.encode('utf8'), tx2x.encode('utf8'), tx2y.encode('utf8'), sym_size)
         
 
 

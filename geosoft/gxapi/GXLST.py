@@ -64,7 +64,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._add_item(name.encode(), val.encode())
+        self._add_item(name.encode('utf8'), val.encode('utf8'))
         
 
 
@@ -89,7 +89,7 @@ class GXLST(gxapi_cy.WrapLST):
         you quickly add a new item without the need of coverting
         the handle into a string value.
         """
-        self._add_symb_item(name.encode(), symb)
+        self._add_symb_item(name.encode('utf8'), symb)
         
 
 
@@ -110,7 +110,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** Existing items that match the name are first removed.
         """
-        self._add_unique_item(name.encode(), val.encode())
+        self._add_unique_item(name.encode('utf8'), val.encode('utf8'))
         
 
 
@@ -211,7 +211,7 @@ class GXLST(gxapi_cy.WrapLST):
         Both the Name and Value in the list are set to the
         item.
         """
-        self._convert_from_csv_string(buff.encode())
+        self._convert_from_csv_string(buff.encode('utf8'))
         
 
 
@@ -340,7 +340,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** If item number is not in the list, the buffer will be "".
         """
-        buff.value = self._gt_item(type, item, buff.value.encode())
+        buff.value = self._gt_item(type, item, buff.value.encode('utf8'))
         
 
 
@@ -367,7 +367,7 @@ class GXLST(gxapi_cy.WrapLST):
         you quickly retrieve both the name and symbol handle
         for a given item, which needing to convert between types.
         """
-        name.value, symb.value = self._gt_symb_item(item, name.value.encode(), symb.value)
+        name.value, symb.value = self._gt_symb_item(item, name.value.encode('utf8'), symb.value)
         
 
 
@@ -387,7 +387,7 @@ class GXLST(gxapi_cy.WrapLST):
         **Note:** The list name values are put into a string,
         items separated by commas.
         """
-        buff.value = self._convert_to_csv_string(buff.value.encode())
+        buff.value = self._convert_to_csv_string(buff.value.encode('utf8'))
         
 
 
@@ -412,7 +412,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** Comparisons are case-tolerant.
         """
-        ret_val = self._find_item(type, name.encode())
+        ret_val = self._find_item(type, name.encode('utf8'))
         return ret_val
 
 
@@ -452,7 +452,7 @@ class GXLST(gxapi_cy.WrapLST):
 
             `assay_channel <geosoft.gxapi.GXLST.assay_channel>`
         """
-        ret_val = self._find_item_mask(type, name.encode())
+        ret_val = self._find_item_mask(type, name.encode('utf8'))
         return ret_val
 
 
@@ -498,7 +498,7 @@ class GXLST(gxapi_cy.WrapLST):
         **Note:** Index must be 0 >= index >= list size.
         Items above the list index are shifted up one index value.
         """
-        self._insert_item(item, name.encode(), val.encode())
+        self._insert_item(item, name.encode('utf8'), val.encode('utf8'))
         
 
 
@@ -542,7 +542,7 @@ class GXLST(gxapi_cy.WrapLST):
         a header line with the field names.
         Leading and trailing spaces are removed in the names and values.
         """
-        self._load_csv(csv.encode(), name_field.encode(), value_field.encode())
+        self._load_csv(csv.encode('utf8'), name_field.encode('utf8'), value_field.encode('utf8'))
         
 
 
@@ -574,7 +574,7 @@ class GXLST(gxapi_cy.WrapLST):
         If it cannot be found, the list will be
         empty.  Not finding a file is not an error.
         """
-        self._load_file(file.encode())
+        self._load_file(file.encode('utf8'))
         
 
 
@@ -593,7 +593,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._resource(res.encode())
+        self._resource(res.encode('utf8'))
         
 
 
@@ -646,7 +646,7 @@ class GXLST(gxapi_cy.WrapLST):
         file in the local then the GEOSOFT\\etc directory.  If the file
         does not exist it will be created in the GEOSOFT\\etc directory.
         """
-        self._save_file(file.encode())
+        self._save_file(file.encode('utf8'))
         
 
 
@@ -675,7 +675,7 @@ class GXLST(gxapi_cy.WrapLST):
         are ignored, and no error is registered.
         Item matches are case-tolerant.
         """
-        self._select_csv_string_items(buff.encode(), ls_to)
+        self._select_csv_string_items(buff.encode('utf8'), ls_to)
         
 
 
@@ -714,7 +714,7 @@ class GXLST(gxapi_cy.WrapLST):
 
         **Note:** The existing item at the given index will be replaced.
         """
-        self._set_item(type, item, buff.encode())
+        self._set_item(type, item, buff.encode('utf8'))
         
 
 

@@ -68,7 +68,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = gxapi_cy.WrapGEOSTRING._open(GXContext._get_tls_geo(), geostring_file.encode(), mode)
+        ret_val = gxapi_cy.WrapGEOSTRING._open(GXContext._get_tls_geo(), geostring_file.encode('utf8'), mode)
         return GXGEOSTRING(ret_val)
 
 
@@ -161,7 +161,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_shapes_for_feature(guid.encode(), lst)
+        self._get_shapes_for_feature(guid.encode('utf8'), lst)
         
 
 
@@ -180,7 +180,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_shapes_for_section(guid.encode(), lst)
+        self._get_shapes_for_section(guid.encode('utf8'), lst)
         
 
 
@@ -201,7 +201,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._get_shapes_for_feature_and_section(feature_guid.encode(), section_guid.encode(), lst)
+        self._get_shapes_for_feature_and_section(feature_guid.encode('utf8'), section_guid.encode('utf8'), lst)
         
 
 
@@ -244,7 +244,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._get_feature_properties(guid.encode(), name.value.encode(), description.value.encode(), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
+        name.value, description.value, polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value = self._get_feature_properties(guid.encode('utf8'), name.value.encode('utf8'), description.value.encode('utf8'), polygon.value, pat_number.value, pat_size.value, pat_thick.value, pat_density.value, pat_color.value, pat_bg_color.value, line_style.value, line_thickness.value, line_pitch.value, line_color.value)
         
 
 
@@ -285,7 +285,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._get_section_properties(guid.encode(), name.value.encode(), container_name.value.encode(), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
+        name.value, container_name.value, orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value = self._get_section_properties(guid.encode('utf8'), name.value.encode('utf8'), container_name.value.encode('utf8'), orientation.value, easting.value, northing.value, elevation.value, azimuth.value, swing.value, a.value, b.value, c.value, d.value)
         
 
 
@@ -312,7 +312,7 @@ class GXGEOSTRING(gxapi_cy.WrapGEOSTRING):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        feature_guid.value, section_guid.value = self._get_shape_properties(guid.encode(), feature_guid.value.encode(), section_guid.value.encode(), vert_v_vx, vert_v_vy, vert_v_vz)
+        feature_guid.value, section_guid.value = self._get_shape_properties(guid.encode('utf8'), feature_guid.value.encode('utf8'), section_guid.value.encode('utf8'), vert_v_vx, vert_v_vy, vert_v_vz)
         
 
 

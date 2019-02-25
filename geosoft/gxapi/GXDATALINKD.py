@@ -64,7 +64,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode())
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr(GXContext._get_tls_geo(), arc_lyr_file.encode('utf8'))
         return GXDATALINKD(ret_val)
 
 
@@ -88,7 +88,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_ex(GXContext._get_tls_geo(), arc_lyr_file.encode('utf8'), o3d_group)
         return GXDATALINKD(ret_val)
 
 
@@ -110,7 +110,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode())
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp(GXContext._get_tls_geo(), arc_lyr_file.encode('utf8'))
         return GXDATALINKD(ret_val)
 
 
@@ -134,7 +134,7 @@ class GXDATALINKD(gxapi_cy.WrapDATALINKD):
 
         **Note:** Needs ArcEngine licence.
         """
-        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode(), o3d_group)
+        ret_val = gxapi_cy.WrapDATALINKD._create_arc_lyr_from_tmp_ex(GXContext._get_tls_geo(), arc_lyr_file.encode('utf8'), o3d_group)
         return GXDATALINKD(ret_val)
 
 

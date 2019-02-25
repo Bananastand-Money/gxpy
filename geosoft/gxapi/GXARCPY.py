@@ -60,7 +60,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCPY._add_message(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapARCPY._add_message(GXContext._get_tls_geo(), message.encode('utf8'))
         
 
 
@@ -77,7 +77,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCPY._add_warning(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapARCPY._add_warning(GXContext._get_tls_geo(), message.encode('utf8'))
         
 
 
@@ -94,7 +94,7 @@ class GXARCPY(gxapi_cy.WrapARCPY):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapARCPY._add_error(GXContext._get_tls_geo(), message.encode())
+        gxapi_cy.WrapARCPY._add_error(GXContext._get_tls_geo(), message.encode('utf8'))
         
 
 

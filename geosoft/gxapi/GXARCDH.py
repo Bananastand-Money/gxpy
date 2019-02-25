@@ -77,7 +77,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapARCDH._set_project(GXContext._get_tls_geo(), path.encode(), project.encode())
+        gxapi_cy.WrapARCDH._set_project(GXContext._get_tls_geo(), path.encode('utf8'), project.encode('utf8'))
         
 
 
@@ -94,7 +94,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapARCDH._set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode())
+        gxapi_cy.WrapARCDH._set_string_file_gdb(GXContext._get_tls_geo(), string_file_gdb.encode('utf8'))
         
 
 
@@ -158,7 +158,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        name.value = gxapi_cy.WrapARCDH._get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode())
+        name.value = gxapi_cy.WrapARCDH._get_current_string_file_gdb(GXContext._get_tls_geo(), name.value.encode('utf8'))
         
 
 
@@ -176,7 +176,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapARCDH._is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode())
+        ret_val = gxapi_cy.WrapARCDH._is_valid_fgdb_file_name(GXContext._get_tls_geo(), fgdb.encode('utf8'))
         return ret_val
 
 
@@ -194,7 +194,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapARCDH._is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode())
+        ret_val = gxapi_cy.WrapARCDH._is_valid_feature_class_name(GXContext._get_tls_geo(), feature_class_name.encode('utf8'))
         return ret_val
 
 
@@ -221,7 +221,7 @@ class GXARCDH(gxapi_cy.WrapARCDH):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH._s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode(), input_xml_string, xml.value.encode(), fill_color.value, edge_color.value)
+        xml.value, fill_color.value, edge_color.value = gxapi_cy.WrapARCDH._s_prompt_for_esri_symbol(GXContext._get_tls_geo(), hwnd, h_wnd.encode('utf8'), input_xml_string, xml.value.encode('utf8'), fill_color.value, edge_color.value)
         
 
 

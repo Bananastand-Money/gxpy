@@ -74,7 +74,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL._create(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line)
+        ret_val = gxapi_cy.WrapMAPL._create(GXContext._get_tls_geo(), name.encode('utf8'), ref_name.encode('utf8'), line)
         return GXMAPL(ret_val)
 
 
@@ -103,7 +103,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
         "_Data" and "_Base" added.  If no reference name is specified,
         the name "`GXMAPL <geosoft.gxapi.GXMAPL>`" is used
         """
-        ret_val = gxapi_cy.WrapMAPL._create_reg(GXContext._get_tls_geo(), name.encode(), ref_name.encode(), line, reg)
+        ret_val = gxapi_cy.WrapMAPL._create_reg(GXContext._get_tls_geo(), name.encode('utf8'), ref_name.encode('utf8'), line, reg)
         return GXMAPL(ret_val)
 
 
@@ -140,7 +140,7 @@ class GXMAPL(gxapi_cy.WrapMAPL):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._replace_string(var.encode(), repl.encode())
+        self._replace_string(var.encode('utf8'), repl.encode('utf8'))
         
 
 

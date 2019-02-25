@@ -83,7 +83,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA._bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
+        gxapi_cy.WrapCHIMERA._bar_plot(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
 
@@ -272,7 +272,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        gxapi_cy.WrapCHIMERA._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), x0, y0, xs, ys)
+        gxapi_cy.WrapCHIMERA._duplicate_chem(GXContext._get_tls_geo(), mview, vv, log, det_lim, old, vv_tol, title.encode('utf8'), unit.encode('utf8'), x0, y0, xs, ys)
         
 
 
@@ -320,7 +320,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **License:** `Geosoft Extended End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-ext-end-user-lic>`_
         """
-        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._duplicate_chem_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vv, log, det_lim, old, vv_tol, title.encode(), unit.encode(), vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
+        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._duplicate_chem_view(GXContext._get_tls_geo(), map, view.encode('utf8'), group.encode('utf8'), ipj, vv, log, det_lim, old, vv_tol, title.encode('utf8'), unit.encode('utf8'), vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
 
@@ -351,7 +351,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         are stored in the input INI. Returns a `GXVV <geosoft.gxapi.GXVV>` for the given line
         with the calculated expression values.
         """
-        gxapi_cy.WrapCHIMERA._get_expression_data_vv(GXContext._get_tls_geo(), db, line, stage.encode(), exp.encode(), ini.encode(), gvv)
+        gxapi_cy.WrapCHIMERA._get_expression_data_vv(GXContext._get_tls_geo(), db, line, stage.encode('utf8'), exp.encode('utf8'), ini.encode('utf8'), gvv)
         
 
 
@@ -445,7 +445,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         1 - Log transform: base e with log min = CHIMERA_LOG_MIN
         2 - Lambda transform
         """
-        trans.value, lda.value = gxapi_cy.WrapCHIMERA._get_transform(GXContext._get_tls_geo(), db, chan.encode(), trans_opt, trans.value, lda.value)
+        trans.value, lda.value = gxapi_cy.WrapCHIMERA._get_transform(GXContext._get_tls_geo(), db, chan.encode('utf8'), trans_opt, trans.value, lda.value)
         
 
 
@@ -476,7 +476,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         extracts the channel name, and units from an acQuire-formatted
         channel name.
         """
-        ret_val, chan.value, units.value, factor.value, oxide.value = gxapi_cy.WrapCHIMERA._is_acquire_chan(GXContext._get_tls_geo(), input_chan.encode(), chan.value.encode(), units.value.encode(), factor.value, oxide.value)
+        ret_val, chan.value, units.value, factor.value, oxide.value = gxapi_cy.WrapCHIMERA._is_acquire_chan(GXContext._get_tls_geo(), input_chan.encode('utf8'), chan.value.encode('utf8'), units.value.encode('utf8'), factor.value, oxide.value)
         return ret_val
 
 
@@ -499,7 +499,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** Suggested use - testing to see if a channel name is an
         element so that the "ASSAY" class can be set.
         """
-        ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode(), case)
+        ret_val = gxapi_cy.WrapCHIMERA._is_element(GXContext._get_tls_geo(), chan.encode('utf8'), case)
         return ret_val
 
 
@@ -522,7 +522,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         This function supercedes `GXEDB.launch_histogram <geosoft.gxapi.GXEDB.launch_histogram>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
-        gxapi_cy.WrapCHIMERA._launch_histogram(GXContext._get_tls_geo(), db.encode(), chan.encode())
+        gxapi_cy.WrapCHIMERA._launch_histogram(GXContext._get_tls_geo(), db.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -543,7 +543,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** The database should be a currently open database.
         """
-        gxapi_cy.WrapCHIMERA._launch_probability(GXContext._get_tls_geo(), db.encode(), chan.encode())
+        gxapi_cy.WrapCHIMERA._launch_probability(GXContext._get_tls_geo(), db.encode('utf8'), chan.encode('utf8'))
         
 
 
@@ -578,7 +578,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         This function supercedes `GXEDB.launch_scatter <geosoft.gxapi.GXEDB.launch_scatter>`, (which now
         just gets the name of the `GXEDB <geosoft.gxapi.GXEDB>` and calls this function).
         """
-        gxapi_cy.WrapCHIMERA._launch_scatter(GXContext._get_tls_geo(), db.encode())
+        gxapi_cy.WrapCHIMERA._launch_scatter(GXContext._get_tls_geo(), db.encode('utf8'))
         
 
 
@@ -613,7 +613,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         The database should be a currently open database.
         """
-        gxapi_cy.WrapCHIMERA._launch_triplot(GXContext._get_tls_geo(), db.encode())
+        gxapi_cy.WrapCHIMERA._launch_triplot(GXContext._get_tls_geo(), db.encode('utf8'))
         
 
 
@@ -711,7 +711,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         is given by the percent contribution of each constituent.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA._pie_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius)
+        gxapi_cy.WrapCHIMERA._pie_plot(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size, radius)
         
 
 
@@ -754,7 +754,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `pie_plot <geosoft.gxapi.GXCHIMERA.pie_plot>`.
         """
-        gxapi_cy.WrapCHIMERA._pie_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle)
+        gxapi_cy.WrapCHIMERA._pie_plot2(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size, radius, start_angle)
         
 
 
@@ -785,7 +785,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot in a legend the classes in the class file found in the input class indices.
         """
-        gxapi_cy.WrapCHIMERA._plot_string_classified_symbols_legend_from_class_file(GXContext._get_tls_geo(), mview, title.encode(), x, y_min, y_max, class_file.encode(), index_vv)
+        gxapi_cy.WrapCHIMERA._plot_string_classified_symbols_legend_from_class_file(GXContext._get_tls_geo(), mview, title.encode('utf8'), x, y_min, y_max, class_file.encode('utf8'), index_vv)
         
 
 
@@ -808,7 +808,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** If the input string is not an element symbol (elements in the range
         1-92, "H" to "U"), then returns a dummy (`GS_R8DM <geosoft.gxapi.GS_R8DM>`).
         """
-        ret_val = gxapi_cy.WrapCHIMERA._atomic_weight(GXContext._get_tls_geo(), element.encode())
+        ret_val = gxapi_cy.WrapCHIMERA._atomic_weight(GXContext._get_tls_geo(), element.encode('utf8'))
         return ret_val
 
 
@@ -857,7 +857,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         pushed to the outside edge and your plot will look like a
         hedgehog (it also takes a lot longer!).
         """
-        gxapi_cy.WrapCHIMERA._rose_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size)
+        gxapi_cy.WrapCHIMERA._rose_plot(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size)
         
 
 
@@ -898,7 +898,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         slice, counted in degrees counter-clockwise from horizontal
         (3 o'clock). Zero degrees gives the same plot as `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`.
         """
-        gxapi_cy.WrapCHIMERA._rose_plot2(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle)
+        gxapi_cy.WrapCHIMERA._rose_plot2(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size, start_angle)
         
 
 
@@ -978,7 +978,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA._scatter2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, horz_vv, vert_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan.encode(), v_chan.encode(), h_units.encode(), v_units.encode(), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
+        gxapi_cy.WrapCHIMERA._scatter2(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, width, height, horz_vv, vert_vv, sym_font.encode('utf8'), sym_num_vv, sym_siz_vv, sym_col_vv, annot_style, h_chan.encode('utf8'), v_chan.encode('utf8'), h_units.encode('utf8'), v_units.encode('utf8'), h_min, h_max, v_min, v_max, hr_min, hr_max, vr_min, vr_max, use_hr_min, use_hr_max, use_vr_min, use_vr_max, h_scaling, v_scaling)
         
 
 
@@ -1059,7 +1059,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using a single fixed symbol.
         """
-        gxapi_cy.WrapCHIMERA._fixed_symbol_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._fixed_symbol_scatter_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, symbol_font.encode('utf8'), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, annotn, x_chan.encode('utf8'), y_chan.encode('utf8'), x_units.encode('utf8'), y_units.encode('utf8'), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode('utf8'))
         
 
 
@@ -1146,7 +1146,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using colors based on a zone file.
         """
-        gxapi_cy.WrapCHIMERA._zone_coloured_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._zone_coloured_scatter_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, zone_data_vv, zone_file.encode('utf8'), symbol_font.encode('utf8'), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, annotn, x_chan.encode('utf8'), y_chan.encode('utf8'), x_units.encode('utf8'), y_units.encode('utf8'), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode('utf8'))
         
 
 
@@ -1221,7 +1221,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a scatter plot using symbols based on a symbol class file.
         """
-        gxapi_cy.WrapCHIMERA._string_classified_scatter_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, annotn, x_chan.encode(), y_chan.encode(), x_units.encode(), y_units.encode(), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode())
+        gxapi_cy.WrapCHIMERA._string_classified_scatter_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, width, height, x_vv, y_vv, m_vv, mask_col, class_vv, class_file.encode('utf8'), symbol_size_override, db, line_vv, fid_vv, annotn, x_chan.encode('utf8'), y_chan.encode('utf8'), x_units.encode('utf8'), y_units.encode('utf8'), x_min, x_max, y_min, y_max, x_lin, y_lin, overlay.encode('utf8'))
         
 
 
@@ -1311,7 +1311,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         Plots a bar plot with the center of the "X" axis at the symbol location.
         See the note on offset symbols in `rose_plot <geosoft.gxapi.GXCHIMERA.rose_plot>`
         """
-        gxapi_cy.WrapCHIMERA._stacked_bar_plot(GXContext._get_tls_geo(), mview, data_group.encode(), offset_group.encode(), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
+        gxapi_cy.WrapCHIMERA._stacked_bar_plot(GXContext._get_tls_geo(), mview, data_group.encode('utf8'), offset_group.encode('utf8'), xvv, yvv, dvv, cvv, col, offset, offset_size, width)
         
 
 
@@ -1353,7 +1353,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         **Note:** If the tolerance is `rDUMMY <geosoft.gxapi.rDUMMY>`, then the minimum and maximum
         values are used, and must be specified.
         """
-        gxapi_cy.WrapCHIMERA._standard(GXContext._get_tls_geo(), mview, vv, old, tol, min, max, title.encode(), unit.encode(), x0, y0, xs, ys)
+        gxapi_cy.WrapCHIMERA._standard(GXContext._get_tls_geo(), mview, vv, old, tol, min, max, title.encode('utf8'), unit.encode('utf8'), x0, y0, xs, ys)
         
 
 
@@ -1405,7 +1405,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Same as `standard <geosoft.gxapi.GXCHIMERA.standard>` but plot in a new view.
         """
-        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._standard_view(GXContext._get_tls_geo(), map, view.encode(), group.encode(), ipj, vvy, old, tol, min, max, title.encode(), unit.encode(), xs, vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
+        min_y.value, max_y.value = gxapi_cy.WrapCHIMERA._standard_view(GXContext._get_tls_geo(), map, view.encode('utf8'), group.encode('utf8'), ipj, vvy, old, tol, min, max, title.encode('utf8'), unit.encode('utf8'), xs, vvx, vv_line, vv_fid, db, min_y.value, max_y.value)
         
 
 
@@ -1490,7 +1490,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
         The view scaling is not altered with any projection. The base view
         is best as the input.
         """
-        gxapi_cy.WrapCHIMERA._tri_plot2(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font.encode(), sym_num_vv, sym_siz_vv, sym_col_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
+        gxapi_cy.WrapCHIMERA._tri_plot2(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, width, height, x_vv, y_vv, z_vv, m_vv, sym_font.encode('utf8'), sym_num_vv, sym_siz_vv, sym_col_vv, x_chan.encode('utf8'), y_chan.encode('utf8'), z_chan.encode('utf8'), xr_min, xr_max, yr_min, yr_max, zr_min, zr_max, use_xr_min, use_xr_max, use_yr_min, use_yr_max, use_zr_min, use_zr_max, grid, tic, grid_inc)
         
 
 
@@ -1561,7 +1561,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri plot using a single fixed symbol.
         """
-        gxapi_cy.WrapCHIMERA._fixed_symbol_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._fixed_symbol_tri_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, symbol_font.encode('utf8'), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, db, line_vv, fid_vv, x_chan.encode('utf8'), y_chan.encode('utf8'), z_chan.encode('utf8'), grid, tic, grid_inc, overlay.encode('utf8'))
         
 
 
@@ -1638,7 +1638,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri plot using colors based on a zone file.
         """
-        gxapi_cy.WrapCHIMERA._zone_coloured_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, zone_data_vv, zone_file.encode(), symbol_font.encode(), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._zone_coloured_tri_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, zone_data_vv, zone_file.encode('utf8'), symbol_font.encode('utf8'), symbol_number, symbol_size, symbol_angle, symbol_color, symbol_fill, fix_edge_color, db, line_vv, fid_vv, x_chan.encode('utf8'), y_chan.encode('utf8'), z_chan.encode('utf8'), grid, tic, grid_inc, overlay.encode('utf8'))
         
 
 
@@ -1703,7 +1703,7 @@ class GXCHIMERA(gxapi_cy.WrapCHIMERA):
 
         **Note:** Plot a tri-plot using symbols based on a symbol class file.
         """
-        gxapi_cy.WrapCHIMERA._string_classified_tri_plot(GXContext._get_tls_geo(), mview, title.encode(), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, class_vv, class_file.encode(), symbol_size_override, db, line_vv, fid_vv, x_chan.encode(), y_chan.encode(), z_chan.encode(), grid, tic, grid_inc, overlay.encode())
+        gxapi_cy.WrapCHIMERA._string_classified_tri_plot(GXContext._get_tls_geo(), mview, title.encode('utf8'), x1, y1, side, x_vv, y_vv, z_vv, m_vv, mask_col, class_vv, class_file.encode('utf8'), symbol_size_override, db, line_vv, fid_vv, x_chan.encode('utf8'), y_chan.encode('utf8'), z_chan.encode('utf8'), grid, tic, grid_inc, overlay.encode('utf8'))
         
 
 

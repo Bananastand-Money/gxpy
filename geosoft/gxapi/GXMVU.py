@@ -190,7 +190,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._bar_chart(GXContext._get_tls_geo(), mview, group_name.encode(), data, line, x_chan.encode(), list.encode(), x_title.encode(), x_txt_size, y_title.encode(), y_txt_size, bar_title.encode(), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
+        gxapi_cy.WrapMVU._bar_chart(GXContext._get_tls_geo(), mview, group_name.encode('utf8'), data, line, x_chan.encode('utf8'), list.encode('utf8'), x_title.encode('utf8'), x_txt_size, y_title.encode('utf8'), y_txt_size, bar_title.encode('utf8'), bar_txt_size, bar_width, dist_fid, label, tick, right_axis, top_axis, bottom_axis, surround, left, bottom, right, top, xm, ym, widthm, heightm)
         
 
 
@@ -225,7 +225,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         are sized so that the boundaries are half-way between adjacent
         data, both vertically and horizontally.
         """
-        gxapi_cy.WrapMVU._cdi_pixel_plot(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, itr)
+        gxapi_cy.WrapMVU._cdi_pixel_plot(GXContext._get_tls_geo(), mview, group.encode('utf8'), data_va, elev_va, xvv, itr)
         
 
 
@@ -260,7 +260,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         data point is plotted in two halves, with each half on adjacent plotting planes,
         with the bend at the data point.
         """
-        gxapi_cy.WrapMVU._cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview, group.encode(), data_va, elev_va, xvv, yvv, itr)
+        gxapi_cy.WrapMVU._cdi_pixel_plot_3d(GXContext._get_tls_geo(), mview, group.encode('utf8'), data_va, elev_va, xvv, yvv, itr)
         
 
 
@@ -609,7 +609,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._contour(GXContext._get_tls_geo(), mview, con.encode(), grid.encode())
+        gxapi_cy.WrapMVU._contour(GXContext._get_tls_geo(), mview, con.encode('utf8'), grid.encode('utf8'))
         
 
 
@@ -637,7 +637,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         a `GXPLY <geosoft.gxapi.GXPLY>` object using the `GXPLY.add_polygon_ex <geosoft.gxapi.GXPLY.add_polygon_ex>` function, to add both
         inclusive (as the first `GXPLY <geosoft.gxapi.GXPLY>`) and exclusive interior regions.
         """
-        gxapi_cy.WrapMVU._contour_ply(GXContext._get_tls_geo(), mview, ply, con.encode(), grid.encode())
+        gxapi_cy.WrapMVU._contour_ply(GXContext._get_tls_geo(), mview, ply, con.encode('utf8'), grid.encode('utf8'))
         
 
 
@@ -680,7 +680,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         the correct font and symbol before CSymbLegend is
         called. The same is true of the edge color.
         """
-        gxapi_cy.WrapMVU._c_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, file.encode(), title.encode(), sub_title.encode())
+        gxapi_cy.WrapMVU._c_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, file.encode('utf8'), title.encode('utf8'), sub_title.encode('utf8'))
         
 
 
@@ -740,7 +740,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Box width and height are used to draw horizontal and vertical
         bars. Curves outside the box are not clipped.
         """
-        gxapi_cy.WrapMVU._decay_curve(GXContext._get_tls_geo(), mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode())
+        gxapi_cy.WrapMVU._decay_curve(GXContext._get_tls_geo(), mview, vv_x, vv_y, v_ay, v_ax, log, log_min, angle, x_bar, y_bar, x_off_set, y_off_set, width, height, x_min, y_min, x_scale, y_scale, line_pitch, line_style, line_color.encode('utf8'))
         
 
 
@@ -862,7 +862,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `GXLST <geosoft.gxapi.GXLST>` class
         """
-        gxapi_cy.WrapMVU._export_datamine_string(GXContext._get_tls_geo(), mview, lst, file.encode())
+        gxapi_cy.WrapMVU._export_datamine_string(GXContext._get_tls_geo(), mview, lst, file.encode('utf8'))
         
 
 
@@ -1003,7 +1003,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
-        gxapi_cy.WrapMVU._flight_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff)
+        gxapi_cy.WrapMVU._flight_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode('utf8'), locate, vangle, up, loff, voff)
         
 
 
@@ -1038,7 +1038,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `re_gen_areas <geosoft.gxapi.GXMVU.re_gen_areas>`
         """
-        gxapi_cy.WrapMVU._gen_areas(GXContext._get_tls_geo(), mview, lines.encode(), col_vv, pat_vv, pitch)
+        gxapi_cy.WrapMVU._gen_areas(GXContext._get_tls_geo(), mview, lines.encode('utf8'), col_vv, pat_vv, pitch)
         
 
 
@@ -1070,7 +1070,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Required to set up a map view before doing the actual
         surface import.
         """
-        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMVU._get_range_gocad_surface(GXContext._get_tls_geo(), file.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = gxapi_cy.WrapMVU._get_range_gocad_surface(GXContext._get_tls_geo(), file.encode('utf8'), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         
 
 
@@ -1128,7 +1128,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `histogram2 <geosoft.gxapi.GXMVU.histogram2>`, `histogram3 <geosoft.gxapi.GXMVU.histogram3>`
         """
-        gxapi_cy.WrapMVU._histogram(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box)
+        gxapi_cy.WrapMVU._histogram(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode('utf8'), unit.encode('utf8'), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box)
         
 
 
@@ -1194,7 +1194,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         None of them will be plotted if threshold value is dummy or outside
         the X data range.
         """
-        gxapi_cy.WrapMVU._histogram2(GXContext._get_tls_geo(), mview, st_data, st_hist, x_title.encode(), y_title.encode(), xy_txt_size, title.encode(), plot_txt_size, unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker)
+        gxapi_cy.WrapMVU._histogram2(GXContext._get_tls_geo(), mview, st_data, st_hist, x_title.encode('utf8'), y_title.encode('utf8'), xy_txt_size, title.encode('utf8'), plot_txt_size, unit.encode('utf8'), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, st_box, x_marker)
         
 
 
@@ -1249,7 +1249,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._histogram3(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box)
+        gxapi_cy.WrapMVU._histogram3(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode('utf8'), unit.encode('utf8'), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, fill_color, data_decimal, stat_decimal, st_box)
         
 
 
@@ -1306,7 +1306,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._histogram4(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box)
+        gxapi_cy.WrapMVU._histogram4(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode('utf8'), unit.encode('utf8'), xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box)
         
 
 
@@ -1369,7 +1369,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
-        gxapi_cy.WrapMVU._histogram5(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr)
+        gxapi_cy.WrapMVU._histogram5(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode('utf8'), unit.encode('utf8'), lmd, xm, ym, widthm, heightm, xd, yd, widthd, heightd, sum_width, log, summ, prob, fill_color, data_decimal, stat_decimal, st_box, itr)
         
 
 
@@ -1446,7 +1446,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         **Note:** Use `GXSYS.show_error <geosoft.gxapi.GXSYS.show_error>` to display errors that may have been encountered. This function can also be used
         to calculate the default scale without creating a map.
         """
-        ret_val, scale.value = gxapi_cy.WrapMVU._mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        ret_val, scale.value = gxapi_cy.WrapMVU._mapset_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode('utf8'), port, exact, scale.value, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
@@ -1496,7 +1496,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Same as `mapset_test <geosoft.gxapi.GXMVU.mapset_test>`, with vertical exaggeration.
         """
-        ret_val, scale.value = gxapi_cy.WrapMVU._mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        ret_val, scale.value = gxapi_cy.WrapMVU._mapset2_test(GXContext._get_tls_geo(), min_x, max_x, min_y, max_y, size.encode('utf8'), port, exact, scale.value, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         return ret_val
 
 
@@ -1522,7 +1522,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         the normal of each defined triangle, and taking the
         average when vertex is shared among more than one triangle.
         """
-        gxapi_cy.WrapMVU._import_gocad_surface(GXContext._get_tls_geo(), mview, file.encode(), col)
+        gxapi_cy.WrapMVU._import_gocad_surface(GXContext._get_tls_geo(), mview, file.encode('utf8'), col)
         
 
 
@@ -1541,7 +1541,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._load_plot(GXContext._get_tls_geo(), map, name.encode())
+        gxapi_cy.WrapMVU._load_plot(GXContext._get_tls_geo(), map, name.encode('utf8'))
         
 
 
@@ -1576,7 +1576,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `load_plot <geosoft.gxapi.GXMVU.load_plot>`
         """
-        gxapi_cy.WrapMVU._map_from_plt(GXContext._get_tls_geo(), map, base.encode(), data.encode(), plt.encode(), mpx, mpy)
+        gxapi_cy.WrapMVU._map_from_plt(GXContext._get_tls_geo(), map, base.encode('utf8'), data.encode('utf8'), plt.encode('utf8'), mpx, mpy)
         
 
 
@@ -1597,7 +1597,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._map_mdf(GXContext._get_tls_geo(), map, mdf.encode(), data.encode())
+        gxapi_cy.WrapMVU._map_mdf(GXContext._get_tls_geo(), map, mdf.encode('utf8'), data.encode('utf8'))
         
 
 
@@ -1646,7 +1646,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._mapset(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        gxapi_cy.WrapMVU._mapset(GXContext._get_tls_geo(), map, base.encode('utf8'), data.encode('utf8'), min_x, max_x, min_y, max_y, size.encode('utf8'), port, exact, scale, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
@@ -1697,7 +1697,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._mapset2(GXContext._get_tls_geo(), map, base.encode(), data.encode(), min_x, max_x, min_y, max_y, size.encode(), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
+        gxapi_cy.WrapMVU._mapset2(GXContext._get_tls_geo(), map, base.encode('utf8'), data.encode('utf8'), min_x, max_x, min_y, max_y, size.encode('utf8'), port, exact, scale, vert_exag, conv, marg_xmin, marg_xmax, marg_ymin, marg_ymax, inside)
         
 
 
@@ -1720,7 +1720,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._mdf(GXContext._get_tls_geo(), map, mdf.encode(), base.encode(), data.encode())
+        gxapi_cy.WrapMVU._mdf(GXContext._get_tls_geo(), map, mdf.encode('utf8'), base.encode('utf8'), data.encode('utf8'))
         
 
 
@@ -1762,7 +1762,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `flight_plot <geosoft.gxapi.GXMVU.flight_plot>`
         """
-        gxapi_cy.WrapMVU._path_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU._path_plot(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode('utf8'), locate, vangle, up, loff, voff, gap)
         
 
 
@@ -1805,7 +1805,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot <geosoft.gxapi.GXMVU.path_plot>`
         """
-        gxapi_cy.WrapMVU._path_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap)
+        gxapi_cy.WrapMVU._path_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode('utf8'), locate, compass, vangle, up, loff, voff, gap)
         
 
 
@@ -1850,7 +1850,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `path_plot_ex <geosoft.gxapi.GXMVU.path_plot_ex>`
         """
-        gxapi_cy.WrapMVU._path_plot_ex2(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode(), locate, compass, vangle, up, loff, voff, gap, dummies)
+        gxapi_cy.WrapMVU._path_plot_ex2(GXContext._get_tls_geo(), mview, vv_x, vv_y, line.encode('utf8'), locate, compass, vangle, up, loff, voff, gap, dummies)
         
 
 
@@ -1916,7 +1916,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         is 2-D, then only the intersection of the surface with the 2D surface is
         plotted, using lines.
         """
-        gxapi_cy.WrapMVU._plot_voxel_surface2(GXContext._get_tls_geo(), mview, vox, value, col, line_thick, transparency, surface_name.encode())
+        gxapi_cy.WrapMVU._plot_voxel_surface2(GXContext._get_tls_geo(), mview, vox, value, col, line_thick, transparency, surface_name.encode('utf8'))
         
 
 
@@ -1953,7 +1953,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** TODO... Move to `GXVOX <geosoft.gxapi.GXVOX>` method for surface generation only and use GeosurfaceD to display.
         """
-        gxapi_cy.WrapMVU._generate_surface_from_voxel(GXContext._get_tls_geo(), mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name.encode())
+        gxapi_cy.WrapMVU._generate_surface_from_voxel(GXContext._get_tls_geo(), mview, vox, method, option, min_value, max_value, col, line_thick, transparency, surface_name.encode('utf8'))
         
 
 
@@ -2096,7 +2096,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** The `GXITR <geosoft.gxapi.GXITR>` can be empty (but must still be a valid `GXITR <geosoft.gxapi.GXITR>` object).
         """
-        gxapi_cy.WrapMVU._probability(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode(), unit.encode(), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr)
+        gxapi_cy.WrapMVU._probability(GXContext._get_tls_geo(), mview, st_data, st_hist, title.encode('utf8'), unit.encode('utf8'), transform, lmd, xm, ym, widthm, heightm, symb_size, sigma, sum_width, summ, data_decimal, stat_decimal, itr)
         
 
 
@@ -2180,7 +2180,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **Note:** Profiles will be drawn in the current line style.
         """
-        gxapi_cy.WrapMVU._profile_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode(), neg_f_color.encode())
+        gxapi_cy.WrapMVU._profile_plot_ex(GXContext._get_tls_geo(), mview, vv_x, vv_y, vv_z, vangle, up, gap, base, scale, join, log, log_base, smooth, pos_f_color.encode('utf8'), neg_f_color.encode('utf8'))
         
 
 
@@ -2222,7 +2222,7 @@ class GXMVU(gxapi_cy.WrapMVU):
         Spacing is based on the maximum of the largest plotted symbol
         and the font size.
         """
-        gxapi_cy.WrapMVU._prop_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode(), sub_title.encode())
+        gxapi_cy.WrapMVU._prop_symb_legend(GXContext._get_tls_geo(), mview, x1, y1, font_size, symb_scale, base, n_symb, start, increment, title.encode('utf8'), sub_title.encode('utf8'))
         
 
 
@@ -2254,7 +2254,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
             `gen_areas <geosoft.gxapi.GXMVU.gen_areas>`
         """
-        gxapi_cy.WrapMVU._re_gen_areas(GXContext._get_tls_geo(), mview, lines.encode())
+        gxapi_cy.WrapMVU._re_gen_areas(GXContext._get_tls_geo(), mview, lines.encode('utf8'))
         
 
 
@@ -2315,7 +2315,7 @@ class GXMVU(gxapi_cy.WrapMVU):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        gxapi_cy.WrapMVU._text_box(GXContext._get_tls_geo(), mview, xmin, ymin, xmax, ymax, text.encode(), space, type)
+        gxapi_cy.WrapMVU._text_box(GXContext._get_tls_geo(), mview, xmin, ymin, xmax, ymax, text.encode('utf8'), space, type)
         
 
 

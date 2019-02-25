@@ -557,7 +557,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         image color tool. Be sure to pass a combined name containing
         both the view name and the group separated by a "/" or "\\".
         """
-        self._activate_group(view_group.encode())
+        self._activate_group(view_group.encode('utf8'))
         
 
 
@@ -576,7 +576,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._activate_view(view.encode())
+        self._activate_view(view.encode('utf8'))
         
 
 
@@ -718,7 +718,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         Unlike `set_current_view <geosoft.gxapi.GXEMAP.set_current_view>` this function's action
         survive the GX finishing.
         """
-        ret_val = self._change_current_view(view.encode())
+        ret_val = self._change_current_view(view.encode('utf8'))
         return ret_val
 
 
@@ -762,7 +762,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._get_3d_view_name(name.value.encode())
+        name.value = self._get_3d_view_name(name.value.encode('utf8'))
         
 
 
@@ -783,7 +783,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** This function operates on the current map.
         """
-        group.value = self._get_current_group(group.value.encode())
+        group.value = self._get_current_group(group.value.encode('utf8'))
         
 
 
@@ -804,7 +804,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** This function operates on the current map.
         """
-        view.value = self._get_current_view(view.value.encode())
+        view.value = self._get_current_view(view.value.encode('utf8'))
         
 
 
@@ -848,7 +848,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode('utf8'))
         
 
 
@@ -896,7 +896,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, name.value = gxapi_cy.WrapEMAP._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode(), value.encode(), name.value.encode())
+        ret_val, name.value = gxapi_cy.WrapEMAP._i_get_specified_map_name(GXContext._get_tls_geo(), field.encode('utf8'), value.encode('utf8'), name.value.encode('utf8'))
         return ret_val
 
 
@@ -937,7 +937,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Note:** Use this method to reload (if loaded) a grid document if the file on disk changed.
         """
-        gxapi_cy.WrapEMAP._reload_grid(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEMAP._reload_grid(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -1017,7 +1017,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP._loaded(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._loaded(GXContext._get_tls_geo(), name.encode('utf8'))
         return ret_val
 
 
@@ -1148,7 +1148,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         GX. As soon as the GX terminates the view will revert
         to the original one.
         """
-        ret_val = self._set_current_view(view.encode())
+        ret_val = self._set_current_view(view.encode('utf8'))
         return ret_val
 
 
@@ -1173,7 +1173,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         without having to call `lock <geosoft.gxapi.GXEMAP.lock>`. This could be an expensive operation
         that cause undesirable UX.
         """
-        self._get_view_ipj(view.encode(), ipj)
+        self._get_view_ipj(view.encode('utf8'), ipj)
         
 
 
@@ -1203,7 +1203,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEMAP._load(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._load(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAP(ret_val)
 
 
@@ -1229,7 +1229,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEMAP.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEMAP._load_no_activate(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._load_no_activate(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAP(ret_val)
 
 
@@ -1257,7 +1257,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEMAP._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
+        ret_val = gxapi_cy.WrapEMAP._load_with_view(GXContext._get_tls_geo(), name.encode('utf8'), p2)
         return GXEMAP(ret_val)
 
 
@@ -1339,7 +1339,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode())
+        self._print_(entire_map, scale_to_fit, print_to_file, all_pages, centre, copies, first_page, last_page, scale_factor, overlap_size, offset_x, offset_y, file.encode('utf8'))
         
 
 
@@ -1377,7 +1377,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._select_group(view_group.encode())
+        self._select_group(view_group.encode('utf8'))
         
 
 
@@ -1428,7 +1428,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** If the `GXMAP <geosoft.gxapi.GXMAP>` is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEMAP.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEMAP._un_load(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEMAP._un_load(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -1469,7 +1469,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** If the map is not loaded, nothing happens.
         If "FALSE", map is saved without a prompt.
         """
-        gxapi_cy.WrapEMAP._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
+        gxapi_cy.WrapEMAP._un_load_verify(GXContext._get_tls_geo(), name.encode('utf8'), prompt)
         
 
 
@@ -1620,7 +1620,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         Locations are in the current view user units
         """
-        ret_val = self._digitize(wa, img, digits, prompt.encode(), prefix.encode(), delim.encode(), newline)
+        ret_val = self._digitize(wa, img, digits, prompt.encode('utf8'), prefix.encode('utf8'), delim.encode('utf8'), newline)
         return ret_val
 
 
@@ -1664,7 +1664,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         Locations are in the current view user units
         """
-        ret_val = self._digitize2(vvx, vvy, vvz, img, prompt.encode(), newline)
+        ret_val = self._digitize2(vvx, vvy, vvz, img, prompt.encode('utf8'), newline)
         return ret_val
 
 
@@ -1704,7 +1704,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         a higher value, it will just take the first one and continue, and this method will
         stall on flat areas as well (since no surrounding point is larger).
         """
-        ret_val = self._digitize_peaks(vvx, vvy, vvz, img, prompt.encode(), newline)
+        ret_val = self._digitize_peaks(vvx, vvy, vvz, img, prompt.encode('utf8'), newline)
         return ret_val
 
 
@@ -1745,7 +1745,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         the polygon is assumed to be closed, and the operation is the same as
         the RMB "done" command, and the process returns 0.
         """
-        ret_val = self._digitize_polygon(vvx, vvy, vvz, img, prompt.encode(), newline, pixel_radius)
+        ret_val = self._digitize_polygon(vvx, vvy, vvz, img, prompt.encode('utf8'), newline, pixel_radius)
         return ret_val
 
 
@@ -1776,7 +1776,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_box(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1821,7 +1821,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         function returns the exact coordinates of all four corners, calculated
         from the pixel locations.
         """
-        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._get_box2(str_val.encode(), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
+        ret_val, x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value = self._get_box2(str_val.encode('utf8'), x1.value, y1.value, x2.value, y2.value, x3.value, y3.value, x4.value, y4.value)
         return ret_val
 
 
@@ -1869,7 +1869,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._get_grid(str_val.encode(), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
+        ret_val, angle.value, x1.value, y1.value, x_len.value, y_len.value = self._get_grid(str_val.encode('utf8'), nx, ny, angle.value, x1.value, y1.value, x_len.value, y_len.value)
         return ret_val
 
 
@@ -1903,7 +1903,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1938,7 +1938,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line_ex(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_line_ex(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -1979,7 +1979,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         This is useful for digitizing a line in an oriented view and getting
         the true coordinates in (X, Y, Z) at the selected point on the view plane.
         """
-        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_line_xyz(str_val.encode(), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
+        ret_val, min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value = self._get_line_xyz(str_val.encode('utf8'), min_x.value, min_y.value, min_z.value, max_x.value, max_y.value, max_z.value)
         return ret_val
 
 
@@ -2012,7 +2012,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value = self._get_point(str_val.encode(), x.value, y.value)
+        ret_val, x.value, y.value = self._get_point(str_val.encode('utf8'), x.value, y.value)
         return ret_val
 
 
@@ -2047,7 +2047,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value = self._get_point_ex(str_val.encode(), x.value, y.value)
+        ret_val, x.value, y.value = self._get_point_ex(str_val.encode('utf8'), x.value, y.value)
         return ret_val
 
 
@@ -2084,7 +2084,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
             iTrackPoint, GetCurPoint, GetCursor
         """
-        ret_val, x.value, y.value, z.value = self._get_point_3d(str_val.encode(), x.value, y.value, z.value)
+        ret_val, x.value, y.value, z.value = self._get_point_3d(str_val.encode('utf8'), x.value, y.value, z.value)
         return ret_val
 
 
@@ -2114,7 +2114,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         **Note:** The coordinates are returned in the current User projection
         (See `GXMVIEW.get_user_ipj <geosoft.gxapi.GXMVIEW.get_user_ipj>` and `GXMVIEW.set_user_ipj <geosoft.gxapi.GXMVIEW.set_user_ipj>`.)
         """
-        ret_val = self._get_poly_line(str_val.encode(), vv_x, vv_y)
+        ret_val = self._get_poly_line(str_val.encode('utf8'), vv_x, vv_y)
         return ret_val
 
 
@@ -2148,7 +2148,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         of the method X, Y and Z (depth) are returned. Initially created
         to deal with crooked sections.
         """
-        ret_val = self._get_poly_line_xyz(str_val.encode(), vv_x, vv_y, vv_z)
+        ret_val = self._get_poly_line_xyz(str_val.encode('utf8'), vv_x, vv_y, vv_z)
         return ret_val
 
 
@@ -2196,7 +2196,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
         max values. What appears to be a rectangle as seen on the map is not
         necessarily a rectangle in the User coordinates.
         """
-        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode(), min_x.value, min_y.value, max_x.value, max_y.value)
+        ret_val, min_x.value, min_y.value, max_x.value, max_y.value = self._get_rect(str_val.encode('utf8'), min_x.value, min_y.value, max_x.value, max_y.value)
         return ret_val
 
 
@@ -2358,7 +2358,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEMAP._create_virtual(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEMAP._create_virtual(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEMAP(ret_val)
 
 
@@ -2383,7 +2383,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEMAP._load_control(GXContext._get_tls_geo(), map_file.encode(), window)
+        gxapi_cy.WrapEMAP._load_control(GXContext._get_tls_geo(), map_file.encode('utf8'), window)
         
 
 
@@ -2406,7 +2406,7 @@ class GXEMAP(gxapi_cy.WrapEMAP):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEMAP._load_with_view_control(GXContext._get_tls_geo(), map_file.encode(), emap, window)
+        gxapi_cy.WrapEMAP._load_with_view_control(GXContext._get_tls_geo(), map_file.encode('utf8'), emap, window)
         
 
 

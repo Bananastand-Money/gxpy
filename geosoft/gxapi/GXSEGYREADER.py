@@ -64,7 +64,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val = gxapi_cy.WrapSEGYREADER._open_file(GXContext._get_tls_geo(), filename.encode())
+        ret_val = gxapi_cy.WrapSEGYREADER._open_file(GXContext._get_tls_geo(), filename.encode('utf8'))
         return GXSEGYREADER(ret_val)
 
 
@@ -81,7 +81,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_z_type(z_type.encode())
+        self._set_z_type(z_type.encode('utf8'))
         
 
 
@@ -98,7 +98,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        z_type.value = self._get_z_type(z_type.value.encode())
+        z_type.value = self._get_z_type(z_type.value.encode('utf8'))
         
 
 
@@ -115,7 +115,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        z_units_list.value = self._get_possible_z_units(z_units_list.value.encode())
+        z_units_list.value = self._get_possible_z_units(z_units_list.value.encode('utf8'))
         
 
 
@@ -132,7 +132,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        z_units.value = self._get_z_units(z_units.value.encode())
+        z_units.value = self._get_z_units(z_units.value.encode('utf8'))
         
 
 
@@ -149,7 +149,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_z_units(z_units.encode())
+        self._set_z_units(z_units.encode('utf8'))
         
 
 
@@ -166,7 +166,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        z_units.value = self._get_z_offset_units(z_units.value.encode())
+        z_units.value = self._get_z_offset_units(z_units.value.encode('utf8'))
         
 
 
@@ -183,7 +183,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_z_offset_units(z_units.encode())
+        self._set_z_offset_units(z_units.encode('utf8'))
         
 
 
@@ -218,7 +218,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        ret_val, error_messages.value = self._has_sane_setup(error_messages.value.encode())
+        ret_val, error_messages.value = self._has_sane_setup(error_messages.value.encode('utf8'))
         return ret_val
 
 
@@ -267,7 +267,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        text.value = self._get_text_header(text.value.encode())
+        text.value = self._get_text_header(text.value.encode('utf8'))
         
 
 
@@ -320,7 +320,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        name.value = gxapi_cy.WrapSEGYREADER._get_trace_data_type_name(GXContext._get_tls_geo(), index, name.value.encode())
+        name.value = gxapi_cy.WrapSEGYREADER._get_trace_data_type_name(GXContext._get_tls_geo(), index, name.value.encode('utf8'))
         
 
 
@@ -339,7 +339,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        name.value = gxapi_cy.WrapSEGYREADER._get_trace_data_type_display_name(GXContext._get_tls_geo(), index, name.value.encode())
+        name.value = gxapi_cy.WrapSEGYREADER._get_trace_data_type_display_name(GXContext._get_tls_geo(), index, name.value.encode('utf8'))
         
 
 
@@ -356,7 +356,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        name.value = self._get_trace_data_type(name.value.encode())
+        name.value = self._get_trace_data_type(name.value.encode('utf8'))
         
 
 
@@ -373,7 +373,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_trace_data_type(name.encode())
+        self._set_trace_data_type(name.encode('utf8'))
         
 
 
@@ -392,7 +392,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        which_header.value, location.value = self._get_trace_length_configuration(which_header.value.encode(), location.value)
+        which_header.value, location.value = self._get_trace_length_configuration(which_header.value.encode('utf8'), location.value)
         
 
 
@@ -411,7 +411,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_trace_length_configuration(which_header.encode(), location_or_value)
+        self._set_trace_length_configuration(which_header.encode('utf8'), location_or_value)
         
 
 
@@ -446,7 +446,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        which_header.value, location.value = self._get_sample_interval_configuration(which_header.value.encode(), location.value)
+        which_header.value, location.value = self._get_sample_interval_configuration(which_header.value.encode('utf8'), location.value)
         
 
 
@@ -467,7 +467,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_sample_interval_configuration(which_header.encode(), location, location_or_value)
+        self._set_sample_interval_configuration(which_header.encode('utf8'), location, location_or_value)
         
 
 
@@ -503,7 +503,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        which_header.value, location.value = self._get_z_offset_configuration(which_header.value.encode(), location.value)
+        which_header.value, location.value = self._get_z_offset_configuration(which_header.value.encode('utf8'), location.value)
         
 
 
@@ -524,7 +524,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._set_z_offset_configuration(which_header.encode(), location, value)
+        self._set_z_offset_configuration(which_header.encode('utf8'), location, value)
         
 
 
@@ -848,7 +848,7 @@ class GXSEGYREADER(gxapi_cy.WrapSEGYREADER):
 
         **License:** `Geosoft End-User License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-end-user-lic>`_
         """
-        self._export_voxel_and_database(voxel_filename.encode(), gdb_filename.encode())
+        self._export_voxel_and_database(voxel_filename.encode('utf8'), gdb_filename.encode('utf8'))
         
 
 

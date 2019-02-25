@@ -128,7 +128,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         "Data\\AGG_test" (when used as a string, the double slash
         represents as single \\).
         """
-        ret_val = gxapi_cy.WrapAGG._create_map(GXContext._get_tls_geo(), map, name.encode())
+        ret_val = gxapi_cy.WrapAGG._create_map(GXContext._get_tls_geo(), map, name.encode('utf8'))
         return GXAGG(ret_val)
 
 
@@ -222,7 +222,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
-        self._layer_img(name.encode(), zone, color.encode(), cont)
+        self._layer_img(name.encode('utf8'), zone, color.encode('utf8'), cont)
         
 
 
@@ -253,7 +253,7 @@ class GXAGG(gxapi_cy.WrapAGG):
 
             `layer_shade_img <geosoft.gxapi.GXAGG.layer_shade_img>`
         """
-        self._layer_img_ex(name.encode(), zone, color.encode(), min, max, cont)
+        self._layer_img_ex(name.encode('utf8'), zone, color.encode('utf8'), min, max, cont)
         
 
 
@@ -285,7 +285,7 @@ class GXAGG(gxapi_cy.WrapAGG):
         regardless of the location of the original source image.
         If the file already exists, it will replaced.
         """
-        scl.value = self._layer_shade_img(name.encode(), color.encode(), inc, dec, scl.value)
+        scl.value = self._layer_shade_img(name.encode('utf8'), color.encode('utf8'), inc, dec, scl.value)
         
 
 

@@ -88,7 +88,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._apply_formula_internal(formula.encode())
+        self._apply_formula_internal(formula.encode('utf8'))
         
 
 
@@ -800,7 +800,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `disp_chan_list <geosoft.gxapi.GXEDB.disp_chan_list>`
         """
-        ret_val = self._disp_class_chan_lst(lst, class_name.encode())
+        ret_val = self._disp_class_chan_lst(lst, class_name.encode('utf8'))
         return ret_val
 
 
@@ -823,7 +823,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = self._find_channel_column(chan.encode())
+        ret_val = self._find_channel_column(chan.encode('utf8'))
         return ret_val
 
 
@@ -874,7 +874,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** Returns "" if mark not currently in a channel.
         """
-        str_val.value = self._get_cur_chan(str_val.value.encode())
+        str_val.value = self._get_cur_chan(str_val.value.encode('utf8'))
         
 
 
@@ -894,7 +894,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        val.value = self._get_cur_fid_string(val.value.encode())
+        val.value = self._get_cur_fid_string(val.value.encode('utf8'))
         
 
 
@@ -913,7 +913,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        str_val.value = self._get_cur_line(str_val.value.encode())
+        str_val.value = self._get_cur_line(str_val.value.encode('utf8'))
         
 
 
@@ -971,7 +971,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         "[None]"  if no values are selected
         "10 to 20"  giving the range of values.
         """
-        db.value, chan.value, line.value, fid.value = self._get_current_selection(db.value.encode(), chan.value.encode(), line.value.encode(), fid.value.encode())
+        db.value, chan.value, line.value, fid.value = self._get_current_selection(db.value.encode('utf8'), chan.value.encode('utf8'), line.value.encode('utf8'), fid.value.encode('utf8'))
         
 
 
@@ -1079,7 +1079,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        name.value = self._get_name(name.value.encode())
+        name.value = self._get_name(name.value.encode('utf8'))
         
 
 
@@ -1181,7 +1181,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        ret_val = gxapi_cy.WrapEDB._loaded(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._loaded(GXContext._get_tls_geo(), name.encode('utf8'))
         return ret_val
 
 
@@ -1309,7 +1309,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** If the symbol is not loaded, it will be loaded.
         """
-        ret_val = self._show_profile_name(state, chan.encode())
+        ret_val = self._show_profile_name(state, chan.encode('utf8'))
         return ret_val
 
 
@@ -1374,7 +1374,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
             `GXCHIMERA.launch_histogram <geosoft.gxapi.GXCHIMERA.launch_histogram>` in chimera.gxh
         """
-        self._launch_histogram(chan.encode())
+        self._launch_histogram(chan.encode('utf8'))
         
 
 
@@ -1432,7 +1432,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         All other files in the list are assumed to be in the same
         directory as the first file.
         """
-        ret_val = gxapi_cy.WrapEDB._load(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEDB(ret_val)
 
 
@@ -1458,7 +1458,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** This function acts just like `load <geosoft.gxapi.GXEDB.load>` except that the document(s) is not activated (brought to foreground) and no
         guarantee is given about which document is currently active.
         """
-        ret_val = gxapi_cy.WrapEDB._load_no_activate(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load_no_activate(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEDB(ret_val)
 
 
@@ -1497,7 +1497,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._load_chan(chan.encode())
+        self._load_chan(chan.encode('utf8'))
         
 
 
@@ -1523,7 +1523,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         an internal flag such that if on closing the user chooses
         not to save changes, the database is deleted.
         """
-        ret_val = gxapi_cy.WrapEDB._load_new(GXContext._get_tls_geo(), name.encode())
+        ret_val = gxapi_cy.WrapEDB._load_new(GXContext._get_tls_geo(), name.encode('utf8'))
         return GXEDB(ret_val)
 
 
@@ -1554,7 +1554,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         If the database is already loaded, it simply becomes
         the current database.
         """
-        ret_val = gxapi_cy.WrapEDB._load_pass(GXContext._get_tls_geo(), name.encode(), login.encode(), password.encode())
+        ret_val = gxapi_cy.WrapEDB._load_pass(GXContext._get_tls_geo(), name.encode('utf8'), login.encode('utf8'), password.encode('utf8'))
         return GXEDB(ret_val)
 
 
@@ -1582,7 +1582,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         dbsubset to create a new database with the same
         view as previously.
         """
-        ret_val = gxapi_cy.WrapEDB._load_with_view(GXContext._get_tls_geo(), name.encode(), p2)
+        ret_val = gxapi_cy.WrapEDB._load_with_view(GXContext._get_tls_geo(), name.encode('utf8'), p2)
         return GXEDB(ret_val)
 
 
@@ -1732,7 +1732,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** Skips channels without makers; will not return an
         error if the channel does not exist.
         """
-        self._run_channel_maker(chan.encode())
+        self._run_channel_maker(chan.encode('utf8'))
         
 
 
@@ -1770,7 +1770,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._set_cur_line(line.encode())
+        self._set_cur_line(line.encode('utf8'))
         
 
 
@@ -1789,7 +1789,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        self._set_cur_line_no_message(str_val.encode())
+        self._set_cur_line_no_message(str_val.encode('utf8'))
         
 
 
@@ -2111,7 +2111,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the database is not loaded, nothing happens.
         Same as `un_load_verify <geosoft.gxapi.GXEDB.un_load_verify>` with FALSE to prompt save.
         """
-        gxapi_cy.WrapEDB._un_load(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEDB._un_load(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -2167,7 +2167,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         **Note:** If the channel does not exist, or if channel is already
         loaded nothing happens.
         """
-        self._un_load_chan(chan.encode())
+        self._un_load_chan(chan.encode('utf8'))
         
 
 
@@ -2188,7 +2188,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Note:** If the database is not loaded, nothing happens.
         """
-        gxapi_cy.WrapEDB._un_load_discard(GXContext._get_tls_geo(), name.encode())
+        gxapi_cy.WrapEDB._un_load_discard(GXContext._get_tls_geo(), name.encode('utf8'))
         
 
 
@@ -2215,7 +2215,7 @@ class GXEDB(gxapi_cy.WrapEDB):
         EDB_UNLOAD_MULTIPROMPT is now obsolete and
         is equivalent to `EDB_UNLOAD_SINGLE_PROMPT <geosoft.gxapi.EDB_UNLOAD_SINGLE_PROMPT>`.
         """
-        gxapi_cy.WrapEDB._un_load_verify(GXContext._get_tls_geo(), name.encode(), prompt)
+        gxapi_cy.WrapEDB._un_load_verify(GXContext._get_tls_geo(), name.encode('utf8'), prompt)
         
 
 
@@ -2257,7 +2257,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB._load_control(GXContext._get_tls_geo(), db_file.encode(), window)
+        gxapi_cy.WrapEDB._load_control(GXContext._get_tls_geo(), db_file.encode('utf8'), window)
         
 
 
@@ -2278,7 +2278,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB._load_new_control(GXContext._get_tls_geo(), db_file.encode(), window)
+        gxapi_cy.WrapEDB._load_new_control(GXContext._get_tls_geo(), db_file.encode('utf8'), window)
         
 
 
@@ -2303,7 +2303,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB._load_pass_control(GXContext._get_tls_geo(), db_file.encode(), user.encode(), password.encode(), window)
+        gxapi_cy.WrapEDB._load_pass_control(GXContext._get_tls_geo(), db_file.encode('utf8'), user.encode('utf8'), password.encode('utf8'), window)
         
 
 
@@ -2326,7 +2326,7 @@ class GXEDB(gxapi_cy.WrapEDB):
 
         **Limitations:** May not be available while executing a command line program.
         """
-        gxapi_cy.WrapEDB._load_with_view_control(GXContext._get_tls_geo(), db_file.encode(), edb, window)
+        gxapi_cy.WrapEDB._load_with_view_control(GXContext._get_tls_geo(), db_file.encode('utf8'), edb, window)
         
 
 

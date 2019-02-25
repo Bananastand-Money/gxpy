@@ -70,7 +70,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._create(file.encode(), status)
+        ret_val = self._create(file.encode('utf8'), status)
         return GXSBF(ret_val)
 
 
@@ -111,7 +111,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._del_dir(dir.encode())
+        self._del_dir(dir.encode('utf8'))
         
 
 
@@ -128,7 +128,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._del_file(file.encode())
+        self._del_file(file.encode('utf8'))
         
 
 
@@ -209,7 +209,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._exist_dir(dir.encode())
+        ret_val = self._exist_dir(dir.encode('utf8'))
         return ret_val
 
 
@@ -230,7 +230,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        ret_val = self._exist_file(file.encode())
+        ret_val = self._exist_file(file.encode('utf8'))
         return ret_val
 
 
@@ -253,7 +253,7 @@ class GXSBF(gxapi_cy.WrapSBF):
 
         **License:** `Geosoft Open License <https://geosoftgxdev.atlassian.net/wiki/spaces/GD/pages/2359406/License#License-open-lic>`_
         """
-        self._save_log(dir.encode(), file.encode(), file_save.encode(), p5)
+        self._save_log(dir.encode('utf8'), file.encode('utf8'), file_save.encode('utf8'), p5)
         
 
 
