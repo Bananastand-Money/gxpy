@@ -38,7 +38,7 @@ class Test(GXPYTest):
         ppr = gxgeou.resample(pp, 2.5)
         self.assertEqual(ppr.length, 93)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-1]), '_point_(234.61203746485876, 20.64579408987188, 0.0)')
+        self.assertEqual(str(ppr[-1]), '_point_(234.612037465, 20.6457940899, 0.0)')
 
         ppr = gxgeou.resample(pp, 2.5, closed=True)
         self.assertEqual(ppr.length, 145)
@@ -48,18 +48,18 @@ class Test(GXPYTest):
         ppr = gxgeou.resample(pp, 2.5, spline=gxgeou.SPLINE_AKIMA, closed=True)
         self.assertEqual(ppr.length, 145)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-2]), '_point_(109.96046205631022, 4.960353267681198, 0.0)')
+        self.assertEqual(str(ppr[-2]), '_point_(109.960462056, 4.96035326768, 0.0)')
 
         ppr = gxgeou.resample(pp, 2.5, spline=gxgeou.SPLINE_LINEAR, closed=True)
         self.assertEqual(ppr.length, 145)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-2]), '_point_(110.15605873233088, 5.016854343091733, 0.0)')
+        self.assertEqual(str(ppr[-2]), '_point_(110.156058732, 5.01685434309, 0.0)')
 
         ppr = gxgeou.resample(plinelist, 2.5, spline=gxgeou.SPLINE_LINEAR, closed=True)
         ppr = gxgeo.PPoint(ppr)
         self.assertEqual(ppr.length, 145)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-2]), '_point_(110.15605873233088, 5.016854343091733, 0.0)')
+        self.assertEqual(str(ppr[-2]), '_point_(110.156058732, 5.01685434309, 0.0)')
 
         ppr = gxgeou.resample(plinelist, 2.5, spline=gxgeou.SPLINE_NEAREST, closed=True)
         ppr = gxgeo.PPoint(ppr)
@@ -103,13 +103,13 @@ class Test(GXPYTest):
         ppr = gxgeou.resample(pp, 2.5, spline=gxgeou.SPLINE_AKIMA)
         self.assertEqual(ppr.length, 145)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-2]), '_point_(109.96046205631022, 4.960353267681198, 0.0)')
+        self.assertEqual(str(ppr[-2]), '_point_(109.960462056, 4.96035326768, 0.0)')
 
         pp = gxgeo.PPoint([[110, 5], [120, 20]])
         ppr = gxgeou.resample(pp, 2.5, spline=gxgeou.SPLINE_AKIMA)
         self.assertEqual(ppr.length, 8)
         self.assertEqual(ppr[0], pp[0])
-        self.assertEqual(str(ppr[-1]), '_point_(119.7072534339415, 19.560880150912265, 0.0)')
+        self.assertEqual(str(ppr[-1]), '_point_(119.707253434, 19.5608801509, 0.0)')
 
         pp = gxgeo.PPoint([[110, 5]])
         ppr = gxgeou.resample(pp, 2.5, spline=gxgeou.SPLINE_AKIMA)

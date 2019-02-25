@@ -252,7 +252,7 @@ class Test(GXPYTest):
 
         fn = 'except.geosoft_surface'
         try:
-            with open(fn, '+w') as f:
+            with open(fn, 'w') as f:
                 f.write('maki')
             self.assertRaises(gxsurf.SurfaceException, gxsurf.SurfaceDataset.new, 'except')
 
