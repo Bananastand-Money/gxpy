@@ -113,7 +113,7 @@ def Data_frame(initial=None, records=None, columns=None):
     .. versionchanged:: 9.4
 
     """
-    if not type(initial) is str:
+    if not type(initial) in (str, unicode):
         raise DfException(_t('Only Geosoft tables are supported.'))
 
     df = pd.DataFrame()
@@ -130,7 +130,7 @@ def Data_frame(initial=None, records=None, columns=None):
         except geosoft.gxapi.GXError as e:
             raise DfException(str(e))
     else:
-        if type(records) is str:
+        if type(records) in (str, unicode):
             if not records:
                 raise DfException(_t('Empty records string.'))
             try:
@@ -148,7 +148,7 @@ def Data_frame(initial=None, records=None, columns=None):
         ltb.get_field(i, sr)
         if columns is None:
             incl = True
-        elif type(columns) is str:
+        elif type(columns) in (str, unicode):
             incl = sr.value == columns
         else:
             incl = sr.value in columns

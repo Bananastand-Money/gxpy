@@ -486,7 +486,7 @@ class View(gxgeo.Geometry):
         child_files = gxmeta.get_node_from_meta_dict(node, meta)
         if child_files is None:
             child_files = []
-        if isinstance(file_list, str):
+        if isinstance(file_list, str) or isinstance(file_list, unicode):
             child_files.append(file_list)
         else:
             for f in file_list:
@@ -1077,7 +1077,7 @@ class View_3d(View):
 
     def plane_name(self, plane):
         """Return the name of a numbered plane"""
-        if isinstance(plane, str):
+        if isinstance(plane, str) or isinstance(plane, unicode):
             if self.gxview.find_plane(plane) == -1:
                 _plane_err(plane, self.name)
             return plane
@@ -1112,7 +1112,7 @@ class View_3d(View):
 
         .. versionadded:: 9.3.1
         """
-        if isinstance(plane, str):
+        if isinstance(plane, str) or isinstance(plane, unicode):
             plane = self.plane_number(plane)
         try:
             self.gxview.delete_plane(plane, True)
@@ -1144,7 +1144,7 @@ class View_3d(View):
         .. versionadded:: 9.2
         """
         gxlst = gxapi.GXLST.create(VIEW_NAME_SIZE)
-        if isinstance(plane, str):
+        if isinstance(plane, str) or isinstance(plane, unicode):
             plane = self.plane_number(plane)
         self.gxview.list_plane_groups(plane, gxlst)
         return list(gxu.dict_from_lst(gxlst))

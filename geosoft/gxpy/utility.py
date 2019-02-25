@@ -182,7 +182,7 @@ def xml_from_dict(d, pretty=True, xmlns=''):
 
 def _convert_to_str(data):
     if isinstance(data, basestring):
-        return str(data)
+        return unicode(data)
     elif isinstance(data, Mapping):
         return dict(map(_convert_to_str, data.iteritems()))
     elif isinstance(data, Iterable):
@@ -565,7 +565,7 @@ def gx_dtype(dtype):
             str(np.dtype(np.uint32)): gxapi.GS_ULONG,
             str(np.dtype(np.uint64)): gxapi.GS_ULONG64}
     dtype = np.dtype(dtype)
-    if dtype.type is np.str_ or dtype.type is np.string_:
+    if dtype.type is np.str_ or dtype.type is np.string_ or dtype.type is np.unicode_:
         # x4 to allow for full UTF-8 characters
         return -int(dtype.str[2:])*4
     return _np2gx_type[str(dtype)]
@@ -595,7 +595,7 @@ def dtype_gx(gtype):
             gxapi.GS_FLOAT3D: np.dtype(np.float32),
             gxapi.GS_DOUBLE3D: np.dtype(np.float64)}
     if gtype < 0:
-        return np.dtype('|S{}'.format(-gtype))
+        return np.dtype('U{}'.format(-gtype))
     return _gx2np_type[gtype]
 
 
@@ -1148,7 +1148,7 @@ def year_from_datetime(dt):
     naive_dt = dt.replace(tzinfo=None)
     y_start = datetime.datetime(naive_dt.year, 1, 1)
     y_end = y_start.replace(year=naive_dt.year + 1)
-    return dt.year + (naive_dt - y_start) / (y_end - y_start)
+    return dt.year + (naive_dt - y_start).total_seconds() / (y_end - y_start).total_seconds()
 
 
 def datetime_from_year(year):
@@ -1214,7 +1214,8 @@ def str_significant(value, n, mode=0):
     else:
         vstr = str(math.floor(v))
 
-    return str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
+    vstr = str(decimal.Decimal(vstr) * mult * (10 ** decimal.Decimal(power - n)))
+    return vstr.rstrip(' 0').rstrip('.')
 
 def delete_file(file_name):
     """

@@ -263,7 +263,7 @@ class Metadata(object):
         if self.has_attribute(attr_name):
             self.gxmeta.delete_attrib(self.attribute_token(attr_name))
         node = self.node_token(node)
-        if isinstance(value, str):
+        if isinstance(value, str) or isinstance(value, unicode):
             a = self.gxmeta.create_attrib(attr, node, gxapi.META_CORE_TYPE_String)
             self.gxmeta.set_attrib_string(node, a, value)
         elif isinstance(value, float):

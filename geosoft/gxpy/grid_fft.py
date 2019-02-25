@@ -480,13 +480,13 @@ class GridFFT(object):
             cf.write('{} /\n'.format(mag_declination))
             cf.write('{} /\n'.format(mag_strength))
 
-            if isinstance(filters, str):
+            if isinstance(filters, str) or isinstance(filters, unicode):
                 filters = [filters]
 
             # filters
             if filters:
                 for f in filters:
-                    if isinstance(f, str):
+                    if isinstance(f, str) or isinstance(f, unicode):
                         cf.write('{} /\n'.format(f))
                     else:
                         for p in f:

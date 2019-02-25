@@ -500,7 +500,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        if isinstance(symb, str):
+        if isinstance(symb, str) or isinstance(symb, unicode):
             return self._db.exist_symb(symb, symb_type)
         elif isinstance(symb, int):
             return self._db.valid_symb(symb, symb_type)
@@ -851,7 +851,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         if isinstance(line, Line):
             return line.name, line.symbol
 
-        elif isinstance(line, str):
+        elif isinstance(line, str) or isinstance(line, unicode):
             if self.exist_symb_(line, gxapi.DB_SYMB_LINE):
                 symb = self._db.find_symb(line, gxapi.DB_SYMB_LINE)
                 return line, symb
@@ -877,7 +877,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         if isinstance(chan, Channel):
             return chan.name, chan.symbol
-        if isinstance(chan, str):
+        if isinstance(chan, str) or isinstance(chan, unicode):
             symb = self._db.find_symb(chan, gxapi.DB_SYMB_CHAN)
             if symb == -1:
                 raise GdbException(_t('Channel \'{}\' not found'.format(chan)))
@@ -1263,7 +1263,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        if isinstance(channels, str) or isinstance(channels, int):
+        if isinstance(channels, str) or isinstance(channels, unicode) or isinstance(channels, int):
             channels = [channels]
 
         protected_channels = []
@@ -1291,7 +1291,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        if isinstance(lines, str) or isinstance(lines, int):
+        if isinstance(lines, str) or  isinstance(lines, unicode) or isinstance(lines, int):
             lines = [lines]
 
         for s in lines:
@@ -1311,7 +1311,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.6
         """
 
-        if isinstance(lines, str) or isinstance(lines, int):
+        if isinstance(lines, str) or isinstance(lines, unicode) or isinstance(lines, int):
             lines = [lines]
 
         for s in lines:
@@ -1352,7 +1352,7 @@ class Geosoft_gdb(gxgeo.Geometry):
 
         """
 
-        if isinstance(selection, str):
+        if isinstance(selection, str) or isinstance(selection, unicode):
             selection = selection.split(',')
 
         for s in selection:
@@ -1367,7 +1367,7 @@ class Geosoft_gdb(gxgeo.Geometry):
     # reading and writing
 
     def _to_string_chan_list(self, channels):
-        if isinstance(channels, str):
+        if isinstance(channels, str) or isinstance(channels, unicode):
             if ',' in channels:
                 channels = [c.strip() for c in channels.split(',')]
             else:
@@ -1944,7 +1944,7 @@ class Geosoft_gdb(gxgeo.Geometry):
             cn, cs = self.channel_name_symb(channel)
 
         except GdbException:
-            if type(channel) is str:
+            if type(channel) in (str, unicode):
                 cs = self.new_channel(channel, vv.dtype)
                 cn = channel
             else:
@@ -1979,7 +1979,7 @@ class Geosoft_gdb(gxgeo.Geometry):
             cn, cs = self.channel_name_symb(channel)
 
         except GdbException:
-            if type(channel) is str:
+            if type(channel) in (str, unicode):
                 cs = self.new_channel(channel, va.dtype, array=va.width)
             else:
                 raise
@@ -2021,7 +2021,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         if not isinstance(data, np.ndarray):
             data = np.array(data)
 
-        if isinstance(channel, str):
+        if isinstance(channel, str) or isinstance(channel, unicode):
             cn = channel
             cs = self.new_channel(channel, data.dtype, array=_va_width(data))
         else:
@@ -2104,7 +2104,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         .. versionadded:: 9.1
         """
 
-        if type(channels) is str:
+        if type(channels) in (str, unicode):
             self.write_channel(line, channels, data, fid=fid)
 
         else:
@@ -2235,7 +2235,7 @@ class Geosoft_gdb(gxgeo.Geometry):
         # uppercase features, use a dict so we pop things we use and report error
         if features is None:
             features = ['ALL']
-        if isinstance(features, str):
+        if isinstance(features, str) or isinstance(features, unicode):
             features = (features,)
         feature_list = {}
         if features is not None:

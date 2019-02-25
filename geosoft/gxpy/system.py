@@ -15,6 +15,7 @@ import zipfile
 import threading
 import sys
 from itertools import count
+import multiprocessing
 import geosoft
 
 __version__ = geosoft.__version__
@@ -183,7 +184,7 @@ def parallel_map(f, l, threads=None):
 
     """
     if threads is None:
-        threads = os.cpu_count()
+        threads = multiprocessing.cpu_count()
     return _parallel_foreach(f, l, threads=threads, return_=True)
 
 

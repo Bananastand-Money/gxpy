@@ -144,7 +144,7 @@ class VoxDisplay(object):
 
         voxd = cls(vox)
 
-        if (color_map is None) or (isinstance(color_map, str)):
+        if color_map is None or isinstance(color_map, str) or isinstance(color_map, unicode):
             color_map = geosoft.gxpy.group.Color_map(color_map)
         color_map_file = color_map.save_file()
 
@@ -426,7 +426,7 @@ class VoxDisplay(object):
         """
 
         # uppercase features, use a dict so we pop things we use and report error
-        if isinstance(features, str):
+        if isinstance(features, str) or isinstance(features, unicode):
             features = (features,)
         feature_list = {}
         if features is not None:

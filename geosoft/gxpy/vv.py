@@ -194,7 +194,9 @@ class GXvv(Sequence):
         # The gx_dtype method and the gxapi wrappers accounts for that by multiplying the dtype number accordingly.
         # Specifying a numpy dtype to instantiate VV will ensure the internal space is enough to allocate up to
         # that 4 times the Unicode characters, however any Numpy arrays should still used the passed dtype as specified
-        if dtype is not None and isinstance(dtype, np.dtype) and dtype.type is np.str_:
+        if dtype is not None and isinstance(dtype, np.dtype) and (dtype.type is np.str_ or
+                                                                  dtype.type is np.string_ or
+                                                                  dtype.type is np.unicode_):
             self._dtype = dtype
         elif type(dtype) is str:
             self._dtype = np.dtype(dtype)
@@ -406,7 +408,7 @@ class GXvv(Sequence):
         else:
 
             # strings wanted
-            if dtype.type is np.str_:
+            if dtype.type is np.str_ or dtype.type is np.string_ or dtype.type is np.unicode_:
                 sr = gxapi.str_ref()
                 npd = np.empty((n,), dtype=dtype)
                 for i in range(start, start + n):
@@ -495,7 +497,7 @@ class GXvv(Sequence):
         else:
             i = 0
             for d in data:
-                self._gxvv.set_string(i, str(d))
+                self._gxvv.set_string(i, unicode(d))
                 i += 1
 
         self._gxvv.set_len(data.shape[0])

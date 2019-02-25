@@ -624,7 +624,7 @@ class DapClient(Sequence):
                 raise IndexError('catalog index {} out of range {}'.format(item, len(self._cat)))
             card = self._cat[item]
         else:
-            if isinstance(item, str):
+            if isinstance(item, str) or isinstance(item, unicode):
                 title = item
                 hierarchy = None
             else:

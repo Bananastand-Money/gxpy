@@ -240,7 +240,6 @@ def _exit_cleanup():
     if _have_gx():
         gx = _get_gx_instance()
         gx.log('\nGX closing')
-        atexit.unregister(_exit_cleanup)
 
         temp_folder = gx.temp_folder()
         if temp_folder and (temp_folder != gxu.folder_temp()):
@@ -846,7 +845,12 @@ class GXpy:
             uuid = "_gx_" + self._gxid
             self._temp_file_folder = os.path.join(path, uuid)
             try:
-                os.makedirs(self._temp_file_folder, exist_ok=True)
+                try:
+                    os.makedirs(self._temp_file_folder)
+                except OSError as e:
+                    import errno
+                    if e.errno != errno.EEXIST:
+                        raise
                 self._keep_temp_files = False
             except OSError:
                 self._temp_file_folder = path

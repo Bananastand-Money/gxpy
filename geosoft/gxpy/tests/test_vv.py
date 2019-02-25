@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import os
 import unittest
@@ -153,7 +154,7 @@ class Test(GXPYTest):
         self.start()
 
         fidvv = (99,0.1)
-        npdata = np.array(["name", "maki", "neil", "rider"])
+        npdata = np.array(["name", "maki", "neil", "rider"], np.unicode_)
         with  gxvv.GXvv(npdata, fid=fidvv) as vv:
             self.assertTrue(vv.is_string)
             self.assertFalse(vv.is_int)
@@ -161,8 +162,8 @@ class Test(GXPYTest):
             self.assertEqual(vv.fid,fidvv)
             self.assertEqual(vv.length,len(npdata))
             self.assertEqual(vv.gxtype,-20)
-            self.assertTrue(vv.dtype.type is np.str_)
-            self.assertEqual(str(vv.dtype),'|S20')
+            self.assertTrue(vv.dtype.type is np.unicode_)
+            self.assertEqual(str(vv.dtype),'<U5')
 
             npd,fid = vv.get_data(vv.dtype)
             self.assertEqual(npd[0],"name")
@@ -278,11 +279,11 @@ class Test(GXPYTest):
 
         # The following 4-byte UTF-8 characters can be correctly extracted (to limits of what is specified).
         # Characters from http://www.i18nguy.com/unicode/supplementary-test.html
-        l = [1, 2, "𠜎𠜱𠝹𠱓𠱸𠲖"]
-        with gxvv.GXvv(l, dtype='S4') as vv:
-            self.assertEqual(list(vv.np), ['1', '2', '𠜎𠜱𠝹𠱓'])
-        with gxvv.GXvv(l, dtype='S2') as vv:
-            self.assertEqual(list(vv.np), ['1', '2', '𠜎𠜱'])
+        l = [1, 2, u"𠜎𠜱𠝹𠱓𠱸𠲖"]
+        with gxvv.GXvv(l, dtype='U4') as vv:
+            self.assertEqual(list(vv.np), [u'1', u'2', u'𠜎𠜱𠝹𠱓'])
+        with gxvv.GXvv(l, dtype='U2') as vv:
+            self.assertEqual(list(vv.np), [u'1', u'2', u'𠜎𠜱'])
 
     def test_iterator(self):
         self.start()

@@ -210,7 +210,7 @@ class Aggregate_image(gxgm.Geometry):
         return self._base_properties['coordinate_system']
 
     def _layer_index(self, layer):
-        if isinstance(layer, str):
+        if isinstance(layer, str) or isinstance(layer, unicode):
             layer = layer.lower()
             for l in range(self.layer_count):
                 if layer == self.layer_file_names[l].lower():
@@ -219,7 +219,7 @@ class Aggregate_image(gxgm.Geometry):
 
         if layer >= self.layer_count:
             raise AggregateException(
-                _t('Layer \'{}\' ot of range for aggregate with {} layers.'.format(layer, self.layer_count)))
+                _t('Layer \'{}\' out of range for aggregate with {} layers.'.format(layer, self.layer_count)))
         return layer
 
     def _create_name(self):
@@ -235,7 +235,7 @@ class Aggregate_image(gxgm.Geometry):
             if fn[-2:] == '_s':
                 if fn[:-2] in names:
                     continue
-                i = str.rfind(fn[:-2], '_')
+                i = fn[:-2].rfind('_')
                 if i > 1 and fn[:i] in names:
                     continue
             s = s + fn + ', '
@@ -287,7 +287,7 @@ class Aggregate_image(gxgm.Geometry):
         if color_map is None:
             if zone == ZONE_SHADE:
                 color_map = 'lgray.tbl'
-        if (color_map is None) or (isinstance(color_map, str)):
+        if color_map is None or isinstance(color_map, str) or isinstance(color_map, unicode):
             color_map = geosoft.gxpy.group.Color_map(color_map)
         color_map_file = color_map.save_file()
 
@@ -383,7 +383,7 @@ class Aggregate_image(gxgm.Geometry):
         ref_grid = gxgrd.Grid.open(ref_grid_name)
 
         # uppercase features, use a dict so we pop things we use and report error
-        if isinstance(features, str):
+        if isinstance(features, str) or isinstance(features, unicode):
             features = (features,)
         feature_list = {}
         if features is not None:

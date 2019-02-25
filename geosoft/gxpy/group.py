@@ -1924,7 +1924,7 @@ class Color(object):
         elif isinstance(color, int):
             self.int_value = color
 
-        elif isinstance(color, str):
+        elif isinstance(color, str) or isinstance(color, unicode):
             self._color = gxapi.GXMVIEW.color(color)
 
         else:
@@ -2484,7 +2484,7 @@ class Color_symbols_group(Group):
     def __init__(self, view, group_name, **kwargs):
 
         self._gxcsymb = None
-        super(Color_symbols_group).__init__(view, group_name, **kwargs)
+        super(Color_symbols_group, self).__init__(view, group_name, **kwargs)
 
     @classmethod
     def new(cls,
@@ -2820,7 +2820,7 @@ class Color_map(object):
         if isinstance(cmap, unicode):
             cmap = str(cmap)
 
-        if isinstance(cmap, str):
+        if isinstance(cmap, str) or isinstance(cmap, unicode):
             if cmap == 'color':
                 cmap = 'colour'
             base, ext = os.path.splitext(cmap)

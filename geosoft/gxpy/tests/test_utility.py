@@ -1,10 +1,13 @@
+from __future__ import division
+
 import unittest
 import numpy as np
 import os
 import datetime
 import time
 import requests
-from datetime import timezone, datetime
+from datetime import datetime
+from dateutil import tz
 
 import geosoft
 import geosoft.gxapi as gxapi
@@ -403,7 +406,7 @@ class Test(GXPYTest):
         geo_utc = gxu.datetime_from_year(gxapi.GXSYS.utc_date())
 
         # Due to testing environment variables the above would always be 2003-01-01
-        py_utc = datetime(2003, 1, 1, tzinfo=timezone.utc)
+        py_utc = datetime(2003, 1, 1, tzinfo=tz.tzutc())
 
         self.assertEqual(geo_utc.year, py_utc.year)
         self.assertEqual(geo_utc.month, py_utc.month)
@@ -435,7 +438,7 @@ class Test(GXPYTest):
         self.assertEqual(gxu.str_significant(1.0, 1), '1')
         self.assertEqual(gxu.str_significant(-1.0, 1), '-1')
         self.assertEqual(gxu.str_significant(105.1005, 2), '110')
-        self.assertEqual(gxu.str_significant(-105.0, 2), '-100')
+        self.assertEqual(gxu.str_significant(-105.0, 2), '-110')
         self.assertEqual(gxu.str_significant(-105.0001000, 2), '-110')
         self.assertEqual(gxu.str_significant(105.0, 2, mode=-1), '100')
         self.assertEqual(gxu.str_significant(-105.0, 2, mode=-1), '-100')
@@ -595,7 +598,7 @@ class Test(GXPYTest):
         self.start()
 
         fn = gx.gx().temp_file()
-        with open(fn, '+w') as f:
+        with open(fn, 'w') as f:
             f.write('maki')
         self.assertFalse(gxu.is_file_locked(fn))
         self.assertFalse(gxu.is_path_locked(fn))

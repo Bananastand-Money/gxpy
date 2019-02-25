@@ -394,7 +394,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         .. versionadded:: 9.3.1
         """
 
-        if isinstance(surface_dataset, str):
+        if isinstance(surface_dataset, str) or isinstance(surface_dataset, unicode):
             surface_dataset = SurfaceDataset.open(surface_dataset)
         for s in surface_dataset:
             self.add_surface(s)
@@ -440,7 +440,7 @@ class SurfaceDataset(gxspd.SpatialData, Sequence):
         """
 
         # uppercase features, use a dict so we pop things we use and report error
-        if isinstance(features, str):
+        if isinstance(features, str) or isinstance(features, unicode):
             features = (features,)
         feature_list = {}
         if features is not None:
@@ -562,7 +562,7 @@ class Surface(gxspd.SpatialData, Sequence):
     def __init__(self, surface, surface_type='none', surface_dataset=None,
                  mesh=None, coordinate_system=None, render_properties=None):
 
-        if isinstance(surface, str):
+        if isinstance(surface, str) or isinstance(surface, unicode):
             if surface_dataset and surface_dataset.has_surface(surface):
                 raise SurfaceException(_t('Cannot overwrite existing surface ({}) in dataset ({}).')
                                        .format(surface, surface_dataset.name))
@@ -938,7 +938,7 @@ def render(view, surface, group_name=None, overwrite=False):
     """
 
     if group_name is None:
-        if isinstance(surface, str):
+        if isinstance(surface, str) or isinstance(surface, unicode):
             group_name = _surface_name(surface)
         else:
             group_name = surface.name
@@ -946,7 +946,7 @@ def render(view, surface, group_name=None, overwrite=False):
     if view.has_group(group_name) and not overwrite:
         raise SurfaceException(_t('Cannot overwerwrite existing group: {}').format(group_name))
 
-    if not isinstance(surface, str):
+    if not isinstance(surface, str) or isinstance(surface, unicode):
 
         surface_dataset_file_name = _surface_file_name(view.file_name + '.' + surface.name)
         with SurfaceDataset.new(surface_dataset_file_name, overwrite=overwrite,

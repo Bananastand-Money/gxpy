@@ -183,7 +183,7 @@ def delete_files(file_name):
     def remove(fn):
         try:
             os.remove(fn)
-        except FileNotFoundError:
+        except IOError:
             pass
 
     file_name = map_file_name(file_name)
@@ -438,7 +438,7 @@ class Map(object):
 
         map = cls(file_name, WRITE_NEW, _internal=True)
 
-        if type(media) is str:
+        if type(media) in (str, unicode):
             try:
                 spec = gxdf.table_record('media', media.upper())
                 media = (float(spec['SIZE_X']), float(spec['SIZE_Y']))
@@ -940,7 +940,7 @@ class Map(object):
         """
 
         # uppercase features, use a dict so we pop things we use and report error
-        if isinstance(features, str):
+        if isinstance(features, str) or isinstance(features, unicode):
             features = (features,)
         feature_list = {}
         if features is not None:
@@ -1034,12 +1034,12 @@ class Map(object):
 
         if outer_pen is None:
             outer_pen = gxg.Pen(line_thick=0.05)
-        elif isinstance(outer_pen, str):
+        elif isinstance(outer_pen, str) or isinstance(outer_pen, unicode):
             outer_pen = gxg.Pen.from_mapplot_string(outer_pen)
             outer_pen.line_thick = outer_pen.line_thick / 10.0 # to cm
         if inner_pen is None:
             inner_pen = gxg.Pen(line_thick=outer_pen.line_thick * 0.5)
-        elif isinstance(inner_pen, str):
+        elif isinstance(inner_pen, str) or isinstance(inner_pen, unicode):
             inner_pen = gxg.Pen.from_mapplot_string(inner_pen)
             inner_pen.line_thick = inner_pen.line_thick / 10.0 # to cm
 
@@ -1423,7 +1423,7 @@ class _Mapplot(object):
         else:
             if pen is None:
                 pen = gxg.Pen(line_color=text_def.color, line_thick=text_def.line_thick)
-            elif isinstance(pen, str):
+            elif isinstance(pen, str) or isinstance(pen, unicode):
                 pen = gxg.Pen.from_mapplot_string(pen)
                 pen.line_thick = pen.line_thick * 0.1 # to cm
             ls = pen.line_style
@@ -1453,7 +1453,7 @@ class _Mapplot(object):
 
         .. versionadded:: 9.2
         """
-        if type(view) is str:
+        if type(view) in (str, unicode):
             if view.lower() == 'base':
                 view = VIEW_BASE
             else:

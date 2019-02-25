@@ -213,7 +213,7 @@ def name_list(what, datum_filter=''):
     lst = gxapi.GXLST.create(1000)
     gxapi.GXIPJ.get_list(what, datum_filter, lst)
     namelist = list(gxu.dict_from_lst(lst))
-    namelist.sort(key=str.lower)
+    namelist.sort(key=unicode.lower)
     return namelist
 
 
@@ -521,10 +521,8 @@ class Coordinate_system(object):
         if coordinate_system is None:
             coordinate_system = _unknown_name
 
-        if isinstance(coordinate_system, str):
+        if isinstance(coordinate_system, str) or isinstance(coordinate_system, unicode):
             self._from_str(coordinate_system)
-        elif isinstance(coordinate_system, unicode):
-            self._from_str(str(coordinate_system))
 
         elif isinstance(coordinate_system, gxapi.GXIPJ):
             coordinate_system.copy(self.gxipj)

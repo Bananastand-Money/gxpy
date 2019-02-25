@@ -194,9 +194,9 @@ class GXPYTest(unittest.TestCase):
             pos = 8
             while pos < len(bytes):
                 buf_length = bytes[pos:pos + 4]
-                length = buf_length[0] * 256 * 256 * 256 + \
-                         buf_length[1] * 256 * 256 + \
-                         buf_length[2] * 256 + buf_length[3]
+                length = ord(buf_length[0]) * 256 * 256 * 256 + \
+                         ord(buf_length[1]) * 256 * 256 + \
+                         ord(buf_length[2]) * 256 + ord(buf_length[3])
                 buf_type = bytes[pos + 4:pos + 12]
                 chunk_type = buf_type.decode('ascii', 'ignore')
                 if not (chunk_type.startswith('tIME') or chunk_type.startswith('tEXtdate')):
@@ -226,7 +226,7 @@ class GXPYTest(unittest.TestCase):
         try:
             os.remove(image_file + '.gi')
             os.remove(image_file + '.xml')
-        except FileNotFoundError:
+        except IOError:
             pass
 
     @classmethod

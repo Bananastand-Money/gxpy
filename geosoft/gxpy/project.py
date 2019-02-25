@@ -435,7 +435,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         gxapi.GXSYS.set_string("USER_INPUT", "PROMPT", str(prompt))
 
         # clean up filemask
-        if not isinstance(filemask, str):
+        if not isinstance(filemask, str) or isinstance(filemask, unicode):
             if len(filemask) > 0:
                 filemask = ';'.join(filemask)
             else:
@@ -449,7 +449,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
         if len(items) > 0:
             if type(items) is dict:
                 items = [(k) for k in items.keys()]
-            elif isinstance(items, str):
+            elif isinstance(items, str) or isinstance(items, unicode):
                 items = items.split(',')
             gxapi.GXSYS.set_string("USER_INPUT", "LIST", ",".join(items))
 
@@ -460,7 +460,7 @@ def get_user_input(title="Input required...", prompt='?', kind='string', default
 
         # resolve default string
         if kind == kind_list['file']:
-            if isinstance(default, str):
+            if isinstance(default, str) or isinstance(default, unicode):
                 default = default.replace(',', '|').replace(';', '|')
             else:
                 if len(default) > 0:
