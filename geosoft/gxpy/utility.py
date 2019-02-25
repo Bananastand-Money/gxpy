@@ -1095,7 +1095,7 @@ def crc32(byte_buffer, crc=0):
     .. versionadded:: 9.2
     """
     crc = binascii.crc32(byte_buffer, crc)
-    return crc
+    return crc % (1 << 32)
 
 
 def crc32_file(filename, crc=0):
@@ -1131,7 +1131,7 @@ def crc32_str(s, crc=0):
 
     .. versionadded:: 9.2
     """
-    crc = crc32(s.encode(), crc)
+    crc = crc32(s.encode('utf8'), crc)
     return crc
 
 
