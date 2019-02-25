@@ -206,7 +206,7 @@ def _remove_stale_gx_temporary_folders():
             if not gxu.is_file_locked(ff, age=_stale_age):
                 try:
                     os.remove(ff)
-                except IOError as e:
+                except Exception as e:
                     _log_file_error('os.remove', ff, e)
 
 

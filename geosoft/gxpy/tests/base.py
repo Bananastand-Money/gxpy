@@ -227,7 +227,7 @@ class GXPYTest(unittest.TestCase):
         try:
             os.remove(image_file + '.gi')
             os.remove(image_file + '.xml')
-        except IOError:
+        except (IOError, OSError, WindowsError):
             pass
 
     @classmethod

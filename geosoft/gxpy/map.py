@@ -183,7 +183,7 @@ def delete_files(file_name):
     def remove(fn):
         try:
             os.remove(fn)
-        except IOError:
+        except (IOError, OSError, WindowsError):
             pass
 
     file_name = map_file_name(file_name)

@@ -1028,7 +1028,7 @@ def get_shared_dict():
         os.remove(_temp_dict_file_name())
         return shared_dict
 
-    except (IOError, OSError):
+    except (IOError, OSError, WindowsError):
         return {}
 
 
@@ -1393,7 +1393,7 @@ def delete_folder(folder_name, age=None, raise_on_error=False):
 
         os.removedirs(folder_name)
 
-    except IOError:
+    except (IOError, OSError, WindowsError):
         if raise_on_error:
             raise
 
