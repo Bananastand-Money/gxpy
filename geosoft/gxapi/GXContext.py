@@ -3,7 +3,7 @@ from . import gxapi_cy
 from geosoft.gxapi import GXAPIError, int_ref
 
 import threading
-import winreg
+import _winreg as winreg
 
 _tls = threading.local()
 
